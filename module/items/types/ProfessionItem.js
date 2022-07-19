@@ -1,0 +1,1 @@
+export class ProfessionItem extends Item {}

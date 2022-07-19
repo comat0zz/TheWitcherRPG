@@ -1,0 +1,104 @@
+{
+  "name": "TheWitcherRPG",
+  "title": "My build The Witcher RPG",
+  "description": "Many details here.",
+  "version": "0.0.1",
+  "author": "comAT0Zz@gmail.com",
+  "esmodules": ["module/index.js"],
+  "styles": ["styles/witcher.css"],
+  "packs": [
+    {
+      "name": "monsters",
+      "label": "Бестиарий",
+      "system": "TheWitcherRPG",
+      "path": "packs/monsters.db",
+      "type": "Actor"
+    },
+    {
+        "name": "mounts",
+        "label": "Скакуны и транспорт",
+        "system": "TheWitcherRPG",
+        "path": "packs/mounts.db",
+        "type": "Actor"
+    },
+    {
+      "name": "items",
+      "label": "Предметы",
+      "system": "TheWitcherRPG",
+      "path": "packs/items.db",
+      "type": "Item"
+    },
+    {
+        "name": "spells",
+        "label": "Магия",
+        "system": "TheWitcherRPG",
+        "path": "packs/spells.db",
+        "type": "Item"
+    },
+    {
+        "name": "enhancements",
+        "label": "Улучшения",
+        "system": "TheWitcherRPG",
+        "path": "packs/enhancements.db",
+        "type": "Item"
+    },
+    {
+        "name": "races",
+        "label": "Расы",
+        "system": "TheWitcherRPG",
+        "path": "packs/races.db",
+        "type": "Item"
+    },
+    {
+        "name": "professions",
+        "label": "Профессии",
+        "system": "TheWitcherRPG",
+        "path": "packs/professions.db",
+        "type": "Item"
+    },
+    {
+        "name": "effects",
+        "label": "Эффекты",
+        "system": "TheWitcherRPG",
+        "path": "packs/effects.db",
+        "type": "Item"
+    },
+    {
+        "name": "skills",
+        "label": "Навыки",
+        "system": "TheWitcherRPG",
+        "path": "packs/skills.db",
+        "type": "Item"
+    },
+    {
+        "name": "substances",
+        "label": "Субстанции",
+        "system": "TheWitcherRPG",
+        "path": "packs/substances.db",
+        "type": "Item"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "lang/ru.json"
+    }
+  ],
+  "socket": true,
+  "initiative": "1d10",
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "minimumCoreVersion": "9.0",
+  "compatibleCoreVersion": "9",
+  "primaryTokenAttribute": "",
+  "secondaryTokenAttribute": null,
+  "url": "https://github.com/comat0zz/TheWitcherRPG",
+  "manifest": "",
+  "download": ""
+}

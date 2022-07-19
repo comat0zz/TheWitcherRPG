@@ -1,0 +1,92 @@
+[
+	{
+		"name": "Купорос",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/vitriol.png",
+		"data": {
+			"description": "Купорос, обозначенный фиолетовым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "vitrol"
+		},
+		"folder": null
+	},
+	{
+		"name": "Ребис",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/rebis.png",
+		"data": {
+			"description": "Ребис, обозначенный зеленым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров.",
+			"key": "rebis"
+		},
+		"folder": null
+	},
+	{
+		"name": "Эфир",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/aether.png",
+		"data": {
+			"description": "Эфир, обозначенный голубым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "aether"
+		},
+		"folder": null
+	},
+	{
+		"name": "Квебрит",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/quebrith.png",
+		"data": {
+			"description": "Квебрит, обозначенный жёлтым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "quebrith"
+		},
+		"folder": null
+	},
+	{
+		"name": "Гидраген",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/hydragenum.png",
+		"data": {
+			"description": "Гидраген, обозначенный синим цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "hydragenum"
+		},
+		"folder": null
+	},
+	{
+		"name": "Киноварь",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/vermilion.png",
+		"data": {
+			"description": "Киноварь, обозначенный темно-зеленым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "vermilion"
+		},
+		"folder": null
+	},
+	{
+		"name": "Солнце",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/sol.png",
+		"data": {
+			"description": "Солнце, обозначенный оранжевым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "sol"
+		},
+		"folder": null
+	},
+	{
+		"name": "Аер",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/caelum.png",
+		"data": {
+			"description": "Аер, обозначенный салатовым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "caelum"
+		},
+		"folder": null
+	},
+	{
+		"name": "Фульгор",
+		"type": "substances",
+		"img": "systems/TheWitcherRPG/assets/Substances/fulgur.png",
+		"data": {
+			"description": "Фульгор, обозначенный бордовым цветом, является основным алхимическим веществом. Он присутствует во многих ингредиентах, включая травы, минералы и части монстров. ",
+			"key": "fulgur"
+		},
+		"folder": null
+	}
+]

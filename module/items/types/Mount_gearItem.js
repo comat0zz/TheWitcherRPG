@@ -1,0 +1,1 @@
+export class Mount_gearItem extends Item {}

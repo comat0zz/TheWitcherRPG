@@ -1,0 +1,1 @@
+export class MutagenItem extends Item {}

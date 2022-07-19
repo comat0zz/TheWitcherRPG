@@ -1,0 +1,191 @@
+{
+  "Actor": {
+    "types": [
+      "hero", 
+      "npc", 
+      "monster", 
+      "mount"
+    ],
+    "templates": {
+      "baseActor": {
+        "deathSaves": 0,
+        "race": "",
+        "stats": {
+          "int": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Int",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "ref": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Ref",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "dex": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Dex",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "body": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Body",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "spd": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Spd",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "emp": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Emp",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "cra": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Cra",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "will": {
+            "max": 0,
+            "current": 0,
+            "label": "WITCHER.Actor.Stat.Will",
+            "isOpened": false,
+            "modifiers": []
+          },
+          "luck": {
+            "max": 0,
+            "current": 0,
+            "total": 0,
+            "label": "WITCHER.Actor.Stat.Luck",
+            "isOpened": false,
+            "modifiers": []
+          }
+        }
+      }, 
+      "creature": {
+        "loots":[]
+      }
+    },
+    "hero": {
+      "templates": ["baseActor"],
+      "profession": ""
+      
+    },
+    "npc": {
+      "templates": ["baseActor"]
+    },
+    "mount": {
+      "templates": ["baseActor", "creature"],
+      "gears": []
+    },
+    "monster": {
+      "templates": ["baseActor", "creature"]
+    }
+  },
+  "Item": {
+    "types": [
+      "weapon",
+      "armor",
+      "enhancement",
+      "valuable",
+      "alchemical",
+      "component",
+      "diagrams",
+      "mutagen",
+      "spell",
+      "profession",
+      "note",
+      "race",
+      "effect",
+      "mount_gear",
+      "bullets",
+      "substances"
+    ],
+    "templates": {
+      "base": {
+        "effect": "",
+        "description": "",
+        "quantity": 1,
+        "weight": 0,
+        "cost": 0,
+        "isHidden": false,
+        "associatedDiagram": {},
+        "accessibility": ""
+      }
+    },
+    "note": {
+      "description": "",
+      "desc4gm": "",
+      "isEditOtherPlayers": false,
+      "desc4Players": ""
+    },
+    "valuable": {
+      "templates": ["base"]
+    }, 
+    "substances": {
+      "templates": [],
+      "description": ""
+    },
+    "weapon": {
+      "templates": ["base"]
+    },
+    "bullets": {
+      "templates": ["base"]
+    },  
+    "armor": {
+      "templates": ["base"]
+    }, 
+    "enhancement": {
+      "templates": ["base"]
+    }, 
+    "alchemical": {
+      "templates": ["base"]
+    }, 
+    "mutagen": {
+      "templates": ["base"]
+    },
+    "component": {
+      "templates": ["base"],
+      "type": "",
+      "rarity": "",
+      "location": [],
+      "quantityObtainable": "",
+      "forage": "",
+      "substanceType": ""
+    }, 
+    "diagrams": {
+      "templates": ["base"],
+      "components": []
+    }, 
+    "spell": {
+      "templates": ["base"]
+    }, 
+    "profession": {
+      "templates": ["base"]
+    }, 
+    "race": {
+      "templates": ["base"]
+    }, 
+    "effect": {
+      "templates": ["base"]
+    }, 
+    "mount_gear": {
+      "templates": ["base"]
+    }
+  }
+}

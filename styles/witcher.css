@@ -1,0 +1,32 @@
+.sheet.item form header.item-header {
+  display: flex;
+  margin-bottom: 5px;
+}
+.sheet.item form header.item-header img {
+  width: 100px;
+  height: 100px;
+}
+.sheet.item form header.item-header .item-header-first-column {
+  margin-left: 5px;
+  width: 100%;
+}
+.sheet.item form header.item-header .item-header-first-column h1 {
+  margin-bottom: 0;
+}
+.sheet.item form .item-body-container {
+  text-align: center;
+  justify-content: space-around;
+  height: 100%;
+}
+.sheet.item form .item-body-container .editor {
+  height: 100%;
+  min-height: 300px;
+  text-align: left;
+}
+@font-face {
+  font-family: 'Thewitcher';
+  src: url('./fonts/thewitcher2.ttf');
+}
+.witcher-style {
+  font-family: Thewitcher;
+}
