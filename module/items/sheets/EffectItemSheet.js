@@ -1,7 +1,7 @@
 import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
 
 
-export class WitcherItemSubstancesSheet extends WitcherBaseItemSheet {
+export class EffectItemSheet extends WitcherBaseItemSheet {
   
   /** @override */
   static get defaultOptions() {
@@ -9,7 +9,6 @@ export class WitcherItemSubstancesSheet extends WitcherBaseItemSheet {
       classes: ["witcher", "sheet", "item"],
       width: 500,
       height: 250,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
     });
   }
 

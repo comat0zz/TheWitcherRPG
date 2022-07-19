@@ -8,6 +8,21 @@ const preloadHandlebarsTemplates = async function () {
   const templatePaths = [
 
     // Items
+    "systems/TheWitcherRPG/templates/sheets/items/weapon-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/armor-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/enhancement-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/valuable-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/alchemical-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/component-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/diagrams-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/mutagen-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spell-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/profession-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/note-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/race-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/effect-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/mount_gear-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/bullets-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/substances-sheet.hbs"
   ];
 
@@ -16,6 +31,22 @@ const preloadHandlebarsTemplates = async function () {
 };
 
 function registerHandlebarsHelpers() {
+
+  Handlebars.registerHelper('isGM', function () {
+    return game.user.isGM;
+  });
+
+  Handlebars.registerHelper('getCharacterActorId', function () {
+    return game.user.character.id;
+  });
+
+  Handlebars.registerHelper('abs', function (num) {
+    return Math.abs(num);
+  });
+
+  Handlebars.registerHelper('isdefined', function (value) {
+    return value === 0 ? true : typeof (value) !== undefined && value !== null;
+  });
 
   // Ifis not equal
   Handlebars.registerHelper('ifne', function (v1, v2, options) {

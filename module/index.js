@@ -21,7 +21,7 @@ Hooks.once("init", function () {
     
     Items.registerSheet("witcher", WitcherItemSheetProxy, {
         label: "Witcher.Sheet.Item",
-        types: ["substances", "bullets"],
+        //types: ["substances", "bullets"],
         makeDefault: true,
       });
     

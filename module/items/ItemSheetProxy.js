@@ -1,7 +1,37 @@
-import { WitcherItemSubstancesSheet } from "./sheets/ItemSubstancesSheet.js";
+import { SubstancesItemSheet } from "./sheets/SubstancesItemSheet.js";
+import { EnhancementItemSheet } from "./sheets/EnhancementItemSheet.js";
+import { ArmorItemSheet } from "./sheets/ArmorItemSheet.js";
+import { WeaponItemSheet } from "./sheets/WeaponItemSheet.js";
+import { ValuableItemSheet } from "./sheets/ValuableItemSheet.js";
+import { AlchemicalItemSheet } from "./sheets/AlchemicalItemSheet.js";
+import { ComponentItemSheet } from "./sheets/ComponentItemSheet.js";
+import { DiagramsItemSheet } from "./sheets/DiagramsItemSheet.js";
+import { MutagenItemSheet } from "./sheets/MutagenItemSheet.js";
+import { SpellItemSheet } from "./sheets/SpellItemSheet.js";
+import { ProfessionItemSheet } from "./sheets/ProfessionItemSheet.js";
+import { NoteItemSheet } from "./sheets/NoteItemSheet.js";
+import { RaceItemSheet } from "./sheets/RaceItemSheet.js";
+import { EffectItemSheet } from "./sheets/EffectItemSheet.js";
+import { Mount_gearItemSheet } from "./sheets/Mount_gearItemSheet.js";
+import { BulletsItemSheet } from "./sheets/BulletsItemSheet.js";
 
 const itemSheetMappings = {
-  substances: WitcherItemSubstancesSheet
+  substances: SubstancesItemSheet,
+  enhancement: EnhancementItemSheet,
+  armor: ArmorItemSheet,
+  weapon: WeaponItemSheet,
+  valuable: ValuableItemSheet,
+  alchemical: AlchemicalItemSheet,
+  component: ComponentItemSheet,
+  diagrams: DiagramsItemSheet,
+  mutagen: MutagenItemSheet,
+  spell: SpellItemSheet,
+  profession: ProfessionItemSheet,
+  note: NoteItemSheet,
+  race: RaceItemSheet,
+  effect: EffectItemSheet,
+  mount_gear: Mount_gearItemSheet,
+  bullets: BulletsItemSheet
 }
 
 /**
