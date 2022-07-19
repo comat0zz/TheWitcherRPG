@@ -1,5 +1,21 @@
 import { ArmorItem } from "./types/ArmorItem.js";
-import { SubstancesItem } from "./types/SpellItem.js";
+import { SubstancesItem } from "./types/SubstancesItem.js";
+import { EnhancementItem } from "./types/EnhancementItem.js";
+import { WeaponItem } from "./types/WeaponItem.js";
+import { ValuableItem } from "./types/ValuableItem.js";
+import { AlchemicalItem } from "./types/AlchemicalItem.js";
+import { ComponentItem } from "./types/ComponentItem.js";
+import { DiagramsItem } from "./types/DiagramsItem.js";
+import { MutagenItem } from "./types/MutagenItem.js";
+import { SpellItem } from "./types/SpellItem.js";
+import { ProfessionItem } from "./types/ProfessionItem.js";
+import { NoteItem } from "./types/NoteItem.js";
+import { RaceItem } from "./types/RaceItem.js";
+import { EffectItem } from "./types/EffectItem.js";
+import { Mount_gearItem } from "./types/Mount_gearItem.js";
+import { BulletsItem } from "./types/BulletsItem.js";
+
+
 
 const itemMappings = {
   substances: SubstancesItem,

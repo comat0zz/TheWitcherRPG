@@ -2,9 +2,8 @@ import { WITCHER } from "./config.js";
 import { registerSystemSettings } from "./settings.js";
 import { initializeHandlebars } from "./handlebars.js";
 
-import { WitcherItemSheet } from "./items/sheets/WitcherItemSheet.js";
-
-import { WitcherItemProxy } from "./items/proxy.js";
+import { WitcherItemSheetProxy } from "./items/ItemSheetProxy.js";
+import { WitcherItemProxy } from "./items/ItemProxy.js";
 
 
 Hooks.once("init", function () {
@@ -20,9 +19,9 @@ Hooks.once("init", function () {
     //Items.unregisterSheet("core", ItemSheet);
 
     
-    Items.registerSheet("witcher", WitcherItemSheet, {
+    Items.registerSheet("witcher", WitcherItemSheetProxy, {
         label: "Witcher.Sheet.Item",
-        types: ["substances"],
+        types: ["substances", "bullets"],
         makeDefault: true,
       });
     

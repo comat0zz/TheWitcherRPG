@@ -1,17 +1,16 @@
-export class WitcherItemSheet extends ItemSheet {
+import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
+
+
+export class WitcherItemSubstancesSheet extends WitcherBaseItemSheet {
   
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
-      width: 520,
-      height: 450,
+      width: 500,
+      height: 250,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
     });
-  }
-
-  get template() {
-    return `systems/TheWitcherRPG/templates/sheets/items/${this.item.data.type}-sheet.hbs`;
   }
 
   getData(options) {
@@ -27,3 +26,10 @@ export class WitcherItemSheet extends ItemSheet {
   }
 
 }
+
+
+
+
+
+
+
