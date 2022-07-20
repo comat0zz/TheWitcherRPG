@@ -1,3 +1,7 @@
+.sheet.item form .item-text-left-bold {
+  text-align: left;
+  font-weight: bold;
+}
 .sheet.item form .is-hidden {
   visibility: hidden;
 }
@@ -47,6 +51,7 @@
   text-align: center;
   justify-content: space-around;
   height: 100%;
+  margin-top: 5px;
 }
 .sheet.item form .item-body-container .editor {
   height: 100%;

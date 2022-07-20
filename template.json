@@ -130,9 +130,9 @@
     },
     "note": {
       "description": "",
-      "desc4gm": "",
-      "isEditOtherPlayers": false,
-      "desc4Players": ""
+      "descriptionOnlyGM": "",
+      "descriptionForPlayes": "",
+      "playersIsEdit": false
     },
     "valuable": {
       "templates": ["base"]

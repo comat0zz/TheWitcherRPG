@@ -1,4 +1,4 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
+<form class="{{cssClass}} flexcol witcher-item-{{item.type}}" autocomplete="off">
 <header class="item-header">
   <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
   <div class="item-header-first-column">
@@ -10,4 +10,24 @@
 <div class="item-body-container">
   {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
 </div>
+
+{{#if (or UserisGM data.playersIsEdit)}}
+<div class="item-body-container">
+{{#isGM}}
+  <div class="item-text-left-bold">
+    {{localize "Witcher.Item.Notes.PlayersIsEdit"}}
+    <input type="checkbox" name="data.playersIsEdit" {{checked data.playersIsEdit}}/>
+  </div>
+{{/isGM}}
+  <label>{{localize "Witcher.Item.Notes.PlayersInfo"}}</label>
+  <textarea name="data.descriptionForPlayes">{{data.descriptionForPlayes}}</textarea>
+</div>
+{{/if}}
+
+{{#isGM}}
+<div class="item-body-container">
+  <label>{{localize "Witcher.DescriptionOnlyGM"}}</label>
+  {{editor content=data.descriptionOnlyGM target="data.descriptionOnlyGM" button=true owner=owner editable=editable}}
+</div>
+{{/isGM}}
 </form>

@@ -35,8 +35,13 @@ const preloadHandlebarsTemplates = async function () {
 
 function registerHandlebarsHelpers() {
 
-  Handlebars.registerHelper('isGM', function () {
-    return game.user.isGM;
+  Handlebars.registerHelper('ifor', function (v1, v2) {
+    return (v1 || v2); 
+  });
+
+  Handlebars.registerHelper('isGM', function (options) {
+    if (game.user.isGM) return options.fn(this);
+    return options.inverse(this);
   });
 
   Handlebars.registerHelper('getCharacterActorId', function () {

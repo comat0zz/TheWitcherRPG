@@ -1,6 +1,7 @@
 {
 	"Witcher": {
 		"Type": "Тип",
+		"DescriptionOnlyGM": "Только для GM",
 
 		"Actor": {
 
@@ -42,6 +43,11 @@
 				"AlchemicalTreatments": "Алхимические пропитки и составы",
 				"IngotsMinerals": "Слитки и минералы",
 				"Substances": "Субстанции"
+			},
+
+			"Notes": {
+				"PlayersIsEdit": "Могут ли игроки добавлять информацию?",
+				"PlayersInfo": "Можете оставить заметки для партии героев"
 			},
 
 			"Rarity": {
