@@ -8,7 +8,7 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
       classes: ["witcher", "sheet", "item"],
       width: 500,
       height: 350,
-      dragDrop: [{dragSelector: ".item-list"}]
+      dragDrop: [{dropSelector: ".item-locations", dragSelector: ".item"}]
     });
   }
 
@@ -53,6 +53,13 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     html.find('[item-click="QuantityObtainable_on"]').on('click', this._clickQuantityObtainable.bind(this));
   }
 
+  async _onDrop(event) { 
+    let dragData = JSON.parse(event.dataTransfer.getData("text/plain"));
+    let locations = duplicate(this.item.data.data.location);
+    locations.push({ id: dragData.id });
+    this.item.update({ "data.location": locations })
+  }
+
   async _clickQuantityObtainable(event) {
     event.preventDefault();
     const input = await $(event.currentTarget).closest('form').find('input[item-click="QuantityObtainable_value"]').val();
@@ -60,7 +67,7 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     if(input.includes("d")) {
       let roll = await new Roll(input).roll({async: true});
       
-      // TODO: Высчитывать сложность, если тыкает игрок 
+      // TODO: Высчитывать сложность, если тыкает игрок / хз, надо ли
 
       const html = await renderTemplate("systems/TheWitcherRPG/templates/chat/card-roll.hbs", {
         name: name,

@@ -63,11 +63,11 @@ export const WITCHER = /** @type {const} */ ({
 
   // Components categories
   ComponentsCategories: {
-    craftmaterial: "Witcher.Item.ComponentsCategories.CraftingMaterials",
-    hidesanimal: "Witcher.Item.ComponentsCategories.HidesAnimalParts",
-    alchreatments: "Witcher.Item.ComponentsCategories.AlchemicalTreatments",
-    igotsmaterail: "Witcher.Item.ComponentsCategories.IngotsMinerals",
-    substances: "Witcher.Item.ComponentsCategories.Substances"
+    craftmaterial: "Witcher.Item.Components.Categories.CraftingMaterials",
+    hidesanimal: "Witcher.Item.Components.Categories.HidesAnimalParts",
+    alchreatments: "Witcher.Item.Components.Categories.AlchemicalTreatments",
+    igotsmaterail: "Witcher.Item.Components.Categories.IngotsMinerals",
+    substances: "Witcher.Item.Components.Categories.Substances"
   }, 
 
   // Rarity Item

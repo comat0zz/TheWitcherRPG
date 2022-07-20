@@ -59,21 +59,8 @@ function compileLess(cb) {
   cb();
 };
 
-gulp.task(
-  'default',
-  gulp.series(compileLess, function(cb) {
-    gulp.watch("src/less/*.less", gulp.series(compileLess));
-    cb();
-  })
-);
-
-gulp.watch('less', function(){
-  console.log("src/less/*.less");
-});
-
 /* ----------------------------------------- */
 /*  Export Tasks
 /* ----------------------------------------- */
-
 exports.compileLess = gulp.series(compileLess);
 exports.compilePacks = gulp.series(compilePacks);

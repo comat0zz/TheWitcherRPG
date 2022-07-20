@@ -26,23 +26,28 @@
 				"bullets": "Боеприпасы",
 				"substances": "Субстанции"
 			},
-			"SelectSubstanceType": "Выберите тип субстанции",
+			
 			"Name": "Название",
 			"Quantity": "Количество",
-			"QuantityObtainable": "Доступное Количество",
+			
 			"Weight": "Вес",
 			"Cost": "Цена",
 			"ForageDC": "Сложность",
 			"Location": "Где найти",
-			"QuantityObtainableLabel":"Cбор",
-
-			"ComponentsCategories": {
-				"Label": "Категория",
-				"CraftingMaterials": "Ремесленные материалы",
-				"HidesAnimalParts": "Шкуры и части животных",
-				"AlchemicalTreatments": "Алхимические пропитки и составы",
-				"IngotsMinerals": "Слитки и минералы",
-				"Substances": "Субстанции"
+			
+			"Components": {
+				"Location": "Где или из кого добыть",
+				"QuantityObtainableLabel":"Cбор",
+				"SelectSubstanceType": "Выберите тип субстанции",
+				"QuantityObtainable": "Доступное Количество",
+				"Categories": {
+					"Label": "Категория",
+					"CraftingMaterials": "Ремесленные материалы",
+					"HidesAnimalParts": "Шкуры и части животных",
+					"AlchemicalTreatments": "Алхимические пропитки и составы",
+					"IngotsMinerals": "Слитки и минералы",
+					"Substances": "Субстанции"
+				}
 			},
 
 			"Notes": {

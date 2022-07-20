@@ -8,7 +8,7 @@
     <div class="item-header-second-column">
       <table class="item-header-table">
         <tr>
-          <td>{{localize "Witcher.Item.ComponentsCategories.Label"}}</td>
+          <td>{{localize "Witcher.Item.Components.Categories.Label"}}</td>
           <td>
             <select class="select-header" name="data.category">
               {{#select data.category}}
@@ -39,7 +39,7 @@
     <tr>
       <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
       <th>{{localize "Witcher.Item.Weight"}}</th>
-      <th item-click="QuantityObtainable_on">{{localize "Witcher.Item.QuantityObtainable"}}</th>
+      <th item-click="QuantityObtainable_on">{{localize "Witcher.Item.Components.QuantityObtainable"}}</th>
       <th>{{localize "Witcher.Item.ForageDC"}}</th>
     </tr>
     <tr>
@@ -57,9 +57,12 @@
       <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
     </tr>
   </table>
+</div>
+<div class="item-body-container">
+  <div class="item-text-left-bold">{{localize "Witcher.Item.Components.Location"}}:</div>
+  <div class="item-locations">
 
-  <input type="text" name="" value=""/>
-
+  </div>
 </div>
 <div class="item-body-container">
   {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
