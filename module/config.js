@@ -59,6 +59,39 @@ export const WITCHER = /** @type {const} */ ({
         long: "Witcher.Item.CantHide.Long",
         tips: "Witcher.Item.CantHide.Tips"
       },
+  },
+
+  // Components categories
+  ComponentsCategories: {
+    craftmaterial: "Witcher.Item.ComponentsCategories.CraftingMaterials",
+    hidesanimal: "Witcher.Item.ComponentsCategories.HidesAnimalParts",
+    alchreatments: "Witcher.Item.ComponentsCategories.AlchemicalTreatments",
+    igotsmaterail: "Witcher.Item.ComponentsCategories.IngotsMinerals",
+    substances: "Witcher.Item.ComponentsCategories.Substances"
+  }, 
+
+  // Rarity Item
+  RarityItem: {
+    everywhere: {
+      short: "Witcher.Item.Rarity.Everywhere.Short",
+      long: "Witcher.Item.Rarity.Everywhere.Long",
+      tips: "Witcher.Item.Rarity.Everywhere.Tips"
+    },
+    common: {
+      short: "Witcher.Item.Rarity.Common.Short",
+      long: "Witcher.Item.Rarity.Common.Long",
+      tips: "Witcher.Item.Rarity.Common.Tips"
+    },
+    poor: {
+      short: "Witcher.Item.Rarity.Poor.Short",
+      long: "Witcher.Item.Rarity.Poor.Long",
+      tips: "Witcher.Item.Rarity.Poor.Tips"
+    },
+    rare: {
+      short: "Witcher.Item.Rarity.Rare.Short",
+      long: "Witcher.Item.Rarity.Rare.Long",
+      tips: "Witcher.Item.Rarity.Rare.Tips"
+    }
   }
 
 });

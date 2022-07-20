@@ -6,10 +6,46 @@
 
 		},
 		"Item": {
+
+			"Types": {
+				"weapon": "Оружие",
+				"armor": "Броня",
+				"enhancement": "Улучшения",
+				"valuable": "Вещи",
+				"alchemical": "Алхимия",
+				"component": "Компоненты",
+				"diagrams": "Рецепты",
+				"mutagen": "Мутагены",
+				"spell": "Заклинания",
+				"profession": "Профессии",
+				"note": "Заметки",
+				"race": "Расы",
+				"effect": "Эффекты и состояния",
+				"mount_gear": "Снаряжение питомцев",
+				"bullets": "Боеприпасы",
+				"substances": "Субстанции"
+			},
+			"SelectSubstanceType": "Выберите тип субстанции",
 			"Name": "Название",
+			"Quantity": "Количество",
+			"QuantityObtainable": "Доступное Количество",
+			"Weight": "Вес",
+			"Cost": "Цена",
+			"ForageDC": "Сложность",
+			"Location": "Где найти",
+			"QuantityObtainableLabel":"Cбор",
+
+			"ComponentsCategories": {
+				"Label": "Категория",
+				"CraftingMaterials": "Ремесленные материалы",
+				"HidesAnimalParts": "Шкуры и части животных",
+				"AlchemicalTreatments": "Алхимические пропитки и составы",
+				"IngotsMinerals": "Слитки и минералы",
+				"Substances": "Субстанции"
+			},
 
 			"Rarity": {
-				"Label": "Доступность",
+				"Label": "Редкость",
 
 				"Everywhere": {
 					"Long": "Повсеместное",

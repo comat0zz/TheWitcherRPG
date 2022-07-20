@@ -7,6 +7,9 @@ const preloadHandlebarsTemplates = async function () {
   // Define template paths to load
   const templatePaths = [
 
+    // chat
+    "systems/TheWitcherRPG/templates/chat/card-roll.hbs",
+
     // Items
     "systems/TheWitcherRPG/templates/sheets/items/weapon-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/armor-sheet.hbs",
@@ -46,6 +49,17 @@ function registerHandlebarsHelpers() {
 
   Handlebars.registerHelper('isdefined', function (value) {
     return value === 0 ? true : typeof (value) !== undefined && value !== null;
+  });
+
+  // value in array
+  Handlebars.registerHelper('inarray', function(value, arr) {
+    console.log(arr)
+    return arr.includes(value);
+  });
+
+  // if empty 
+  Handlebars.registerHelper('ifempty', function(value) {
+    return (value === "");
   });
 
   // Ifis not equal

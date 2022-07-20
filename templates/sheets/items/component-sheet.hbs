@@ -5,8 +5,62 @@
     <h1 class="item-name">
       <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
     </h1>
-  </div>
+    <div class="item-header-second-column">
+      <table class="item-header-table">
+        <tr>
+          <td>{{localize "Witcher.Item.ComponentsCategories.Label"}}</td>
+          <td>
+            <select class="select-header" name="data.category">
+              {{#select data.category}}
+                {{#each config.ComponentsCategories as |name type|}}
+                  <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+          </td>
+        </tr>
+        <tr{{#if noSubstance}} class="is-hidden"{{/if}}>
+          <td class="type-substance-image"><img class="substanceImage" src="{{substanceImage}}" /></td>
+          <td>
+            <select class="select-header" name="data.substanceType" id="change-substanceType">
+              {{#select data.substanceType}}
+                {{#each substances}}
+                  <option value="{{_id}}" data-image="{{img}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select> 
+          </td>
+        </tr>
+      </table>
+  
 </header>
+<div class="item-block-column">
+  <table class="item-table-content">
+    <tr>
+      <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
+      <th>{{localize "Witcher.Item.Weight"}}</th>
+      <th item-click="QuantityObtainable_on">{{localize "Witcher.Item.QuantityObtainable"}}</th>
+      <th>{{localize "Witcher.Item.ForageDC"}}</th>
+    </tr>
+    <tr>
+      <td>
+        <select name="data.rarity">
+          {{#select data.rarity}}
+            {{#each config.RarityItem as |name value|}}
+              <option value="{{value}}">{{localize name.long}}</option>
+            {{/each}}
+          {{/select}}
+        </select>
+      </td>
+      <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+      <td><input item-click="QuantityObtainable_value" type="text" name="data.quantityObtainable" value="{{data.quantityObtainable}}"/></td>
+      <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
+    </tr>
+  </table>
+
+  <input type="text" name="" value=""/>
+
+</div>
 <div class="item-body-container">
   {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
 </div>

@@ -1,6 +1,17 @@
 .sheet.item {
 
   form {
+
+    .is-hidden {
+      visibility: hidden;
+    }
+
+    .item-title-bold {
+      font-size: medium;
+      width: 120px;
+      height: 30px;
+      font-weight: bold;
+    }
     header.item-header {
       display: flex;
       margin-bottom: 5px;
@@ -9,6 +20,25 @@
         width: 100px;
         height: 100px;
       }
+
+      .select-header {
+        width: 100%
+      }
+
+      .item-header-table {
+        border: 0;
+        align-items: center;
+
+        .type-substance-image {
+          text-align: center;
+        }
+
+        .substanceImage {
+          width: 35px;
+          height: 35px;
+          border: 0;
+        }
+      }
       
       .item-header-first-column {
         margin-left: 5px;
@@ -16,6 +46,17 @@
         h1 {
           margin-bottom: 0;
         }
+      }
+
+      .item-header-second-column {
+        margin: auto;
+      }
+
+    }
+
+    .item-block-column {
+      .item-table-content {
+        text-align: center;
       }
     }
 

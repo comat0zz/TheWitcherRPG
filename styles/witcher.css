@@ -1,3 +1,12 @@
+.sheet.item form .is-hidden {
+  visibility: hidden;
+}
+.sheet.item form .item-title-bold {
+  font-size: medium;
+  width: 120px;
+  height: 30px;
+  font-weight: bold;
+}
 .sheet.item form header.item-header {
   display: flex;
   margin-bottom: 5px;
@@ -6,12 +15,33 @@
   width: 100px;
   height: 100px;
 }
+.sheet.item form header.item-header .select-header {
+  width: 100%;
+}
+.sheet.item form header.item-header .item-header-table {
+  border: 0;
+  align-items: center;
+}
+.sheet.item form header.item-header .item-header-table .type-substance-image {
+  text-align: center;
+}
+.sheet.item form header.item-header .item-header-table .substanceImage {
+  width: 35px;
+  height: 35px;
+  border: 0;
+}
 .sheet.item form header.item-header .item-header-first-column {
   margin-left: 5px;
   width: 100%;
 }
 .sheet.item form header.item-header .item-header-first-column h1 {
   margin-bottom: 0;
+}
+.sheet.item form header.item-header .item-header-second-column {
+  margin: auto;
+}
+.sheet.item form .item-block-column .item-table-content {
+  text-align: center;
 }
 .sheet.item form .item-body-container {
   text-align: center;
