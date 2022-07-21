@@ -1,6 +1,26 @@
+.sheet.item form .curor-pointer {
+  cursor: pointer;
+}
 .sheet.item form .item-locations {
   height: 100px;
   weight: 100px;
+}
+.sheet.item form .item-locations .location-table tr > td {
+  text-align: left;
+}
+.sheet.item form .item-locations .location-table tr > td:first-child,
+.sheet.item form .item-locations .location-table tr > td:last-child {
+  width: 30px;
+}
+.sheet.item form .item-locations .location-table tr > td:nth-child(2) {
+  padding-left: 15px;
+}
+.sheet.item form .item-locations .location-table td:nth-child(-n+2) {
+  cursor: pointer;
+}
+.sheet.item form .item-locations .location-table img {
+  width: 30px;
+  height: 30px;
 }
 .sheet.item form .item-text-left-bold {
   text-align: left;

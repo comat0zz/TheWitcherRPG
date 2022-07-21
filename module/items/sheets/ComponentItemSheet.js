@@ -18,6 +18,23 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     const substances = await this._prepareSubstancesPack();
     data.config = CONFIG.WITCHER;
 
+    let locations = [];
+    // Хотел перенести формирование в перетаскивание
+    // так снизит заметно нагрузку, но проблемы будут при переименовывании
+    itemData.data.location.forEach((location) => {
+      if(location.type == 'Item'){
+        let item = game.items.get(location.id);
+        locations.push({
+          name: item.data.name,
+          img: item.data.img,
+          id: item.data._id,
+          isHidden: item.isHidden,
+          type: location.type
+        });
+      }
+    });
+    itemData.data.location = locations;
+    console.log(itemData.data.location)
     // Re-define the template data references (backwards compatible)
     data.item = itemData;
     data.data = itemData.data;
@@ -51,12 +68,35 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     super.activateListeners(html);
 
     html.find('[item-click="QuantityObtainable_on"]').on('click', this._clickQuantityObtainable.bind(this));
+
+    html.find('.location-table .item td:nth-child(-n+2)').click(evt => this._onItemShow(evt));
+    html.find('.location-table .item td:last-child').click(evt => this._onDeleteLocation(evt));
+  }
+
+  _onDeleteLocation(evt){
+    evt.preventDefault();
+    let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+    const locations = duplicate(this.item.data.data.location);
+    let newLocations = []
+    locations.forEach((loc) => {
+      if(loc.id != item_id){
+        newLocations.push(loc);
+      }
+    });
+    this.item.update({ "data.location": newLocations })
+  }
+
+  _onItemShow(evt) {
+      evt.preventDefault();
+      let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+      const item = game.items.get(item_id);
+      item.sheet.render(true, { focus: true });
   }
 
   async _onDrop(event) { 
     let dragData = JSON.parse(event.dataTransfer.getData("text/plain"));
     let locations = duplicate(this.item.data.data.location);
-    locations.push({ id: dragData.id });
+    locations.push(dragData);
     this.item.update({ "data.location": locations })
   }
 
@@ -68,7 +108,7 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
       let roll = await new Roll(input).roll({async: true});
       
       // TODO: Высчитывать сложность, если тыкает игрок / хз, надо ли
-
+      // Если выбран токен, то вставлять количество в его чарник ( надо ли добавлять траву как итем? )
       const html = await renderTemplate("systems/TheWitcherRPG/templates/chat/card-roll.hbs", {
         name: name,
         result: roll.result,

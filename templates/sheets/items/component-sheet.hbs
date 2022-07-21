@@ -39,7 +39,7 @@
     <tr>
       <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
       <th>{{localize "Witcher.Item.Weight"}}</th>
-      <th item-click="QuantityObtainable_on">{{localize "Witcher.Item.Components.QuantityObtainable"}}</th>
+      <th class="curor-pointer" item-click="QuantityObtainable_on">{{localize "Witcher.Item.Components.QuantityObtainable"}}</th>
       <th>{{localize "Witcher.Item.ForageDC"}}</th>
     </tr>
     <tr>
@@ -61,7 +61,21 @@
 <div class="item-body-container">
   <div class="item-text-left-bold">{{localize "Witcher.Item.Components.Location"}}:</div>
   <div class="item-locations">
+    <table class="location-table">
+      {{#each data.location as |location|}}
+      
+      <tr class="item" data-item-id="{{location.id}}">
+        <td><img src="{{location.img}}" alt="{{location.name}}"></td>
+        <td>{{location.name}}</td>
+        <td>
+          {{#if ../owner}}
+          <a class="del-item" data-itemType="{{location.type}}"><i class="fas fa-trash-alt"></i></a>
+          {{/if}}
+        </td>        
+      </tr>
 
+      {{/each}}
+    </table>
   </div>
 </div>
 <div class="item-body-container">

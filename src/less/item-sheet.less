@@ -2,9 +2,36 @@
 
   form {
 
+    .curor-pointer {
+      cursor: pointer;
+    }
+
     .item-locations {
       height: 100px;
-      weight: 100px
+      weight: 100px;
+
+      .location-table {
+        tr > td {
+          text-align: left;
+        }
+        
+        tr > td:first-child, tr > td:last-child {
+          width: 30px
+        }
+
+        tr > td:nth-child(2) {
+          padding-left: 15px;
+        }
+
+        td:nth-child(-n+2) {
+          cursor: pointer
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
     }
     .item-text-left-bold {
       text-align: left;
