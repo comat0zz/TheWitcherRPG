@@ -10,6 +10,16 @@ const preloadHandlebarsTemplates = async function () {
     // chat
     "systems/TheWitcherRPG/templates/chat/card-roll.hbs",
 
+    // Spells partials
+    "systems/TheWitcherRPG/templates/sheets/items/spells/spell.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/invocPriest.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/invocDruid.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/invocHighPriest.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/ritual.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/injury.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/signs.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/spells/gifts.hbs",
+
     // Items
     "systems/TheWitcherRPG/templates/sheets/items/weapon-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/armor-sheet.hbs",
@@ -57,9 +67,11 @@ function registerHandlebarsHelpers() {
   });
 
   // value in array
-  Handlebars.registerHelper('inarray', function(value, arr) {
-    console.log(arr)
-    return arr.includes(value);
+  Handlebars.registerHelper('ifIn', function(elem, list, options) {
+    if(list.indexOf(elem) > -1) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
   });
 
   // if empty 

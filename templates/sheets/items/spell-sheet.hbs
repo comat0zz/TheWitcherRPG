@@ -1,13 +1,77 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
-  </div>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+  <h1 class="item-name">
+    <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+  </h1>
+  </section>
 </header>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
+  <a class="item" data-tab="tab-detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
+</nav>
+
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-detailed" data-group="primary-tabs">
+    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-properties" data-group="primary-tabs">
+    <table>
+      <tr>
+        <td>{{localize "Witcher.Item.Spells.MagicTypeLabel"}}</td>
+        <td>
+          <select class="select-header" name="data.magicType">
+            {{#select data.magicType}}
+              {{#each config.magicType as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+        <td>
+          <select class="select-header{{#ifIn data.magicType magicNoElements}} is-hidden{{/ifIn}}" name="data.element">
+            {{#select data.element}}
+              {{#each config.magicElement as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+        </td>
+      </tr>
+    <!-- // TODO: Handlebars.registerPartial -->
+    {{#ife data.magicType "spell"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/spell.hbs" item=item}}{{/ife}}  
+    {{#ife data.magicType "invocPriest"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/invocPriest.hbs" item=item}}{{/ife}}
+    {{#ife data.magicType "invocDruid"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/invocDruid.hbs" item=item}}{{/ife}}
+    {{#ife data.magicType "invocHighPriest"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/invocHighPriest.hbs" item=item}}{{/ife}}
+    {{#ife data.magicType "ritual"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/ritual.hbs" item=item}}{{/ife}}
+    {{#ife data.magicType "injury"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/injury.hbs" item=item}}{{/ife}}
+    {{#ife data.magicType "signs"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/signs.hbs" item=item}}{{/ife}}
+    {{#ife data.magicType "gifts"}}
+      {{> "systems/TheWitcherRPG/templates/sheets/items/spells/gifts.hbs" item=item}}{{/ife}}
+    <tr>
+      <td>{{localize "Witcher.Source"}}</td>
+      <td colspan="2">
+        <select class="select-header" name="data.source">
+            {{#select data.source}}
+              {{#each config.SourceList as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+      </td>
+    </tr>  
+    </table>
+  </div>
+</section>
 </form>

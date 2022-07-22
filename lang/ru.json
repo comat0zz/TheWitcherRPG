@@ -2,6 +2,12 @@
 	"Witcher": {
 		"Type": "Тип",
 		"DescriptionOnlyGM": "Только для GM",
+		"Source": "Книга правил",
+
+		"SourceList": {
+			"Core": "НРИ Ведьмак Основная книга правил"
+		},
+
 
 		"Actor": {
 
@@ -29,7 +35,8 @@
 			
 			"Name": "Название",
 			"Quantity": "Количество",
-			
+			"Detailed": "Описание",
+			"Properties": "Свойства",
 			"Weight": "Вес",
 			"Cost": "Цена",
 			"ForageDC": "Сложность",
@@ -52,7 +59,57 @@
 
 			"Notes": {
 				"PlayersIsEdit": "Могут ли игроки добавлять информацию?",
-				"PlayersInfo": "Можете оставить заметки для партии героев"
+				"PlayersInfo": "Ваши заметки",
+				"PlayersInfoGM": "Заметки игроков",
+				"Label": "Описание",
+				"LabelGM": "Только для GM"				
+			},
+
+			"Spells": {
+				"CostStamina": "Затраты выносливости",
+				"LevelTypeLabel": "Уровень мастерства",
+				"LevelType": {
+					"Newbie": "Новичек",
+					"Prentice": "Подмастерье",
+					"Master": "Мастер"
+				},
+				"DistantionType": {
+					"Accurate": "Точное значение",
+					"Cone": "Конус",
+					"Self": "На себя",
+					"Zone": "Зона с радиусом",
+					"Selfzone": "На себя / радиус",
+					"Selfacc": "На себя / метры",
+					"Unlimited": "Неограниченно"
+				},
+				"DistantionLabel": "Дистанция",
+				"DistantionValue": "Вспомогательное...",
+				"Defence": {
+
+				},
+				"DefenceLabel": "Защита",
+				"DurationLabel": "Длительность",
+
+				"MagicTypeLabel": "Тип магии",
+				"MagicType": {
+					"Spells": "Заклинания",
+					"InvocPriest":"Инвокации жреца",
+					"InvocDruid":"Инвокации друида",
+					"InvocHighPriest": "Инвокации верховного жреца",
+					"Ritual":"Ритуал",
+					"Injury":"Порча",
+					"Signs":"Ведьмачьи знаки",
+					"Gifts":"Магические дары"
+				},
+
+				"MagicElementLabel": "Элемент",
+				"MagicElement": {
+					"Water": "Вода",
+					"Fire": "Огонь",
+					"Air": "Воздух",
+					"Earth": "Земля",
+					"Mixed": "Смешанные"
+				}
 			},
 
 			"Rarity": {

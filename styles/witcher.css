@@ -1,86 +1,133 @@
-.sheet.item form .curor-pointer {
+.sheet.item form.witcher-item-component .curor-pointer {
   cursor: pointer;
 }
-.sheet.item form .item-locations {
+.sheet.item form.witcher-item-component .item-locations {
   height: 100px;
   weight: 100px;
 }
-.sheet.item form .item-locations .location-table tr > td {
+.sheet.item form.witcher-item-component .item-locations .location-table tr > td {
   text-align: left;
 }
-.sheet.item form .item-locations .location-table tr > td:first-child,
-.sheet.item form .item-locations .location-table tr > td:last-child {
+.sheet.item form.witcher-item-component .item-locations .location-table tr > td:first-child,
+.sheet.item form.witcher-item-component .item-locations .location-table tr > td:last-child {
   width: 30px;
 }
-.sheet.item form .item-locations .location-table tr > td:nth-child(2) {
+.sheet.item form.witcher-item-component .item-locations .location-table tr > td:nth-child(2) {
   padding-left: 15px;
 }
-.sheet.item form .item-locations .location-table td:nth-child(-n+2) {
+.sheet.item form.witcher-item-component .item-locations .location-table td:nth-child(-n+2) {
   cursor: pointer;
 }
-.sheet.item form .item-locations .location-table img {
+.sheet.item form.witcher-item-component .item-locations .location-table img {
   width: 30px;
   height: 30px;
 }
-.sheet.item form .item-text-left-bold {
+.sheet.item form.witcher-item-component .item-text-left-bold {
   text-align: left;
   font-weight: bold;
 }
-.sheet.item form .is-hidden {
+.sheet.item form.witcher-item-component .is-hidden {
   visibility: hidden;
 }
-.sheet.item form .item-title-bold {
+.sheet.item form.witcher-item-component .item-title-bold {
   font-size: medium;
   width: 120px;
   height: 30px;
   font-weight: bold;
 }
-.sheet.item form header.item-header {
+.sheet.item form.witcher-item-component header.item-header {
   display: flex;
   margin-bottom: 5px;
 }
-.sheet.item form header.item-header img {
+.sheet.item form.witcher-item-component header.item-header img {
   width: 100px;
   height: 100px;
 }
-.sheet.item form header.item-header .select-header {
+.sheet.item form.witcher-item-component header.item-header .select-header {
   width: 100%;
 }
-.sheet.item form header.item-header .item-header-table {
+.sheet.item form.witcher-item-component header.item-header .item-header-table {
   border: 0;
   align-items: center;
 }
-.sheet.item form header.item-header .item-header-table .type-substance-image {
+.sheet.item form.witcher-item-component header.item-header .item-header-table .type-substance-image {
   text-align: center;
 }
-.sheet.item form header.item-header .item-header-table .substanceImage {
+.sheet.item form.witcher-item-component header.item-header .item-header-table .substanceImage {
   width: 35px;
   height: 35px;
   border: 0;
 }
-.sheet.item form header.item-header .item-header-first-column {
+.sheet.item form.witcher-item-component header.item-header .item-header-first-column {
   margin-left: 5px;
   width: 100%;
 }
-.sheet.item form header.item-header .item-header-first-column h1 {
+.sheet.item form.witcher-item-component header.item-header .item-header-first-column h1 {
   margin-bottom: 0;
 }
-.sheet.item form header.item-header .item-header-second-column {
+.sheet.item form.witcher-item-component header.item-header .item-header-second-column {
   margin: auto;
 }
-.sheet.item form .item-block-column .item-table-content {
+.sheet.item form.witcher-item-component .item-block-column .item-table-content {
   text-align: center;
 }
-.sheet.item form .item-body-container {
+.sheet.item form.witcher-item-component .item-body-container {
   text-align: center;
   justify-content: space-around;
   height: 150px;
   margin-top: 5px;
   border-bottom: 1px solid var(--color-border-light-tertiary);
 }
-.sheet.item form .item-body-container .editor {
+.sheet.item form.witcher-item-component .item-body-container .editor {
   height: 200px;
   text-align: left;
+}
+.sheet.item form {
+  height: 100%;
+  overflow: hidden;
+}
+.sheet.item form .is-hidden {
+  visibility: hidden;
+}
+.sheet.item form .notes-sub-header {
+  padding-left: 8px;
+  align-items: center;
+}
+.sheet.item form .sheet-navigation {
+  flex: 0 0 30px;
+  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: var(--font-size-24, 18pt);
+  font-variant: small-caps;
+  margin: 4px 0;
+  background: rgba(155, 155, 155, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 6px 6px 0 0;
+  font-size: var(--font-size-20, 16pt);
+}
+.sheet.item form .sheet-navigation .item {
+  height: 30px;
+  line-height: 32px;
+  margin: 0 2px;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 12px 12px 0 0;
+  flex: 1;
+}
+.sheet.item form .sheet-navigation .item.active {
+  background: rgba(155, 155, 155, 0.5);
+}
+.sheet.item form .item-content {
+  flex: 1;
+  overflow: hidden;
+}
+.sheet.item form .item-content .tab {
+  padding: 0 5px;
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
+}
+.sheet.item form .item-content select {
+  width: 100%;
 }
 @font-face {
   font-family: 'Thewitcher';

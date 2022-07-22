@@ -7,8 +7,9 @@ export class SpellItemSheet extends WitcherBaseItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
-      width: 500,
-      height: 250,
+      width: 530,
+      height: 400,
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-properties"}]
     });
   }
 
@@ -17,6 +18,15 @@ export class SpellItemSheet extends WitcherBaseItemSheet {
     console.log(data)
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
+    // Нет элемента в заклинаниях
+    data.magicNoElements = [
+      "gifts", 
+      "injury", 
+      "ritual", 
+      "invocDruid", 
+      "invocPriest", 
+      "invocHighPriest"
+    ];
 
     // Re-define the template data references (backwards compatible)
     data.item = itemData;

@@ -9,12 +9,13 @@
  *
  * @module config
  */
-export const WITCHER = /** @type {const} */ ({
-    
-  //imageRef: "systems/TheWitcherRPG/asset/{filename}",
 
-  // Weapon and bullets damage types 
-  typeDamage: {
+export const WITCHER = {};
+    
+WITCHER.imageRef = "systems/TheWitcherRPG/asset/{filename}";
+
+// Weapon and bullets damage types 
+WITCHER.typeDamage = {
     slashing: {
       short: "Witcher.Item.TypeDamages.Slashing.Short",
       long: "Witcher.Item.TypeDamages.Slashing.Long",
@@ -35,10 +36,10 @@ export const WITCHER = /** @type {const} */ ({
       long: "Witcher.Item.TypeDamages.Elemental.Long",
       tips: "Witcher.Item.TypeDamages.Elemental.Tips"
     }
-  },
+  }
 
-  // Concealment (CONC.) weapons
-  typeCONC: {
+// Concealment (CONC.) weapons
+WITCHER.typeCONC = {
     tiny: {
       short: "Witcher.Item.Concealment.Short",
       long: "Witcher.Item.Concealment.Long",
@@ -59,19 +60,19 @@ export const WITCHER = /** @type {const} */ ({
         long: "Witcher.Item.CantHide.Long",
         tips: "Witcher.Item.CantHide.Tips"
       },
-  },
+}
 
-  // Components categories
-  ComponentsCategories: {
+// Components categories
+WITCHER.ComponentsCategories = {
     craftmaterial: "Witcher.Item.Components.Categories.CraftingMaterials",
     hidesanimal: "Witcher.Item.Components.Categories.HidesAnimalParts",
     alchreatments: "Witcher.Item.Components.Categories.AlchemicalTreatments",
     igotsmaterail: "Witcher.Item.Components.Categories.IngotsMinerals",
     substances: "Witcher.Item.Components.Categories.Substances"
-  }, 
+}
 
-  // Rarity Item
-  RarityItem: {
+// Rarity Item
+WITCHER.RarityItem = {
     everywhere: {
       short: "Witcher.Item.Rarity.Everywhere.Short",
       long: "Witcher.Item.Rarity.Everywhere.Long",
@@ -92,6 +93,43 @@ export const WITCHER = /** @type {const} */ ({
       long: "Witcher.Item.Rarity.Rare.Long",
       tips: "Witcher.Item.Rarity.Rare.Tips"
     }
-  }
+}
 
-});
+WITCHER.magicType = {
+  spell: "Witcher.Item.Spells.MagicType.Spells",
+  invocPriest: "Witcher.Item.Spells.MagicType.InvocPriest",
+  invocDruid: "Witcher.Item.Spells.MagicType.InvocDruid",
+  invocHighPriest: "Witcher.Item.Spells.MagicType.InvocHighPriest",
+  ritual: "Witcher.Item.Spells.MagicType.Ritual",
+  injury: "Witcher.Item.Spells.MagicType.Injury",
+  signs: "Witcher.Item.Spells.MagicType.Signs",
+  gifts: "Witcher.Item.Spells.MagicType.Gifts"
+}
+
+WITCHER.magicElement = {
+  mixed: "Witcher.Item.Spells.MagicElement.Mixed",  
+  water: "Witcher.Item.Spells.MagicElement.Water",
+  fire: "Witcher.Item.Spells.MagicElement.Fire",
+  air: "Witcher.Item.Spells.MagicElement.Air",
+  earth: "Witcher.Item.Spells.MagicElement.Earth"
+}
+
+WITCHER.LevelType = {
+  newbie: "Witcher.Item.Spells.LevelType.Newbie",
+  prentice: "Witcher.Item.Spells.LevelType.Prentice",
+  master: "Witcher.Item.Spells.LevelType.Master"
+}
+
+WITCHER.DistantionType = {
+  accurate: "Witcher.Item.Spells.DistantionType.Accurate",
+  cone: "Witcher.Item.Spells.DistantionType.Cone",
+  self: "Witcher.Item.Spells.DistantionType.Self",
+  zone: "Witcher.Item.Spells.DistantionType.Zone",
+  selfzone: "Witcher.Item.Spells.DistantionType.Selfzone",
+  selfacc: "Witcher.Item.Spells.DistantionType.Selfacc",
+  unlimited: "Witcher.Item.Spells.DistantionType.Unlimited"
+}
+
+WITCHER.SourceList = {
+  core: "Witcher.SourceList.Core"
+}

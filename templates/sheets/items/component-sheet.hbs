@@ -59,6 +59,9 @@
   </table>
 </div>
 <div class="item-body-container">
+  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+</div>
+<div class="item-body-container">
   <div class="item-text-left-bold">{{localize "Witcher.Item.Components.Location"}}:</div>
   <div class="item-locations">
     <table class="location-table">
@@ -77,8 +80,5 @@
       {{/each}}
     </table>
   </div>
-</div>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
 </div>
 </form>

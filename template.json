@@ -175,7 +175,13 @@
       "components": []
     }, 
     "spell": {
-      "templates": ["base"]
+      "templates": [],
+      "description": "",
+      "source": "",
+      "effect": "",
+      "magicType": "",
+      "costStamina": 0,
+      "specData": []
     }, 
     "profession": {
       "templates": ["base"]

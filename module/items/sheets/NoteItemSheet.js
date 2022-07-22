@@ -9,6 +9,7 @@ export class NoteItemSheet extends WitcherBaseItemSheet {
       classes: ["witcher", "sheet", "item"],
       width: 500,
       height: 450,
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Label"}]
     });
   }
 
