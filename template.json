@@ -114,7 +114,9 @@
       "effect",
       "mount_gear",
       "bullets",
-      "substances"
+      "substances",
+      "weapon_effect",
+      "armor_effect"
     ],
     "templates": {
       "base": {
@@ -135,7 +137,16 @@
       "playersIsEdit": false
     },
     "valuable": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "rarity": "",
+      "typeCONC": "",
+      "specData": {}
+    }, 
+    "weapon_effect": {
+      "templates": []
+    }, 
+    "armor_effect": {
+      "templates": []
     }, 
     "substances": {
       "templates": [],
