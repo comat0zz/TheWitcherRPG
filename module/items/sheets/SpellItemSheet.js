@@ -46,6 +46,7 @@ export class SpellItemSheet extends WitcherBaseItemSheet {
     // Re-define the template data references (backwards compatible)
     data.item = itemData;
     data.data = itemData.data;
+    console.log(data)
     return data;
   }
 
