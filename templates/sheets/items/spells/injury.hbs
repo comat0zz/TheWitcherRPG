@@ -1,0 +1,16 @@
+<tr>
+  <td>{{localize "Witcher.Item.Spells.CostStamina"}}</td>
+  <td colspan="2"><input name="data.costStamina" type="text" value="{{data.costStamina}}" placeholder=""  data-dtype="Number" /></td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.HazardLabel"}}</td>
+  <td colspan="2">
+    <select name="data.specData.Hazards">
+      {{#select data.specData.Hazards}}
+        {{#each config.Hazards as |name type|}}
+          <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+      {{/select}}
+    </select> 
+  </td>
+</tr>

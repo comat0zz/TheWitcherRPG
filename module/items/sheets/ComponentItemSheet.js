@@ -7,8 +7,9 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 350,
-      dragDrop: [{dropSelector: ".item-locations", dragSelector: ".item"}]
+      height: 450,
+      dragDrop: [{dropSelector: ".item-locations", dragSelector: ".item"}],
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 
@@ -17,7 +18,8 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     const itemData = data.data;
     const substances = await this._prepareSubstancesPack();
     data.config = CONFIG.WITCHER;
-
+    // TODO: перетаскивание нескольких итемов проверять 
+    
     let locations = [];
     // Хотел перенести формирование в перетаскивание
     // так снизит заметно нагрузку, но проблемы будут при переименовывании

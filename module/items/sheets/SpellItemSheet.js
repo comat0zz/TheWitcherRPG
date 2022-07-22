@@ -18,14 +18,10 @@ export class SpellItemSheet extends WitcherBaseItemSheet {
     console.log(data)
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
-    // Нет элемента в заклинаниях
-    data.magicNoElements = [
-      "gifts", 
-      "injury", 
-      "ritual", 
-      "invocDruid", 
-      "invocPriest", 
-      "invocHighPriest"
+    // Элемента в заклинаниях
+    data.magicElements = [
+      "signs",
+      "spell"
     ];
 
     // Re-define the template data references (backwards compatible)

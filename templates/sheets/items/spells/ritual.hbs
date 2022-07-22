@@ -1,0 +1,32 @@
+<tr>
+  <td>{{localize "Witcher.Item.Spells.CostStamina"}}</td>
+  <td colspan="2"><input name="data.costStamina" type="text" value="{{data.costStamina}}" placeholder=""  data-dtype="Number" /></td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.LevelTypeLabel"}}</td>
+  <td colspan="2">
+    <select name="data.specData.LevelType">
+      {{#select data.specData.LevelType}}
+        {{#each config.LevelType as |name type|}}
+          <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+      {{/select}}
+    </select> 
+  </td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.PreparationTime"}}</td>
+  <td colspan="2">
+    <input name="data.specData.preparationTime" type="text" value="{{data.specData.preparationTime}}" placeholder=""  data-dtype="Number" /> 
+  </td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.ForageDC"}}</td>
+  <td colspan="2">
+    <input name="data.specData.forgeDC" type="text" value="{{data.specData.forgeDC}}" placeholder=""  data-dtype="Number" />
+  </td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.DurationLabel"}}</td>
+  <td colspan="2"><input name="data.specData.duration" type="text" value="{{data.specData.duration}}" placeholder="" /></td>
+</tr>

@@ -5,7 +5,15 @@
 		"Source": "Книга правил",
 
 		"SourceList": {
-			"Core": "НРИ Ведьмак Основная книга правил"
+			"Core": "НРИ Ведьмак. Основная книга правил",
+			"Chaos": "НРИ Ведьмак. Том Хаоса"
+		},
+
+		"HazardLabel": "Опасность",
+		"Hazards": {
+			"low": "Низкая",
+			"medium": "Средняя",
+			"high": "Высокая"
 		},
 
 
@@ -43,10 +51,13 @@
 			"Location": "Где найти",
 			
 			"Components": {
-				"Location": "Где или из кого добыть",
+				"Properties": "Свойства",
+				"Description": "Описание",
+				"Location": "Как добыть",
+				"ForageDC": "Сложность сбора",
 				"QuantityObtainableLabel":"Cбор",
 				"SelectSubstanceType": "Выберите тип субстанции",
-				"QuantityObtainable": "Доступное Количество",
+				"QuantityObtainable": "Доступное количество",
 				"Categories": {
 					"Label": "Категория",
 					"CraftingMaterials": "Ремесленные материалы",
@@ -67,6 +78,11 @@
 
 			"Spells": {
 				"CostStamina": "Затраты выносливости",
+				"ForageDC": "Сложность",
+				"Deities": "Божество",
+				"SideEffect": "Побочный эффект",
+				"Withdrawal": "Как снять",
+				"PreparationTime": "Время подготовки (раунд)",
 				"LevelTypeLabel": "Уровень мастерства",
 				"LevelType": {
 					"Newbie": "Новичек",
@@ -85,11 +101,14 @@
 				"DistantionLabel": "Дистанция",
 				"DistantionValue": "Вспомогательное...",
 				"Defence": {
-
+					"no": "Нет защиты",
+    			"evasion": "Уклонение",
+					"blocking": "Блокирование",
+					"evblo": "Уклонение или блокирование",
+					"magic": "Сопротивление магии"
 				},
 				"DefenceLabel": "Защита",
 				"DurationLabel": "Длительность",
-
 				"MagicTypeLabel": "Тип магии",
 				"MagicType": {
 					"Spells": "Заклинания",
@@ -100,6 +119,11 @@
 					"Injury":"Порча",
 					"Signs":"Ведьмачьи знаки",
 					"Gifts":"Магические дары"
+				},
+
+				"giftsType": {
+					"Small": "Малый дар",
+					"Big": "Большой дар"
 				},
 
 				"MagicElementLabel": "Элемент",

@@ -13,6 +13,15 @@
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
   <a class="item" data-tab="tab-properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
   <a class="item" data-tab="tab-detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
+  {{#ife data.magicType "ritual"}}
+  <a class="item" data-tab="tab-components" data-group="primary-tabs">{{localize "Witcher.Item.Types.component"}}</a>
+  {{/ife}}
+  {{#ife data.magicType "injury"}}
+  <a class="item" data-tab="tab-withdrawal" data-group="primary-tabs">{{localize "Witcher.Item.Spells.Withdrawal"}}</a>
+  {{/ife}}
+  {{#ife data.magicType "gifts"}}
+  <a class="item" data-tab="tab-gifts" data-group="primary-tabs">{{localize "Witcher.Item.Spells.SideEffect"}}</a>
+  {{/ife}}  
 </nav>
 
 <section class="item-content">
@@ -33,13 +42,24 @@
           </select>
         </td>
         <td>
-          <select class="select-header{{#ifIn data.magicType magicNoElements}} is-hidden{{/ifIn}}" name="data.element">
+          {{#ifIn data.magicType magicElements}}
+          <select class="select-header" name="data.element">
             {{#select data.element}}
               {{#each config.magicElement as |name type|}}
                 <option value="{{type}}">{{localize name}}</option>
               {{/each}}
             {{/select}}
-          </select> 
+          </select>
+          {{/ifIn}}
+          {{#ife data.magicType "gifts"}}
+          <select class="select-header" name="data.specData.giftsType">
+            {{#select data.specData.giftsType}}
+              {{#each config.SpellsGiftsType as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+          {{/ife}}
         </td>
       </tr>
     <!-- // TODO: Handlebars.registerPartial -->
@@ -62,7 +82,7 @@
     <tr>
       <td>{{localize "Witcher.Source"}}</td>
       <td colspan="2">
-        <select class="select-header" name="data.source">
+        <select name="data.source">
             {{#select data.source}}
               {{#each config.SourceList as |name type|}}
                 <option value="{{type}}">{{localize name}}</option>
@@ -73,5 +93,20 @@
     </tr>  
     </table>
   </div>
+  {{#ife data.magicType "ritual"}}
+  <div class="tab flexcol" data-tab="tab-components" data-group="primary-tabs">
+    список
+  </div>
+  {{/ife}}
+  {{#ife data.magicType "injury"}}
+  <div class="tab flexcol" data-tab="tab-withdrawal" data-group="primary-tabs">
+    {{editor content=data.specData.withdrawal target="data.specData.withdrawal" button=true owner=owner editable=editable}}
+  </div>
+  {{/ife}}
+  {{#ife data.magicType "gifts"}}
+  <div class="tab flexcol" data-tab="tab-gifts" data-group="primary-tabs">
+    {{editor content=data.specData.SideEffect target="data.specData.SideEffect" button=true owner=owner editable=editable}}
+  </div>
+  {{/ife}}
 </section>
 </form>

@@ -31,9 +31,17 @@
 </tr>
 <tr>
   <td>{{localize "Witcher.Item.Spells.DefenceLabel"}}</td>
-  <td colspan="2"></td>
+  <td colspan="2">
+    <select name="data.specData.defence">
+      {{#select data.specData.defence}}
+        {{#each config.SpellsDefences as |name type|}}
+          <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+      {{/select}}
+    </select> 
+  </td>
 </tr>
 <tr>
   <td>{{localize "Witcher.Item.Spells.DurationLabel"}}</td>
-  <td colspan="2"><input name="" type="text" value="" placeholder=""  data-dtype="Number" /></td>
+  <td colspan="2"><input name="data.specData.duration" type="text" value="{{data.specData.duration}}" placeholder="" /></td>
 </tr>

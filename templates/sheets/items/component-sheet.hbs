@@ -1,84 +1,97 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
-    <div class="item-header-second-column">
-      <table class="item-header-table">
-        <tr>
-          <td>{{localize "Witcher.Item.Components.Categories.Label"}}</td>
-          <td>
-            <select class="select-header" name="data.category">
-              {{#select data.category}}
-                {{#each config.ComponentsCategories as |name type|}}
-                  <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-              {{/select}}
-            </select>
-          </td>
-        </tr>
-        <tr{{#if noSubstance}} class="is-hidden"{{/if}}>
-          <td class="type-substance-image"><img class="substanceImage" src="{{substanceImage}}" /></td>
-          <td>
-            <select class="select-header" name="data.substanceType" id="change-substanceType">
-              {{#select data.substanceType}}
-                {{#each substances}}
-                  <option value="{{_id}}" data-image="{{img}}">{{localize name}}</option>
-                {{/each}}
-              {{/select}}
-            </select> 
-          </td>
-        </tr>
-      </table>
-  
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="flexcol">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+    </div>
+  </section>
 </header>
-<div class="item-block-column">
-  <table class="item-table-content">
-    <tr>
-      <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
-      <th>{{localize "Witcher.Item.Weight"}}</th>
-      <th class="curor-pointer" item-click="QuantityObtainable_on">{{localize "Witcher.Item.Components.QuantityObtainable"}}</th>
-      <th>{{localize "Witcher.Item.ForageDC"}}</th>
-    </tr>
-    <tr>
-      <td>
-        <select name="data.rarity">
-          {{#select data.rarity}}
-            {{#each config.RarityItem as |name value|}}
-              <option value="{{value}}">{{localize name.long}}</option>
-            {{/each}}
-          {{/select}}
-        </select>
-      </td>
-      <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
-      <td><input item-click="QuantityObtainable_value" type="text" name="data.quantityObtainable" value="{{data.quantityObtainable}}"/></td>
-      <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
-    </tr>
-  </table>
-</div>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
-<div class="item-body-container">
-  <div class="item-text-left-bold">{{localize "Witcher.Item.Components.Location"}}:</div>
-  <div class="item-locations">
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Components.Properties"}}</a>
+  <a class="item" data-tab="tab-Description" data-group="primary-tabs">{{localize "Witcher.Item.Components.Description"}}</a>
+  <a class="item" data-tab="tab-Location" data-group="primary-tabs">{{localize "Witcher.Item.Components.Location"}}</a>
+</nav>
+
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
+    <table>
+      <tr>
+        <td>{{localize "Witcher.Item.Components.Categories.Label"}}</td>
+        <td>
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.ComponentsCategories as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      {{#ifn noSubstance}}
+      <tr>
+        <td>
+          <img class="substanceImage" src="{{substanceImage}}" />
+        </td>
+        <td>
+          <select name="data.substanceType">
+            {{#select data.substanceType}}
+              {{#each substances}}
+                <option value="{{_id}}" data-image="{{img}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+        </td>
+      </tr>
+      {{/ifn}}
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
+        <td>
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Weight"}}</td>
+        <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td class="cursor-pointer" item-click="QuantityObtainable_on">{{localize "Witcher.Item.Components.QuantityObtainable"}}</td>
+        <td><input item-click="QuantityObtainable_value" type="text" name="data.quantityObtainable" value="{{data.quantityObtainable}}"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Components.ForageDC"}}</td>
+        <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab flexcol" data-tab="tab-Description" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  </div>
+  <div class="tab flexcol item-locations" data-tab="tab-Location" data-group="primary-tabs">
     <table class="location-table">
       {{#each data.location as |location|}}
-      
-      <tr class="item" data-item-id="{{location.id}}">
-        <td><img src="{{location.img}}" alt="{{location.name}}"></td>
-        <td>{{location.name}}</td>
-        <td>
-          {{#if ../owner}}
-          <a class="del-item" data-itemType="{{location.type}}"><i class="fas fa-trash-alt"></i></a>
-          {{/if}}
-        </td>        
-      </tr>
-
+        <tr class="item" data-item-id="{{location.id}}">
+          <td><img src="{{location.img}}" alt="{{location.name}}"></td>
+          <td>{{location.name}}</td>
+          <td>
+            {{#if ../owner}}
+            <a class="del-item" data-itemType="{{location.type}}"><i class="fas fa-trash-alt"></i></a>
+            {{/if}}
+          </td>        
+        </tr>
       {{/each}}
     </table>
   </div>
-</div>
+</section>
 </form>

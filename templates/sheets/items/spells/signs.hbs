@@ -1,0 +1,35 @@
+<tr>
+  <td>{{localize "Witcher.Item.Spells.CostStamina"}}</td>
+  <td colspan="2"><input name="data.costStamina" type="text" value="{{data.costStamina}}" placeholder=""  data-dtype="Number" /></td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.DistantionLabel"}}</td>
+  <td>
+    <select name="data.specData.DistantionType">
+      {{#select data.specData.DistantionType}}
+        {{#each config.DistantionType as |name type|}}
+          <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+      {{/select}}
+    </select>
+  </td>
+  <td> 
+    <input name="data.specData.DistantionValue" type="text" value="{{data.specData.DistantionValue}}" placeholder="{{localize "Witcher.Item.Spells.DistantionValue"}}" />
+  </td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.DefenceLabel"}}</td>
+  <td colspan="2">
+    <select name="data.specData.defence">
+      {{#select data.specData.defence}}
+        {{#each config.SpellsDefences as |name type|}}
+          <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+      {{/select}}
+    </select> 
+  </td>
+</tr>
+<tr>
+  <td>{{localize "Witcher.Item.Spells.DurationLabel"}}</td>
+  <td colspan="2"><input name="data.specData.duration" type="text" value="{{data.specData.duration}}" placeholder="" /></td>
+</tr>

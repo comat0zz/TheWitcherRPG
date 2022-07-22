@@ -13,6 +13,7 @@
       </div>
       {{/if}}
     </div>
+
   </section>
 </header>
 
@@ -44,7 +45,7 @@
   {{/if}}
   {{#if (or UserisGM data.playersIsEdit)}}
   <div class="tab flexcol" data-tab="tab-PlayersInfo" data-group="primary-tabs">
-    {{editor content=data.descriptionForPlayes target="data.descriptionForPlayes" button=true editable=true}}
+    {{editor content=data.descriptionForPlayes target="data.descriptionForPlayes" owner=data.playersIsEdit button=true editable=true}}
   </div>
   {{/if}}
 </section>

@@ -131,5 +131,25 @@ WITCHER.DistantionType = {
 }
 
 WITCHER.SourceList = {
-  core: "Witcher.SourceList.Core"
+  core: "Witcher.SourceList.Core",
+  chaos: "Witcher.SourceList.Chaos"
+}
+
+WITCHER.SpellsDefences = {
+  no: "Witcher.Item.Spells.Defence.no",
+  evasion: "Witcher.Item.Spells.Defence.evasion",
+  blocking: "Witcher.Item.Spells.Defence.blocking",
+  evblo: "Witcher.Item.Spells.Defence.evblo",
+  magic: "Witcher.Item.Spells.Defence.magic"
+}
+
+WITCHER.Hazards = {
+  low: "Witcher.Hazards.low",
+  medium: "Witcher.Hazards.medium",
+  high: "Witcher.Hazards.high"
+}
+
+WITCHER.SpellsGiftsType = {
+  small: "Witcher.Item.Spells.giftsType.Small",
+  big: "Witcher.Item.Spells.giftsType.Big"
 }

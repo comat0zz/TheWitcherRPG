@@ -1,121 +1,15 @@
 .sheet.item {
 
-  form.witcher-item-component {
-
-    .curor-pointer {
-      cursor: pointer;
-    }
-
-    .item-locations {
-      height: 100px;
-      weight: 100px;
-
-      .location-table {
-        tr > td {
-          text-align: left;
-        }
-        
-        tr > td:first-child, tr > td:last-child {
-          width: 30px
-        }
-
-        tr > td:nth-child(2) {
-          padding-left: 15px;
-        }
-
-        td:nth-child(-n+2) {
-          cursor: pointer
-        }
-
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-    .item-text-left-bold {
-      text-align: left;
-      font-weight: bold;
-    }
-
-    .is-hidden {
-      visibility: hidden;
-    }
-
-    .item-title-bold {
-      font-size: medium;
-      width: 120px;
-      height: 30px;
-      font-weight: bold;
-    }
-    header.item-header {
-      display: flex;
-      margin-bottom: 5px;
-
-      img {
-        width: 100px;
-        height: 100px;
-      }
-
-      .select-header {
-        width: 100%
-      }
-
-      .item-header-table {
-        border: 0;
-        align-items: center;
-
-        .type-substance-image {
-          text-align: center;
-        }
-
-        .substanceImage {
-          width: 35px;
-          height: 35px;
-          border: 0;
-        }
-      }
-      
-      .item-header-first-column {
-        margin-left: 5px;
-        width: 100%;
-        h1 {
-          margin-bottom: 0;
-        }
-      }
-
-      .item-header-second-column {
-        margin: auto;
-      }
-
-    }
-
-    .item-block-column {
-      .item-table-content {
-        text-align: center;
-      }
-    }
-
-    .item-body-container {
-      text-align: center;
-      justify-content: space-around;
-      height: 150px;
-      margin-top: 5px;
-      border-bottom: 1px solid var(--color-border-light-tertiary);
-   
-      .editor {
-        height: 200px;
-        text-align: left;
-      }
-    }
-  }
-
   form {
     height: 100%;
     overflow: hidden;
     
     .is-hidden {
       visibility: hidden;
+    }
+    
+    .cursor-pointer {
+      cursor: pointer;
     }
 
     .notes-sub-header {
@@ -163,6 +57,14 @@
       select {
         width: 100%
       }
+    }
+  }
+
+  form.witcher-item-component {
+    .substanceImage, .location-table img {
+      width: 35px;
+      height: 35px;
+      border: 0;
     }
   }
 }
