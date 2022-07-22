@@ -5,6 +5,14 @@
 .sheet.item form .is-hidden {
   visibility: hidden;
 }
+.sheet.item form .img35x35 {
+  width: 35px;
+  height: 35px;
+  border: 0;
+}
+.sheet.item form .list-item-tr {
+  height: 50px;
+}
 .sheet.item form .cursor-pointer {
   cursor: pointer;
 }

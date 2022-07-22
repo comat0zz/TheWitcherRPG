@@ -43,7 +43,6 @@ export class SpellItemSheet extends WitcherBaseItemSheet {
     }
     itemData.data.specData.components = components;
 
-
     // Re-define the template data references (backwards compatible)
     data.item = itemData;
     data.data = itemData.data;
@@ -80,12 +79,17 @@ export class SpellItemSheet extends WitcherBaseItemSheet {
 
   async _onDrop(event) { 
     let dragData = JSON.parse(event.dataTransfer.getData("text/plain"));
+    if(dragData.id == this.item.id) return;
     let specData = this.item.data.data.specData;
     if( ! (Object.keys(specData).includes("components"))) {
       specData.components = [];
     }
     let components = duplicate(specData.components);
+    if(components.findIndex(x => x.id === dragData.id) != -1) {
+      return;
+    }
     components.push(dragData);
+    console.log(components)
     this.item.update({ "data.specData.components": components });
   }
 

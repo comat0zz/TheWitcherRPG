@@ -97,7 +97,13 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
 
   async _onDrop(event) { 
     let dragData = JSON.parse(event.dataTransfer.getData("text/plain"));
+    if(dragData.id == this.item.id) return;
     let locations = duplicate(this.item.data.data.location);
+
+    if(locations.findIndex(x => x.id === dragData.id) != -1) {
+      return;
+    }
+
     locations.push(dragData);
     this.item.update({ "data.location": locations })
   }
