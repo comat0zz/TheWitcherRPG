@@ -94,8 +94,19 @@
     </table>
   </div>
   {{#ife data.magicType "ritual"}}
-  <div class="tab flexcol" data-tab="tab-components" data-group="primary-tabs">
-    список
+  <div class="tab flexcol item-components" data-tab="tab-components" data-group="primary-tabs">
+    <table class="components-table">
+      {{#each data.specData.components }}
+        <tr class="item" data-item-id="{{id}}">
+          <td><img src="{{img}}" alt="{{name}}"></td>
+          <td>{{name}}</td>
+          <td>
+            {{#if ../owner}}
+            <a class="del-item" data-itemType="{{type}}"><i class="fas fa-trash-alt"></i></a>
+            {{/if}}
+          </td>        
+        </tr>
+      {{/each}}
   </div>
   {{/ife}}
   {{#ife data.magicType "injury"}}
