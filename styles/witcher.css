@@ -10,9 +10,6 @@
   height: 35px;
   border: 0;
 }
-.sheet.item form .list-item-tr {
-  height: 50px;
-}
 .sheet.item form .cursor-pointer {
   cursor: pointer;
 }
@@ -57,11 +54,17 @@
 .sheet.item form .item-content select {
   width: 100%;
 }
+.sheet.item form .item-content .item-components input.qty-edit {
+  width: 30px;
+}
 .sheet.item form.witcher-item-component .substanceImage,
 .sheet.item form.witcher-item-component .location-table img {
   width: 35px;
   height: 35px;
   border: 0;
+}
+.sheet.item form.witcher-item-substances .item-content {
+  padding-top: 10px;
 }
 @font-face {
   font-family: 'Thewitcher';

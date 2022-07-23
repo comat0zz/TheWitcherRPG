@@ -1,13 +1,18 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
-  </div>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="flexcol">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+    </div>
+
+  </section>
 </header>
-<div class="item-body-container">
+
+<section class="item-content">
   {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+</section>
 </form>

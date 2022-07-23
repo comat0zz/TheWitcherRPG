@@ -1,6 +1,5 @@
 import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
 
-
 export class SubstancesItemSheet extends WitcherBaseItemSheet {
   
   /** @override */
@@ -14,7 +13,6 @@ export class SubstancesItemSheet extends WitcherBaseItemSheet {
 
   getData(options) {
     const data = super.getData(options);
-    console.log(data)
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
 

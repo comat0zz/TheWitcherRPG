@@ -31,8 +31,26 @@ export class DiagramsItemSheet extends WitcherBaseItemSheet {
   
     html.find('.item-components .item td:nth-child(-n+2)').click(evt => this._onItemShow(evt));
     html.find('.item-components .item td:last-child').click(evt => this._onDeleteComponent(evt));
+
+    html.find('.item-components .item .qty-edit').blur(evt => this._changeQty(evt));
   }
   
+  _changeQty(evt) {
+    evt.preventDefault();
+    const item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+    let value = $(evt.currentTarget).val();
+    if(value == "") value = 0;
+    const components = duplicate(this.item.data.data.components);
+    let newComps = [];
+    components.forEach((loc) => {
+      if(loc.id == item_id){
+        loc.qty = value;
+      }
+      newComps.push(loc);
+    });
+    this.item.update({ "data.components": newComps })
+  }
+
   _onDeleteComponent(evt){
     evt.preventDefault();
     let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
@@ -46,16 +64,23 @@ export class DiagramsItemSheet extends WitcherBaseItemSheet {
     this.item.update({ "data.components": newComponents })
   }
 
-  _onItemShow(evt) {
-    evt.preventDefault();
-    let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
-    const item = game.items.get(item_id);
-    item.sheet.render(true, { focus: true });
-  }
-
   async _getDocumentByPack(name) {
     const pack = game.packs.get(name.pack);
     return pack.getDocument(name.id);
+  }
+
+  async _onItemShow(evt) {
+    evt.preventDefault();
+    let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+    const data = this.item.data.data.components; 
+    const index = data.findIndex(x => x.id === item_id);
+    let item = {};
+    if(index >= 0 && Object.keys(data[index]).includes("pack") && data[index].pack != "") {
+      item = await this._getDocumentByPack(data[index])
+    }else{
+      item = game.items.get(item_id);
+    }
+    item.sheet.render(true, { focus: true });
   }
 
   async _onDrop(event) { 
@@ -88,6 +113,7 @@ export class DiagramsItemSheet extends WitcherBaseItemSheet {
     }else{
       item = game.items.get(dragData.id);
     }
+
     dragData.img = item.img;
     dragData.name = item.name;
     components.push(dragData);

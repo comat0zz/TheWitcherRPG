@@ -114,9 +114,7 @@
       "effect",
       "mount_gear",
       "bullets",
-      "substances",
-      "weapon_effect",
-      "armor_effect"
+      "substances"
     ],
     "templates": {
       "base": {
@@ -141,12 +139,6 @@
       "rarity": "",
       "typeCONC": "",
       "specData": {}
-    }, 
-    "weapon_effect": {
-      "templates": []
-    }, 
-    "armor_effect": {
-      "templates": []
     }, 
     "substances": {
       "templates": [],
