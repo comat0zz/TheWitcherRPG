@@ -1,0 +1,52 @@
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="flexcol">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+      {{#if UserisGM}}
+      <div class="notes-sub-header">
+        <input type="checkbox" name="data.playersIsEdit" {{checked data.playersIsEdit}}/> {{localize "Witcher.Item.Notes.PlayersIsEdit"}} 
+      </div>
+      {{/if}}
+    </div>
+
+  </section>
+</header>
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-Label" data-group="primary-tabs">{{localize "Witcher.Item.Notes.Label"}}</a>
+  {{#if UserisGM}}
+    <a class="item" data-tab="tab-LabelGM" data-group="primary-tabs">{{localize "Witcher.Item.Notes.LabelGM"}}</a>
+  {{/if}}
+  {{#if (or UserisGM data.playersIsEdit)}}
+  <a class="item" data-tab="tab-PlayersInfo" data-group="primary-tabs">
+    {{#if UserisGM}}
+      {{localize "Witcher.Item.Notes.PlayersInfoGM"}}
+    {{else}}
+      {{localize "Witcher.Item.Notes.PlayersInfo"}}
+    {{/if}}
+  </a>
+  {{/if}}
+</nav>
+
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-Label" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  </div>
+  {{#if UserisGM}}
+  <div class="tab flexcol" data-tab="tab-LabelGM" data-group="primary-tabs">
+    {{editor content=data.descriptionOnlyGM target="data.descriptionOnlyGM" button=true owner=owner editable=editable}}
+  </div>
+  {{/if}}
+  {{#if (or UserisGM data.playersIsEdit)}}
+  <div class="tab flexcol" data-tab="tab-PlayersInfo" data-group="primary-tabs">
+    {{editor content=data.descriptionForPlayes target="data.descriptionForPlayes" owner=data.playersIsEdit button=true editable=true}}
+  </div>
+  {{/if}}
+</section>
+</form>

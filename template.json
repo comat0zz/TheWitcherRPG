@@ -182,8 +182,15 @@
       "substanceType": ""
     }, 
     "diagrams": {
-      "templates": ["base"],
-      "components": []
+      "templates": [],
+      "components": [],
+      "typeItem": "",
+      "forageDC": 0,
+      "time": 0,
+      "cost": 0,
+      "surcharge": 0, 
+      "levelType": "",
+      "source": "source"
     }, 
     "spell": {
       "templates": [],

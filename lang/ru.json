@@ -22,6 +22,14 @@
 		},
 		"Item": {
 
+			"LevelTypeLabel": "Уровень мастерства",
+			"LevelType": {
+				"Newbie": "Новичек",
+				"Prentice": "Подмастерье",
+				"Master": "Мастер",
+				"HighMaster": "Великий мастер"
+			},
+
 			"Types": {
 				"weapon": "Оружие",
 				"armor": "Броня",
@@ -47,6 +55,10 @@
 			"Properties": "Свойства",
 			"Weight": "Вес",
 			"Cost": "Цена",
+			"Times": {
+				"Hour": "Время (в часах)"
+			}, 
+			"Surcharge": "Доплата",
 			"ForageDC": "Сложность",
 			"Location": "Где найти",
 			
@@ -66,6 +78,21 @@
 					"IngotsMinerals": "Слитки и минералы",
 					"Substances": "Субстанции"
 				}
+			},
+			
+			"Diagrams": {
+				"Properties": "Характеристики",
+				"Components": "Компоненты",
+				"TypeLabel": "Тип чертежа",
+				"Types": {
+					"weapon": "Оружие",
+					"weaponHigh": "Оружие Старшего народа",
+					"armor": "Броня",
+					"armorHigh":"Броня Старшего народа",
+					"component": "Компоненты",
+					"ammunition":"Боеприпасы",
+					"gain":"Усиление"	
+				}				
 			},
 
 			"Notes": {

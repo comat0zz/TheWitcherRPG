@@ -115,9 +115,10 @@ WITCHER.magicElement = {
 }
 
 WITCHER.LevelType = {
-  newbie: "Witcher.Item.Spells.LevelType.Newbie",
-  prentice: "Witcher.Item.Spells.LevelType.Prentice",
-  master: "Witcher.Item.Spells.LevelType.Master"
+  newbie: "Witcher.Item.LevelType.Newbie",
+  prentice: "Witcher.Item.LevelType.Prentice",
+  master: "Witcher.Item.LevelType.Master",
+  highmaster: "Witcher.Item.LevelType.HighMaster"
 }
 
 WITCHER.DistantionType = {
@@ -152,4 +153,14 @@ WITCHER.Hazards = {
 WITCHER.SpellsGiftsType = {
   small: "Witcher.Item.Spells.giftsType.Small",
   big: "Witcher.Item.Spells.giftsType.Big"
+}
+
+WITCHER.diagramsType = {
+  weapon: "Witcher.Item.Diagrams.Types.weapon",
+  weaponHigh: "Witcher.Item.Diagrams.Types.weaponHigh",
+  armor: "Witcher.Item.Diagrams.Types.armor",
+  armorHigh: "Witcher.Item.Diagrams.Types.armorHigh",
+  component: "Witcher.Item.Diagrams.Types.component",
+  ammunition: "Witcher.Item.Diagrams.Types.ammunition",
+  gain: "Witcher.Item.Diagrams.Types.gain"
 }

@@ -8,13 +8,14 @@ export class DiagramsItemSheet extends WitcherBaseItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 250,
+      height: 350,
+      dragDrop: [{dropSelector: ".item-components", dragSelector: ".item"}],
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 
-  getData(options) {
+  async getData(options) {
     const data = super.getData(options);
-    console.log(data)
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
 
@@ -24,11 +25,72 @@ export class DiagramsItemSheet extends WitcherBaseItemSheet {
     return data;
   }
 
+  /** @override */
+  activateListeners(html) {
+    super.activateListeners(html);
+  
+    html.find('.item-components .item td:nth-child(-n+2)').click(evt => this._onItemShow(evt));
+    html.find('.item-components .item td:last-child').click(evt => this._onDeleteComponent(evt));
+  }
+  
+  _onDeleteComponent(evt){
+    evt.preventDefault();
+    let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+    const components = duplicate(this.item.data.data.components);
+    let newComponents = []
+    components.forEach((loc) => {
+      if(loc.id != item_id){
+        newComponents.push(loc);
+      }
+    });
+    this.item.update({ "data.components": newComponents })
+  }
+
+  _onItemShow(evt) {
+    evt.preventDefault();
+    let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+    const item = game.items.get(item_id);
+    item.sheet.render(true, { focus: true });
+  }
+
+  async _getDocumentByPack(name) {
+    const pack = game.packs.get(name.pack);
+    return pack.getDocument(name.id);
+  }
+
+  async _onDrop(event) { 
+    let dragData = JSON.parse(event.dataTransfer.getData("text/plain"));
+    // Нельзя добавлять самого себя
+    if(dragData.id == this.item.id) return;
+    let data = this.item.data.data;
+    // Если нет поля, то добавим
+    if( ! (Object.keys(data).includes("components"))) {
+      data.components = [];
+    }
+    let components = duplicate(data.components);
+    // Нельзя добавлять добавленные
+    if(components.findIndex(x => x.id === dragData.id) != -1) {
+      return;
+    }
+    // Если нет количества, то количество = 1
+    if( ! (Object.keys(dragData).includes("qty"))) {
+      dragData.qty = 1;
+    }
+    /* 
+    * Парсим pack и item. 
+    * Лучше распарсить один раз при добавлении, 
+    * чем каждый раз при открытии карточки
+    */
+    let item = {};
+    if(Object.keys(dragData).includes("pack")) {
+      item = await this._getDocumentByPack(dragData);
+      item = item.data;
+    }else{
+      item = game.items.get(dragData.id);
+    }
+    dragData.img = item.img;
+    dragData.name = item.name;
+    components.push(dragData);
+    this.item.update({ "data.components": components });
+  }
 }
-
-
-
-
-
-
-
