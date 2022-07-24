@@ -10,6 +10,9 @@
   height: 35px;
   border: 0;
 }
+.sheet.item form table.item-properties-list .item-properties-small {
+  width: 50px;
+}
 .sheet.item form .cursor-pointer {
   cursor: pointer;
 }

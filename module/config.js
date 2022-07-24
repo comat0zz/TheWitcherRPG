@@ -40,25 +40,25 @@ WITCHER.typeDamage = {
 
 // Concealment (CONC.) weapons
 WITCHER.typeCONC = {
+    noType: {
+      short: "",
+      long: ""
+    },
     tiny: {
-      short: "Witcher.Item.Concealment.Short",
-      long: "Witcher.Item.Concealment.Long",
-      tips: "Witcher.Item.Concealment.Tips"
+      short: "Witcher.Item.Concealment.Tiny.Short",
+      long: "Witcher.Item.Concealment.Tiny.Long"
     },
     small: {
-        short: "Witcher.Item.Small.Short",
-        long: "Witcher.Item.Small.Long",
-        tips: "Witcher.Item.Small.Tips"
+        short: "Witcher.Item.Concealment.Small.Short",
+        long: "Witcher.Item.Concealment.Small.Long"
       },
     large: {
-        short: "Witcher.Item.Large.Short",
-        long: "Witcher.Item.Large.Long",
-        tips: "Witcher.Item.Large.Tips"
+        short: "Witcher.Item.Concealment.Large.Short",
+        long: "Witcher.Item.Concealment.Large.Long"
       },
     canthide: {
-        short: "Witcher.Item.CantHide.Short",
-        long: "Witcher.Item.CantHide.Long",
-        tips: "Witcher.Item.CantHide.Tips"
+        short: "Witcher.Item.Concealment.CantHide.Short",
+        long: "Witcher.Item.Concealment.CantHide.Long"
       },
 }
 
@@ -163,4 +163,12 @@ WITCHER.diagramsType = {
   component: "Witcher.Item.Diagrams.Types.component",
   ammunition: "Witcher.Item.Diagrams.Types.ammunition",
   gain: "Witcher.Item.Diagrams.Types.gain"
+}
+
+WITCHER.ValuablesTypes = {
+  tools: "Witcher.Item.Valuables.Types.Tools",
+	standardEquip: "Witcher.Item.Valuables.Types.StandardEquip",
+	containers: "Witcher.Item.Valuables.Types.Containers",
+	eatDrink: "Witcher.Item.Valuables.Types.EatDrink",
+	clothing: "Witcher.Item.Valuables.Types.Clothing"
 }

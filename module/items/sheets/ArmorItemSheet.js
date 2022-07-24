@@ -14,7 +14,6 @@ export class ArmorItemSheet extends WitcherBaseItemSheet {
 
   getData(options) {
     const data = super.getData(options);
-    console.log(data)
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
 

@@ -125,7 +125,7 @@
         "weight": 0,
         "cost": 0,
         "isHidden": false,
-        "associatedDiagram": {},
+        "associatedDiagram": "",
         "accessibility": ""
       },
       "sourceList": {
@@ -139,10 +139,15 @@
       "playersIsEdit": false
     },
     "valuable": {
-      "templates": ["base"],
+      "templates": ["sourceList"],
       "rarity": "",
+      "types": "",
       "typeCONC": "",
-      "specData": {}
+      "stealth": "",
+      "weight": 0,
+      "cost": 0,
+      "effect": "",
+      "description": ""
     }, 
     "substances": {
       "templates": [],
@@ -163,7 +168,8 @@
       "templates": ["base"]
     }, 
     "alchemical": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "rarity": ""
     }, 
     "mutagen": {
       "templates": ["base"]

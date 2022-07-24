@@ -7,46 +7,64 @@
       <h1 class="item-name">
         <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
       </h1>
-      {{#if UserisGM}}
-      <div class="notes-sub-header">
-        <input type="checkbox" name="data.playersIsEdit" {{checked data.playersIsEdit}}/> {{localize "Witcher.Item.Notes.PlayersIsEdit"}} 
-      </div>
-      {{/if}}
     </div>
-
   </section>
 </header>
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
-  <a class="item" data-tab="tab-Label" data-group="primary-tabs">{{localize "Witcher.Item.Notes.Label"}}</a>
-  {{#if UserisGM}}
-    <a class="item" data-tab="tab-LabelGM" data-group="primary-tabs">{{localize "Witcher.Item.Notes.LabelGM"}}</a>
-  {{/if}}
-  {{#if (or UserisGM data.playersIsEdit)}}
-  <a class="item" data-tab="tab-PlayersInfo" data-group="primary-tabs">
-    {{#if UserisGM}}
-      {{localize "Witcher.Item.Notes.PlayersInfoGM"}}
-    {{else}}
-      {{localize "Witcher.Item.Notes.PlayersInfo"}}
-    {{/if}}
-  </a>
-  {{/if}}
+  <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
+  <a class="item" data-tab="tab-Effect" data-group="primary-tabs">{{localize "Witcher.Item.Effect"}}</a>
+  <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
 </nav>
 
 <section class="item-content">
-  <div class="tab flexcol" data-tab="tab-Label" data-group="primary-tabs">
+  <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
+    <table>
+      <tr>
+        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
+        <th>{{localize "Witcher.Item.Weight"}}</th>
+        <th>{{localize "Witcher.Item.Cost"}}</th>
+      </tr>
+      <tr>
+        <td>
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+        <td><input name="data.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
+        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
+        <td colspan="2">
+
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td colspan="2">
+          <select name="data.source">
+          {{#select data.source}}
+            {{#each config.SourceList as |name type|}}
+              <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+          {{/select}}
+          </select> 
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
+    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
   </div>
-  {{#if UserisGM}}
-  <div class="tab flexcol" data-tab="tab-LabelGM" data-group="primary-tabs">
-    {{editor content=data.descriptionOnlyGM target="data.descriptionOnlyGM" button=true owner=owner editable=editable}}
-  </div>
-  {{/if}}
-  {{#if (or UserisGM data.playersIsEdit)}}
-  <div class="tab flexcol" data-tab="tab-PlayersInfo" data-group="primary-tabs">
-    {{editor content=data.descriptionForPlayes target="data.descriptionForPlayes" owner=data.playersIsEdit button=true editable=true}}
-  </div>
-  {{/if}}
 </section>
 </form>
