@@ -54,7 +54,7 @@
 .sheet.item form .item-content select {
   width: 100%;
 }
-.sheet.item form .item-content .item-components input.qty-edit {
+.sheet.item form .item-content input.qty-edit {
   width: 30px;
 }
 .sheet.item form.witcher-item-component .substanceImage,

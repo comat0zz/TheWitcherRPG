@@ -18,8 +18,8 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     const itemData = data.data;
     const substances = await this._prepareSubstancesPack();
     data.config = CONFIG.WITCHER;
-    // TODO: перетаскивание нескольких итемов проверять 
     
+    /*
     let locations = [];
     // Хотел перенести формирование в перетаскивание
     // так снизит заметно нагрузку, но проблемы будут при переименовывании
@@ -36,7 +36,7 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
       }
     });
     itemData.data.location = locations;
-    console.log(itemData.data.location)
+    console.log(itemData.data.location) */
     // Re-define the template data references (backwards compatible)
     data.item = itemData;
     data.data = itemData.data;
@@ -88,24 +88,60 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     this.item.update({ "data.location": newLocations })
   }
 
-  _onItemShow(evt) {
-      evt.preventDefault();
-      let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
-      const item = game.items.get(item_id);
-      item.sheet.render(true, { focus: true });
+  async _onItemShow(evt) {
+    evt.preventDefault();
+    let item_id = $(evt.currentTarget).closest(".item").attr('data-item-id');
+    const data = this.item.data.data.location; 
+    const index = data.findIndex(x => x.id === item_id);
+    let item = {};
+    if(index >= 0 && Object.keys(data[index]).includes("pack") && data[index].pack != "") {
+      item = await this._getDocumentByPack(data[index])
+    }else{
+      item = game.items.get(item_id);
+    }
+    item.sheet.render(true, { focus: true });
+  }
+
+  async _getDocumentByPack(name) {
+    const pack = game.packs.get(name.pack);
+    return pack.getDocument(name.id);
   }
 
   async _onDrop(event) { 
     let dragData = JSON.parse(event.dataTransfer.getData("text/plain"));
+    // Нельзя добавлять самого себя
     if(dragData.id == this.item.id) return;
-    let locations = duplicate(this.item.data.data.location);
-
-    if(locations.findIndex(x => x.id === dragData.id) != -1) {
+    let data = this.item.data.data;
+    // Если нет поля, то добавим
+    if( ! (Object.keys(data).includes("location"))) {
+      data.location = [];
+    }
+    let location = duplicate(data.location);
+    // Нельзя добавлять добавленные
+    if(location.findIndex(x => x.id === dragData.id) != -1) {
       return;
     }
+    // Если нет количества, то количество = 1
+    if( ! (Object.keys(dragData).includes("qty"))) {
+      dragData.qty = 1;
+    }
+    /* 
+    * Парсим pack и item. 
+    * Лучше распарсить один раз при добавлении, 
+    * чем каждый раз при открытии карточки
+    */
+    let item = {};
+    if(Object.keys(dragData).includes("pack")) {
+      item = await this._getDocumentByPack(dragData);
+      item = item.data;
+    }else{
+      item = game.items.get(dragData.id);
+    }
 
-    locations.push(dragData);
-    this.item.update({ "data.location": locations })
+    dragData.img = item.img;
+    dragData.name = item.name;
+    location.push(dragData);
+    this.item.update({ "data.location": location });
   }
 
   async _clickQuantityObtainable(event) {
