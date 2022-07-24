@@ -14,7 +14,7 @@ import { RaceItem } from "./types/RaceItem.js";
 import { EffectItem } from "./types/EffectItem.js";
 import { Mount_gearItem } from "./types/Mount_gearItem.js";
 import { BulletsItem } from "./types/BulletsItem.js";
-
+import { AlhformulasItem } from "./types/AlhformulasItem.js";
 
 
 const itemMappings = {
@@ -33,7 +33,8 @@ const itemMappings = {
   race: RaceItem,
   effect: EffectItem,
   mount_gear: Mount_gearItem,
-  bullets: BulletsItem
+  bullets: BulletsItem,
+  alhformulas: AlhformulasItem
 }
 
 /**

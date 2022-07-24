@@ -14,6 +14,7 @@ import { RaceItemSheet } from "./sheets/RaceItemSheet.js";
 import { EffectItemSheet } from "./sheets/EffectItemSheet.js";
 import { Mount_gearItemSheet } from "./sheets/Mount_gearItemSheet.js";
 import { BulletsItemSheet } from "./sheets/BulletsItemSheet.js";
+import { AlhformulasItemSheet } from "./sheets/AlhformulasItemSheet.js";
 
 const itemSheetMappings = {
   substances: SubstancesItemSheet,
@@ -31,7 +32,8 @@ const itemSheetMappings = {
   race: RaceItemSheet,
   effect: EffectItemSheet,
   mount_gear: Mount_gearItemSheet,
-  bullets: BulletsItemSheet
+  bullets: BulletsItemSheet,
+  alhformulas: AlhformulasItemSheet
 }
 
 /**
