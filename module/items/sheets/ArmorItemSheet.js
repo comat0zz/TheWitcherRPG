@@ -8,7 +8,8 @@ export class ArmorItemSheet extends WitcherBaseItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 250,
+      height: 350,
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 

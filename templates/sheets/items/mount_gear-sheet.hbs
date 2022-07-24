@@ -1,13 +1,76 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
-  </div>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="flexcol">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+    </div>
+  </section>
 </header>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
+  <a class="item" data-tab="tab-Effect" data-group="primary-tabs">{{localize "Witcher.Item.Effect"}}</a>
+  <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
+</nav>
+
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
+    <table class="item-properties-list">
+      <tr>
+        <th class="item-properties-small">{{localize "Witcher.Item.Weight"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Cost"}}</th>
+        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>        
+      </tr>
+      <tr>
+        <td><input name="data.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
+        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+        <td>
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>        
+      </tr>
+      <tr>
+        <td colspan="2">{{localize "Witcher.Item.MountGears.Label"}}</td>
+        <td>
+          <select name="data.types">
+            {{#select data.types}}
+              {{#each config.mountGearTypes as |name value|}}
+                <option value="{{value}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">{{localize "Witcher.Source"}}</td>
+        <td>
+          <select name="data.source">
+          {{#select data.source}}
+            {{#each config.SourceList as |name type|}}
+              <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+          {{/select}}
+          </select> 
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
+    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  </div>
+</section>
 </form>

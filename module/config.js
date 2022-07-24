@@ -172,3 +172,10 @@ WITCHER.ValuablesTypes = {
 	eatDrink: "Witcher.Item.Valuables.Types.EatDrink",
 	clothing: "Witcher.Item.Valuables.Types.Clothing"
 }
+
+WITCHER.mountGearTypes = {
+  saddles: "Witcher.Item.MountGears.Saddles",
+  blinders:  "Witcher.Item.MountGears.Blinders",
+  slingBags: "Witcher.Item.MountGears.SlingBags",
+  horseArmor: "Witcher.Item.MountGears.HorseArmor"
+}

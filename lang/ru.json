@@ -124,7 +124,13 @@
 				"Label": "Описание",
 				"LabelGM": "Только для GM"				
 			},
-
+			"MountGears": {
+				"Label": "Упряж",
+				"Saddles": "Сёдла",
+				"Blinders": "Шоры",
+				"SlingBags": "Перемётные сумки",
+				"HorseArmor": "Конские доспехи"
+			},
 			"Spells": {
 				"CostStamina": "Затраты выносливости",
 				"ForageDC": "Сложность",

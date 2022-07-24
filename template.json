@@ -215,7 +215,9 @@
       "d": ""
     }, 
     "mount_gear": {
-      "templates": ["base"]
+      "templates": ["base"],
+      "types": "",
+      "rarity": ""
     },
     "alhformulas": {
       "templates": ["sourceList"],
