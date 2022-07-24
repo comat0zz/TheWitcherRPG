@@ -125,17 +125,27 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     if( ! (Object.keys(dragData).includes("qty"))) {
       dragData.qty = 1;
     }
+
     /* 
     * Парсим pack и item. 
     * Лучше распарсить один раз при добавлении, 
     * чем каждый раз при открытии карточки
     */
     let item = {};
+    console.log(dragData)
+
     if(Object.keys(dragData).includes("pack")) {
       item = await this._getDocumentByPack(dragData);
       item = item.data;
     }else{
-      item = game.items.get(dragData.id);
+      if(dragData.type == 'Item'){ 
+        item = game.items.get(dragData.id);
+      } else if (dragData.type == 'Actor') {
+
+      }else{
+      // TODO: Сделать плашку с неизвестным типом
+        return;
+      }
     }
 
     dragData.img = item.img;

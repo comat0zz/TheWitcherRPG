@@ -30,6 +30,6 @@ Hooks.once("init", function () {
         makeDefault: true,
     });
     
-
     initializeHandlebars();
+    registerSystemSettings();
 });
