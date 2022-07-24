@@ -63,6 +63,16 @@
           </select>
         </td>
       </tr>
+      <tr class="area-insert">
+        <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
+        <td class="insert-diagram flexrow" colspan="4" data-item-id="{{data.associatedDiagram.id}}">
+          {{#ifne data.associatedDiagram ""}}
+            <img class="img35x35 click-show" src="{{data.associatedDiagram.img}}" title="{{data.associatedDiagram.name}}">&nbsp;
+            {{data.associatedDiagram.name}}&nbsp;
+            <a class="delete" data-itemType="{{data.associatedDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
+          {{/ifne}}
+        </td>
+      </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
         <td colspan="4">
