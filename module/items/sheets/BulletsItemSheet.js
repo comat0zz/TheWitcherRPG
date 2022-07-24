@@ -8,13 +8,13 @@ export class BulletsItemSheet extends WitcherBaseItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 250,
+      height: 350,
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 
   getData(options) {
     const data = super.getData(options);
-    console.log(data)
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
 
@@ -25,10 +25,3 @@ export class BulletsItemSheet extends WitcherBaseItemSheet {
   }
 
 }
-
-
-
-
-
-
-

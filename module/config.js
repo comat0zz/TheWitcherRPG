@@ -18,23 +18,19 @@ WITCHER.imageRef = "systems/TheWitcherRPG/asset/{filename}";
 WITCHER.typeDamage = {
     slashing: {
       short: "Witcher.Item.TypeDamages.Slashing.Short",
-      long: "Witcher.Item.TypeDamages.Slashing.Long",
-      tips: "Witcher.Item.TypeDamages.Slashing.Tips"
+      long: "Witcher.Item.TypeDamages.Slashing.Long"
     },
     piercing: {
       short: "Witcher.Item.TypeDamages.Piercing.Short",
-      long: "Witcher.Item.TypeDamages.Piercing.Long",
-      tips: "Witcher.Item.TypeDamages.Piercing.Tips"
+      long: "Witcher.Item.TypeDamages.Piercing.Long"
     },
     bludgeoning: {
       short: "Witcher.Item.TypeDamages.Bludgeoning.Short",
-      long: "Witcher.Item.TypeDamages.Bludgeoning.Long",
-      tips: "Witcher.Item.TypeDamages.Bludgeoning.Tips"
+      long: "Witcher.Item.TypeDamages.Bludgeoning.Long"
     },
     elemental: {
       short: "Witcher.Item.TypeDamages.Elemental.Short",
-      long: "Witcher.Item.TypeDamages.Elemental.Long",
-      tips: "Witcher.Item.TypeDamages.Elemental.Tips"
+      long: "Witcher.Item.TypeDamages.Elemental.Long"
     }
   }
 

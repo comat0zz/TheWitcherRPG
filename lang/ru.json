@@ -57,6 +57,7 @@
 			"Properties": "Свойства",
 			"Weight": "Вес",
 			"Cost": "Цена",
+			"Reliability": "Надежность",
 			"DiagramLabel": "Рецепт",
 			"ValuableLabel": "Категория предмета",
 			"StealhLabel": "Скрытность",
@@ -232,6 +233,7 @@
 			},
 
 			"TypeDamages": {
+				"Label": "Тип урона",
 				"Slashing": {
 					"Long": "Режущий",
 					"Short": "Р"
