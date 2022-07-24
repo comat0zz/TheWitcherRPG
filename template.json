@@ -127,6 +127,9 @@
         "isHidden": false,
         "associatedDiagram": {},
         "accessibility": ""
+      },
+      "sourceList": {
+        "source": ""
       }
     },
     "note": {
@@ -175,15 +178,14 @@
       "substanceType": ""
     }, 
     "diagrams": {
-      "templates": [],
+      "templates": ["sourceList"],
       "components": [],
       "typeItem": "",
       "forageDC": 0,
       "time": 0,
       "cost": 0,
       "surcharge": 0, 
-      "levelType": "",
-      "source": "source"
+      "levelType": ""
     }, 
     "spell": {
       "templates": [],
@@ -210,10 +212,10 @@
       "templates": ["base"]
     },
     "alhformulas": {
-      "templates": [],
+      "templates": ["sourceList"],
       "forageDC": 0,
-      "time": 0,
-      "timeType": "",
+      "time": "",
+      "levelType": "",
       "ingridients": [],
       "cost": 0
     }

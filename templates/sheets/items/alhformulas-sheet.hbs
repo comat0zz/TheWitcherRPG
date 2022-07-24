@@ -12,8 +12,54 @@
 </header>
 
 <section class="item-content">
-  <div class="flexcol">
-    
-  </div>
+  <table>
+    <tr>
+      <th>{{localize "Witcher.Item.ForgeDC"}}</th>
+      <th>{{localize "Witcher.Item.Times.Label"}}</th>
+      <th>{{localize "Witcher.Item.Cost"}}</th>
+    </tr>
+    <tr>
+      <td><input name="data.forageDC" type="text" value="{{data.forageDC}}" placeholder="" data-dtype="Number" /></td>
+      <td><input name="data.time" type="text" value="{{data.time}}" placeholder="" /></td>
+      <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+    </tr>
+    <tr class="item-ingridients">
+      <td>{{localize "Witcher.Item.Alhformulas.IngridientsLabel"}}</td>
+      <td colspan="2" class="insert-ingridients">
+        {{#each data.ingridients}}
+          <span data-item-id="{{id}}" class="ingridient">
+              <img src="{{img}}" class="img35x35" title="{{name}}">
+              <a class="delete" data-itemType="{{type}}"><i class="fas fa-trash-alt"></i></a>
+          </span>
+        {{/each}}
+      </td>
+    </tr>
+    <tr>
+        <td>
+          {{localize "Witcher.Item.LevelTypeLabel"}}
+        </td>
+        <td colspan="2">
+          <select name="data.LevelType">
+          {{#select data.LevelType}}
+            {{#each config.LevelType as |name type|}}
+              <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+          {{/select}}
+        </select> 
+      </td>
+    </tr>
+    <tr>
+      <td>{{localize "Witcher.Source"}}</td>
+      <td colspan="2">
+        <select name="data.source">
+        {{#select data.source}}
+          {{#each config.SourceList as |name type|}}
+            <option value="{{type}}">{{localize name}}</option>
+          {{/each}}
+        {{/select}}
+        </select> 
+      </td>
+    </tr>
+  </table>
 </section>
 </form>

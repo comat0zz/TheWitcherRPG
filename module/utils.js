@@ -1,5 +1,13 @@
 
+export const arrayRemove = function (arr, value) {
+  return arr.filter(function(ele){ 
+      return ele != value; 
+  });
+}
 
+
+
+/*
 var preparePack = async function(name) {
   // https://gitlab.com/-/snippets/2138719
   const pack = game.packs.get(name);
@@ -11,3 +19,4 @@ var preparePack = async function(name) {
 module.exports.preparePack = async function(session, lat, lon) {
   await preparePack(session, lat, lon);
 }
+*/

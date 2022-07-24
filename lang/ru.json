@@ -56,13 +56,20 @@
 			"Properties": "Свойства",
 			"Weight": "Вес",
 			"Cost": "Цена",
+			"ForgeDC": "Сложность",
 			"Times": {
+				"Label": "Время",
 				"Hour": "Время (в часах)"
 			}, 
 			"Surcharge": "Доплата",
 			"ForageDC": "Сложность",
 			"Location": "Где найти",
 			
+			"Alhformulas": {
+				"IngridientsLabel": "Ингридиенты",
+				"Time": "Время"
+			},
+
 			"Components": {
 				"Properties": "Свойства",
 				"Description": "Описание",
