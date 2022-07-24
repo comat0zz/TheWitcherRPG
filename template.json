@@ -114,7 +114,8 @@
       "effect",
       "mount_gear",
       "bullets",
-      "substances"
+      "substances",
+      "alhformulas"
     ],
     "templates": {
       "base": {
@@ -201,10 +202,20 @@
     }, 
     "effect": {
       "templates": [],
-      "description": "str 161"
+      "description": "",
+      "isWeapon": false,
+      "d": ""
     }, 
     "mount_gear": {
       "templates": ["base"]
+    },
+    "alhformulas": {
+      "templates": [],
+      "forageDC": 0,
+      "time": 0,
+      "timeType": "",
+      "ingridients": [],
+      "cost": 0
     }
   }
 }
