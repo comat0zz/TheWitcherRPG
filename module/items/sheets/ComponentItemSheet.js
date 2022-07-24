@@ -95,9 +95,16 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     const index = data.findIndex(x => x.id === item_id);
     let item = {};
     if(index >= 0 && Object.keys(data[index]).includes("pack") && data[index].pack != "") {
-      item = await this._getDocumentByPack(data[index])
+      item = await this._getDocumentByPack(data[index]);
     }else{
-      item = game.items.get(item_id);
+      if(data[index].type == 'Item'){ 
+        item = game.items.get(data[index].id);
+      } else if (data[index].type == 'Actor') {
+        item = game.actors.get(data[index].id);
+      }else{
+      // TODO: Сделать плашку с неизвестным типом
+        return;
+      }
     }
     item.sheet.render(true, { focus: true });
   }
@@ -132,7 +139,6 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     * чем каждый раз при открытии карточки
     */
     let item = {};
-    console.log(dragData)
 
     if(Object.keys(dragData).includes("pack")) {
       item = await this._getDocumentByPack(dragData);
