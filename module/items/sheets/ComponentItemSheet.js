@@ -141,7 +141,9 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
       if(dragData.type == 'Item'){ 
         item = game.items.get(dragData.id);
       } else if (dragData.type == 'Actor') {
-
+        const actor = game.actors.get(dragData.id);
+        item.img = actor.data.img;
+        item.name = actor.data.name;
       }else{
       // TODO: Сделать плашку с неизвестным типом
         return;
