@@ -59,6 +59,10 @@ function compileLess(cb) {
   cb();
 };
 
+gulp.task('watch', function(){
+    gulp.watch(CSS_SRC + '/**/*.less', gulp.series(compileLess));
+});
+
 /* ----------------------------------------- */
 /*  Export Tasks
 /* ----------------------------------------- */
