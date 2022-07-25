@@ -128,8 +128,9 @@
         "associatedDiagram": "",
         "accessibility": ""
       },
-      "sourceList": {
-        "source": ""
+      "system": {
+        "source": "core",
+        "isHide": false
       },
       "things": {
         "description": "",
@@ -152,15 +153,7 @@
       "playersIsEdit": false
     },
     "valuable": {
-      "templates": ["sourceList"],
-      "rarity": "",
-      "types": "",
-      "typeCONC": "",
-      "stealth": "",
-      "weight": 0,
-      "cost": 0,
-      "effect": "",
-      "description": ""
+      "templates": ["system", "things"]      
     }, 
     "substances": {
       "templates": [],
@@ -170,11 +163,8 @@
       "templates": ["base"]
     },
     "bullets": {
-      "templates": ["base"],
-      "concealment": "",
-      "reliability": 0,
-      "rarity": "",
-      "covert": ""
+      "templates": ["system", "things"],
+      "reliability": 0
     },  
     "armor": {
       "templates": ["base"]
@@ -199,7 +189,7 @@
       "substanceType": ""
     }, 
     "diagrams": {
-      "templates": ["sourceList"],
+      "templates": ["system"],
       "components": [],
       "typeItem": "",
       "forageDC": 0,
@@ -235,7 +225,7 @@
       "rarity": ""
     },
     "alhformulas": {
-      "templates": ["sourceList"],
+      "templates": ["system"],
       "forageDC": 0,
       "time": "",
       "levelType": "",

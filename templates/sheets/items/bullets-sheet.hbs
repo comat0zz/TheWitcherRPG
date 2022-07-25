@@ -39,8 +39,8 @@
           </select>
         </td>
         <td>
-          <select name="data.typeCONC">
-            {{#select data.typeCONC}}
+          <select name="data.concealment">
+            {{#select data.concealment}}
               {{#each config.typeCONC as |name value|}}
                 <option value="{{value}}">{{localize name.long}}</option>
               {{/each}}
@@ -54,8 +54,8 @@
       <tr>
         <td>{{localize "Witcher.Item.TypeDamages.Label"}}</td>
         <td colspan="4">
-          <select name="data.types">
-            {{#select data.types}}
+          <select name="data.category">
+            {{#select data.category}}
               {{#each config.typeDamage as |name value|}}
                 <option value="{{value}}">{{localize name.long}}</option>
               {{/each}}
@@ -65,11 +65,11 @@
       </tr>
       <tr class="area-insert">
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td class="insert-diagram" colspan="4" data-item-id="{{data.associatedDiagram.id}}">
-          {{#ifne data.associatedDiagram ""}}
-            <img class="img35x35 click-show" src="{{data.associatedDiagram.img}}" title="{{data.associatedDiagram.name}}">&nbsp;
-            {{data.associatedDiagram.name}}&nbsp;
-            <a class="delete" data-itemType="{{data.associatedDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
+        <td class="insert-diagram" colspan="4" data-item-id="{{data.assocDiagram.id}}">
+          {{#ifne data.assocDiagram ""}}
+            <img class="img35x35 click-show" src="{{data.assocDiagram.img}}" title="{{data.assocDiagram.name}}">&nbsp;
+            {{data.assocDiagram.name}}&nbsp;
+            <a class="delete" data-itemType="{{data.assocDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
           {{/ifne}}
         </td>
       </tr>
@@ -89,7 +89,7 @@
   </div>
 
   <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
-    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+    {{editor content=data.effects target="data.effects" button=true owner=owner editable=editable}}
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

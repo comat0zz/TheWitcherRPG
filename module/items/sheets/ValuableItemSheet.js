@@ -34,7 +34,7 @@ export class ValuableItemSheet extends WitcherBaseItemSheet {
 
   _onDeleteComponent(evt){
     evt.preventDefault();
-    this.item.update({ "data.associatedDiagram": "" });
+    this.item.update({ "data.assocDiagram": "" });
     return false;
   }
 
@@ -46,7 +46,7 @@ export class ValuableItemSheet extends WitcherBaseItemSheet {
   async _onItemShow(evt) {
     evt.preventDefault();
     let item_id = $(evt.currentTarget).closest(".insert-diagram").attr('data-item-id');
-    const data = this.item.data.data.associatedDiagram; 
+    const data = this.item.data.data.assocDiagram; 
     let item = {};
     if(Object.keys(data).includes("pack") && data.pack != "") {
       item = await this._getDocumentByPack(data);
@@ -74,12 +74,12 @@ export class ValuableItemSheet extends WitcherBaseItemSheet {
       item = game.items.get(dragData.id);
     }
 
-    let associatedDiagram = dragData;
-    associatedDiagram.img = item.img;
-    associatedDiagram.name = item.name;
-    associatedDiagram.qty = 1;
+    let assocDiagram = dragData;
+    assocDiagram.img = item.img;
+    assocDiagram.name = item.name;
+    assocDiagram.qty = 1;
 
-    this.item.update({ "data.associatedDiagram": associatedDiagram });
+    this.item.update({ "data.assocDiagram": assocDiagram });
   }
 }
 
