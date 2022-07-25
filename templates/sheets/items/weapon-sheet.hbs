@@ -1,13 +1,140 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
-  </div>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="flexcol">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+    </div>
+  </section>
 </header>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
+  <a class="item" data-tab="tab-Effect" data-group="primary-tabs">{{localize "Witcher.Item.Effect"}}</a>
+  <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
+</nav>
+
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
+    <table class="item-properties-list">
+      <tr>
+        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
+        <th>{{localize "Witcher.Item.StealhLabel"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Weight"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Cost"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Reliability"}}</th>
+      </tr>
+      <tr>
+        <td>
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+        <td>
+          <select name="data.concealment">
+            {{#select data.concealment}}
+              {{#each config.typeCONC as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+        <td><input name="data.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
+        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+        <td><input name="data.reliability" type="text" value="{{data.reliability}}" placeholder="" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="data.isElder" {{checked data.isElder}}/></td>
+        <td colspan="4">
+          {{localize "Witcher.Item.Weapon.isElder"}}
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Weapon.Category"}}</td>
+        <td colspan="4">
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.categoryWeapon as |name value|}}
+                <option value="{{value}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Weapon.Damage"}}</td>
+        <td colspan="4">
+          <input name="data.damage" type="text" value="{{data.damage}}" placeholder="" />
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Weapon.Runes"}}</td>
+        <td colspan="4">
+          <input name="data.runes" type="text" value="{{data.runes}}" placeholder="" data-dtype="Number" />
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Weapon.Grasp"}}</td>
+        <td colspan="4">
+          <input name="data.grasp" type="text" value="{{data.grasp}}" placeholder="" data-dtype="Number" />
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Weapon.Distantion"}}</td>
+        <td colspan="4">
+          <input name="data.distantion" type="text" value="{{data.distantion}}" placeholder="" />
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.TypeDamages.Label"}}</td>
+        <td colspan="4">
+          <select name="data.damageType" multiple="multiple">
+            {{#select data.damageType}}
+              {{#each config.typeDamage as |name value|}}
+                <option value="{{value}}"{{#ifIn value ../data.damageType}} selected{{/ifIn}}>{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr class="area-insert">
+        <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
+        <td class="insert-diagram" colspan="4" data-item-id="{{data.assocDiagram.id}}">
+          {{#ifne data.assocDiagram ""}}
+            <img class="img35x35 click-show" src="{{data.assocDiagram.img}}" title="{{data.assocDiagram.name}}">&nbsp;
+            {{data.assocDiagram.name}}&nbsp;
+            <a class="delete" data-itemType="{{data.assocDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
+          {{/ifne}}
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td colspan="4">
+          <select name="data.source">
+          {{#select data.source}}
+            {{#each config.SourceList as |name type|}}
+              <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+          {{/select}}
+          </select> 
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
+    {{editor content=data.effects target="data.effects" button=true owner=owner editable=editable}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  </div>
+</section>
 </form>

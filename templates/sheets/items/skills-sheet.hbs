@@ -1,0 +1,26 @@
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="flexcol">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+    </div>
+  </section>
+</header>
+
+<section class="item-content">
+{{localize "Witcher.Actor.SkillStat"}}: <select name="data.stat">
+          {{#select data.stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select> 
+</section>
+
+<section class="item-content">{{data.description}}</section>   

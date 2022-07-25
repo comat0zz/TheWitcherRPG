@@ -1,0 +1,18 @@
+    "weapon": {
+      "templates": ["system", "things"],
+      "grasp": 1,
+      "damageType": [],
+      "damage": "",
+      "distantion": "",
+      "reliability": "",
+      "runes": 0,
+      "accuracy": ""
+    }
+
+grasp - Хват
+damageTypes[] - типы урона
+damage - урон формулой 
+distantion - дистанция
+reliability - надежность
+runes - количество втыкаемых рун
+accuracy - точность , принимает формулу 

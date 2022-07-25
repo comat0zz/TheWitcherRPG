@@ -16,12 +16,42 @@
 			"high": "Высокая"
 		},
 
-
 		"Actor": {
-			"Name": "Имя"
+			"Name": "Имя",
+
+			"Stats": {
+				"INT": {"Long": "Интеллект", "Short": "Инт"},
+				"REF": {"Long": "Рефлексы", "Short": "Реф"},
+				"DEX": {"Long": "Ловкость", "Short": "Лвк"},
+				"BODY": {"Long": "Телосложение", "Short": "Тел"},
+				"SPD": {"Long": "Скорость", "Short": "Скор"},
+				"EMP": {"Long": "Эмпатия", "Short": "Эмп"},
+				"CRA": {"Long": "Ремесло", "Short": "Рем"},
+				"WILL": {"Long": "Воля", "Short": "Воля"},
+				"LUCK": {"Long": "Удача", "Short": "Удача"},
+				"VIGOR": {"Long": "Энергия", "Short": ""},
+				"STUN": {"Long": "Устойчивость", "Short": "Уст"},
+				"RUN": {"Long": "Бег", "Short": ""},
+				"LEAP": {"Long": "Прыжок", "Short": "Прж"},
+				"HP": {"Long": "Пункты здоровья", "Short": "ПЗ"},
+				"STA": {"Long": "Выносливость", "Short": "Вын"},
+				"ENC": {"Long": "Переносимый вес", "Short": "Вес"},
+				"REC": {"Long": "Отдых", "Short": "Отдых"},
+				"PUNKI": {"Long": "Удар рукой/ногой", "Short": ""}
+			},
+
+			"SkillStat": "Зависит от параметра"
 
 		},
 		"Item": {
+
+			"Test": {
+				"Name": {
+					"one": "Один",
+					"two": "Два",
+					"five": "Пять"
+				}
+			}, 
 
 			"LevelTypeLabel": "Уровень мастерства",
 			"LevelType": {
@@ -47,7 +77,10 @@
 				"effect": "Эффекты и состояния",
 				"mount_gear": "Снаряжение питомцев",
 				"bullets": "Боеприпасы",
-				"substances": "Субстанции"
+				"substances": "Субстанции",
+				"alhformulas": "Алхимические формулы",
+				"skills": "Навыки персонажа",
+				"stats": "Параметры персонажа"
 			},
 			
 			"Name": "Название",
@@ -71,8 +104,7 @@
 			"Location": "Где найти",
 			
 			"Alhformulas": {
-				"IngridientsLabel": "Ингридиенты",
-				"Time": "Время"
+				"IngridientsLabel": "Ингридиенты"
 			},
 
 			"Valuables": {
@@ -82,6 +114,27 @@
 					"Containers": "Ёмкости",
 					"EatDrink": "Еда и питье",
 					"Clothing": "Одежда"
+				}
+			},
+
+			"Weapon": {
+				"ElderPeople": "Вооружение старшего народа",
+				"Category": "Категория оружия",
+				"Runes": "Количество рун",
+				"Damage": "Урон",
+				"Grasp": "Хват",
+				"isElder": "Вооружение Старшего Народа",
+				"Distantion": "Дистанция",
+				"Types": {
+					"Sword": "Мечи",
+					"LightBlade": "Лёгкие клинки",
+					"Axe": "Топоры",
+					"Crushing": "Дробящее",
+					"Polearm": "Древковое",
+					"Staff": "Посох",
+					"Throwing": "Метательное",
+					"Bow": "Луки",
+					"Crossbow": "Арбалеты"
 				}
 			},
 
@@ -130,7 +183,7 @@
 			},
 			"MountGears": {
 				"Label": "Упряж",
-				
+
 				"Saddles": "Сёдла",
 				"Blinders": "Шоры",
 				"SlingBags": "Перемётные сумки",

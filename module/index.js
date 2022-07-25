@@ -32,4 +32,8 @@ Hooks.once("init", function () {
     
     initializeHandlebars();
     registerSystemSettings();
+
+
+    const testname = WITCHER.ItemTestName;
+    console.log(testname)
 });

@@ -178,3 +178,38 @@ WITCHER.mountGearTypes = {
   slingBags: "Witcher.Item.MountGears.SlingBags",
   horseArmor: "Witcher.Item.MountGears.HorseArmor"
 }
+
+WITCHER.CharacterStats = {
+  INT: {"Type": "basis", "Long": "Witcher.Actor.Stats.INT.Long", "Short": "Witcher.Actor.Stats.INT.Short"},
+  REF: {"Type": "basis", "Long": "Witcher.Actor.Stats.REF.Long", "Short": "Witcher.Actor.Stats.REF.Short"},
+  DEX: {"Type": "basis", "Long": "Witcher.Actor.Stats.DEX.Long", "Short": "Witcher.Actor.Stats.DEX.Short"},
+  BODY: {"Type": "basis", "Long": "Witcher.Actor.Stats.BODY.Long", "Short": "Witcher.Actor.Stats.BODY.Short"},
+  SPD: {"Type": "basis", "Long": "Witcher.Actor.Stats.SPD.Long", "Short": "Witcher.Actor.Stats.SPD.Short"},
+  EMP: {"Type": "basis", "Long": "Witcher.Actor.Stats.EMP.Long", "Short": "Witcher.Actor.Stats.EMP.Short"},
+  CRA: {"Type": "basis", "Long": "Witcher.Actor.Stats.CRA.Long", "Short": "Witcher.Actor.Stats.CRA.Short"},
+  WILL: {"Type": "basis", "Long": "Witcher.Actor.Stats.WILL.Long", "Short": "Witcher.Actor.Stats.WILL.Short"},
+  LUCK: {"Type": "basis", "Long": "Witcher.Actor.Stats.LUCK.Long", "Short": "Witcher.Actor.Stats.LUCK.Short"},
+  VIGOR: {"Type": "derived", "Long": "Witcher.Actor.Stats.VIGOR.Long", "Short": "Witcher.Actor.Stats.VIGOR.Short"},
+  STUN: {"Type": "derived", "Long": "Witcher.Actor.Stats.STUN.Long", "Short": "Witcher.Actor.Stats.STUN.Short"},
+  RUN: {"Type": "derived", "Long": "Witcher.Actor.Stats.RUN.Long", "Short": "Witcher.Actor.Stats.RUN.Short"},
+  LEAP: {"Type": "derived", "Long": "Witcher.Actor.Stats.LEAP.Long", "Short": "Witcher.Actor.Stats.LEAP.Short"},
+  HP: {"Type": "derived", "Long": "Witcher.Actor.Stats.HP.Long", "Short": "Witcher.Actor.Stats.HP.Short"},
+  STA: {"Type": "derived", "Long": "Witcher.Actor.Stats.STA.Long", "Short": "Witcher.Actor.Stats.STA.Short"},
+  ENC: {"Type": "derived", "Long": "Witcher.Actor.Stats.ENC.Long", "Short": "Witcher.Actor.Stats.ENC.Short"},
+  REC: {"Type": "derived", "Long": "Witcher.Actor.Stats.REC.Long", "Short": "Witcher.Actor.Stats.REC.Short"},
+  PUNKI: {"Type": "derived", "Long": "Witcher.Actor.Stats.PUNKI.Long", "Short": "Witcher.Actor.Stats.PUNKI.Short"}
+}
+
+WITCHER.categoryWeapon = {
+  sword: "Witcher.Item.Weapon.Types.Sword",
+  lightBlade: "Witcher.Item.Weapon.Types.LightBlade",
+  axe: "Witcher.Item.Weapon.Types.Axe",
+  crushing: "Witcher.Item.Weapon.Types.Crushing",
+  polearm: "Witcher.Item.Weapon.Types.Polearm",
+  staff: "Witcher.Item.Weapon.Types.Staff",
+  throwing: "Witcher.Item.Weapon.Types.Throwing",
+  bow: "Witcher.Item.Weapon.Types.Bow",
+  crossbow: "Witcher.Item.Weapon.Types.Crossbow"
+}
+
+WITCHER.ItemTestName = ["one", "two", "five"];

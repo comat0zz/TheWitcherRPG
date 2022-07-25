@@ -15,7 +15,8 @@ import { EffectItem } from "./types/EffectItem.js";
 import { Mount_gearItem } from "./types/Mount_gearItem.js";
 import { BulletsItem } from "./types/BulletsItem.js";
 import { AlhformulasItem } from "./types/AlhformulasItem.js";
-
+import { SkillsItem } from "./types/SkillsItem.js";
+import { StatsItem } from "./types/StatsItem.js";
 
 const itemMappings = {
   substances: SubstancesItem,
@@ -34,7 +35,9 @@ const itemMappings = {
   effect: EffectItem,
   mount_gear: Mount_gearItem,
   bullets: BulletsItem,
-  alhformulas: AlhformulasItem
+  alhformulas: AlhformulasItem,
+  stats: StatsItem,
+  skills: SkillsItem
 }
 
 /**

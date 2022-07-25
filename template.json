@@ -115,7 +115,9 @@
       "mount_gear",
       "bullets",
       "substances",
-      "alhformulas"
+      "alhformulas",
+      "skills",
+      "stats"
     ],
     "templates": {
       "base": {
@@ -137,6 +139,7 @@
         "effects": "",
         "quantity": 1,
         "weight": 0,
+        "isEquiped": false,
         "cost": 0,
         "category": "",
         "assocDiagram": "",
@@ -145,6 +148,15 @@
         "attributes": {},
         "container": false
       }
+    },
+    "skills": {
+      "templates": [],
+      "stat": "",
+      "description": ""
+    },
+    "stats": {
+      "templates": [],
+      "description": ""
     },
     "note": {
       "description": "",
@@ -160,7 +172,15 @@
       "description": ""
     },
     "weapon": {
-      "templates": ["base"]
+      "templates": ["system", "things"],
+      "grasp": 1,
+      "damageType": [],
+      "damage": "",
+      "distantion": "",
+      "reliability": "",
+      "runes": 0,
+      "accuracy": "",
+      "isElder": false
     },
     "bullets": {
       "templates": ["system", "things"],
