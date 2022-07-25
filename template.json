@@ -152,7 +152,8 @@
     "skills": {
       "templates": [],
       "stat": "",
-      "description": ""
+      "description": "",
+      "difficult": 1
     },
     "stats": {
       "templates": [],
