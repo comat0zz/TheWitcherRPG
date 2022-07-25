@@ -1,8 +1,10 @@
       "things": {
         "description": "",
+        "effects": "",
         "quantity": 1,
         "weight": 0,
         "cost": 0,
+        "category": "",
         "associatedDiagram": "",
         "rarity": "everywhere",
         "concealment": "noType",
@@ -11,11 +13,18 @@
       }
 
 description - Описание
+effects - эффекты, если использовать или надеть
 quantity - количество
 weight - вес
 cost - цена
+category - категория вещи ( например, если броня то легкая )
 assocDiagram - ссылка на рецепт
 rarity - раритетность, доступность
 concealment - как легко спрятать, размеры
 attributes - бонусы к персонажу, если надета
 container - признак контейнера. если не False, значит объект с набором
+
+
+На уровне чарника добавятся: 
+isUse если надето или активировано, необходимо для расчета модификаторов
+

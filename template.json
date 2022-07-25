@@ -133,9 +133,11 @@
       },
       "things": {
         "description": "",
+        "effects": "",
         "quantity": 1,
         "weight": 0,
         "cost": 0,
+        "category": "",
         "assocDiagram": "",
         "rarity": "everywhere",
         "concealment": "noType",
