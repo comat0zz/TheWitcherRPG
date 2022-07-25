@@ -220,9 +220,7 @@
       "d": ""
     }, 
     "mount_gear": {
-      "templates": ["base"],
-      "types": "",
-      "rarity": ""
+      "templates": ["system", "things"]
     },
     "alhformulas": {
       "templates": ["system"],

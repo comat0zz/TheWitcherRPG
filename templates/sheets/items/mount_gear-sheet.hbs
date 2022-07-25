@@ -42,13 +42,23 @@
       <tr>
         <td colspan="2">{{localize "Witcher.Item.MountGears.Label"}}</td>
         <td>
-          <select name="data.types">
-            {{#select data.types}}
+          <select name="data.category">
+            {{#select data.category}}
               {{#each config.mountGearTypes as |name value|}}
                 <option value="{{value}}">{{localize name}}</option>
               {{/each}}
             {{/select}}
           </select>
+        </td>
+      </tr>
+      <tr class="area-insert">
+        <td colspan="2">{{localize "Witcher.Item.DiagramLabel"}}</td>
+        <td class="insert-diagram" data-item-id="{{data.assocDiagram.id}}">
+          {{#ifne data.assocDiagram ""}}
+            <img class="img35x35 click-show" src="{{data.assocDiagram.img}}" title="{{data.assocDiagram.name}}">&nbsp;
+            {{data.assocDiagram.name}}&nbsp;
+            <a class="delete" data-itemType="{{data.assocDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
+          {{/ifne}}
         </td>
       </tr>
       <tr>

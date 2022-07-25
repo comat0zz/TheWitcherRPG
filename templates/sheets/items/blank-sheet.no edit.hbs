@@ -20,11 +20,13 @@
 
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
-    <table>
+    <table class="item-properties-list">
       <tr>
         <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
-        <th>{{localize "Witcher.Item.Weight"}}</th>
-        <th>{{localize "Witcher.Item.Cost"}}</th>
+        <th>{{localize "Witcher.Item.StealhLabel"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Weight"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Cost"}}</th>
+        <th class="item-properties-small">{{localize "Witcher.Item.Reliability"}}</th>
       </tr>
       <tr>
         <td>
@@ -36,18 +38,44 @@
             {{/select}}
           </select>
         </td>
+        <td>
+          <select name="data.concealment">
+            {{#select data.concealment}}
+              {{#each config.typeCONC as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
         <td><input name="data.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
         <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+        <td><input name="data.reliability" type="text" value="{{data.reliability}}" placeholder="" data-dtype="Number" /></td>
       </tr>
       <tr>
+        <td>{{localize "Witcher.Item.TypeDamages.Label"}}</td>
+        <td colspan="4">
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.typeDamage as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr class="area-insert">
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td colspan="2">
-
+        <td class="insert-diagram" colspan="4" data-item-id="{{data.assocDiagram.id}}">
+          {{#ifne data.assocDiagram ""}}
+            <img class="img35x35 click-show" src="{{data.assocDiagram.img}}" title="{{data.assocDiagram.name}}">&nbsp;
+            {{data.assocDiagram.name}}&nbsp;
+            <a class="delete" data-itemType="{{data.assocDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
+          {{/ifne}}
         </td>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="2">
+        <td colspan="4">
           <select name="data.source">
           {{#select data.source}}
             {{#each config.SourceList as |name type|}}
@@ -61,7 +89,7 @@
   </div>
 
   <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
-    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+    {{editor content=data.effects target="data.effects" button=true owner=owner editable=editable}}
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

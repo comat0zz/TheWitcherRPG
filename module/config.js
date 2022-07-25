@@ -173,7 +173,7 @@ WITCHER.ValuablesTypes = {
 }
 
 WITCHER.mountGearTypes = {
-  valuable: "Witcher.Item.MountGears.valuable",
+  saddles: "Witcher.Item.MountGears.Saddles",
   blinders:  "Witcher.Item.MountGears.Blinders",
   slingBags: "Witcher.Item.MountGears.SlingBags",
   horseArmor: "Witcher.Item.MountGears.HorseArmor"
