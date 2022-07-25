@@ -1,0 +1,21 @@
+      "things": {
+        "description": "",
+        "quantity": 1,
+        "weight": 0,
+        "cost": 0,
+        "associatedDiagram": "",
+        "rarity": "everywhere",
+        "concealment": "noType",
+        "attributes": {},
+        "container": false
+      }
+
+description - Описание
+quantity - количество
+weight - вес
+cost - цена
+assocDiagram - ссылка на рецепт
+rarity - раритетность, доступность
+concealment - как легко спрятать, размеры
+attributes - бонусы к персонажу, если надета
+container - признак контейнера. если не False, значит объект с набором

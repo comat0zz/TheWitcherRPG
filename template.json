@@ -130,6 +130,17 @@
       },
       "sourceList": {
         "source": ""
+      },
+      "things": {
+        "description": "",
+        "quantity": 1,
+        "weight": 0,
+        "cost": 0,
+        "assocDiagram": "",
+        "rarity": "everywhere",
+        "concealment": "noType",
+        "attributes": {},
+        "container": false
       }
     },
     "note": {

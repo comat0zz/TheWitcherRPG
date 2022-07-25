@@ -158,7 +158,10 @@ WITCHER.diagramsType = {
   armorHigh: "Witcher.Item.Diagrams.Types.armorHigh",
   component: "Witcher.Item.Diagrams.Types.component",
   ammunition: "Witcher.Item.Diagrams.Types.ammunition",
-  gain: "Witcher.Item.Diagrams.Types.gain"
+  gain: "Witcher.Item.Diagrams.Types.gain",
+  valuable: "Witcher.Item.Diagrams.Types.valuable",
+  mountgear: "Witcher.Item.Diagrams.Types.mountgear",
+  cart: "Witcher.Item.Diagrams.Types.cart"
 }
 
 WITCHER.ValuablesTypes = {
@@ -170,7 +173,7 @@ WITCHER.ValuablesTypes = {
 }
 
 WITCHER.mountGearTypes = {
-  saddles: "Witcher.Item.MountGears.Saddles",
+  valuable: "Witcher.Item.MountGears.valuable",
   blinders:  "Witcher.Item.MountGears.Blinders",
   slingBags: "Witcher.Item.MountGears.SlingBags",
   horseArmor: "Witcher.Item.MountGears.HorseArmor"
