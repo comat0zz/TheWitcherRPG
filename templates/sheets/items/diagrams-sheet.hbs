@@ -49,8 +49,8 @@
       <tr>
         <td>{{localize "Witcher.Item.Diagrams.TypeLabel"}}</td>
         <td colspan="3">
-          <select name="data.typeItem">
-              {{#select data.typeItem}}
+          <select name="data.category">
+              {{#select data.category}}
                 {{#each config.diagramsType as |name type|}}
                   <option value="{{type}}">{{localize name}}</option>
                 {{/each}}

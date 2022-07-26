@@ -157,8 +157,8 @@ WITCHER.diagramsType = {
   armor: "Witcher.Item.Diagrams.Types.armor",
   armorHigh: "Witcher.Item.Diagrams.Types.armorHigh",
   component: "Witcher.Item.Diagrams.Types.component",
-  ammunition: "Witcher.Item.Diagrams.Types.ammunition",
-  gain: "Witcher.Item.Diagrams.Types.gain",
+  bullets: "Witcher.Item.Diagrams.Types.ammunition",
+  enhancement: "Witcher.Item.Diagrams.Types.gain",
   valuable: "Witcher.Item.Diagrams.Types.valuable",
   mountgear: "Witcher.Item.Diagrams.Types.mountgear",
   cart: "Witcher.Item.Diagrams.Types.cart"
@@ -217,4 +217,9 @@ WITCHER.EffectsCategories = {
   weapon: "Witcher.Item.Effects.Categories.forWeapon",
   armor: "Witcher.Item.Effects.Categories.forArmor",
   actor: "Witcher.Item.Effects.Categories.forAll"  
+}
+
+WITCHER.EnchancementsCategories = {
+  weapon: "Witcher.Item.Enchancements.Categories.Weapon",
+  armor: "Witcher.Item.Enchancements.Categories.Armor"
 }

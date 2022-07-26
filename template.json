@@ -192,9 +192,12 @@
     }, 
     "enhancement": {
       "templates": ["system"],
-      "effect": [],
+      "effects": [],
       "category": "",
-      "dataArmor": {}
+      "dataArmor": {},
+      "cost": 0,
+      "rarity": "", 
+      "assocDiagram": ""
     }, 
     "alchemical": {
       "templates": ["base"],
@@ -215,7 +218,7 @@
     "diagrams": {
       "templates": ["system"],
       "components": [],
-      "typeItem": "",
+      "category": "",
       "forageDC": 0,
       "time": 0,
       "cost": 0,

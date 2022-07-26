@@ -8,20 +8,176 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 250,
+      height: 400,
+      dragDrop: [
+        {dropSelector: ".witcher-insertion-area", dragSelector: ".item"},
+        {dropSelector: ".effect-insert", dragSelector: ".item"}
+      ],
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 
-  getData(options) {
+  async getData(options) {
     const data = super.getData(options);
-    console.log(data)
+    
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
 
     // Re-define the template data references (backwards compatible)
     data.item = itemData;
     data.data = itemData.data;
+    console.log(data)
     return data;
+  }
+
+  /** @override */
+  activateListeners(html) {
+    super.activateListeners(html);
+
+
+
+    html.find('.witcher-insertion-area .click-show').click(evt => this._onItemShow(evt));
+    html.find('.witcher-insertion-area a.delete').click(evt => this._onDeleteComponent(evt));
+  }
+
+  _onDeleteComponent(evt){
+    evt.preventDefault();
+    const item_id =  $(evt.currentTarget).closest('[data-item-id]').attr('data-item-id');
+    const item_otions = $(evt.currentTarget).closest('[data-dist-field]').attr('data-dist-field').split(";");
+    const item_field = item_otions[0];
+    const dataItem = this.item.data.data;
+    const data = duplicate(dataItem[item_field]);
+
+    console.log(data, item_id)
+
+    return;
+    this.item.update({ [`data.${item_field}`]: assocData});
+    return false;
+  }
+
+  async _getDocumentByPack(name) {
+    const pack = game.packs.get(name.pack);
+    return pack.getDocument(name.id);
+  }
+
+  async _extractItem(data, item_id) {
+    if(Object.keys(data).includes("pack") && data.pack != "") {
+      return await this._getDocumentByPack(data);
+    }else{
+      return game.items.get(item_id);
+    }
+  }
+
+  async _onItemShow(evt) {
+    evt.preventDefault();
+    const item_id =  $(evt.currentTarget).closest('[data-item-id]').attr('data-item-id');
+    const item_otions = $(evt.currentTarget).closest('[data-dist-field]').attr('data-dist-field').split(";");
+    const item_field = item_otions[0];
+    const dataItem = this.item.data.data;
+    const data = dataItem[`${item_field}`];
+    const item = await this._extractItem(data, item_id);
+    item.sheet.render(true, { focus: true });
+  }
+
+  // Подготовка опций для data-dist-type
+  async prepareTypes(opt) {
+    opt = opt.split(";");
+    let options = {};
+    opt.forEach(el => {
+      const [name, value] = el.split(":");
+      if(value !== undefined){
+        options[name] = value.split(",");
+      }else{
+        options[name] = [];
+      }      
+    });
+    return options;
+  }
+
+  async _onDrop(evt) { 
+    const dragData = JSON.parse(evt.dataTransfer.getData("text/plain"));
+    const parent = $(evt.currentTarget).closest(".witcher-insertion-area");
+    // В какое поле закидывать итоги
+    // Формат: fieldname;uniq;qty;list
+    // fieldname - поле, которое обновляем
+    // uniq - возможны ли повторы итемов. 0 - нет, 1 - да
+    // qty - считать ли количество каждого. 0 - нет, 1 - да
+    // list - количество. 1 - только один, 0 - без ограничений
+    // data-dist-field="data.assocDiagram;0;0;1" 
+    const item_otions = $(parent).attr('data-dist-field').split(";");
+    const item_field = item_otions[0];
+    const item_uniq = item_otions[1] ?? 0;
+    const item_qty = item_otions[2] ?? 0;
+    const item_list = item_otions[3] ?? 1;
+    
+    // Категории и типы, которые принимает. 
+    // Формат поля, строка: type:category;type:category,category;type,
+    // при значении all - нет проверки
+    // Мы берем наш type и category сверяем с теми, что прилетели.
+    // В итоге можем гибко настраивать каждое поле в верстке
+    // В самой верстке мы подгружаем часть шаблона с передачей строки
+    // с настройкой аргументом
+    // data-dist-type="diagrams:armor;component:craftmaterial,hidesanimal"
+    let item_check = $(parent).attr('data-dist-type');
+    if(item_check !== "all") {
+      item_check = await this.prepareTypes(item_check);
+    }
+     
+
+    // Нельзя добавлять самого себя
+    if(dragData.id == this.item.id) return;
+
+    const data = this.item.data.data;
+    // Если нет поля, то добавим
+    if( ! (Object.keys(data).includes(item_field))) {
+      data[item_field] = [];
+    }
+
+    const item = await this._extractItem(data, dragData.id);
+    const item_type = item.type;
+    const item_category = item.data.data.category ?? false;
+
+    // Пока False - значение не добавляется
+    let isTrue = false;
+
+    if(item_check === "all") {
+      isTrue = true;
+    } else {
+      // Ищем ключ в массиве проверке
+      if(Object.keys(item_check).includes(item_type)) {
+        const check = item_check[item_type];
+        // Если массив не пустой, значит чекаем значение
+        if(check !== [] && Object.values(check).includes(item_category)) {
+          isTrue = true;
+        // Если массив пустой, значит принимаем всю схему
+        }else if(check.length == 0){
+          isTrue = true;
+        }
+        // В ином условии ничего
+      }
+    }
+
+    dragData.img = item.img;
+    dragData.name = item.name;
+    dragData.qty = 1;
+    dragData.type = item_type;
+    dragData.category = item_category;
+
+    let dataOririnal = duplicate(data[item_field]);
+    // Нельзя добавлять добавленные
+    if(item_uniq == 0 && Array.isArray(dataOririnal) && (dataOririnal.findIndex(x => x.id === dragData.id) != -1)) {
+      return;
+    }
+
+    if(item_list == 0) {
+      dataOririnal.push(dragData);
+    }else{
+      dataOririnal = dragData;
+    }
+
+    if(isTrue){
+      this.item.update({ [`data.${item_field}`]: dataOririnal});
+    }
   }
 
 }

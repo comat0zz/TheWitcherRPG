@@ -7,6 +7,10 @@ const preloadHandlebarsTemplates = async function () {
   // Define template paths to load
   const templatePaths = [
     
+
+    
+    "systems/TheWitcherRPG/templates/insertion-area.hbs",
+    
     // chat
     "systems/TheWitcherRPG/templates/chat/card-roll.hbs",
 
@@ -64,10 +68,17 @@ function registerHandlebarsHelpers() {
     return Math.abs(num);
   });
 
+  Handlebars.registerHelper('isArray', function (value, options) {
+    if(Array.isArray(value)){
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
   Handlebars.registerHelper('isdefined', function (value) {
     return value === 0 ? true : typeof (value) !== undefined && value !== null;
   });
-
+  
   // value in array
   Handlebars.registerHelper('ifIn', function(elem, list, options) {
     if(list.indexOf(elem) > -1) {

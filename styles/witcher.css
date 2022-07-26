@@ -5,6 +5,10 @@
 .sheet.item form .is-hidden {
   visibility: hidden;
 }
+.sheet.item form .witcher-insertion-area {
+  width: 100%;
+  height: 100%;
+}
 .sheet.item form .img35x35 {
   width: 35px;
   height: 35px;

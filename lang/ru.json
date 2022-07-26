@@ -4,6 +4,8 @@
 		"DescriptionOnlyGM": "Только для GM",
 		"Source": "Книга правил",
 
+		"DragDrop": "Перетащите сюда элемент",
+
 		"SourceList": {
 			"Core": "НРИ Ведьмак. Основная книга правил",
 			"Chaos": "НРИ Ведьмак. Том Хаоса"
@@ -105,6 +107,14 @@
 			
 			"Alhformulas": {
 				"IngridientsLabel": "Ингридиенты"
+			},
+
+			"Enchancements": {
+				"Category": "Категория",
+				"Categories": {
+					"Weapon": "На оружие",
+					"Armor": "На броню"
+				}
 			},
 
 			"Valuables": {
