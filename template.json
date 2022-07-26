@@ -111,7 +111,7 @@
       "profession",
       "note",
       "race",
-      "effect",
+      "effects",
       "mount_gear",
       "bullets",
       "substances",
@@ -191,7 +191,10 @@
       "templates": ["base"]
     }, 
     "enhancement": {
-      "templates": ["base"]
+      "templates": ["system"],
+      "effect": [],
+      "category": "",
+      "dataArmor": {}
     }, 
     "alchemical": {
       "templates": ["base"],
@@ -234,11 +237,11 @@
     "race": {
       "templates": ["base"]
     }, 
-    "effect": {
+    "effects": {
       "templates": [],
       "description": "",
-      "isWeapon": false,
-      "d": ""
+      "category": "",
+      "properties": ""
     }, 
     "mount_gear": {
       "templates": ["system", "things"]

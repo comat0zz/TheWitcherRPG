@@ -1,7 +1,7 @@
 import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
 
 
-export class EffectItemSheet extends WitcherBaseItemSheet {
+export class EffectsItemSheet extends WitcherBaseItemSheet {
   
   /** @override */
   static get defaultOptions() {
@@ -9,18 +9,20 @@ export class EffectItemSheet extends WitcherBaseItemSheet {
       classes: ["witcher", "sheet", "item"],
       width: 500,
       height: 250,
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 
   getData(options) {
     const data = super.getData(options);
-    console.log(data)
+
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
 
     // Re-define the template data references (backwards compatible)
     data.item = itemData;
     data.data = itemData.data;
+    console.log(data)
     return data;
   }
 

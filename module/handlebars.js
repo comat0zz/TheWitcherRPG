@@ -6,7 +6,7 @@ export const initializeHandlebars = () => {
 const preloadHandlebarsTemplates = async function () {
   // Define template paths to load
   const templatePaths = [
-
+    
     // chat
     "systems/TheWitcherRPG/templates/chat/card-roll.hbs",
 
@@ -33,10 +33,12 @@ const preloadHandlebarsTemplates = async function () {
     "systems/TheWitcherRPG/templates/sheets/items/profession-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/note-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/race-sheet.hbs",
-    "systems/TheWitcherRPG/templates/sheets/items/effect-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/effects-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/mount_gear-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/bullets-sheet.hbs",
-    "systems/TheWitcherRPG/templates/sheets/items/substances-sheet.hbs"
+    "systems/TheWitcherRPG/templates/sheets/items/substances-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/items/skills-sheet.hbs",
+
   ];
 
   // Load the template parts

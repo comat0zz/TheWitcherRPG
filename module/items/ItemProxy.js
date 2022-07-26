@@ -11,7 +11,7 @@ import { SpellItem } from "./types/SpellItem.js";
 import { ProfessionItem } from "./types/ProfessionItem.js";
 import { NoteItem } from "./types/NoteItem.js";
 import { RaceItem } from "./types/RaceItem.js";
-import { EffectItem } from "./types/EffectItem.js";
+import { EffectsItem } from "./types/EffectsItem.js";
 import { Mount_gearItem } from "./types/Mount_gearItem.js";
 import { BulletsItem } from "./types/BulletsItem.js";
 import { AlhformulasItem } from "./types/AlhformulasItem.js";
@@ -32,7 +32,7 @@ const itemMappings = {
   profession: ProfessionItem,
   note: NoteItem,
   race: RaceItem,
-  effect: EffectItem,
+  effects: EffectsItem,
   mount_gear: Mount_gearItem,
   bullets: BulletsItem,
   alhformulas: AlhformulasItem,

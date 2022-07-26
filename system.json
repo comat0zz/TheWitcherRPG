@@ -58,7 +58,7 @@
     },
     {
         "name": "effects",
-        "label": "Эффекты",
+        "label": "Эффекты и состояния",
         "system": "TheWitcherRPG",
         "path": "packs/effects.db",
         "type": "Item"

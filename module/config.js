@@ -212,4 +212,9 @@ WITCHER.categoryWeapon = {
   crossbow: "Witcher.Item.Weapon.Types.Crossbow"
 }
 
-WITCHER.ItemTestName = ["one", "two", "five"];
+WITCHER.EffectsCategories = {
+  all: "Witcher.Item.Effects.Categories.forActor",
+  weapon: "Witcher.Item.Effects.Categories.forWeapon",
+  armor: "Witcher.Item.Effects.Categories.forArmor",
+  actor: "Witcher.Item.Effects.Categories.forAll"  
+}

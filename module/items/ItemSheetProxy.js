@@ -11,7 +11,7 @@ import { SpellItemSheet } from "./sheets/SpellItemSheet.js";
 import { ProfessionItemSheet } from "./sheets/ProfessionItemSheet.js";
 import { NoteItemSheet } from "./sheets/NoteItemSheet.js";
 import { RaceItemSheet } from "./sheets/RaceItemSheet.js";
-import { EffectItemSheet } from "./sheets/EffectItemSheet.js";
+import { EffectsItemSheet } from "./sheets/EffectsItemSheet.js";
 import { Mount_gearItemSheet } from "./sheets/Mount_gearItemSheet.js";
 import { BulletsItemSheet } from "./sheets/BulletsItemSheet.js";
 import { AlhformulasItemSheet } from "./sheets/AlhformulasItemSheet.js";
@@ -32,7 +32,7 @@ const itemSheetMappings = {
   profession: ProfessionItemSheet,
   note: NoteItemSheet,
   race: RaceItemSheet,
-  effect: EffectItemSheet,
+  effects: EffectsItemSheet,
   mount_gear: Mount_gearItemSheet,
   bullets: BulletsItemSheet,
   alhformulas: AlhformulasItemSheet,

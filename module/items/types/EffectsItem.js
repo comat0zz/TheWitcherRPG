@@ -1,0 +1,1 @@
+export class EffectsItem extends Item {}

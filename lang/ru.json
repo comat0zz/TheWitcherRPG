@@ -74,7 +74,7 @@
 				"profession": "Профессии",
 				"note": "Заметки",
 				"race": "Расы",
-				"effect": "Эффекты и состояния",
+				"effects": "Эффекты и состояния",
 				"mount_gear": "Снаряжение питомцев",
 				"bullets": "Боеприпасы",
 				"substances": "Субстанции",
@@ -138,6 +138,17 @@
 				}
 			},
 
+			"Effects": {
+				"Formulas": "Формула",
+				"Category": "Категория",
+				"Categories": {
+					"forArmor": "Эффект брони",
+					"forWeapon": "Эффект оружия",
+					"forAll": "Общий эффект",
+					"forActor": "Состояние на персонаже"
+				}
+			},
+
 			"Components": {
 				"Properties": "Свойства",
 				"Description": "Описание",
@@ -172,6 +183,13 @@
 					"mountgear": "Упряжь",
 					"cart": "Транспорт и телеги"
 				}				
+			},
+
+			"Armor": {
+				"Label": {
+					"Short": "ПБ",
+					"Long": "Пункты Брони"
+				}
 			},
 
 			"Notes": {
