@@ -188,7 +188,7 @@
       "reliability": 0
     },  
     "armor": {
-      "templates": ["base"]
+      "templates": ["system", "things"]
     }, 
     "enhancement": {
       "templates": ["system"],
