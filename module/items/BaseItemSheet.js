@@ -3,17 +3,20 @@ export class WitcherBaseItemSheet extends ItemSheet {
     return `systems/TheWitcherRPG/templates/sheets/items/${this.item.data.type}-sheet.hbs`;
   }
 
-  async getData(options) {
-    const data = super.getData(options);
-    
-    const itemData = data.data;
-    data.config = CONFIG.WITCHER;
-
-    // Re-define the template data references (backwards compatible)
-    data.item = itemData;
-    data.data = itemData.data;
-    return data;
+  /** @override */
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ["witcher", "sheet", "item"],
+      width: 500,
+      height: 400,
+      dragDrop: [
+        {dropSelector: ".witcher-insertion-area", dragSelector: ".item"}
+      ],
+      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
+    });
   }
+
+
 
   /** @override */
   activateListeners(html) {
@@ -95,11 +98,11 @@ export class WitcherBaseItemSheet extends ItemSheet {
     return pack.getDocument(name.id);
   }
 
-  async _extractItem(data, item_id) {
+  async _extractItem(data) {
     if(Object.keys(data).includes("pack") && data.pack != "") {
       return await this._getDocumentByPack(data);
     }else{
-      return game.items.get(item_id);
+      return game.items.get(data.id);
     }
   }
 
@@ -167,7 +170,7 @@ export class WitcherBaseItemSheet extends ItemSheet {
       data[item_field] = [];
     }
 
-    const item = await this._extractItem(data, dragData.id);
+    const item = await this._extractItem(dragData);
     const item_type = item.type;
     const item_category = item.data.data.category ?? false;
 
@@ -212,5 +215,5 @@ export class WitcherBaseItemSheet extends ItemSheet {
       this.item.update({ [`data.${item_field}`]: dataOririnal});
     }
   }
-  
+
 }

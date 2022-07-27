@@ -2,22 +2,19 @@ import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
 
 
 export class EnhancementItemSheet extends WitcherBaseItemSheet {
-  
-  /** @override */
-  static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
-      classes: ["witcher", "sheet", "item"],
-      width: 500,
-      height: 400,
-      dragDrop: [
-        {dropSelector: ".witcher-insertion-area", dragSelector: ".item"}
-      ],
-      tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
-    });
+
+  async getData(options) {
+    const data = super.getData(options);
+    
+    const itemData = data.data;
+    data.config = CONFIG.WITCHER;
+
+    // Re-define the template data references (backwards compatible)
+    data.item = itemData;
+    data.data = itemData.data;
+    console.log("Debug Item Base:\n", data);
+    return data;
   }
-
-  
-
 }
 
 
