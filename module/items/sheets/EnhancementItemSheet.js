@@ -33,13 +33,39 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-
-
-    html.find('.witcher-insertion-area .click-show').click(evt => this._onItemShow(evt));
-    html.find('.witcher-insertion-area a.delete').click(evt => this._onDeleteComponent(evt));
+    html.find('.witcher-insertion-area img.click-show').click(evt => this._onItemShow(evt));
+    html.find('.witcher-insertion-area a.delete').click(evt => this._onDeleteItemFromList(evt));
+    html.find('.witcher-insertion-area input.qty-edit').blur(evt => this._changeItemQty(evt));
   }
 
-  _onDeleteComponent(evt){
+  _changeItemQty(evt) {
+    evt.preventDefault();
+    const parent =  $(evt.currentTarget).closest('[data-item-id]');
+    const item_id = $(parent).attr('data-item-id');
+    const item_otions = $(evt.currentTarget).closest('[data-dist-field]').attr('data-dist-field').split(";");
+    const item_field = item_otions[0];
+    const item_qty = item_otions[2] ?? 0;
+    if(item_qty == 0) return;
+    const dataItem = this.item.data.data;
+    const data = duplicate(dataItem[item_field]);
+
+    let value = $(parent).find('input.qty-edit').val();
+    
+    if(value == "") value = 1;
+    if(value < 1) value = 1;
+    if(value == undefined) value = 1;
+
+    let newInsert = [];
+    data.forEach((loc) => {
+      if(loc.id == item_id){
+        loc.qty = value;
+      }
+      newInsert.push(loc);
+    });
+    this.item.update({ [`data.${item_field}`]: newInsert })
+  }
+
+  _onDeleteItemFromList(evt){
     evt.preventDefault();
     evt.stopPropagation();
     const item_id =  $(evt.currentTarget).closest('[data-item-id]').attr('data-item-id');
@@ -51,7 +77,7 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
     
     let newInsert = [];
     if(item_uniq == 1){
-      
+
       data.some((loc, i) => {
         if(loc.id == item_id){
           console.log(data[i], i)

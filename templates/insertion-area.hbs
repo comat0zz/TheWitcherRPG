@@ -9,13 +9,16 @@
           <td>
             <img class="img35x35 click-show" src="{{img}}" title="{{name}}">
           </td>
-          <td>{{name}}</td>
+          <td>{{name}}</td>          
+          {{#if ../isQty}}
+            <td><input class="qty-edit" type="text" value="{{qty}}" data-dtype="Number" /></td>
+          {{/if}}
           <td><a class="delete"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
       {{/each}}
     </table>
     {{else}}
-      {{#ife data []}}
+      {{#ife data.length 1}}
         {{#with data.[0]}}
         <div data-item-id="{{id}}">
           <img class="img35x35 click-show" src="{{img}}" title="{{name}}">&nbsp;
