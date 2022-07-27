@@ -1,25 +1,19 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-  <h1 class="item-name">
-    <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-  </h1>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
   <a class="item" data-tab="tab-properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
   <a class="item" data-tab="tab-detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
-  {{#ife data.magicType "ritual"}}
+  {{#ife data.category "ritual"}}
   <a class="item" data-tab="tab-components" data-group="primary-tabs">{{localize "Witcher.Item.Types.component"}}</a>
   {{/ife}}
-  {{#ife data.magicType "injury"}}
+  {{#ife data.category "injury"}}
   <a class="item" data-tab="tab-withdrawal" data-group="primary-tabs">{{localize "Witcher.Item.Spells.Withdrawal"}}</a>
   {{/ife}}
-  {{#ife data.magicType "gifts"}}
+  {{#ife data.category "gifts"}}
   <a class="item" data-tab="tab-gifts" data-group="primary-tabs">{{localize "Witcher.Item.Spells.SideEffect"}}</a>
   {{/ife}}  
 </nav>
@@ -31,18 +25,18 @@
   <div class="tab flexcol" data-tab="tab-properties" data-group="primary-tabs">
     <table>
       <tr>
-        <td>{{localize "Witcher.Item.Spells.MagicTypeLabel"}}</td>
+        <td>{{localize "Witcher.Item.Spells.categoryLabel"}}</td>
         <td>
-          <select class="select-header" name="data.magicType">
-            {{#select data.magicType}}
-              {{#each config.magicType as |name type|}}
+          <select class="select-header" name="data.category">
+            {{#select data.category}}
+              {{#each config.magicCategories as |name type|}}
                 <option value="{{type}}">{{localize name}}</option>
               {{/each}}
             {{/select}}
           </select>
         </td>
         <td>
-          {{#ifIn data.magicType magicElements}}
+          {{#if (or (eq data.category "signs") (eq data.category "magicspell"))}}
           <select class="select-header" name="data.element">
             {{#select data.element}}
               {{#each config.magicElement as |name type|}}
@@ -50,8 +44,8 @@
               {{/each}}
             {{/select}}
           </select>
-          {{/ifIn}}
-          {{#ife data.magicType "gifts"}}
+          {{/if}}
+          {{#ife data.category "gifts"}}
           <select class="select-header" name="data.specData.giftsType">
             {{#select data.specData.giftsType}}
               {{#each config.SpellsGiftsType as |name type|}}
@@ -63,21 +57,21 @@
         </td>
       </tr>
     <!-- // TODO: Handlebars.registerPartial -->
-    {{#ife data.magicType "spell"}}
+    {{#ife data.category "magicspell"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/spell.hbs" item=item}}{{/ife}}  
-    {{#ife data.magicType "invocPriest"}}
+    {{#ife data.category "invocPriest"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/invocPriest.hbs" item=item}}{{/ife}}
-    {{#ife data.magicType "invocDruid"}}
+    {{#ife data.category "invocDruid"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/invocDruid.hbs" item=item}}{{/ife}}
-    {{#ife data.magicType "invocHighPriest"}}
+    {{#ife data.category "invocHighPriest"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/invocHighPriest.hbs" item=item}}{{/ife}}
-    {{#ife data.magicType "ritual"}}
+    {{#ife data.category "ritual"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/ritual.hbs" item=item}}{{/ife}}
-    {{#ife data.magicType "injury"}}
+    {{#ife data.category "injury"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/injury.hbs" item=item}}{{/ife}}
-    {{#ife data.magicType "signs"}}
+    {{#ife data.category "signs"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/signs.hbs" item=item}}{{/ife}}
-    {{#ife data.magicType "gifts"}}
+    {{#ife data.category "gifts"}}
       {{> "systems/TheWitcherRPG/templates/sheets/items/spells/gifts.hbs" item=item}}{{/ife}}
     <tr>
       <td>{{localize "Witcher.Source"}}</td>
@@ -93,30 +87,17 @@
     </tr>  
     </table>
   </div>
-  {{#ife data.magicType "ritual"}}
+  {{#ife data.category "ritual"}}
   <div class="tab flexcol item-components" data-tab="tab-components" data-group="primary-tabs">
-    <table class="components-table">
-      {{#each data.specData.components }}
-        <tr class="item" data-item-id="{{id}}">
-          <td><img class="img35x35" src="{{img}}" alt="{{name}}"></td>
-          <td>{{name}}</td>
-          <td><input class="qty-edit" type="text" value="{{qty}}" placeholder="" data-dtype="Number" /></td>
-          <td>
-            {{#if ../owner}}
-            <a class="del-item" data-itemType="{{type}}"><i class="fas fa-trash-alt"></i></a>
-            {{/if}}
-          </td>        
-        </tr>
-      {{/each}}
-    </table>
+    {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.components dist_field="components;0;1;0" dist_type="all" isQty=true}}
   </div>
   {{/ife}}
-  {{#ife data.magicType "injury"}}
+  {{#ife data.category "injury"}}
   <div class="tab flexcol" data-tab="tab-withdrawal" data-group="primary-tabs">
     {{editor content=data.specData.withdrawal target="data.specData.withdrawal" button=true owner=owner editable=editable}}
   </div>
   {{/ife}}
-  {{#ife data.magicType "gifts"}}
+  {{#ife data.category "gifts"}}
   <div class="tab flexcol" data-tab="tab-gifts" data-group="primary-tabs">
     {{editor content=data.specData.SideEffect target="data.specData.SideEffect" button=true owner=owner editable=editable}}
   </div>

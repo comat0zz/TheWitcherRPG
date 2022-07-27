@@ -226,8 +226,9 @@
       "templates": ["system"],
       "description": "",
       "effect": "",
-      "magicType": "",
+      "category": "",
       "costStamina": 0,
+      "components": [],
       "specData": []
     }, 
     "profession": {

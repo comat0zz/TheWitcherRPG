@@ -91,8 +91,8 @@ WITCHER.RarityItem = {
     }
 }
 
-WITCHER.magicType = {
-  spell: "Witcher.Item.Spells.MagicType.Spells",
+WITCHER.magicCategories = {
+  magicspell: "Witcher.Item.Spells.MagicType.Spells",
   invocPriest: "Witcher.Item.Spells.MagicType.InvocPriest",
   invocDruid: "Witcher.Item.Spells.MagicType.InvocDruid",
   invocHighPriest: "Witcher.Item.Spells.MagicType.InvocHighPriest",

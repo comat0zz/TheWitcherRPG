@@ -44,8 +44,9 @@ for col in range(2, 999):
         "data": {
             "costStamina": costStamina,
             "source": "core",
-            "effect": sheet.cell(row=3, column=col).value,
-            "magicType": "spells",
+            "description": sheet.cell(row=3, column=col).value,
+            "category": "magicspell",
+            "components": [],
             "specData": {
                 "element": sheet.cell(row=8, column=col).value,
                 "LevelType": sheet.cell(row=9, column=col).value,
@@ -58,5 +59,5 @@ for col in range(2, 999):
     })
 
 cf = open('spells.json', 'w', encoding='utf-8')
-cf.writelines(json.dumps(spells, ensure_ascii=False))
+cf.writelines(json.dumps(spells, ensure_ascii=False, indent=4, sort_keys=True))
 cf.close()

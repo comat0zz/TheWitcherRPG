@@ -221,6 +221,7 @@
 				"HorseArmor": "Конские доспехи"
 			},
 			"Spells": {
+				"categoryLabel": "Тип магии",
 				"CostStamina": "Затраты выносливости",
 				"ForageDC": "Сложность",
 				"Deities": "Божество",
