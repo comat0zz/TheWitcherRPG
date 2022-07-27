@@ -110,7 +110,7 @@ function registerHandlebarsHelpers() {
     else return options.inverse(this);
   });
   
-  // if equal
+  // if 
   Handlebars.registerHelper('ifgt', function (v1, v2, options) {
     if (v1 > v2) return options.fn(this);
     else return options.inverse(this);

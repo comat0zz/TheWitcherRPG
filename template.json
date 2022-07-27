@@ -197,7 +197,7 @@
       "dataArmor": {},
       "cost": 0,
       "rarity": "", 
-      "assocDiagram": ""
+      "assocDiagram": []
     }, 
     "alchemical": {
       "templates": ["base"],

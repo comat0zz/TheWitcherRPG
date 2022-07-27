@@ -10,8 +10,7 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
       width: 500,
       height: 400,
       dragDrop: [
-        {dropSelector: ".witcher-insertion-area", dragSelector: ".item"},
-        {dropSelector: ".effect-insert", dragSelector: ".item"}
+        {dropSelector: ".witcher-insertion-area", dragSelector: ".item"}
       ],
       tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
@@ -42,17 +41,41 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
 
   _onDeleteComponent(evt){
     evt.preventDefault();
+    evt.stopPropagation();
     const item_id =  $(evt.currentTarget).closest('[data-item-id]').attr('data-item-id');
     const item_otions = $(evt.currentTarget).closest('[data-dist-field]').attr('data-dist-field').split(";");
     const item_field = item_otions[0];
+    const item_uniq = item_otions[1] ?? 0;
     const dataItem = this.item.data.data;
     const data = duplicate(dataItem[item_field]);
+    
+    let newInsert = [];
+    if(item_uniq == 1){
+      
+      data.some((loc, i) => {
+        if(loc.id == item_id){
+          console.log(data[i], i)
+           delete data[i];
+           return true;
+        }      
+      });
+      
+      data.forEach((loc) => {
+        if(loc !== null) {
+          newInsert.push(loc);
+        }
+      });
 
-    console.log(data, item_id)
+    }else{
+      
+      data.forEach((loc) => {
+        if(loc.id != item_id){
+          newInsert.push(loc);
+        }
+      });
+    }
 
-    return;
-    this.item.update({ [`data.${item_field}`]: assocData});
-    return false;
+    this.item.update({ [`data.${item_field}`]: newInsert});
   }
 
   async _getDocumentByPack(name) {
@@ -122,7 +145,6 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
     if(item_check !== "all") {
       item_check = await this.prepareTypes(item_check);
     }
-     
 
     // Нельзя добавлять самого себя
     if(dragData.id == this.item.id) return;
@@ -163,17 +185,16 @@ export class EnhancementItemSheet extends WitcherBaseItemSheet {
     dragData.type = item_type;
     dragData.category = item_category;
 
-    let dataOririnal = duplicate(data[item_field]);
-    // Нельзя добавлять добавленные
-    if(item_uniq == 0 && Array.isArray(dataOririnal) && (dataOririnal.findIndex(x => x.id === dragData.id) != -1)) {
-      return;
+    let dataOririnal = [];
+    if(item_list == 0) {
+      dataOririnal = duplicate(data[item_field]);
+      // Нельзя добавлять добавленные
+      if(item_uniq == 0 && Array.isArray(dataOririnal) && (dataOririnal.findIndex(x => x.id === dragData.id) != -1)) {
+        return;
+      }
     }
 
-    if(item_list == 0) {
-      dataOririnal.push(dragData);
-    }else{
-      dataOririnal = dragData;
-    }
+    dataOririnal.push(dragData);
 
     if(isTrue){
       this.item.update({ [`data.${item_field}`]: dataOririnal});
