@@ -1,0 +1,27 @@
+<header class="sheet-header flex0">
+  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+  <section class="header-details flexrow">
+    <div class="">
+      <h1 class="item-name">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
+      </h1>
+      {{#if false}}
+      <div class="item-subtitle">
+        <h4 class="item-type">system type</h4>
+        <span class="item-status">11</span>
+      </div>
+      {{/if}}
+      <ul class="summary">
+        <li>Item</li>
+        <li>
+          {{item.type}}
+        </li>
+        {{#if data.category}}
+        <li>
+          {{data.category}}
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </section>
+</header>

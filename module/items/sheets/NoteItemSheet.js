@@ -1,8 +1,12 @@
-import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
+//import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
 
 
-export class NoteItemSheet extends WitcherBaseItemSheet {
+export class NoteItemSheet extends ItemSheet {
   
+  get template() {
+    return `systems/TheWitcherRPG/templates/sheets/items/${this.item.data.type}-sheet.hbs`;
+  }
+
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {

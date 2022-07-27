@@ -25,6 +25,8 @@ const preloadHandlebarsTemplates = async function () {
     "systems/TheWitcherRPG/templates/sheets/items/spells/gifts.hbs",
 
     // Items
+    
+    "systems/TheWitcherRPG/templates/sheets/item-header.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/weapon-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/armor-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/items/enhancement-sheet.hbs",

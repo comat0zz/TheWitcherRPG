@@ -1,16 +1,7 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 <section class="item-content">
   {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

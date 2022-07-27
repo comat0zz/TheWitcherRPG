@@ -1,6 +1,8 @@
-import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
-
-export class SubstancesItemSheet extends WitcherBaseItemSheet {
+export class SubstancesItemSheet extends ItemSheet {
+  
+  get template() {
+    return `systems/TheWitcherRPG/templates/sheets/items/${this.item.data.type}-sheet.hbs`;
+  }
   
   /** @override */
   static get defaultOptions() {

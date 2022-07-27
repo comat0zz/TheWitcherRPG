@@ -1,15 +1,7 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
@@ -17,6 +9,7 @@
   <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
 </nav>
 
+{{!-- Item Sheet Body --}}
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
@@ -33,10 +26,16 @@
         </td>
       </tr>
       <tr>
-        <td>{{localize "Witcher.Item.Effects.Formulas"}}</td>
-        <td>
-          <input name="data.properties" type="text" value="{{data.properties}}" placeholder="" />
-        </td>
+        <th colspan="2">{{localize "Witcher.Item.Effects.Formulas"}}</th>        
+      </tr>
+      <tr>
+        <th colspan="2"><textarea name="data.formula">{{data.formula}}</textarea></th>
+      </tr>
+      <tr>
+        <th colspan="2">{{localize "Witcher.Item.Effects.Saving"}}</th>
+      </tr>
+      <tr>
+        <th colspan="2"><textarea name="data.saving">{{data.saving}}</textarea></th>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>

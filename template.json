@@ -151,7 +151,7 @@
     },
     "skills": {
       "templates": [],
-      "stat": "",
+      "category": "",
       "description": "",
       "difficult": 1
     },
@@ -207,28 +207,24 @@
       "templates": ["base"]
     },
     "component": {
-      "templates": ["base"],
-      "category": "",
-      "rarity": "",
+      "templates": ["things", "system"],
       "location": [],
       "quantityObtainable": "",
-      "forage": "",
-      "substanceType": ""
+      "substanceType": [],
+      "forage": 0
     }, 
     "diagrams": {
-      "templates": ["system"],
+      "templates": ["things", "system"],
       "components": [],
-      "category": "",
-      "forageDC": 0,
+      "forage": 0,
       "time": 0,
       "cost": 0,
       "surcharge": 0, 
       "levelType": ""
     }, 
     "spell": {
-      "templates": [],
+      "templates": ["system"],
       "description": "",
-      "source": "",
       "effect": "",
       "magicType": "",
       "costStamina": 0,
@@ -241,10 +237,11 @@
       "templates": ["base"]
     }, 
     "effects": {
-      "templates": [],
+      "templates": ["system"],
       "description": "",
       "category": "",
-      "properties": ""
+      "formula": "",
+      "saving": ""
     }, 
     "mount_gear": {
       "templates": ["system", "things"]

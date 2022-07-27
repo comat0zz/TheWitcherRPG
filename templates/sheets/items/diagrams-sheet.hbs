@@ -1,36 +1,38 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
   <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Diagrams.Properties"}}</a>
   <a class="item" data-tab="tab-Components" data-group="primary-tabs">{{localize "Witcher.Item.Diagrams.Components"}}</a>
+  <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
 </nav>
 
+{{!-- Item Sheet Body --}}
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
       <tr>
-        <th>{{localize "Witcher.Item.ForageDC"}}</th>
-        <th>{{localize "Witcher.Item.Times.Hour"}}</th>
         <th>{{localize "Witcher.Item.Surcharge"}}</th>
+        <th>{{localize "Witcher.Item.ForageDC"}}</th>
         <th>{{localize "Witcher.Item.Cost"}}</th>
+        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
       </tr>
-      <tr>
-        <td><input name="data.forageDC" type="text" value="{{data.forageDC}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.time" type="text" value="{{data.time}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.surcharge" type="text" value="{{data.surcharge}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+      <tr class="table-th-value">
+        <td><input type="text" name="data.surcharge" value="{{data.surcharge}}" data-dtype="Number" /></td>
+        <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
+        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+        <td>
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
       </tr>
       <tr>
         <td>
@@ -50,14 +52,14 @@
         <td>{{localize "Witcher.Item.Diagrams.TypeLabel"}}</td>
         <td colspan="3">
           <select name="data.category">
-              {{#select data.category}}
-                {{#each config.diagramsType as |name type|}}
-                  <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-              {{/select}}
-            </select> 
+            {{#select data.category}}
+              {{#each config.diagramsType as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
         </td>
-     </tr>
+      </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
         <td colspan="3">
@@ -70,25 +72,13 @@
             </select> 
         </td>
      </tr>
-    </table>
+    </table>    
   </div>
   <div class="tab flexcol" data-tab="tab-Components" data-group="primary-tabs">
-    <table class="item-components">
-      {{#each data.components }}
-        <tr class="item" data-item-id="{{id}}">
-          <td><img class="img35x35" src="{{img}}" alt="{{name}}"></td>
-          <td>{{name}}</td>
-          <td>
-            <input class="qty-edit" type="text" value="{{qty}}" placeholder="" data-dtype="Number" />
-          </td>
-          <td>
-            {{#if ../owner}}
-            <a class="del-item" data-itemType="{{type}}"><i class="fas fa-trash-alt"></i></a>
-            {{/if}}
-          </td>        
-        </tr>
-      {{/each}}
-    </table>
+    {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.components dist_field="components;0;1;0" dist_type="all" isQty=true}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
   </div>
 </section>
 </form>

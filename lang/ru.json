@@ -5,6 +5,7 @@
 		"Source": "Книга правил",
 
 		"DragDrop": "Перетащите сюда элемент",
+		"Macros": "Поле ввода формулы",
 
 		"SourceList": {
 			"Core": "НРИ Ведьмак. Основная книга правил",
@@ -150,6 +151,7 @@
 
 			"Effects": {
 				"Formulas": "Формула",
+				"Saving": "Спас-бросок",
 				"Category": "Категория",
 				"Categories": {
 					"forArmor": "Эффект брони",
@@ -163,6 +165,7 @@
 				"Properties": "Свойства",
 				"Description": "Описание",
 				"Location": "Как добыть",
+				"Substance": "Субстанция",
 				"ForageDC": "Сложность сбора",
 				"QuantityObtainableLabel":"Cбор",
 				"SelectSubstanceType": "Выберите тип субстанции",

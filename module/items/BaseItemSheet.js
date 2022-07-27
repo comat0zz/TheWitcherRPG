@@ -15,8 +15,20 @@ export class WitcherBaseItemSheet extends ItemSheet {
       tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
+  
+  /** @override */
+  async getData(options) {
+    const data = super.getData(options);
+    
+    const itemData = data.data;
+    data.config = CONFIG.WITCHER;
 
-
+    // Re-define the template data references (backwards compatible)
+    data.item = itemData;
+    data.data = itemData.data;
+    console.log("Debug Item Base:\n", data);
+    return data;
+  }
 
   /** @override */
   activateListeners(html) {
@@ -99,10 +111,13 @@ export class WitcherBaseItemSheet extends ItemSheet {
   }
 
   async _extractItem(data) {
+    console.log(data.type)
     if(Object.keys(data).includes("pack") && data.pack != "") {
       return await this._getDocumentByPack(data);
-    }else{
+    }else if(data.type == "Item"){
       return game.items.get(data.id);
+    }else if(data.type == "Actor") {
+      return game.actors.get(data.id);
     }
   }
 
@@ -112,9 +127,17 @@ export class WitcherBaseItemSheet extends ItemSheet {
     const item_otions = $(evt.currentTarget).closest('[data-dist-field]').attr('data-dist-field').split(";");
     const item_field = item_otions[0];
     const dataItem = this.item.data.data;
-    const data = dataItem[`${item_field}`];
-    const item = await this._extractItem(data, item_id);
-    item.sheet.render(true, { focus: true });
+    let data = dataItem[`${item_field}`];
+
+    // _extractItem принимает конкретно объект итема,
+    // который надо открыть
+    if(Array.isArray(data)) {
+      const index = data.findIndex(x => x.id === item_id);
+      data = data[index];
+    }
+    const goal = await this._extractItem(data);
+    console.log(item_id, data, goal)
+    goal.sheet.render(true, { focus: true });
   }
 
   // Подготовка опций для data-dist-type
@@ -132,6 +155,7 @@ export class WitcherBaseItemSheet extends ItemSheet {
     return options;
   }
 
+  /** @override */
   async _onDrop(evt) { 
     const dragData = JSON.parse(evt.dataTransfer.getData("text/plain"));
     const parent = $(evt.currentTarget).closest(".witcher-insertion-area");
@@ -145,7 +169,7 @@ export class WitcherBaseItemSheet extends ItemSheet {
     const item_otions = $(parent).attr('data-dist-field').split(";");
     const item_field = item_otions[0];
     const item_uniq = item_otions[1] ?? 0;
-    const item_qty = item_otions[2] ?? 0;
+    const item_qty = item_otions[2] ?? 0;  // Используется выше, тут для примера
     const item_list = item_otions[3] ?? 1;
     
     // Категории и типы, которые принимает. 
@@ -197,7 +221,7 @@ export class WitcherBaseItemSheet extends ItemSheet {
     dragData.img = item.img;
     dragData.name = item.name;
     dragData.qty = 1;
-    dragData.type = item_type;
+    dragData.gameType = item_type;
     dragData.category = item_category;
 
     let dataOririnal = [];

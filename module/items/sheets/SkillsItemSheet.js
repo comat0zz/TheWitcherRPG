@@ -1,14 +1,15 @@
-import { WitcherBaseItemSheet } from "../BaseItemSheet.js"
-
-
-export class SkillsItemSheet extends WitcherBaseItemSheet {
+export class SkillsItemSheet extends ItemSheet {
   
+  get template() {
+    return `systems/TheWitcherRPG/templates/sheets/items/${this.item.data.type}-sheet.hbs`;
+  }
+
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 250,
+      height: 350,
     });
   }
 
