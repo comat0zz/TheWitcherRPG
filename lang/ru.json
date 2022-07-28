@@ -108,6 +108,22 @@
 				"IngridientsLabel": "Ингридиенты"
 			},
 
+			"Alchemical": {
+				"CategoryLabel": "Категория",
+				"Category": {
+					"Potion": "Зелье",
+					"Oil": "Масло",
+					"Poison": "Яд",
+					"Liquor": "Отвар",
+					"Elixir": "Эликсир",
+					"Powder": "Порошок",
+					"Solution": "Раствор",
+					"Gas": "Газ",
+					"Incense": "Благовоние",
+					"Mixture": "Смесь (из трав, напр.)"
+				}
+			},
+
 			"Enchancements": {
 				"Category": "Категория",
 				"Categories": {

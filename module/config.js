@@ -250,3 +250,16 @@ WITCHER.ArmorCategory = {
   medium: "Witcher.Item.Armor.Category.Medium",
   havy: "Witcher.Item.Armor.Category.Havy"
 }
+
+WITCHER.AlchemicalCategory = {
+  potion: "Witcher.Item.Alchemical.Category.Potion",
+	oil: "Witcher.Item.Alchemical.Category.Oil",
+	poison: "Witcher.Item.Alchemical.Category.Poison",
+	liquor: "Witcher.Item.Alchemical.Category.Liquor",
+	elixir: "Witcher.Item.Alchemical.Category.Elixir",
+	powder: "Witcher.Item.Alchemical.Category.Powder",
+	solution: "Witcher.Item.Alchemical.Category.Solution",
+	gas: "Witcher.Item.Alchemical.Category.Gas",
+	incense: "Witcher.Item.Alchemical.Category.Incense",
+  mixture: "Witcher.Item.Alchemical.Category.Mixture"
+}

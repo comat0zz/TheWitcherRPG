@@ -32,6 +32,19 @@
           </select>
         </td>
       </tr>
+      
+      <tr>
+        <td>{{localize "Witcher.Item.Alchemical.CategoryLabel"}}</td>
+        <td colspan="2">
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.AlchemicalCategory as |name value|}}
+                <option value="{{value}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
     
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
