@@ -8,7 +8,7 @@ export class WitcherBaseItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 400,
+      height: 450,
       dragDrop: [
         {dropSelector: ".witcher-insertion-area", dragSelector: ".item"}
       ],
