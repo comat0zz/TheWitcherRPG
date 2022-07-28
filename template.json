@@ -253,7 +253,8 @@
       "time": "",
       "levelType": "",
       "ingridients": [],
-      "cost": 0
+      "cost": 0,
+      "rarity": ""
     }
   }
 }

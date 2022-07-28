@@ -1,64 +1,62 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
+{{!-- Item Sheet Body --}}
 <section class="item-content">
   <table>
     <tr>
-      <th>{{localize "Witcher.Item.ForgeDC"}}</th>
       <th>{{localize "Witcher.Item.Times.Label"}}</th>
+      <th>{{localize "Witcher.Item.ForgeDC"}}</th>
       <th>{{localize "Witcher.Item.Cost"}}</th>
+      <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
     </tr>
-    <tr>
-      <td><input name="data.forageDC" type="text" value="{{data.forageDC}}" placeholder="" data-dtype="Number" /></td>
-      <td><input name="data.time" type="text" value="{{data.time}}" placeholder="" /></td>
-      <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
-    </tr>
-    <tr class="item-ingridients">
-      <td>{{localize "Witcher.Item.Alhformulas.IngridientsLabel"}}</td>
-      <td colspan="2" class="insert-ingridients">
-        {{#each data.ingridients}}
-          <span data-item-id="{{id}}" class="ingridient">
-              <img src="{{img}}" class="img35x35" title="{{name}}">
-              <a class="delete" data-itemType="{{type}}"><i class="fas fa-trash-alt"></i></a>
-          </span>
-        {{/each}}
+    <tr class="table-th-value">
+      <td><input type="text" name="data.time" value="{{data.time}}" placeholder="" /></td>
+      <td><input type="text" name="data.forageDC" value="{{data.forageDC}}" data-dtype="Number"/></td>
+      <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+      <td>
+        <select name="data.rarity">
+          {{#select data.rarity}}
+            {{#each config.RarityItem as |name value|}}
+              <option value="{{value}}">{{localize name.long}}</option>
+            {{/each}}
+          {{/select}}
+        </select>
       </td>
     </tr>
     <tr>
-        <td>
-          {{localize "Witcher.Item.LevelTypeLabel"}}
-        </td>
-        <td colspan="2">
-          <select name="data.LevelType">
-          {{#select data.LevelType}}
+      <td>{{localize "Witcher.Item.Alhformulas.IngridientsLabel"}}</td>
+      <td colspan="3">
+        {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.ingridients dist_field="ingridients;1;0;0" dist_type="all" isQty=false tpl="row"}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{localize "Witcher.Item.LevelTypeLabel"}}
+      </td>
+      <td colspan="3">
+        <select name="data.LevelType">
+        {{#select data.LevelType}}
             {{#each config.LevelType as |name type|}}
               <option value="{{type}}">{{localize name}}</option>
             {{/each}}
           {{/select}}
         </select> 
-      </td>
-    </tr>
-    <tr>
-      <td>{{localize "Witcher.Source"}}</td>
-      <td colspan="2">
-        <select name="data.source">
-        {{#select data.source}}
-          {{#each config.SourceList as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
-          {{/each}}
-        {{/select}}
-        </select> 
-      </td>
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td colspan="3">
+          <select name="data.source">
+          {{#select data.source}}
+            {{#each config.SourceList as |name type|}}
+              <option value="{{type}}">{{localize name}}</option>
+            {{/each}}
+          {{/select}}
+          </select> 
+       </td>
     </tr>
   </table>
 </section>

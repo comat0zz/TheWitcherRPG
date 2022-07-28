@@ -155,18 +155,6 @@
 .sheet.item form.witcher-item-substances .item-content {
   padding-top: 10px;
 }
-.sheet.item form.witcher-item-alhformulas .item-ingridients {
-  height: 40px;
-}
-.sheet.item form.witcher-item-alhformulas .item-ingridients span {
-  width: 35px;
-  height: 35px;
-  margin-right: 5px;
-}
-.sheet.item form.witcher-item-alhformulas .item-ingridients span .delete {
-  position: relative;
-  left: -10px;
-}
 @font-face {
   font-family: 'Thewitcher';
   src: url('./fonts/thewitcher2.ttf');
