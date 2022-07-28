@@ -208,7 +208,9 @@
     }, 
     "alchemical": {
       "templates": ["system", "things"],
-      "effects": []
+      "effects": [],
+      "toxic": 0,
+      "macros": ""
     }, 
     "mutagen": {
       "templates": ["system", "things"],

@@ -110,6 +110,8 @@
 
 			"Alchemical": {
 				"CategoryLabel": "Категория",
+				"Toxic": "Токсичность",
+				"Formulas": "Формула",
 				"Category": {
 					"Potion": "Зелье",
 					"Oil": "Масло",
