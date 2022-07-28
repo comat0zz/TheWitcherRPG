@@ -211,7 +211,9 @@
       "effects": []
     }, 
     "mutagen": {
-      "templates": ["system", "things"]
+      "templates": ["system", "things"],
+      "fromWhom": [],
+      "mutation": ""
     },
     "component": {
       "templates": ["things", "system"],

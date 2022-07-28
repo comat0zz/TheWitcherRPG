@@ -124,6 +124,16 @@
 				}
 			},
 
+			"Mutagen": {
+				"Category": {
+					"Red": "Красный мутаген",
+					"Blue": "Синий мутаген",
+					"Green": "Зеленый мутаген"
+				},
+				"FromWhom": "Источник мутагена",
+				"Mutation": "Малая мутация"
+			},
+
 			"Enchancements": {
 				"Category": "Категория",
 				"Categories": {

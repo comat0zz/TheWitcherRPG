@@ -263,3 +263,9 @@ WITCHER.AlchemicalCategory = {
 	incense: "Witcher.Item.Alchemical.Category.Incense",
   mixture: "Witcher.Item.Alchemical.Category.Mixture"
 }
+
+WITCHER.MutagenCategory = {
+  red: "Witcher.Item.Mutagen.Category.Red",
+  blue: "Witcher.Item.Mutagen.Category.Blue",
+  green: "Witcher.Item.Mutagen.Category.Green"
+}
