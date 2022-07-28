@@ -1,32 +1,27 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
   <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
-  <a class="item" data-tab="tab-Effect" data-group="primary-tabs">{{localize "Witcher.Item.Effect"}}</a>
+  <a class="item" data-tab="tab-Effects" data-group="primary-tabs">{{localize "Witcher.Item.Effect"}}</a>
   <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
 </nav>
 
+{{!-- Item Sheet Body --}}
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
       <tr>
-        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
         <th>{{localize "Witcher.Item.Weight"}}</th>
         <th>{{localize "Witcher.Item.Cost"}}</th>
+        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
       </tr>
-      <tr>
+      <tr class="table-th-value">
+        <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
         <td>
           <select name="data.rarity">
             {{#select data.rarity}}
@@ -36,36 +31,31 @@
             {{/select}}
           </select>
         </td>
-        <td><input name="data.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
       </tr>
-      <tr class="area-insert">
+    
+      <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td colspan="2" class="insert-diagram flexrow"  data-item-id="{{data.associatedDiagram.id}}">
-          {{#ifne data.associatedDiagram ""}}
-            <img class="img35x35 click-show" src="{{data.associatedDiagram.img}}" title="{{data.associatedDiagram.name}}">&nbsp;
-            {{data.associatedDiagram.name}}&nbsp;
-            <a class="delete" data-itemType="{{data.associatedDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
-          {{/ifne}}
+        <td colspan="2">
+          {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="alhformulas" tpl="one"}}
         </td>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="2">
+        <td colspan="3">
           <select name="data.source">
-          {{#select data.source}}
-            {{#each config.SourceList as |name type|}}
-              <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-          {{/select}}
-          </select> 
+              {{#select data.source}}
+                {{#each config.SourceList as |name type|}}
+                  <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select> 
         </td>
-      </tr>
+     </tr>
     </table>
+    
   </div>
-
-  <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
-    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+  <div class="tab flexcol" data-tab="tab-Effects" data-group="primary-tabs">
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.effects dist_field="effects;0;0;0" dist_type="effects" isQty=false tpl="many"}}
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

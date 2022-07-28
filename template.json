@@ -200,8 +200,8 @@
       "assocDiagram": []
     }, 
     "alchemical": {
-      "templates": ["base"],
-      "rarity": ""
+      "templates": ["system", "things"],
+      "effects": []
     }, 
     "mutagen": {
       "templates": ["base"]
