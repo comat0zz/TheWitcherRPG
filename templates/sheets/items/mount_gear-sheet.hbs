@@ -1,15 +1,7 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
@@ -18,17 +10,18 @@
   <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
 </nav>
 
+{{!-- Item Sheet Body --}}
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
-    <table class="item-properties-list">
+    <table>
       <tr>
-        <th class="item-properties-small">{{localize "Witcher.Item.Weight"}}</th>
-        <th class="item-properties-small">{{localize "Witcher.Item.Cost"}}</th>
-        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>        
+        <th>{{localize "Witcher.Item.Weight"}}</th>
+        <th>{{localize "Witcher.Item.Cost"}}</th>
+        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
       </tr>
-      <tr>
-        <td><input name="data.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
+      <tr class="table-th-value">
+        <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
         <td>
           <select name="data.rarity">
             {{#select data.rarity}}
@@ -37,47 +30,45 @@
               {{/each}}
             {{/select}}
           </select>
-        </td>        
+        </td>
       </tr>
       <tr>
-        <td colspan="2">{{localize "Witcher.Item.MountGears.Label"}}</td>
-        <td>
+        <td>{{localize "Witcher.Item.MountGears.Label"}}</td>
+        <td colspan="2">
           <select name="data.category">
             {{#select data.category}}
-              {{#each config.mountGearTypes as |name value|}}
-                <option value="{{value}}">{{localize name}}</option>
+              {{#each config.mountGearTypes as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
               {{/each}}
             {{/select}}
-          </select>
-        </td>
-      </tr>
-      <tr class="area-insert">
-        <td colspan="2">{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td class="insert-diagram" data-item-id="{{data.assocDiagram.id}}">
-          {{#ifne data.assocDiagram ""}}
-            <img class="img35x35 click-show" src="{{data.assocDiagram.img}}" title="{{data.assocDiagram.name}}">&nbsp;
-            {{data.assocDiagram.name}}&nbsp;
-            <a class="delete" data-itemType="{{data.assocDiagram.type}}"><i class="fas fa-trash-alt"></i></a>
-          {{/ifne}}
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">{{localize "Witcher.Source"}}</td>
-        <td>
-          <select name="data.source">
-          {{#select data.source}}
-            {{#each config.SourceList as |name type|}}
-              <option value="{{type}}">{{localize name}}</option>
-            {{/each}}
-          {{/select}}
           </select> 
         </td>
       </tr>
-    </table>
-  </div>
 
+      <tr>
+        <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
+        <td colspan="2">
+          {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" tpl="one"}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td colspan="2">
+          <select name="data.source">
+              {{#select data.source}}
+                {{#each config.SourceList as |name type|}}
+                  <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select> 
+        </td>
+     </tr>
+    </table>
+    
+  </div>
   <div class="tab flexcol" data-tab="tab-Effect" data-group="primary-tabs">
-    {{editor content=data.effect target="data.effect" button=true owner=owner editable=editable}}
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.effects dist_field="effects;0;0;0" dist_type="effects" isQty=false tpl="many"}}
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

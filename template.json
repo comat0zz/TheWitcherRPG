@@ -246,7 +246,8 @@
       "saving": ""
     }, 
     "mount_gear": {
-      "templates": ["system", "things"]
+      "templates": ["system", "things"],
+      "effects": []
     },
     "alhformulas": {
       "templates": ["system"],
