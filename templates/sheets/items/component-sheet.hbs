@@ -50,7 +50,7 @@
         <tr>
           <td>{{localize "Witcher.Item.Components.Substance"}}</td>
           <td colspan="3">
-            {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.substanceType dist_field="substanceType;0;0;1" dist_type="substances"}}
+            {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.substanceType dist_field="substanceType;0;0;1" dist_type="substances" tpl="one"}}
           </td>
         </tr>
       {{/ife}}
@@ -61,7 +61,7 @@
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
         <td colspan="3">
-          {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams"}}
+          {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" tpl="one"}}
         </td>
       </tr>
       <tr>

@@ -2,6 +2,9 @@
   height: 100%;
   overflow: hidden;
 }
+.sheet.item form .align-center {
+  text-align: center;
+}
 .sheet.item form input[type="text"],
 .sheet.item form input[type="number"] {
   background: none;

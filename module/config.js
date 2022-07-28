@@ -223,3 +223,8 @@ WITCHER.EnchancementsCategories = {
   weapon: "Witcher.Item.Enchancements.Categories.Weapon",
   armor: "Witcher.Item.Enchancements.Categories.Armor"
 }
+
+WITCHER.WeaponGrasps = {
+  one: "Witcher.Item.Weapon.Grasps.One",
+  two: "Witcher.Item.Weapon.Grasps.Two"
+}

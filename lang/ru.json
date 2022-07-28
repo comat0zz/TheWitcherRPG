@@ -96,7 +96,7 @@
 			"Reliability": "Надежность",
 			"DiagramLabel": "Рецепт",
 			"ValuableLabel": "Категория предмета",
-			"StealhLabel": "Скрытность",
+			"ConcealmentLabel": "Скрытность",
 			"ForgeDC": "Сложность",
 			"Times": {
 				"Label": "Время",
@@ -133,7 +133,11 @@
 				"Category": "Категория оружия",
 				"Runes": "Количество рун",
 				"Damage": "Урон",
-				"Grasp": "Хват",
+				"Grasp": "Хват руками",
+				"Grasps": {
+					"One": "Одна рука",
+					"Two": "Две руки"
+				},
 				"isElder": "Вооружение Старшего Народа",
 				"Distantion": "Дистанция",
 				"Types": {
