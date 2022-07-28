@@ -111,7 +111,6 @@ export class WitcherBaseItemSheet extends ItemSheet {
   }
 
   async _extractItem(data) {
-    console.log(data.type)
     if(Object.keys(data).includes("pack") && data.pack != "") {
       return await this._getDocumentByPack(data);
     }else if(data.type == "Item"){
@@ -191,6 +190,10 @@ export class WitcherBaseItemSheet extends ItemSheet {
     const data = this.item.data.data;
     // Если нет поля, то добавим
     if( ! (Object.keys(data).includes(item_field))) {
+      data[item_field] = [];
+    }
+    // Если поле равно строке, переопределим
+    if(data[item_field] == "") {
       data[item_field] = [];
     }
 

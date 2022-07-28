@@ -161,7 +161,9 @@ WITCHER.diagramsType = {
   enhancement: "Witcher.Item.Diagrams.Types.gain",
   valuable: "Witcher.Item.Diagrams.Types.valuable",
   mountgear: "Witcher.Item.Diagrams.Types.mountgear",
-  cart: "Witcher.Item.Diagrams.Types.cart"
+  cart: "Witcher.Item.Diagrams.Types.cart",
+  eatdrink: "Witcher.Item.Diagrams.Types.eatdrink",
+  other: "Witcher.Item.Diagrams.Types.other"
 }
 
 WITCHER.ValuablesTypes = {
