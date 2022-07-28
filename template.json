@@ -178,10 +178,10 @@
       "damageType": [],
       "damage": "",
       "distantion": "",
-      "reliability": "",
+      "reliability": 0,
       "runes": 0,
       "accuracy": "",
-      "isElder": false
+      "tags": ""
     },
     "bullets": {
       "templates": ["system", "things"],
@@ -189,7 +189,13 @@
       "damage": ""
     },  
     "armor": {
-      "templates": ["system", "things"]
+      "templates": ["system", "things"],
+      "tags": "",
+      "glifs": 0,
+      "stiffness": 0,
+      "points": 0,
+      "defence": "",
+      "reliability": 0
     }, 
     "enhancement": {
       "templates": ["system"],
@@ -205,7 +211,7 @@
       "effects": []
     }, 
     "mutagen": {
-      "templates": ["base"]
+      "templates": ["system", "things"]
     },
     "component": {
       "templates": ["things", "system"],

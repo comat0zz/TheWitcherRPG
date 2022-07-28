@@ -230,3 +230,23 @@ WITCHER.WeaponGrasps = {
   one: "Witcher.Item.Weapon.Grasps.One",
   two: "Witcher.Item.Weapon.Grasps.Two"
 }
+
+WITCHER.ItemTags = {
+  common: "",
+  elder: "Witcher.Item.TagElder",
+  witcher: "Witcher.Item.TagWitcher"
+}
+
+WITCHER.ArmorDefence = {
+  head: "Witcher.Item.Armor.Defence.Head",
+  body: "Witcher.Item.Armor.Defence.Body",
+  all: "Witcher.Item.Armor.Defence.All",
+  foot: "Witcher.Item.Armor.Defence.Foot",
+  shield: "Witcher.Item.Armor.Defence.Shield"
+}
+
+WITCHER.ArmorCategory = {
+  light: "Witcher.Item.Armor.Category.Light",
+  medium: "Witcher.Item.Armor.Category.Medium",
+  havy: "Witcher.Item.Armor.Category.Havy"
+}

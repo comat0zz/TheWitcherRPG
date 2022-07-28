@@ -59,9 +59,15 @@
       </tr>
 
       <tr>
-        <td colspan="4">{{localize "Witcher.Item.Weapon.isElder"}}</td>
-        <td>
-          <input type="checkbox" name="data.isElder" {{checked data.isElder}}/>
+        <td>{{localize "Witcher.Tags"}}</td>
+        <td colspan="4">
+          <select name="data.tags">
+            {{#select data.tags}}
+              {{#each config.ItemTags as |name value|}}
+                <option value="{{value}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
         </td>
       </tr>
 
