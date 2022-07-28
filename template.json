@@ -185,7 +185,8 @@
     },
     "bullets": {
       "templates": ["system", "things"],
-      "reliability": 0
+      "reliability": 0,
+      "damage": ""
     },  
     "armor": {
       "templates": ["system", "things"]
