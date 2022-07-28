@@ -1,0 +1,14 @@
+<div class="witcher-insertion-area"
+  data-dist-field="{{dist_field}}" 
+  data-dist-type="{{dist_type}}">
+{{#ife data.length 1}}
+  {{#with data.[0]}}
+    <div data-item-id="{{id}}">
+      <img class="img35x35 click-show" src="{{img}}" title="{{name}}">&nbsp;{{name}}&nbsp;
+      <a class="delete"><i class="fas fa-trash-alt"></i></a>
+    </div>
+  {{/with}}
+{{else}}
+  {{localize "Witcher.DragDrop"}}
+{{/ife}}
+</div>

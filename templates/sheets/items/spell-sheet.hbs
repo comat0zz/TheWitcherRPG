@@ -89,7 +89,7 @@
   </div>
   {{#ife data.category "ritual"}}
   <div class="tab flexcol item-components" data-tab="tab-components" data-group="primary-tabs">
-    {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.components dist_field="components;0;1;0" dist_type="all" isQty=true}}
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.components dist_field="components;0;1;0" dist_type="all" isQty=true tpl="many"}}
   </div>
   {{/ife}}
   {{#ife data.category "injury"}}

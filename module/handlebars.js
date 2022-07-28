@@ -8,8 +8,11 @@ const preloadHandlebarsTemplates = async function () {
   const templatePaths = [
     
 
-    
-    "systems/TheWitcherRPG/templates/insertion-area.hbs",
+    // вставка связей
+    "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs",
+    "systems/TheWitcherRPG/templates/insertions/insertion-one.hbs",
+    "systems/TheWitcherRPG/templates/insertions/insertion-many.hbs",
+    "systems/TheWitcherRPG/templates/insertions/insertion-row.hbs",
     
     // chat
     "systems/TheWitcherRPG/templates/chat/card-roll.hbs",

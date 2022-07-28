@@ -117,7 +117,7 @@
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
         <td colspan="4">
-          {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams"}}
+          {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" tpl="one"}}
         </td>
       </tr>
       <tr>
@@ -136,7 +136,7 @@
     
   </div>
   <div class="tab flexcol" data-tab="tab-Effects" data-group="primary-tabs">
-    {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.effects dist_field="effects;0;0;1" dist_type="all" isQty=false tpl="many"}}
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.effects dist_field="effects;0;0;0" dist_type="all" isQty=false tpl="many"}}
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

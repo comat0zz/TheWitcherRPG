@@ -1,15 +1,7 @@
 <form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
 
-<header class="sheet-header flex0">
-  <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-  <section class="header-details flexrow">
-    <div class="flexcol">
-      <h1 class="item-name">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-      </h1>
-    </div>
-  </section>
-</header>
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
 
 {{!-- Item Sheet Navigation --}}
 <nav class="sheet-navigation tabs" data-group="primary-tabs">
@@ -70,7 +62,7 @@
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
         <td colspan="5">
-          {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams"}}
+          {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" isQty=false tpl="one"}}
         </td>
       </tr>
       <tr>
@@ -89,7 +81,7 @@
     
   </div>
   <div class="tab flexcol" data-tab="tab-Effects" data-group="primary-tabs">
-    {{> "systems/TheWitcherRPG/templates/insertion-area.hbs" data=data.effects dist_field="effects;1;1;0" dist_type="all" isQty=true}}
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.effects dist_field="effects;1;1;0" dist_type="all" isQty=true tpl="many"}}
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
