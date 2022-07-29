@@ -12,7 +12,54 @@
   </section>
 </header>
 
+{{!-- NPC Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary">
+  <!-- Общая информация, статы, навыки -->
+  <a class="item" data-tab="summary" data-group="primary">{{localize "Witcher.Summary"}}</a>
+  <!-- Ивентарь -->
+  <a class="item" data-tab="inventory" data-group="primary">{{localize "Witcher.Inventory"}}</a>
+  <!-- Магия и заклинания, рецепты -->
+  <a class="item" data-tab="Spellbook" data-group="primary">{{localize "Witcher.Spellbook"}}</a>
+  <!-- Активные статусы и эффекты на персонаже -->
+  <a class="item" data-tab="statuses" data-group="primary">{{localize "Witcher.Statuses"}}</a>
+  <!-- Профессия и раса -->
+  <a class="item" data-tab="profrace" data-group="primary">{{localize "Witcher.Profrace"}}</a>
+  <!-- Биография и жизненный путь -->
+  <a class="item" data-tab="biography" data-group="primary">{{localize "Witcher.Biography"}}</a>
+</nav>
+
+{{!-- NPC Sheet Body --}}
 <section class="actor-content">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  
+  <div class="tab summary flexcol" data-group="primary" data-tab="summary">
+    <div class="header-summary flexcol">
+    </div>
+  </div>
+
+  <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
+    <div class="header-inventory flexcol">
+    </div>
+  </div>
+
+  <div class="tab Spellbook flexcol" data-group="primary" data-tab="Spellbook">
+    <div class="header-Spellbook flexcol">
+    </div>
+  </div>
+
+  <div class="tab statuses flexcol" data-group="primary" data-tab="statuses">
+    <div class="header-statuses flexcol">
+    </div>
+  </div>
+
+  <div class="tab profrace flexcol" data-group="primary" data-tab="profrace">
+    <div class="header-profrace flexcol">
+    </div>
+  </div>
+
+  <div class="tab biography flexcol" data-group="primary" data-tab="biography">
+    <div class="header-biography flexcol">
+    </div>
+  </div>
+
 </section>
 </form>
