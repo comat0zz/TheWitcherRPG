@@ -31,7 +31,7 @@
                 "duration": "Проверка стойкости завершает"
             }
         },
-        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Druid/CursedIllness",
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Druid/CursedIllness.png",
         "name": "Проклятая болезнь",
         "type": "spell"
     },
@@ -157,7 +157,7 @@
                 "duration": "Активное (2 Выносливости)"
             }
         },
-        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Druid/ThreadsOflife/png",
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Druid/ThreadsOflife.png",
         "name": "Нити жизни",
         "type": "spell"
     },

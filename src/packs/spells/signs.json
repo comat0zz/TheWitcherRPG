@@ -14,7 +14,7 @@
                 "element": "mixed"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Yrden.webp",
         "name": "Ирден",
         "type": "spell"
     },
@@ -33,7 +33,7 @@
                 "element": "air"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Aard.webp",
         "name": "Аард",
         "type": "spell"
     },
@@ -52,7 +52,7 @@
                 "element": "fire"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Igni.webp",
         "name": "Игни",
         "type": "spell"
     },
@@ -71,7 +71,7 @@
                 "element": "water"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Axii.webp",
         "name": "Аксий",
         "type": "spell"
     },
@@ -90,7 +90,7 @@
                 "element": "earth"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Quen.webp",
         "name": "Квен",
         "type": "spell"
     },
@@ -109,7 +109,7 @@
                 "element": "mixed"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Yrden.webp",
         "name": "Магическая ловушка",
         "type": "spell"
     },
@@ -128,8 +128,8 @@
                 "element": "earth"
             }
         },
-        "img": null,
-        "name": "Активынй щит",
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Quen.webp",
+        "name": "Активный щит",
         "type": "spell"
     },
     {
@@ -147,7 +147,7 @@
                 "element": "air"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Aard.webp",
         "name": "Сметающий Аард",
         "type": "spell"
     },
@@ -166,7 +166,7 @@
                 "element": "fire"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Igni.webp",
         "name": "Огненный поток",
         "type": "spell"
     },
@@ -185,7 +185,7 @@
                 "element": "water"
             }
         },
-        "img": null,
+        "img": "systems/TheWitcherRPG/assets/Spells/WitcherSigns/Axii.webp",
         "name": "Марионетка",
         "type": "spell"
     }

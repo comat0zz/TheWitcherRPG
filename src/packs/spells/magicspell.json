@@ -655,7 +655,7 @@
                 "element": "water"
             }
         },
-        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CarysHail",
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CarysHail.png",
         "name": "Град Кэрис",
         "type": "spell"
     },
@@ -855,7 +855,7 @@
                 "element": "mixed"
             }
         },
-        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Teleportation",
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Teleportation.png",
         "name": "Телепортация",
         "type": "spell"
     },
@@ -915,7 +915,7 @@
                 "element": "earth"
             }
         },
-        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/StammelfordEarthquake",
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/StammelfordEarthquake.png",
         "name": "Землетрясение Стаммельфорда",
         "type": "spell"
     },
