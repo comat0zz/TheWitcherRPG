@@ -161,9 +161,7 @@
     },
     "note": {
       "description": "",
-      "descriptionOnlyGM": "",
-      "descriptionForPlayes": "",
-      "playersIsEdit": false
+      "descriptionOnlyGM": ""
     },
     "valuable": {
       "templates": ["system", "things"]      
@@ -247,12 +245,15 @@
       "templates": [],
       "skills": [],
       "things": [],
+      "isSpecEquip": false,
+      "specialEquip": [],
       "dskill": {
         "name": "",
         "description": ""
       },
       "energy": 0,
       "description": "",
+      "isMagicAbil": "",
       "magicalAbilities": [],
       "leadStat": "",
       "skillTree": {}

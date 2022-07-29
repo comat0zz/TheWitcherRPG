@@ -15,6 +15,7 @@
 		"Skills": "Навыки",
 		"SkillTree": "Дерево навыков",
 		"Inventory": "Инвентарь",
+		"Energy": "Энергия",
 
 		"HazardLabel": "Опасность",
 		"Hazards": {
@@ -117,7 +118,11 @@
 				"dskilldesc": "Описание определяющего навыка",
 				"skillname": "Название навыка...",
 				"skilldesc": "Описание навыка...",
-				"branchname": "Название ветки навыков"
+				"branchname": "Название ветки навыков",
+				"MagicCapabilities": "Есть ли магические способности?",
+				"SpecialCapabilities": "Есть ли специальное снаряжение?",
+				"isSpecEquip": "Специальное снаряжение",
+				"isMagicAbil": "Магические способности"
 			},
 
 			"Alchemical": {
