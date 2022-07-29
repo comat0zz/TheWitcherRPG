@@ -1,6 +1,5 @@
 import { WitcherBaseActorSheet } from "../BaseActorSheet.js"
 
-
 export class HeroActorSheet extends WitcherBaseActorSheet {
   
   /** @override */

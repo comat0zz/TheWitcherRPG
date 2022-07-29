@@ -1,6 +1,5 @@
 import { WitcherBaseActorSheet } from "../BaseActorSheet.js"
 
-
 export class MountActorSheet extends WitcherBaseActorSheet {
   
   /** @override */
