@@ -137,7 +137,8 @@ WITCHER.SpellsDefences = {
   evasion: "Witcher.Item.Spells.Defence.evasion",
   blocking: "Witcher.Item.Spells.Defence.blocking",
   evblo: "Witcher.Item.Spells.Defence.evblo",
-  magic: "Witcher.Item.Spells.Defence.magic"
+  magic: "Witcher.Item.Spells.Defence.magic",
+  willx3: "Witcher.Item.Spells.Defence.willx3"
 }
 
 WITCHER.Hazards = {
