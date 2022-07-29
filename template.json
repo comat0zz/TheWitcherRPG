@@ -215,7 +215,8 @@
     "mutagen": {
       "templates": ["system", "things"],
       "fromWhom": [],
-      "mutation": ""
+      "mutation": "",
+      "macros": ""
     },
     "component": {
       "templates": ["things", "system"],

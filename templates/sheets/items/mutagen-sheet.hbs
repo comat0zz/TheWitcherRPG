@@ -1,13 +1,55 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
-  </div>
-</header>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
+
+{{!-- Item Sheet Body --}}
+<section class="item-content">
+    <table>
+      <tr>
+        <td>{{localize "Witcher.Item.Mutagen.CategoryLabel"}}</td>
+        <td>
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.MutagenCategory as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Mutagen.FromWhom"}}</td>
+        <td>
+          {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.fromWhom dist_field="fromWhom;0;0;1" dist_type="all" tpl="one"}}
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Effect"}}</td>
+        <td>
+          {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.effects dist_field="effects;0;0;1" dist_type="effects" tpl="one"}}
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Mutagen.Mutation"}}</td>
+        <td><input type="text" name="data.mutation" value="{{data.mutation}}"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Macros"}}</td>
+        <td><input type="text" name="data.macros" value="{{data.macros}}" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td>
+          <select name="data.source">
+              {{#select data.source}}
+                {{#each config.SourceList as |name type|}}
+                  <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select> 
+        </td>
+     </tr>
+    </table>
+</section>
 </form>

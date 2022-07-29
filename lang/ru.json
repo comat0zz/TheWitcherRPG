@@ -127,6 +127,7 @@
 			},
 
 			"Mutagen": {
+				"CategoryLabel": "Категория",
 				"Category": {
 					"Red": "Красный мутаген",
 					"Blue": "Синий мутаген",
