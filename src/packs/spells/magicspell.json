@@ -1,0 +1,1302 @@
+[
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Это заклинание при­думал талантливый аэдирнский маг Афан из Гулеты. Оно создаёт 1d10 иллюзорных копий заклинателя. Копии нематериальны, но неотличимы от заклинателя и полностью управляются его волей. Копии не могут выходить за пределы дистанции заклина­ния, управление ими не требует отдельного действия.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/AfansMirror.png",
+        "name": "Зеркало Афана",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Слепящая пыль позволяет направить в глаза цели горсть магической пыли, которая ослепит её на время действия заклинания",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 4,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "1d10 раундов",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/BlindingDust.png",
+        "name": "Слепящая пыль",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 999999,
+            "effect": "Рассеивание позволяет прекратить действие заклинания/ритуала/порчи в пределах своей дистанции. Это закли¬нание можно сотворить как действие защиты, чтобы бло¬кировать магические атаки вне зависимости от наличия или отсутствия физических компо¬нентов либо прекратить им дли¬ тельное заклинание. Для отмены магического эффекта нужно затратить половину Выносливо¬сти, потребовавшейся для соз¬дания отменяемого магического эффекта, а также совершить проверку Сотворения заклина¬ний. Проверка считается успеш¬ной, если её результат больше проверки заклинателя, сотво¬рившего отменяемый эффект. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "magic",
+                "duration": "Мгновенное",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/dispel.png",
+        "name": "Рассеивание",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Очарование создаёт вокруг вас иллюзию, благодаря которой вы выглядите сногсшибательно. Вы получаете бонус +3 к Соблазнению, Харизме и Лидерству.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "self",
+                "DistantionValue": 0,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d6 часов",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Glamore.png",
+        "name": "Очарование",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Позволяет мгновенно определить в каком направлении находится место, где побывал заклинатель, или же просто указывает на север.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "self",
+                "DistantionValue": 0,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d6 часов",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MagicCompass.png",
+        "name": "Магический компас",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Позволяет заклинателю заставить цель на время действия заклинания испытывать одно из следующих чувств: ненависть, любовь, подавленность или эйфория",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "magic",
+                "duration": "1d10 раундов",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MindManipulation.png",
+        "name": "Управление чувствами",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Позволяет дематериализовать свой посох и отправить его в то место, в котором заклинатель был за последний день. Заклинание можно сотворить снова, для вызова посоха обратно.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "unlimited",
+                "DistantionValue": 0,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/SummonStaff.png",
+        "name": "Призыв Посоха",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Позволяет мысленно общаться с одной целью во время действия заклинания. Для телепатии не существует языкового барьера.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (1 выносливость)",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Telepathy.png",
+        "name": "Телепатия",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Позволяет швырять острые камни в противника. За каждый пункт, который вы вы­бросите свыше защиты против­ника (максимум 10), вы нано­сите 1d6 урона. Каждый бросок считается отдельной атакой.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CenlyGraig.png",
+        "name": "Сенли Грейг",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Коди Бивид позволяет за один ход вырастить из семеч­ка небольшое взрослое расте­ние. С помощью этого заклина­ния можно выращивать травы (в т. ч. для алхимии), но не круп­ные растения вроде деревьев.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 4,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CodiBywyd.png",
+        "name": "Коди Бивид",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Позволяет быстро оценить состояние здоровья: определить количество остав­шихся у цели ПЗ, узнать, какие у неё критические ранения, отравлена/больна ли цель.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/DiagnosticSpell.png",
+        "name": "Магическое обследование",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Это заклинание созда­ёт сталагмит, который вонзается в цель. Сталагмит наносит 5d6 урона и остаётся торчать, пока не будет уничтожен. Для уничтоже­ния нужно нанести сталагмиту 20 пунктов урона.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 6,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/EarthenSpike.png",
+        "name": "Каменный шип",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Дыхание Кората разби­вает поверхность скалы или земли вблизи заклинателя и разбрасыва­ет обжигающий песок в 3-метро­вом конусе перед заклинателем. Противники в зоне действия заклинания, не сумевшие защи­титься, ослеплены на 1d6 раундов.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "cone",
+                "DistantionValue": 3,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/KorathsBreath.png",
+        "name": "Дыхание Кората",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Это заклинание было создано чародейкой Лютиэнь из Эббинга. Позволяет начертать буквы или рисунок на любой твёрдой поверхности. Заклина­ние нельзя использовать на жи­вых существах.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 1,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/LuthiensQuill.png",
+        "name": "Перо Лютинэнь",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Магическое исцеле­ние стимулирует естественный процесс регенерации, восста­навливая 3 ПЗ за ход во время действия заклинания. Также это заклинание можно ис­пользовать несколько раз для исцеления критического ране­ния — в таком случае оно не восстанавливает ПЗ.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 2,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d10 раундов",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MagicHealing.png",
+        "name": "Магическое исцеление",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Заклинание названо в честь Тальфрина из Назаира — рыцаря-предателя, что три дня был в плену в саду чародея. Оно опутывает цель корнями, для уничтожения которых нуж­но нанести им 15 пунктов урона. Чтобы выпутаться из корней, требуется проверка Уклонения/ Изворотливости со СЛ, равной результату проверки Сотворе­ния заклинаний. Такую провер­ку можно совершать каждый раунд в качестве действия.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "evasion",
+                "duration": "Пока не уничтожено",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/TalfrynsPrison.png",
+        "name": "Тюрьма Тальфрина",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 4,
+            "effect": "Адэнидд делает закли­нателя легче, позволяя вместо падения плавно спланировать — за каждые 2 метра падения он перемещается на 2 метра в опре­делённом направлении. Если за время действия заклинания заклинатель достигнет земли, он не получит урона от падения.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "self",
+                "DistantionValue": 0,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Adenydd.png",
+        "name": "Адэнидд",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Создаёт пузырь свежего воздуха под водой или в зоне, где обычно чистого воздуха не быва­ет. Радиус пузыря на время дей­ствия заклинания составляет 1 м.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 12,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "2d10 раундов",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/AirPocket.png",
+        "name": "Воздушный пузырь",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Заклинание названо в честь чародея-налётчика со Скеллиге по имени Бронвин Мёртвый Глаз. Заклинание от­талкивает цель назад на коли­чество метров, равное числу, на которое бросок заклинателя превысил защиту цели. Атака наносит 1d6 урона, а если цель с чем-то столкнётся, то получит урон от таранящего удара.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 2,
+                "LevelType": "newbie",
+                "defence": "evasion",
+                "duration": "Мгновенное",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/BronwynGust.png",
+        "name": "Шквал Бронвина",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Позволяет на время действия заклинания очистить зону радиусом 4 метра (с закли­нателем в центре) от дыма, яда или любого другого загрязне­ния воздуха.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 4,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/FreshenAir.png",
+        "name": "Освежение воздуха",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Заклинание было созда­но Уриеном из Цидариса, морехо­дом и магом воздуха. Оно отме­няет все эффекты плохой погоды в радиусе 8 метров от заклинате­ля: экстремальную жару, экстре­мальный холод, дождь и снег.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d6 часов",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/UrienShelter.png",
+        "name": "Убежище Уриена",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Позволяет наполнить электричеством пространство в радиусе 5 метров от заклинате­ля. За исключением самого закли­нателя, любой в этой зоне, кто носит металлическую броню или держит металлическое оружие, получает 2 пункта урона за раунд.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "2d6 раундов",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/StaticStorm.png",
+        "name": "Статическая буря",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Позволяет поднять предмет и манипулировать им (до 5 кг за 1 пункт Сотворения закли­наний), как если бы заклинатель держал этот предмет в руках.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Telekinesis.png",
+        "name": "Телекинез",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Зефир создаёт порыв ветра, отталкивающий любого в пределах 2 метров от заклинателя на 6 метров. Атака наносит 1d6 урона, а если цель с чем-то столкнётся, она получит урон от таранящего удара.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 2,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Zephyr.png",
+        "name": "Зефир",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Энье позволяет швырнуть сгусток пламени в против­ника, находящегося в пределах дистанции заклинания. Пламя наносит 4d6 урона с 75%-ным шансом горения.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 12,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Aenye.png",
+        "name": "Энье",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 1,
+            "effect": "Айна Версеос создаёт зону яркого света радиусом 4 метра с заклинателем в центре.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 4,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/AineVerseos.png",
+        "name": "Айна Версеос",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 4,
+            "effect": "Огненное клеймо позволяет нанести на обнажённую кожу цели клеймо с простым символом или словом. Клеймо наносит 1d6 урона и оставляет большой шрам на всю жизнь. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/BrandofFire.png",
+        "name": "Огненное клеймо",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 4,
+            "effect": "Заклинание названо в честь чародея-кузнеца Кадфана из Эббинга. Позволяет раскалить металлический предмет настолько, что держащий его в руках роняет его или получает 2d6 урона держащей этот предмет конечности. Заклинанием также можно нагреть оружие — раскалённое оружие наносит +2d6 урона с 50%-ным шансом горения. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d6 раундов",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CadfanGrasp.png",
+        "name": "Хватка Кадфана",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Создаёт яркую вспышку над головой заклинателя. Все, кто находится в радиусе 8 м, должны совершить проверку Сопротивления магии или будут ослеплены на 1d6 раундов. Вспышку видно на расстоянии 10 километров.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "cone",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "magic",
+                "duration": "Мгновенное",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MagicFlare.png",
+        "name": "Магическая вспышка",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Позволяет распространить уже горящее пламя в любом направлении со скоростью 2 метра за раунд, уменьшить его до небольшого огонька (снижая урон от огня на 1) или усилить (повышая урон от огня на 1).",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/RaiseFlames.png",
+        "name": "Управление пламенем",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Танио Ильхар создаёт всполох пламени в зоне 2x2 метра со 100%-ным шансом поджечь цель, находящуюся в этой зоне. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "evasion",
+                "duration": "Мгновенное",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/TanioIlchar.png",
+        "name": "Танио Ильхар",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 4,
+            "effect": "Выпускает в одном направлении 3-метровый конус огня, наносящий 2d6 урона любому, кто не сумеет уклониться или блокировать поток огня, с шансом поджечь цель 50 %. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "cone",
+                "DistantionValue": 3,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/WaveOfFire.png",
+        "name": "Волна огня",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Это заклинание придумала чародейка Кэрис из Цинтры. Оно позволяет швырнуть ледяные осколки с высокой скоростью в одного противника. За каждый пункт сверх значения уклонения/блокирования цели (максимум 5) заклинание наносит 1d6 урона с 25%-ным шансом заморозить цель. При определении места попадания и расчёте урона каждый бросок считается отдельной атакой. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CarysHail",
+        "name": "Град Кэрис",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Позволяет управлять скоростью и направлением течения воды на время действия заклинания. Управление водой можно использовать для снижения скорости плавающих целей вдвое, для ускорения кораблей в полтора раза или для замедления или остановки речного течения. Сложность этого заклинания определяет ведущий",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "magic",
+                "duration": "Активное (2 Выносливости)",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/ControlWater.png",
+        "name": "Управление водой",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Это заклинание названо в честь Седниной Бездны — места гибели многих кораблей. Оно создаёт мощный водоворот в 4-метровой зоне. Любой, кто находится в пределах 5 метров от водоворота, должен совершить проверку Плавания со СЛ, равной результату вашей проверки Сотворения заклинаний, чтобы не оказаться под водой. Он должен каждый раунд совершать проверку, чтобы вы­ браться на поверхность, иначе останется под водой и начнёт задыхаться.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 12,
+                "LevelType": "newbie",
+                "defence": "evasion",
+                "duration": "Активное (2 Выносливости)",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/CurseOfSedna.png",
+        "name": "Проклятие Седны",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Заклинание придумал Дормин из Геммеры. Оно создаёт зону плотного тумана в радиусе 10 метров от заклинателя. Любой, кто находится в этой зоне, получает штраф -3 к Вниманию, а его радиус обзора уменьшается до 4 метров. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "selfzone",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/DormynFog.png",
+        "name": "Туман Дормина",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Это заклинание вызывает сильный дождь в зоне радиусом 10 метров, заливающий любое открытое пламя. Ливень отменяет все эффекты горения. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Активное (2 Выносливости)",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Downpour.png",
+        "name": "Ливень",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Гололёд покрывает льдом квадрат 2x2 метра. Любой, кто пересекает эту зону, должен совершить проверку Атлетики со СЛ, равной результату вашей проверки Сотворения заклинаний, — иначе он поскользнётся на льду и упадёт.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "evasion",
+                "duration": "2d10 раундов",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/IceSlick.png",
+        "name": "Гололёд",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Позволяет очистить 1 кубометр воды. Это отменяет эффекты яда и болезней, но не выталкивает из воды живых существ. Если заклинание применяется к части большого объёма воды, то по окончании действия заклинания вода перемешается и постепенно снова станет грязной.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 4,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d10 раундов",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/PuroDwr.png",
+        "name": "Пиро Дюр",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Рьеви сковывает цель плотным слоем льда. На время действия заклинания цель считается замороженной. При использовании заклинания на неживой предмет цель невозможно передвинуть и ею невозможно манипулировать.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "evasion",
+                "duration": "1d10 раундов",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Rhewi.png",
+        "name": "Рьеви",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 12,
+            "effect": "Это жуткое заклинание названо в честь его создательницы Филиппы Эйльхарт. Оно позволяет проникнуть в разум цели и добыть нужную информацию. При успешной проверке Сотворения заклинаний вы извлекаете из памяти цели одну тайну. Если цель при попытке защититься от этого заклинания получает критический провал, её Инт навсегда снижается на 1. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 3,
+                "LevelType": "prentice",
+                "defence": "magic",
+                "duration": "Мгновенное",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/EilhartsTechnique.png",
+        "name": "Метод Эйльхарт",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 8,
+            "effect": "Позволяет сотворить любую визуальную иллюзию в пределах 20 метров от заклинателя. Любой, кто провалит проверку Сопротивления магии, не только видит иллюзию, но и верит в её реальность. Однако иллюзия не пахнет, её не слышно, и к ней нельзя прикоснуться. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 20,
+                "LevelType": "prentice",
+                "defence": "magic",
+                "duration": "Активное (4 Выносливости)",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/illusion.png",
+        "name": "Иллюзия",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 10,
+            "effect": "Телепортация позволяет мгновенно перенестись в знакомое заклинателю место. С собой нельзя никого захватить; телепортация перенесёт вместе с вами только те предметы, которые на вас или которые вы держите в руках. При попытке телепортироваться вместе с кем-то переместится только маг, а его спутник останется на месте. Для телепортации требуется пройти проверку Сотворения заклинаний со СЛ 15. При провале заклинатель оказывается в случайном месте в ld6 милях.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "unlimited",
+                "DistantionValue": 0,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Teleportation",
+        "name": "Телепортация",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 10,
+            "effect": "Заклинание создал Эльган из Вердэна. Этот маг отправился в самое сердце Махакама и много лет изучал магию земли. Заклинание позволяет намагнитить металлический объект в пределах 8 метров от заклинателя. Любой металлический предмет в пределах 2 метров от магнита притягивается и «прилипает» к нему. Для того чтобы оторвать этот предмет от магнита, требуется проверка Силы со СЛ 18. Предметы, примагнитившиеся к чьему-либо оружию или броне, идут в счёт Переносимого веса этого персонажа. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 8,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "2d10 раундов",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/ElgasTheory.png",
+        "name": "Теория Эльгана",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 15,
+            "effect": "Ристр Грейг позволяет в любом месте в пределах 10 метров от заклинателя создать каменную стену размером 2 на 3 метра с прочностью 30. Стена будет стоять, пока её не уничтожат.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 20,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "Пока не уничтожат",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/RhwystrGraig.png",
+        "name": "Ристр Грейг",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 12,
+            "effect": "Раскалывает землю в 10- метровой зоне, создавая неровную поверхность, изрезанную трещинами. Любой, кто находится в этой зоне, получает штраф -2 к Реакции и -3 к Скорости. Небольшие строения на расколотой земле обрушиваются с вероятностью 10%. Каждый раунд существо, находящееся в зоне действия заклинания, должно проходить проверку Атлетики, чтобы не провалиться под землю. Провалившиеся под землю начинают задыхаться и должны успешно пройти проверку Атлетики, чтобы выбраться. По окончании действия заклинания земля перестаёт трястись, но остаётся искорёженной. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 30,
+                "LevelType": "prentice",
+                "defence": "evasion",
+                "duration": "1d10 раундов",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/StammelfordEarthquake",
+        "name": "Землетрясение Стаммельфорда",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 15,
+            "effect": "Позволяет швырнуть в цель яркую молнию, наносящую 8d6 урона с 75%-ным шансом горения. Гром Альзура бьёт по прямой, проходя сквозь цели. За каждую цель, через которую прошёл заряд, урон сле­ дующей цели снижается на 1d6.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 25,
+                "LevelType": "prentice",
+                "defence": "evasion",
+                "duration": "Мгновенное",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/AlzurThunder.png",
+        "name": "Гром Альзура",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 12,
+            "effect": "Гвинт Троэлли создаёт вокруг вас барьер из ветра, блокирующий дистанционные атаки и снаряды. Если результат проверки дистанционной атаки не превышает ваш результат Сотворения заклинаний, то снаряд отлетает от барьера на 8 метров в случайном направлении.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "Активное (4 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/gwyntTroelli.png",
+        "name": "Гвинт Троэлли",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 14,
+            "effect": "Душит цель, нанося ей 1d10 урона за ход. Удушение прекращается, если по заклинателю попадает удар оружием или если он отвлекается и перестаёт сосредотачиваться на заклинании. Во время удушения цель считается ошеломлённой.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "magic",
+                "duration": "Активное (4 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Suffocate.png",
+        "name": "Удушение",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 12,
+            "effect": "Создаёт вокруг заклинателя щит из чистой магии огня, блокирующий количество заклинаний воды, равное удвоенному значению его навыка Сотворение заклинаний. Снаряды, касающиеся щита, уничтожаются, а живые су­ щества не могут пройти через него.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "Активное (4 Выносливости)",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/DemetiaCrestSurge.png",
+        "name": "Вспышка Деметии Крест",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 15,
+            "effect": "Создаёт пылающее торнадо шириной 2 метра. Заклинатель может перемещать торнадо на количество метров за ход, равное значению его навыка Сотворение заклинаний. Если торнадо сталкивается с целью, заклинатель должен совершить проверку Сотворения заклинаний против проверки Уклонения/Изворотливости цели. При провале цель получает 5d6 урона с 50%-ным шансом горения. Вихрь не выходит за пределы дистанции заклинания.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "selfzone",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "evasion",
+                "duration": "Активное (4 Выносливости)",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/FlamingVortex.png",
+        "name": "Пылающий вихрь",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 10,
+            "effect": "Создаёт из стихии огня несколько змей, которые набрасываются на цель. Цель захвачена и горит до тех пор, пока не совершит проверку Уклонения/Изворотливости против вашей проверки Сотворения заклинаний. Каждый раунд, когда цель проваливает проверку, СЛ последующих проверок Уклонения/Изворотливости повышается на 1, поскольку змеи всё туже стискивают цель.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "evasion",
+                "duration": "2d10 раундов",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/SeiriffHaul.png",
+        "name": "Сейриф Хайль",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 8,
+            "effect": "Позволяет частично вытянуть жидкость из тела цели, истощая её. Заклинание наносит 4d6 урона, не блокируемого щитами или бронёй. Также крайнее обезвоживание изнуряет цель, снижая её текущее значение Вын на 4d6.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "magic",
+                "duration": "Мгновенное",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Anialwch.png",
+        "name": "Аньяльх",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 15,
+            "effect": "Заклинание названо в честь его создательницы Трисс Меригольд, бывшей советницы короля Фольтеста Темерского. Градобитие создаёт зону мощного града. Любой, кто оказывается в зоне действия заклинания, должен каждый раунд проходить проверку Уклонения/Изворотливости со СЛ, равной вашей проверке Сотворения заклинаний, чтобы не получить 2d6 урона по одной из частей тела.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 30,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "Мгновенное",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MerigoldHailstorm.png",
+        "name": "Градобитие Меригольд",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 10,
+            "effect": "Это заклинание придумал чародей, заявлявший, что воочию видел Дикую Охоту. Оно создаёт волну ледяной магии, которая распространяется на 3 метра во все стороны от заклинателя. Любой, кто не уклонится или не блокирует заклинание, становится заморожен и получает 4d6 урона.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "selfzone",
+                "DistantionValue": 3,
+                "LevelType": "prentice",
+                "defence": "evblo",
+                "duration": "Мгновенное",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/WavesOfTheNaglfar.png",
+        "name": "Волны Нагльфара",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 25,
+            "effect": "Позволяет заложить в разум цели приказ, который должен быть исполнен в точности. Если приказ представляет собой что-то, чего цель никогда бы не сделала, цель получает бонус +5 к проверке Сопротивления магии.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "master",
+                "defence": "magic",
+                "duration": "Вплоть до выполнения приказа",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MentalCommand.png",
+        "name": "Мысленный приказ",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 22,
+            "effect": "Создаёт в пределах 10 метров от заклинателя висящий в воздухе портал размером 1 на 2 метра. Через этот портал заклинатель перемещается в любое место, какое может вспомнить. Через портал можно пронести всё, что в него проходит по размеру. Если прекратить поддерживать портал в тот момент, когда сквозь него что-то проходит, портал разрежет этот предмет (или существо) на­ двое. Это считается потерей конечности, аналогично критическому ранению. Заклинатель может открыть портал и в неизвестное ему место, как при Телепортации.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "unlimited",
+                "DistantionValue": 0,
+                "LevelType": "master",
+                "defence": "no",
+                "duration": "Активное (6 Выносливости)",
+                "element": "mixed"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/StandingPortal.png",
+        "name": "Магический портал",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 22,
+            "effect": "Полиморфизм позволяет принять облик змеи, кошки, птицы или собаки. Находясь в облике животного, заклинатель имеет физические параметры этого животного (см. Бе­ стиарий, стр. 310-311). Любые предметы, которые заклинатель имеет при себе, трансформируются вместе с ним. Для возвращения в прежний облик нужно снова сотворить это заклинание.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "self",
+                "DistantionValue": 0,
+                "LevelType": "master",
+                "defence": "no",
+                "duration": "До повторного заклинания",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Polymorphism.png",
+        "name": "Полиморфизм",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 25,
+            "effect": "Трансмутация позволяет изменить свойства минерала или металла. Заклинатель может превратить кусок одного металла в любой другой металл, а несовершенный самоцвет — в совершенный, подходящий для сотворения заклинаний. Двимерит и другие металлы, касающиеся двимерита, не могут быть созданы или изменены с помощью этого заклинания. ",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 2,
+                "LevelType": "master",
+                "defence": "no",
+                "duration": "Постоянное",
+                "element": "earth"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/Transmutation.png",
+        "name": "Трансмутация",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 22,
+            "effect": "Это заклинание разработано таинственным волшебником из Офира. Оно создаёт вокруг заклинателя 2-метровый торнадо, который перенаправляет дистанционные атаки аналогично заклинанию Гвинт Троэлли и действует подобно Зефиру против любого, кто на­ ходится в пределах 2 метров от заклинателя. Заклинатель не может бегать во время действия торнадо или совершать из него атаки. Но если заклинатель окажется в пределах 2 метров от цели, на неё будет действовать эффект заклинания Зефир.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 2,
+                "LevelType": "master",
+                "defence": "evasion",
+                "duration": "Активное (6 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/dervish.png",
+        "name": "Дервиш",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 25,
+            "effect": "Призывает грозу с бьющими в случайные места молниями. Любой, кто окажется в зоне действия заклинания (кроме самого заклинателя), с вероятностью 35% попадёт под удар молнии. При попадании молнии цель должна совершить проверку Уклонения/Изворотливости, чтобы не получить 8d6 урона в туловище с 75%-ным шансом горения.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 30,
+                "LevelType": "master",
+                "defence": "evasion",
+                "duration": "Активное (6 Выносливости)",
+                "element": "air"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/LightningStorm.png",
+        "name": "Гроза",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 25,
+            "effect": "Это заклинание посеяло немало хаоса на полях Долины Понтара. Оно позволяет низвергнуть с небес на большую зону огненные шары. Любой, кроме заклинателя, кто находится в зоне действия заклинания, может попасть под удар огненного шара с шансом 75%. При попадании огненного шара цель должна защищаться со СЛ, равной результату проверки Сотворения заклинаний заклинателя, чтобы не получить 4d6 урона в случайную часть тела с 75%- ным шансом горения.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 40,
+                "LevelType": "master",
+                "defence": "evblo",
+                "duration": "2d6 раундов",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/FireFromTheSky.png",
+        "name": "Огонь Мельгара",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 25,
+            "effect": "Зеркальный эффект создаёт ослепительно яркий луч света, наносящий 10d6 урона. От луча можно уклониться, его можно заблокировать (при этом луч уничтожает то, что его блокирует), но нельзя переместить с помощью ветра. Единственное, что может парировать этот эффект, — зеркальная поверхность, которая при этом получает урон. Отражённый луч отклоняется в случайном направлении. Заклинание использует солнечные лучи и не действует там, куда эти лучи не проникают. При лунном свете или в пасмурные дни заклинание наносит половину урона.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 20,
+                "LevelType": "master",
+                "defence": "evblo",
+                "duration": "2d6 раундов",
+                "element": "fire"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/MirrorEffect.png",
+        "name": "Зеркальный эффект",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 25,
+            "effect": "Позволяет создать посреди водного массива открытое пространство вплоть до 10x100x10 метров. Рыба, чудовища и прочие находящиеся в воде существа отступают вместе с водой. Заклинатель может проходить сквозь стену воды с той же лёгкостью, как если бы проходил сквозь воду, при этом стена не разрушается. Если сотворить заклинание, находясь в воде, то заклинателя отталкивает вместе с водой. Свободное от воды пространство может быть ориентировано как угодно, в том числе вертикально.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "zone",
+                "DistantionValue": 10,
+                "LevelType": "master",
+                "defence": "no",
+                "duration": "Активное (6 Выносливости)",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/PartWater.png",
+        "name": "Расступление вод",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "magicspell",
+            "components": [],
+            "costStamina": 22,
+            "effect": "Позволяет швырнуть несколько 2-метровых ледяных шипов — в количестве, равном половине значения навыка Сотворение заклинаний. Шипы можно метать в любое количество целей в пределах дистанции. Шипы наносят 5d6 урона, а при пробивании брони замораживают противника, нанося 2 пункта урона каждый раунд, пока не будут сломаны успешной проверкой Силы со СЛ 20 или пока не получат 20 урона. В противном случае шипы остаются на время действия заклинания. Каждая атака проводится отдельно..",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 20,
+                "LevelType": "master",
+                "defence": "evblo",
+                "duration": "1d10 раундов",
+                "element": "water"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/MageSpells/TryferiGaeaf.png",
+        "name": "Трифери Геаф",
+        "type": "spell"
+    }
+]

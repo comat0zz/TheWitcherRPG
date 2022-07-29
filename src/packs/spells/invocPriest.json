@@ -1,0 +1,211 @@
+[
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 1,
+            "effect": "Благословение удачи даёт цели очки Удачи в количестве, равном половине очков, которые вы набрали свыше СЛ 12 (максимум 5).",
+            "source": "core",
+            "specData": {
+                "DistantionType": "selfacc",
+                "DistantionValue": 10,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "пока не потрачена"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/BlessingOfGoodFortune.png",
+        "name": "Благословение удачи",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 2,
+            "effect": "Благословение любви даёт заклинателю бонус +3 к Харизме и Соблазнению на время действия инвокации.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "selfacc",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "1d10 раундов"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/BlessingOfLove.png",
+        "name": "Благословение любви",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 1,
+            "effect": "Освещает всё вокруг заклинателя, как если бы он держал в руках факел. Этот свет не даёт тепла и не может быть использован для поджи­ гания других предметов, в отличие от факела.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "self",
+                "DistantionValue": 0,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "3d10 раундов"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/HolyLight.png",
+        "name": "Священный свет",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Хранилище знаний позволяет заклинателю погрузиться в чертоги собственного разума, чтобы заново пережить любое своё воспоминание или вспомнить знание, когда-либо полученное.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "self",
+                "DistantionValue": 0,
+                "LevelType": "newbie",
+                "defence": "no",
+                "duration": "Мгновенная"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/VaultsOfKnowledge.png",
+        "name": "Хранилище знаний",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 1,
+            "effect": "Воды очищения мгновенно протрезвляют цель. Инвокация нивелирует эффекты крепкого алкоголя и алхимических составов, вызывающих опьянение.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "newbie",
+                "defence": "magic",
+                "duration": "Мгновенная"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/WatersOfClearance.png",
+        "name": "Воды очищения",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 3,
+            "effect": "Паутина лжи наводит беспорядок в голове цели, заставляя её сомневаться в любой информации и даже в собственных воспоминаниях. Цель дезориентирована. Один раз за раунд в свой ход цель может бросить 1d10. Если результат ниже её параметра Инт, эффект прекращается.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 8,
+                "LevelType": "newbie",
+                "defence": "magic",
+                "duration": "Бросок 1d10 ниже Инт завершает"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/WebOfLies.png",
+        "name": "Паутина лжи",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 6,
+            "effect": "Очищающее пламя поджигает цель, нанося ей 3d6 урона.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "magic",
+                "duration": "Пока не потушат"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/CleansingFire.png",
+        "name": "Очищающее пламя",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 5,
+            "effect": "Укрепляет волю цели, позволяя ей совершить новую проверку против эффектов любого действующего на неё заклинания.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 10,
+                "LevelType": "prentice",
+                "defence": "no",
+                "duration": "Мгновенная"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/HolyFortification.png",
+        "name": "Святая защита",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 4,
+            "effect": "Создаёт яркий белый огонёк, заставляющий одну цель говорить правду. Каждый раунд цель проходит новую проверку. При провале цель должна отвечать правду на любой заданный вопрос.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 5,
+                "LevelType": "prentice",
+                "defence": "magic",
+                "duration": "Активное (2 Выносливости)"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/LightOfTruth.png",
+        "name": "Свет истины",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 12,
+            "effect": "Создаёт на 1 раунд портал, позволяющий заклинателю переправить себя или других в любое место, которое он помнит. В остальном портал действует аналогично заклинанию Магический портал.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "unlimited",
+                "DistantionValue": 0,
+                "LevelType": "master",
+                "defence": "no",
+                "duration": "1 раунд"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/DivinePortal.png",
+        "name": "Божественный портал",
+        "type": "spell"
+    },
+    {
+        "data": {
+            "category": "invocPriest",
+            "components": [],
+            "costStamina": 10,
+            "effect": "Божественная мудрость позволяет получить ответ на один вопрос. Это не может быть предсказание будущего. СЛ проверки определяет ведущий в зависимости от секретности запрашиваемой информации.",
+            "source": "core",
+            "specData": {
+                "DistantionType": "accurate",
+                "DistantionValue": 50,
+                "LevelType": "master",
+                "defence": "no",
+                "duration": "Активное (5 Выносливости)"
+            }
+        },
+        "img": "systems/TheWitcherRPG/assets/Spells/Invocations/Priest/DivineWisdom.png",
+        "name": "Божественная мудрость",
+        "type": "spell"
+    }
+]
