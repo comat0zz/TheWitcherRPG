@@ -1,13 +1,37 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-Label" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
+  <a class="item" data-tab="tab-Effects" data-group="primary-tabs">{{localize "Witcher.Item.Effect"}}</a>
+  <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
+</nav>
+
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-Label" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
   </div>
-</header>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+  <div class="tab flexcol" data-tab="tab-Effects" data-group="primary-tabs">
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.traits dist_field="traits;0;0;1" dist_type="effects" isQty=false tpl="many"}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
+    <table>
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td colspan="2">
+          <select name="data.source">
+              {{#select data.source}}
+                {{#each config.SourceList as |name type|}}
+                  <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select> 
+        </td>
+     </tr>
+    </table>
+  </div>
+</section>
 </form>

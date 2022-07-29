@@ -120,16 +120,6 @@
       "stats"
     ],
     "templates": {
-      "base": {
-        "effect": [],
-        "description": "",
-        "quantity": 1,
-        "weight": 0,
-        "cost": 0,
-        "isHidden": false,
-        "associatedDiagram": "",
-        "accessibility": ""
-      },
       "system": {
         "source": "core",
         "isHide": false
@@ -242,7 +232,7 @@
       "specData": []
     }, 
     "profession": {
-      "templates": [],
+      "templates": ["system"],
       "skills": [],
       "things": [],
       "isSpecEquip": false,
@@ -259,7 +249,9 @@
       "skillTree": {}
     }, 
     "race": {
-      "templates": ["base"]
+      "templates": ["system"],
+      "description": "",
+      "traits": []
     }, 
     "effects": {
       "templates": ["system"],

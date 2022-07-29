@@ -217,6 +217,19 @@
         <td><textarea name="data.skillTree.twost3desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.twost3desc}}</textarea></td>
         <td><textarea name="data.skillTree.threest3desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.threest3desc}}</textarea></td>
       </tr>
+      
+      <tr>
+        <td>{{localize "Witcher.Source"}}</td>
+        <td colspan="2">
+          <select name="data.source">
+              {{#select data.source}}
+                {{#each config.SourceList as |name type|}}
+                  <option value="{{type}}">{{localize name}}</option>
+                {{/each}}
+              {{/select}}
+            </select> 
+        </td>
+     </tr>
     </table>
   </div>
   <div class="tab flexcol" data-tab="tab-Skills" data-group="primary-tabs">
