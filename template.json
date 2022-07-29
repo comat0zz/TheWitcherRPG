@@ -244,7 +244,18 @@
       "specData": []
     }, 
     "profession": {
-      "templates": ["base"]
+      "templates": [],
+      "skills": [],
+      "things": [],
+      "dskill": {
+        "name": "",
+        "description": ""
+      },
+      "energy": 0,
+      "description": "",
+      "magicalAbilities": [],
+      "leadStat": "",
+      "skillTree": {}
     }, 
     "race": {
       "templates": ["base"]

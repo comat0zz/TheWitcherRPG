@@ -1,13 +1,197 @@
-<form class="{{cssClass}} witcher-item-{{item.type}}" autocomplete="off">
-<header class="item-header">
-  <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />    
-  <div class="item-header-first-column">
-    <h1 class="item-name">
-      <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Item.Name"}}" />
-    </h1>
+<form class="{{cssClass}} witcher-item-{{item.type}} flexcol" autocomplete="off">
+
+{{!-- Item Sheet Header --}}
+{{> "systems/TheWitcherRPG/templates/sheets/item-header.hbs" data=data item=item}}
+
+{{!-- Item Sheet Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary-tabs">
+  <a class="item" data-tab="tab-Properties" data-group="primary-tabs">{{localize "Witcher.Item.Properties"}}</a>
+  <a class="item" data-tab="tab-Skills" data-group="primary-tabs">{{localize "Witcher.Skills"}}</a>
+  <a class="item" data-tab="tab-SkillTree" data-group="primary-tabs">{{localize "Witcher.SkillTree"}}</a>
+  <a class="item" data-tab="tab-Inventory" data-group="primary-tabs">{{localize "Witcher.Inventory"}}</a>
+  <a class="item" data-tab="tab-Detailed" data-group="primary-tabs">{{localize "Witcher.Item.Detailed"}}</a>
+</nav>
+
+{{!-- Item Sheet Body --}}
+<section class="item-content">
+  <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
+
+    
   </div>
-</header>
-<div class="item-body-container">
-  {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
-</div>
+  <div class="tab flexcol" data-tab="tab-Inventory" data-group="primary-tabs">
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.things dist_field="things;0;0;0" dist_type="all" isQty=true tpl="many"}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-SkillTree" data-group="primary-tabs">
+    <table>
+      <!-- Defining Skill -->
+      <tr>
+        <th colspan="3"><input type="text" name="data.dskill.name" value="{{data.dskill.name}}" placeholder="{{localize "Witcher.Item.Profession.dskill"}}"/></th>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <textarea name="data.dskill.description" placeholder="{{localize "Witcher.Item.Profession.dskilldesc"}}">{{data.dskill.description}}</textarea>
+        </td>
+      </tr>
+      <!-- Names Branches -->
+      <tr>
+        <th>
+          <input type="text" name="data.skillTree.onename" value="{{data.skillTree.onename}}" placeholder="{{localize "Witcher.Item.Profession.branchname"}}"/>
+        </th>
+        <th>
+          <input type="text" name="data.skillTree.twoname" value="{{data.skillTree.twoname}}" placeholder="{{localize "Witcher.Item.Profession.branchname"}}"/>
+        </th>
+        <th>
+          <input type="text" name="data.skillTree.threename" value="{{data.skillTree.threename}}" placeholder="{{localize "Witcher.Item.Profession.branchname"}}"/>
+        </th>
+      </tr>
+      <!-- Skills Tree -->
+      <tr>
+        <td><label>
+          <input type="text" name="data.skillTree.onest1name" value="{{data.skillTree.onest1name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.onest1stat">
+          {{#select data.skillTree.onest1stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+        <td><label>
+          <input type="text" name="data.skillTree.twost1name" value="{{data.skillTree.twost1name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.twost1stat">
+          {{#select data.skillTree.twost1stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+          </td>
+        <td><label>
+          <input type="text" name="data.skillTree.threest1name" value="{{data.skillTree.threest1name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.threest1stat">
+          {{#select data.skillTree.threest1stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td><textarea name="data.skillTree.onest1desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.onest1desc}}</textarea></td>
+        <td><textarea name="data.skillTree.twost1desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.twost1desc}}</textarea></td>
+        <td><textarea name="data.skillTree.threest1desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.threest1desc}}</textarea></td>
+      </tr>
+
+      <tr>
+        <td><label>
+          <input type="text" name="data.skillTree.onest2name" value="{{data.skillTree.onest2name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.onest2stat">
+          {{#select data.skillTree.onest2stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+        <td><label>
+          <input type="text" name="data.skillTree.twost2name" value="{{data.skillTree.twost2name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.twost2stat">
+          {{#select data.skillTree.twost2stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+        <td><label>
+          <input type="text" name="data.skillTree.threest2name" value="{{data.skillTree.threest2name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.threest2stat">
+          {{#select data.skillTree.threest2stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td><textarea name="data.skillTree.onest2desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.onest2desc}}</textarea></td>
+        <td><textarea name="data.skillTree.twost2desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.twost2desc}}</textarea></td>
+        <td><textarea name="data.skillTree.threest2desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.threest2desc}}</textarea></td>
+      </tr>
+
+      <tr>
+        <td><label>
+          <input type="text" name="data.skillTree.onest3name" value="{{data.skillTree.onest3name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.onest3stat">
+          {{#select data.skillTree.onest3stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+        <td><label>
+          <input type="text" name="data.skillTree.twost3name" value="{{data.skillTree.twost3name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.twost3stat">
+          {{#select data.skillTree.twost3stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+        <td><label>
+          <input type="text" name="data.skillTree.threest3name" value="{{data.skillTree.threest3name}}" placeholder="{{localize "Witcher.Item.Profession.skillname"}}"/>
+          <select name="data.skillTree.threest3stat">
+          {{#select data.skillTree.threest3stat}}
+            {{#each config.CharacterStats as |name type|}}
+              {{#ife name.Type "basis"}}
+                <option value="{{type}}">{{localize name.Long}}</option>
+              {{/ife}}
+            {{/each}}
+          {{/select}}
+          </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td><textarea name="data.skillTree.onest3desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.onest3desc}}</textarea></td>
+        <td><textarea name="data.skillTree.twost3desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.twost3desc}}</textarea></td>
+        <td><textarea name="data.skillTree.threest3desc" placeholder="{{localize "Witcher.Item.Profession.skilldesc"}}">{{data.skillTree.threest3desc}}</textarea></td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab flexcol" data-tab="tab-Skills" data-group="primary-tabs">
+    {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.skills dist_field="skills;0;0;0" dist_type="skills" isQty=false tpl="many"}}
+  </div>
+  <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+  </div>
+</section>
 </form>

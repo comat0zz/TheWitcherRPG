@@ -12,6 +12,10 @@
 			"Chaos": "НРИ Ведьмак. Том Хаоса"
 		},
 
+		"Skills": "Навыки",
+		"SkillTree": "Дерево навыков",
+		"Inventory": "Инвентарь",
+
 		"HazardLabel": "Опасность",
 		"Hazards": {
 			"low": "Низкая",
@@ -106,6 +110,14 @@
 			
 			"Alhformulas": {
 				"IngridientsLabel": "Ингридиенты"
+			},
+
+			"Profession": {
+				"dskill": "Название определяющего навыка",
+				"dskilldesc": "Описание определяющего навыка",
+				"skillname": "Название навыка...",
+				"skilldesc": "Описание навыка...",
+				"branchname": "Название ветки навыков"
 			},
 
 			"Alchemical": {
