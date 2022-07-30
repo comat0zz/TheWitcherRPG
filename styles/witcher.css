@@ -155,6 +155,118 @@
 .sheet.item form.witcher-item-substances .item-content {
   padding-top: 10px;
 }
+.sheet.actor form {
+  height: 100%;
+  overflow: hidden;
+}
+.sheet.actor form .align-center {
+  text-align: center;
+}
+.sheet.actor form input[type="text"],
+.sheet.actor form input[type="number"] {
+  background: none;
+  border: 1px solid transparent;
+}
+.sheet.actor form h1,
+.sheet.actor form h2,
+.sheet.actor form h3,
+.sheet.actor form h4,
+.sheet.actor form h5 {
+  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: var(--font-size-24, 18pt);
+  font-variant: small-caps;
+}
+.sheet.actor form .sheet-header {
+  flex: 0 0 100px;
+  border-bottom: 2px groove #eeede0;
+  align-items: center;
+}
+.sheet.actor form .sheet-header h1 {
+  flex: 1;
+  border-bottom: none;
+  height: 60px;
+  margin: 0;
+  padding: 5px;
+}
+.sheet.actor form .sheet-header h1 input {
+  font-size: calc(var(--font-size-28, 20pt) * 1.2);
+  font-variant-caps: small-caps;
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.sheet.actor form .sheet-header img.profile {
+  flex: 0 0 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 1px solid #000;
+}
+.sheet.actor form .sheet-navigation {
+  flex: 0 0 30px;
+  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: var(--font-size-24, 18pt);
+  font-variant: small-caps;
+  margin: 4px 0;
+  background: rgba(155, 155, 155, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 6px 6px 0 0;
+  font-size: var(--font-size-20, 16pt);
+}
+.sheet.actor form .sheet-navigation .item {
+  height: 30px;
+  line-height: 32px;
+  margin: 0 2px;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 12px 12px 0 0;
+  flex: 1;
+}
+.sheet.actor form .sheet-navigation .item.active {
+  background: rgba(155, 155, 155, 0.5);
+}
+.sheet.actor form .actor-content {
+  flex: 1;
+  overflow: hidden;
+}
+.sheet.actor form .actor-content .table-th-value input {
+  text-align: center;
+}
+.sheet.actor form .actor-content .tab {
+  padding: 0 5px;
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
+}
+.sheet.actor form .actor-content select {
+  width: 100%;
+}
+.sheet.actor form .actor-content input.qty-edit {
+  width: 30px;
+}
+.sheet.actor form .actor-skills-container {
+  margin: 0 auto;
+}
+.sheet.actor form .actor-skills-container .flex-parent {
+  display: flex;
+}
+.sheet.actor form .actor-skills-container .flex-item {
+  padding: 0.5em;
+}
+.sheet.actor form .actor-skills-container .flex-item.no-shrink {
+  flex-shrink: 0;
+}
+.sheet.actor form .actor-skills-container .actor-table-skills {
+  border: 1px solid var(--color-border-light-tertiary);
+  font-size: 12px;
+}
+.sheet.actor form .actor-skills-container .actor-table-skills td {
+  padding: 0 0 0 3px;
+}
+.sheet.actor form .actor-skills-container .actor-table-skills td:not(:first-child) {
+  width: 30px;
+  text-align: center;
+}
 @font-face {
   font-family: 'Thewitcher';
   src: url('./fonts/thewitcher2.ttf');

@@ -7,6 +7,19 @@ const preloadHandlebarsTemplates = async function () {
   // Define template paths to load
   const templatePaths = [
     
+    // Actors
+    "systems/TheWitcherRPG/templates/sheets/actors/hero-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/skills.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/spellbook.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/inventory.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/summary.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/statuses.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/profrace.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/biography.hbs",
+
+    "systems/TheWitcherRPG/templates/sheets/actors/monster-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/mount-sheet.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/npc-sheet.hbs",
 
     // вставка связей
     "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs",
