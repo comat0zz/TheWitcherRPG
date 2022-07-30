@@ -5,7 +5,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/perception.png",
         "name": "Внимание",
         "type": "skills"
     },
@@ -15,7 +15,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/hiking.png",
         "name": "Выживание в дикой природе",
         "type": "skills"
     },
@@ -25,7 +25,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/sherlock-holmes.png",
         "name": "Дедукция",
         "type": "skills"
     },
@@ -35,7 +35,7 @@
             "difficult": 2,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/swallow.png",
         "name": "Монстрология",
         "type": "skills"
     },
@@ -45,7 +45,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/enlightenment.png",
         "name": "Образование",
         "type": "skills"
     },
@@ -55,7 +55,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/slalom.png",
         "name": "Ориентирование в городе",
         "type": "skills"
     },
@@ -65,7 +65,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/conversation.png",
         "name": "Передача знаний",
         "type": "skills"
     },
@@ -75,7 +75,7 @@
             "difficult": 2,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/annexation.png",
         "name": "Тактика",
         "type": "skills"
     },
@@ -85,7 +85,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/cash.png",
         "name": "Торговля",
         "type": "skills"
     },
@@ -95,7 +95,7 @@
             "difficult": 1,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/prayer.png",
         "name": "Этикет",
         "type": "skills"
     },
@@ -105,7 +105,7 @@
             "difficult": 2,
             "category": "INT"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/dread.png",
         "name": "Язык",
         "type": "skills"
     },
@@ -115,7 +115,7 @@
             "difficult": 1,
             "category": "BODY"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/muscle-up.png",
         "name": "Сила",
         "type": "skills"
     },
@@ -125,7 +125,7 @@
             "difficult": 1,
             "category": "BODY"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/skills.png",
         "name": "Стойкость",
         "type": "skills"
     },
@@ -135,7 +135,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/boot-kick.png",
         "name": "Ближний бой",
         "type": "skills"
     },
@@ -145,7 +145,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/teleport.png",
         "name": "Борьба",
         "type": "skills"
     },
@@ -155,7 +155,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/horse-head.png",
         "name": "Верховая езда",
         "type": "skills"
     },
@@ -165,7 +165,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/catch.png",
         "name": "Владение древковым оружием",
         "type": "skills"
     },
@@ -175,7 +175,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/plain-dagger.png",
         "name": "Владение лёгкими клинками",
         "type": "skills"
     },
@@ -185,7 +185,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/pointy-sword.png",
         "name": "Владение мечом",
         "type": "skills"
     },
@@ -195,7 +195,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/raft.png",
         "name": "Мореходство",
         "type": "skills"
     },
@@ -205,7 +205,7 @@
             "difficult": 1,
             "category": "REF"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/sensuousness.png",
         "name": "Уклонение/Изворотливость",
         "type": "skills"
     },
@@ -215,7 +215,7 @@
             "difficult": 1,
             "category": "DEX"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/discobolus.png",
         "name": "Атлетика",
         "type": "skills"
     },
@@ -225,7 +225,7 @@
             "difficult": 1,
             "category": "DEX"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/juggler.png",
         "name": "Ловкость рук",
         "type": "skills"
     },
@@ -235,7 +235,7 @@
             "difficult": 1,
             "category": "DEX"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/mute.png",
         "name": "Скрытность",
         "type": "skills"
     },
@@ -245,7 +245,7 @@
             "difficult": 1,
             "category": "DEX"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/crossbow.png",
         "name": "Стрельба из арбалета",
         "type": "skills"
     },
@@ -255,7 +255,7 @@
             "difficult": 1,
             "category": "DEX"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/high-shot.png",
         "name": "Стрельба из лука",
         "type": "skills"
     },
@@ -265,7 +265,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/spades.png",
         "name": "Азартные игры",
         "type": "skills"
     },
@@ -275,7 +275,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/robe.png",
         "name": "Внешний вид",
         "type": "skills"
     },
@@ -285,7 +285,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/public-speaker.png",
         "name": "Выступление",
         "type": "skills"
     },
@@ -295,7 +295,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/mona-lisa.png",
         "name": "Искусство",
         "type": "skills"
     },
@@ -305,7 +305,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/stairs-goal.png",
         "name": "Лидерство",
         "type": "skills"
     },
@@ -315,7 +315,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/convince.png",
         "name": "Обман",
         "type": "skills"
     },
@@ -325,7 +325,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/hive-mind.png",
         "name": "Понимание людей",
         "type": "skills"
     },
@@ -335,7 +335,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/love-mystery.png",
         "name": "Соблазнение",
         "type": "skills"
     },
@@ -345,7 +345,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/tribunal-jury.png",
         "name": "Убеждение",
         "type": "skills"
     },
@@ -355,7 +355,7 @@
             "difficult": 1,
             "category": "EMP"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/charm.png",
         "name": "Харизма",
         "type": "skills"
     },
@@ -365,7 +365,7 @@
             "difficult": 2,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/cauldron.png",
         "name": "Алхимия",
         "type": "skills"
     },
@@ -375,7 +375,7 @@
             "difficult": 1,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/lockpicks.png",
         "name": "Взлом замков",
         "type": "skills"
     },
@@ -385,7 +385,7 @@
             "difficult": 2,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/wolf-trap.png",
         "name": "Знание ловушек",
         "type": "skills"
     },
@@ -395,7 +395,7 @@
             "difficult": 2,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/crafting.png",
         "name": "Изготовление",
         "type": "skills"
     },
@@ -405,7 +405,7 @@
             "difficult": 1,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/spy.png",
         "name": "Маскировка",
         "type": "skills"
     },
@@ -415,7 +415,7 @@
             "difficult": 1,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/medical-pack.png",
         "name": "Первая помощь",
         "type": "skills"
     },
@@ -425,7 +425,7 @@
             "difficult": 1,
             "category": "CRA"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/flake.png",
         "name": "Подделывание",
         "type": "skills"
     },
@@ -435,7 +435,7 @@
             "difficult": 1,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/confrontation.png",
         "name": "Запугивание",
         "type": "skills"
     },
@@ -445,7 +445,7 @@
             "difficult": 2,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/delighted.png",
         "name": "Наведение порчи",
         "type": "skills"
     },
@@ -455,7 +455,7 @@
             "difficult": 2,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/burning-tree.png",
         "name": "Проведение ритуалов",
         "type": "skills"
     },
@@ -465,7 +465,7 @@
             "difficult": 2,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/magic-shield.png",
         "name": "Сопротивление магии",
         "type": "skills"
     },
@@ -475,7 +475,7 @@
             "difficult": 1,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/nailed-head.png",
         "name": "Сопротивление убеждению",
         "type": "skills"
     },
@@ -485,7 +485,7 @@
             "difficult": 2,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/magick-trick.png",
         "name": "Сотворение заклинаний",
         "type": "skills"
     },
@@ -495,7 +495,7 @@
             "difficult": 1,
             "category": "WILL"
         },
-        "img": "",
+        "img": "systems/TheWitcherRPG/assets/Skills/medal.png",
         "name": "Храбрость",
         "type": "skills"
     }
