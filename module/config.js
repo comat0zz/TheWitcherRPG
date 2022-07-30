@@ -129,7 +129,16 @@ WITCHER.DistantionType = {
 
 WITCHER.SourceList = {
   core: "Witcher.SourceList.Core",
-  chaos: "Witcher.SourceList.Chaos"
+  chaos: "Witcher.SourceList.Chaos",
+  LordsLands: "Witcher.SourceList.LordsLands",
+  WitcherJournal: "Witcher.SourceList.WitcherJournal",
+  Rendolf14: "Witcher.SourceList.Rendolf14",
+  BookOfTales: "Witcher.SourceList.BookOfTales",
+  RendolfProfTools: "Witcher.SourceList.RendolfProfTools",
+  WitcherTools: "Witcher.SourceList.WitcherTools",
+  Prosthesesand: "Witcher.SourceList.Prosthesesand",
+  SchoolManticora: "Witcher.SourceList.SchoolManticora",
+  SchoolSnail: "Witcher.SourceList.SchoolSnail"
 }
 
 WITCHER.SpellsDefences = {
