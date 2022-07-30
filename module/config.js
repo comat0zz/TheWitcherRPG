@@ -138,7 +138,8 @@ WITCHER.SourceList = {
   WitcherTools: "Witcher.SourceList.WitcherTools",
   Prosthesesand: "Witcher.SourceList.Prosthesesand",
   SchoolManticora: "Witcher.SourceList.SchoolManticora",
-  SchoolSnail: "Witcher.SourceList.SchoolSnail"
+  SchoolSnail: "Witcher.SourceList.SchoolSnail",
+  HomeRule: "Witcher.SourceList.HomeRule"
 }
 
 WITCHER.SpellsDefences = {
