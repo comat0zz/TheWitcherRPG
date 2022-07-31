@@ -280,3 +280,38 @@ WITCHER.MutagenCategory = {
   blue: "Witcher.Item.Mutagen.Category.Blue",
   green: "Witcher.Item.Mutagen.Category.Green"
 }
+
+WITCHER.TablePhysicalParameters = {
+  "2": {"hp": 10, "stamina": 10, "rest": 2, "fatigue": 2},
+  "3": {"hp": 15, "stamina": 15, "rest": 3, "fatigue": 3},
+  "4": {"hp": 20, "stamina": 20, "rest": 4, "fatigue": 4},
+  "5": {"hp": 25, "stamina": 25, "rest": 5, "fatigue": 5},
+  "6": {"hp": 30, "stamina": 30, "rest": 6, "fatigue": 6},
+  "7": {"hp": 35, "stamina": 35, "rest": 7, "fatigue": 7},
+  "8": {"hp": 40, "stamina": 40, "rest": 8, "fatigue": 8},
+  "9": {"hp": 45, "stamina": 45, "rest": 9, "fatigue": 9},
+  "10": {"hp": 50, "stamina": 50, "rest": 10, "fatigue": 10},
+  "11": {"hp": 55, "stamina": 55, "rest": 11, "fatigue": 10},
+  "12": {"hp": 60, "stamina": 60, "rest": 12, "fatigue": 10},
+  "13": {"hp": 65, "stamina": 65, "rest": 13, "fatigue": 10}
+}
+
+WITCHER.TableMeleeFight = {
+  "1-2": {"hand": "1d6-4", "foot": "1d6"},
+  "3-4": {"hand": "1d6-2", "foot": "1d6+2"},
+  "5-6": {"hand": "1d6", "foot": "1d6+4"},
+  "7-8": {"hand": "1d6+2", "foot": "1d6+6"},
+  "9-10": {"hand": "1d6+4", "foot": "1d6+8"},
+  "11-12": {"hand": "1d6+6", "foot": "1d6+10"},
+  "13-99": {"hand": "1d6+8", "foot": "1d6+12"}
+}
+
+WITCHER.TableExtraDamage = {
+  "1-2": -4,
+  "3-4": -2,
+  "5-6": 0,
+  "7-8": 2,
+  "9-10": 4,
+  "11-12": 6,
+  "13-99": 8
+}

@@ -244,6 +244,33 @@
 .sheet.actor form .actor-content input.qty-edit {
   width: 30px;
 }
+.sheet.actor form .actor-stats-container {
+  margin: 0 auto;
+}
+.sheet.actor form .actor-stats-container .flex-parent {
+  display: flex;
+}
+.sheet.actor form .actor-stats-container .flex-item {
+  padding: 0.5em;
+}
+.sheet.actor form .actor-stats-container .flex-item.no-shrink {
+  flex-shrink: 0;
+}
+.sheet.actor form .actor-stats-container .actor-table-stats {
+  border: 1px solid var(--color-border-light-tertiary);
+  font-size: 16px;
+}
+.sheet.actor form .actor-stats-container .actor-table-stats img.profile {
+  width: 300px;
+  height: 300px;
+}
+.sheet.actor form .actor-stats-container .actor-table-stats td {
+  padding: 0 0 0 3px;
+}
+.sheet.actor form .actor-stats-container .actor-table-stats td:not(:first-child) {
+  width: 30px;
+  text-align: center;
+}
 .sheet.actor form .actor-skills-container {
   margin: 0 auto;
 }
@@ -266,6 +293,10 @@
 .sheet.actor form .actor-skills-container .actor-table-skills td:not(:first-child) {
   width: 30px;
   text-align: center;
+}
+.sheet.actor form .actor-skills-container .TableMeleeFight td:last-child {
+  width: 70px;
+  text-align: left;
 }
 @font-face {
   font-family: 'Thewitcher';

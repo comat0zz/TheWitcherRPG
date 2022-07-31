@@ -13,115 +13,24 @@
         "race": "",
         "skills": {},
         "stats": {
-          "int": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.INT",
-            "modifiers": []
-          },
-          "ref": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.REF",
-            "modifiers": []
-          },
-          "dex": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.DEX",
-            "modifiers": []
-          },
-          "body": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.BODY",
-            "modifiers": []
-          },
-          "spd": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.SPD",
-            "modifiers": []
-          },
-          "emp": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.EMP",
-            "modifiers": []
-          },
-          "cra": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.CRA",
-            "modifiers": []
-          },
-          "will": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.WILL",
-            "modifiers": []
-          },
-          "luck": {
-            "max": 0,
-            "current": 0,
-            "total": 0,
-            "label": "WITCHER.Actor.Stats.LUCK",
-            "modifiers": []
-          },
-          "vigor": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.VIGOR",
-            "modifiers": []
-          },
-          "stun": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.STUN",
-            "modifiers": []
-          },
-          "run": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.RUN",
-            "modifiers": []
-          },
-          "leap": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.LEAP",
-            "modifiers": []
-          },
-          "hp": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.HP",
-            "modifiers": []
-          },
-          "sta": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.STA",
-            "modifiers": []
-          },
-          "enc": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.ENC",
-            "modifiers": []
-          },
-          "rec": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.REC",
-            "modifiers": []
-          },
-          "punki": {
-            "max": 0,
-            "current": 0,
-            "label": "WITCHER.Actor.Stats.PUNKI",
-            "modifiers": []
-          }
+          "INT": {}, 
+          "REF": {}, 
+          "DEX": {}, 
+          "BODY": {}, 
+          "SPD": {}, 
+          "EMP": {}, 
+          "CRA": {}, 
+          "WILL": {}, 
+          "LUCK": {}, 
+          "VIGOR": {}, 
+          "STUN": {}, 
+          "RUN": {}, 
+          "LEAP": {}, 
+          "HP": {}, 
+          "STA": {}, 
+          "ENC": {}, 
+          "REC": {}, 
+          "PUNKI": {}
         }
       }, 
       "creature": {

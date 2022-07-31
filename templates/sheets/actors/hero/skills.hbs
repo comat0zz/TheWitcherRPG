@@ -2,20 +2,43 @@
 
   <div class="flex-parent">
     <div class="flex-item">
+      <table class="actor-table-skills TableMeleeFight">
+        <tr>
+          <th colspan="2">{{localize "Witcher.Actor.MeleeFight"}}</th>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.MeleeFightHand"}}</td>
+          <td>{{data.MeleeFightHand}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.MeleeFightFoot"}}</td>
+          <td>{{data.MeleeFightFoot}}</td>
+        </tr>
+      </table>
+
       <table class="actor-table-skills">
         <tr>
           <th colspan="3">{{localize "Witcher.Actor.Stats.INT.Long"}}</th>
         </tr>
         {{#each skillsTable.INT}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="INT"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
         </tr>
         {{/each}}
       </table>
+
+      <table class="actor-table-skills">
+        <tr>
+          <td>{{localize "Witcher.Actor.allSkills"}}</td>
+          <td>{{data.allPoints}}</td>
+        </tr>
+      </table> 
 
     </div>
     <div class="flex-item">
@@ -25,8 +48,10 @@
         </tr>
         {{#each skillsTable.REF}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="REF"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
@@ -40,8 +65,10 @@
         </tr>
         {{#each skillsTable.DEX}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="DEX"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
@@ -57,8 +84,10 @@
         </tr>
         {{#each skillsTable.EMP}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="EMP"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
@@ -72,8 +101,10 @@
         </tr>
         {{#each skillsTable.BODY}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="BODY"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
@@ -90,8 +121,10 @@
         </tr>
         {{#each skillsTable.WILL}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="WILL"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
@@ -105,8 +138,10 @@
         </tr>
         {{#each skillsTable.CRA}}
         <tr data-key="{{key}}">
-          <td>{{name}}</td>
+          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
           <td>
+            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
+            <input type="hidden" name="data.skills.{{key}}.stat" value="CRA"/>
             <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
           </td>
           <td>{{lookup (lookup ../data.skills key) 'total'}}</td>

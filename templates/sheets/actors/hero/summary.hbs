@@ -1,1 +1,45 @@
-summary
+<div class="actor-stats-container">
+
+  <div class="flex-parent">
+    <div class="flex-item">
+      <table class="actor-table-stats">
+        <tr>
+          <td>
+            <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Actor.Name"}}" /></h1></td>
+        </tr>
+        <tr>
+          <td><img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/></td>
+        </tr>
+      </table>
+      
+
+    </div>
+
+    <div class="flex-item">
+      <table class="actor-table-stats">
+        <tr>
+          <th colspan="3">{{localize "Witcher.Stats"}}</th>
+          {{#each config.CharacterStats as |val key|}}
+            {{#ife val.Type "basis"}}
+            <tr>
+              <td>{{localize val.Short}}</td>
+              <td><input type="text" name="data.stats.{{key}}.value" value="{{lookup (lookup ../data.stats key) 'value'}}"  data-dtype="Number"/></td>
+              <td>{{lookup (lookup ../data.stats key) 'total'}}</td>
+            </tr>
+            {{/ife}}
+          {{/each}}
+        </tr>
+      </table>
+    </div>
+
+    <div class="flex-item">
+      <table class="actor-table-stats">
+        <tr>
+          <th colspan="3">{{localize "Witcher.Stats"}}</th>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
