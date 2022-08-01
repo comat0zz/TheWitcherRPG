@@ -19,6 +19,9 @@
   font-size: var(--font-size-24, 18pt);
   font-variant: small-caps;
 }
+.sheet.item form .table-item-card {
+  flex: 0;
+}
 .sheet.item form .sheet-header {
   flex: 0 0 100px;
   border-bottom: 2px groove #eeede0;

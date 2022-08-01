@@ -236,9 +236,13 @@
 				"Categories": {
 					"forArmor": "Эффект брони",
 					"forWeapon": "Эффект оружия",
-					"forAll": "Общий эффект на персонаже",
+					"forAll": "Общий эффект к персонажу",
 					"forActor": "Состояние на персонаже"
-				}
+				},
+				"TableName": "Название",
+				"TableMod": "Модификатор",
+				"TableGoal": "Цель",
+				"TableValue": "Значение"
 			},
 
 			"Components": {

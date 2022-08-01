@@ -12,7 +12,7 @@
 {{!-- Item Sheet Body --}}
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
-    <table>
+    <table class="table-item-card">
       <tr>
         <td>{{localize "Witcher.Item.Effects.Category"}}</td>
         <td>
@@ -24,18 +24,6 @@
             {{/select}}
           </select> 
         </td>
-      </tr>
-      <tr>
-        <th colspan="2">{{localize "Witcher.Item.Effects.Formulas"}}</th>        
-      </tr>
-      <tr>
-        <th colspan="2"><textarea name="data.formula">{{data.formula}}</textarea></th>
-      </tr>
-      <tr>
-        <th colspan="2">{{localize "Witcher.Item.Effects.Saving"}}</th>
-      </tr>
-      <tr>
-        <th colspan="2"><textarea name="data.saving">{{data.saving}}</textarea></th>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
@@ -50,7 +38,17 @@
         </td>
      </tr>
     </table>
-    
+
+    <table class="table-item-card">
+      <tr>
+        <th>{{localize "Witcher.Item.Effects.TableName"}}</th>
+        <th>{{localize "Witcher.Item.Effects.TableMod"}}</th>
+        <th colspan="2">{{localize "Witcher.Item.Effects.TableGoal"}}</th>
+        <th>{{localize "Witcher.Item.Effects.TableValue"}}</th>
+        <th><input type="button" name="effects-add" value=" + "/></th>
+      </tr>
+    </table>
+
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

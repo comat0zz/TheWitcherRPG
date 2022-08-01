@@ -215,9 +215,7 @@
     "effects": {
       "templates": ["system"],
       "description": "",
-      "category": "",
-      "formula": "",
-      "saving": ""
+      "category": "actor"
     }, 
     "mount_gear": {
       "templates": ["system", "things"],
