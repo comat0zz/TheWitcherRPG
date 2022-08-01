@@ -282,18 +282,18 @@ WITCHER.MutagenCategory = {
 }
 
 WITCHER.TablePhysicalParameters = {
-  "2": {"hp": 10, "stamina": 10, "rest": 2, "fatigue": 2},
-  "3": {"hp": 15, "stamina": 15, "rest": 3, "fatigue": 3},
-  "4": {"hp": 20, "stamina": 20, "rest": 4, "fatigue": 4},
-  "5": {"hp": 25, "stamina": 25, "rest": 5, "fatigue": 5},
-  "6": {"hp": 30, "stamina": 30, "rest": 6, "fatigue": 6},
-  "7": {"hp": 35, "stamina": 35, "rest": 7, "fatigue": 7},
-  "8": {"hp": 40, "stamina": 40, "rest": 8, "fatigue": 8},
-  "9": {"hp": 45, "stamina": 45, "rest": 9, "fatigue": 9},
-  "10": {"hp": 50, "stamina": 50, "rest": 10, "fatigue": 10},
-  "11": {"hp": 55, "stamina": 55, "rest": 11, "fatigue": 10},
-  "12": {"hp": 60, "stamina": 60, "rest": 12, "fatigue": 10},
-  "13": {"hp": 65, "stamina": 65, "rest": 13, "fatigue": 10}
+  "2": {"hp": 10, "stamina": 10, "rest": 2, "stun": 2},
+  "3": {"hp": 15, "stamina": 15, "rest": 3, "stun": 3},
+  "4": {"hp": 20, "stamina": 20, "rest": 4, "stun": 4},
+  "5": {"hp": 25, "stamina": 25, "rest": 5, "stun": 5},
+  "6": {"hp": 30, "stamina": 30, "rest": 6, "stun": 6},
+  "7": {"hp": 35, "stamina": 35, "rest": 7, "stun": 7},
+  "8": {"hp": 40, "stamina": 40, "rest": 8, "stun": 8},
+  "9": {"hp": 45, "stamina": 45, "rest": 9, "stun": 9},
+  "10": {"hp": 50, "stamina": 50, "rest": 10, "stun": 10},
+  "11": {"hp": 55, "stamina": 55, "rest": 11, "stun": 10},
+  "12": {"hp": 60, "stamina": 60, "rest": 12, "stun": 10},
+  "13": {"hp": 65, "stamina": 65, "rest": 13, "stun": 10}
 }
 
 WITCHER.TableMeleeFight = {

@@ -1,155 +1,510 @@
 <div class="actor-skills-container">
+<div class="flex-parent">
+<div class="flex-item">
 
-  <div class="flex-parent">
-    <div class="flex-item">
-      <table class="actor-table-skills TableMeleeFight">
-        <tr>
-          <th colspan="2">{{localize "Witcher.Actor.MeleeFight"}}</th>
-        </tr>
-        <tr>
-          <td>{{localize "Witcher.Actor.MeleeFightHand"}}</td>
-          <td>{{data.MeleeFightHand}}</td>
-        </tr>
-        <tr>
-          <td>{{localize "Witcher.Actor.MeleeFightFoot"}}</td>
-          <td>{{data.MeleeFightFoot}}</td>
-        </tr>
-      </table>
+<table class="actor-table-skills TableMeleeFight">
+  <tr><th colspan="2">{{localize "Witcher.Actor.MeleeFight"}}</th></tr>
+  <tr>
+    <td>{{localize "Witcher.Actor.MeleeFightHand"}}</td>
+    <td>{{data.MeleeFightHand}}</td>
+  </tr>
+  <tr>
+    <td>{{localize "Witcher.Actor.MeleeFightFoot"}}</td>
+    <td>{{data.MeleeFightFoot}}</td>
+  </tr>
+</table>
 
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.INT.Long"}}</th>
-        </tr>
-        {{#each skillsTable.INT}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="INT"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.INT.Long"}}</th></tr>
+  <tr data-key="perception">
+    <td>{{skillsTable.INT.perception.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.perception.difficult" value="{{skillsTable.INT.perception.difficult}}"/>
+      <input type="hidden" name="data.skills.perception.stat" value="INT"/>
+      <input type="text" name="data.skills.perception.value" value="{{data.skills.perception.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.perception.total}}</td>
+  </tr>
+  <tr data-key="survival">
+    <td>{{skillsTable.INT.survival.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.survival.difficult" value="{{skillsTable.INT.survival.difficult}}"/>
+      <input type="hidden" name="data.skills.survival.stat" value="INT"/>
+      <input type="text" name="data.skills.survival.value" value="{{data.skills.survival.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.survival.total}}</td>
+  </tr>
+  <tr data-key="deduction">
+    <td>{{skillsTable.INT.deduction.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.deduction.difficult" value="{{skillsTable.INT.deduction.difficult}}"/>
+      <input type="hidden" name="data.skills.deduction.stat" value="INT"/>
+      <input type="text" name="data.skills.deduction.value" value="{{data.skills.deduction.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.deduction.total}}</td>
+  </tr>
+  <tr data-key="monstrology">
+    <td>{{skillsTable.INT.monstrology.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.monstrology.difficult" value="{{skillsTable.INT.monstrology.difficult}}"/>
+      <input type="hidden" name="data.skills.monstrology.stat" value="INT"/>
+      <input type="text" name="data.skills.monstrology.value" value="{{data.skills.monstrology.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.monstrology.total}}</td>
+  </tr>
+  <tr data-key="knowledge">
+    <td>{{skillsTable.INT.knowledge.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.knowledge.difficult" value="{{skillsTable.INT.knowledge.difficult}}"/>
+      <input type="hidden" name="data.skills.knowledge.stat" value="INT"/>
+      <input type="text" name="data.skills.knowledge.value" value="{{data.skills.knowledge.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.knowledge.total}}</td>
+  </tr>
+  <tr data-key="streetknow">
+    <td>{{skillsTable.INT.streetknow.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.streetknow.difficult" value="{{skillsTable.INT.streetknow.difficult}}"/>
+      <input type="hidden" name="data.skills.streetknow.stat" value="INT"/>
+      <input type="text" name="data.skills.streetknow.value" value="{{data.skills.streetknow.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.streetknow.total}}</td>
+  </tr>
+  <tr data-key="transknow">
+    <td>{{skillsTable.INT.transknow.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.transknow.difficult" value="{{skillsTable.INT.transknow.difficult}}"/>
+      <input type="hidden" name="data.skills.transknow.stat" value="INT"/>
+      <input type="text" name="data.skills.transknow.value" value="{{data.skills.transknow.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.transknow.total}}</td>
+  </tr>
+  <tr data-key="tactics">
+    <td>{{skillsTable.INT.tactics.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.tactics.difficult" value="{{skillsTable.INT.tactics.difficult}}"/>
+      <input type="hidden" name="data.skills.tactics.stat" value="INT"/>
+      <input type="text" name="data.skills.tactics.value" value="{{data.skills.tactics.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.tactics.total}}</td>
+  </tr>
+  <tr data-key="trade">
+    <td>{{skillsTable.INT.trade.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.trade.difficult" value="{{skillsTable.INT.trade.difficult}}"/>
+      <input type="hidden" name="data.skills.trade.stat" value="INT"/>
+      <input type="text" name="data.skills.trade.value" value="{{data.skills.trade.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.trade.total}}</td>
+  </tr>
+  <tr data-key="etiquette">
+    <td>{{skillsTable.INT.etiquette.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.etiquette.difficult" value="{{skillsTable.INT.etiquette.difficult}}"/>
+      <input type="hidden" name="data.skills.etiquette.stat" value="INT"/>
+      <input type="text" name="data.skills.etiquette.value" value="{{data.skills.etiquette.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.etiquette.total}}</td>
+  </tr>
+  <tr data-key="lang">
+    <td>{{skillsTable.INT.lang.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.lang.difficult" value="{{skillsTable.INT.lang.difficult}}"/>
+      <input type="hidden" name="data.skills.lang.stat" value="INT"/>
+      <input type="text" name="data.skills.lang.value" value="{{data.skills.lang.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.lang.total}}</td>
+  </tr>
+</table>
 
-      <table class="actor-table-skills">
-        <tr>
-          <td>{{localize "Witcher.Actor.allSkills"}}</td>
-          <td>{{data.allPoints}}</td>
-        </tr>
-      </table> 
+<table class="actor-table-skills">
+  <tr>
+    <td>{{localize "Witcher.Actor.allSkills"}}</td>
+    <td>{{data.allPoints}}</td>
+  </tr>
+</table> 
+</div>
 
-    </div>
-    <div class="flex-item">
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.REF.Long"}}</th>
-        </tr>
-        {{#each skillsTable.REF}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="REF"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
+<div class="flex-item">
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.REF.Long"}}</th></tr>
+  <tr data-key="meleefight">
+    <td>{{skillsTable.REF.meleefight.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.meleefight.difficult" value="{{skillsTable.REF.meleefight.difficult}}"/>
+      <input type="hidden" name="data.skills.meleefight.stat" value="REF"/>
+      <input type="text" name="data.skills.meleefight.value" value="{{data.skills.meleefight.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.meleefight.total}}</td>
+  </tr>
+  <tr data-key="struggle">
+    <td>{{skillsTable.REF.struggle.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.struggle.difficult" value="{{skillsTable.REF.struggle.difficult}}"/>
+      <input type="hidden" name="data.skills.struggle.stat" value="REF"/>
+      <input type="text" name="data.skills.struggle.value" value="{{data.skills.struggle.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.struggle.total}}</td>
+  </tr>
+  <tr data-key="horseriding">
+    <td>{{skillsTable.REF.horseriding.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.horseriding.difficult" value="{{skillsTable.REF.horseriding.difficult}}"/>
+      <input type="hidden" name="data.skills.horseriding.stat" value="REF"/>
+      <input type="text" name="data.skills.horseriding.value" value="{{data.skills.horseriding.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.horseriding.total}}</td>
+  </tr>
+  <tr data-key="polearm">
+    <td>{{skillsTable.REF.polearm.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.polearm.difficult" value="{{skillsTable.REF.polearm.difficult}}"/>
+      <input type="hidden" name="data.skills.polearm.stat" value="REF"/>
+      <input type="text" name="data.skills.polearm.value" value="{{data.skills.polearm.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.polearm.total}}</td>
+  </tr>
+  <tr data-key="lightblade">
+    <td>{{skillsTable.REF.lightblade.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.lightblade.difficult" value="{{skillsTable.REF.lightblade.difficult}}"/>
+      <input type="hidden" name="data.skills.lightblade.stat" value="REF"/>
+      <input type="text" name="data.skills.lightblade.value" value="{{data.skills.lightblade.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.lightblade.total}}</td>
+  </tr>
+  <tr data-key="sword">
+    <td>{{skillsTable.REF.sword.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.sword.difficult" value="{{skillsTable.REF.sword.difficult}}"/>
+      <input type="hidden" name="data.skills.sword.stat" value="REF"/>
+      <input type="text" name="data.skills.sword.value" value="{{data.skills.sword.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.sword.total}}</td>
+  </tr>
+  <tr data-key="ship">
+    <td>{{skillsTable.REF.ship.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.ship.difficult" value="{{skillsTable.REF.ship.difficult}}"/>
+      <input type="hidden" name="data.skills.ship.stat" value="REF"/>
+      <input type="text" name="data.skills.ship.value" value="{{data.skills.ship.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.ship.total}}</td>
+  </tr>
+  <tr data-key="evasion">
+    <td>{{skillsTable.REF.evasion.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.evasion.difficult" value="{{skillsTable.REF.evasion.difficult}}"/>
+      <input type="hidden" name="data.skills.evasion.stat" value="REF"/>
+      <input type="text" name="data.skills.evasion.value" value="{{data.skills.evasion.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.evasion.total}}</td>
+  </tr>
+</table>
 
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.DEX.Long"}}</th>
-        </tr>
-        {{#each skillsTable.DEX}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="DEX"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.DEX.Long"}}</th></tr>
+  <tr data-key="athletic">
+    <td>{{skillsTable.DEX.athletic.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.athletic.difficult" value="{{skillsTable.DEX.athletic.difficult}}"/>
+      <input type="hidden" name="data.skills.athletic.stat" value="DEX"/>
+      <input type="text" name="data.skills.athletic.value" value="{{data.skills.athletic.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.athletic.total}}</td>
+  </tr>
+  <tr data-key="sleighthand">
+    <td>{{skillsTable.DEX.sleighthand.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.sleighthand.difficult" value="{{skillsTable.DEX.sleighthand.difficult}}"/>
+      <input type="hidden" name="data.skills.sleighthand.stat" value="DEX"/>
+      <input type="text" name="data.skills.sleighthand.value" value="{{data.skills.sleighthand.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.sleighthand.total}}</td>
+  </tr>        
+  <tr data-key="stealth">
+    <td>{{skillsTable.DEX.stealth.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.stealth.difficult" value="{{skillsTable.DEX.stealth.difficult}}"/>
+      <input type="hidden" name="data.skills.stealth.stat" value="DEX"/>
+      <input type="text" name="data.skills.stealth.value" value="{{data.skills.stealth.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.stealth.total}}</td>
+  </tr>
+  <tr data-key="bow">
+    <td>{{skillsTable.DEX.bow.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.bow.difficult" value="{{skillsTable.DEX.bow.difficult}}"/>
+      <input type="hidden" name="data.skills.bow.stat" value="DEX"/>
+      <input type="text" name="data.skills.bow.value" value="{{data.skills.bow.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.bow.total}}</td>
+  </tr>
+  <tr data-key="crossbow">
+    <td>{{skillsTable.DEX.crossbow.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.crossbow.difficult" value="{{skillsTable.DEX.crossbow.difficult}}"/>
+      <input type="hidden" name="data.skills.crossbow.stat" value="DEX"/>
+      <input type="text" name="data.skills.crossbow.value" value="{{data.skills.crossbow.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.crossbow.total}}</td>
+  </tr>
+</table>
+</div>
 
-    </div>
-    <div class="flex-item">
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.EMP.Long"}}</th>
-        </tr>
-        {{#each skillsTable.EMP}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="EMP"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
+<div class="flex-item">
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.EMP.Long"}}</th></tr>
+  <tr data-key="gammes">
+    <td>{{skillsTable.EMP.gammes.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.gammes.difficult" value="{{skillsTable.EMP.gammes.difficult}}"/>
+      <input type="hidden" name="data.skills.gammes.stat" value="EMP"/>
+      <input type="text" name="data.skills.gammes.value" value="{{data.skills.gammes.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.gammes.total}}</td>
+  </tr>
+  <tr data-key="appearance">
+    <td>{{skillsTable.EMP.appearance.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.appearance.difficult" value="{{skillsTable.EMP.appearance.difficult}}"/>
+      <input type="hidden" name="data.skills.appearance.stat" value="EMP"/>
+      <input type="text" name="data.skills.appearance.value" value="{{data.skills.appearance.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.appearance.total}}</td>
+  </tr>
+  <tr data-key="performance">
+    <td>{{skillsTable.EMP.performance.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.performance.difficult" value="{{skillsTable.EMP.performance.difficult}}"/>
+      <input type="hidden" name="data.skills.performance.stat" value="EMP"/>
+      <input type="text" name="data.skills.performance.value" value="{{data.skills.performance.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.performance.total}}</td>
+  </tr>
+  <tr data-key="art">
+    <td>{{skillsTable.EMP.art.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.art.difficult" value="{{skillsTable.EMP.art.difficult}}"/>
+      <input type="hidden" name="data.skills.art.stat" value="EMP"/>
+      <input type="text" name="data.skills.art.value" value="{{data.skills.art.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.art.total}}</td>
+  </tr>
+  <tr data-key="leadership">
+    <td>{{skillsTable.EMP.leadership.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.leadership.difficult" value="{{skillsTable.EMP.leadership.difficult}}"/>
+      <input type="hidden" name="data.skills.leadership.stat" value="EMP"/>
+      <input type="text" name="data.skills.leadership.value" value="{{data.skills.leadership.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.leadership.total}}</td>
+  </tr>
+  <tr data-key="fraud">
+    <td>{{skillsTable.EMP.fraud.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.fraud.difficult" value="{{skillsTable.EMP.fraud.difficult}}"/>
+      <input type="hidden" name="data.skills.fraud.stat" value="EMP"/>
+      <input type="text" name="data.skills.fraud.value" value="{{data.skills.fraud.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.fraud.total}}</td>
+  </tr>
+  <tr data-key="understanding">
+    <td>{{skillsTable.EMP.understanding.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.understanding.difficult" value="{{skillsTable.EMP.understanding.difficult}}"/>
+      <input type="hidden" name="data.skills.understanding.stat" value="EMP"/>
+      <input type="text" name="data.skills.understanding.value" value="{{data.skills.understanding.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.understanding.total}}</td>
+  </tr>
+  <tr data-key="seduction">
+    <td>{{skillsTable.EMP.seduction.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.seduction.difficult" value="{{skillsTable.EMP.seduction.difficult}}"/>
+      <input type="hidden" name="data.skills.seduction.stat" value="EMP"/>
+      <input type="text" name="data.skills.seduction.value" value="{{data.skills.seduction.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.seduction.total}}</td>
+  </tr>
+  <tr data-key="belief">
+    <td>{{skillsTable.EMP.belief.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.belief.difficult" value="{{skillsTable.EMP.belief.difficult}}"/>
+      <input type="hidden" name="data.skills.belief.stat" value="EMP"/>
+      <input type="text" name="data.skills.belief.value" value="{{data.skills.belief.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.belief.total}}</td>
+  </tr>
+  <tr data-key="charisma">
+    <td>{{skillsTable.EMP.charisma.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.charisma.difficult" value="{{skillsTable.EMP.charisma.difficult}}"/>
+      <input type="hidden" name="data.skills.charisma.stat" value="EMP"/>
+      <input type="text" name="data.skills.charisma.value" value="{{data.skills.charisma.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.charisma.total}}</td>
+  </tr>
+</table>
 
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.BODY.Long"}}</th>
-        </tr>
-        {{#each skillsTable.BODY}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="BODY"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.BODY.Long"}}</th></tr>
+  <tr data-key="stength">
+    <td>{{skillsTable.BODY.stength.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.stength.difficult" value="{{skillsTable.BODY.stength.difficult}}"/>
+      <input type="hidden" name="data.skills.stength.stat" value="BODY"/>
+      <input type="text" name="data.skills.stength.value" value="{{data.skills.stength.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.stength.total}}</td>
+  </tr>
+  <tr data-key="endurance">
+    <td>{{skillsTable.BODY.endurance.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.endurance.difficult" value="{{skillsTable.BODY.endurance.difficult}}"/>
+      <input type="hidden" name="data.skills.endurance.stat" value="BODY"/>
+      <input type="text" name="data.skills.endurance.value" value="{{data.skills.endurance.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.endurance.total}}</td>
+  </tr>
+</table>
+</div>
 
-    </div>
+<div class="flex-item">
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.WILL.Long"}}</th></tr>
+  <tr data-key="intimidation">
+    <td>{{skillsTable.WILL.intimidation.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.intimidation.difficult" value="{{skillsTable.WILL.intimidation.difficult}}"/>
+      <input type="hidden" name="data.skills.intimidation.stat" value="WILL"/>
+      <input type="text" name="data.skills.intimidation.value" value="{{data.skills.intimidation.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.intimidation.total}}</td>
+  </tr>
+  <tr data-key="injury">
+    <td>{{skillsTable.WILL.injury.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.injury.difficult" value="{{skillsTable.WILL.injury.difficult}}"/>
+      <input type="hidden" name="data.skills.injury.stat" value="WILL"/>
+      <input type="text" name="data.skills.injury.value" value="{{data.skills.injury.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.injury.total}}</td>
+  </tr>
+  <tr data-key="ritual">
+    <td>{{skillsTable.WILL.ritual.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.ritual.difficult" value="{{skillsTable.WILL.ritual.difficult}}"/>
+      <input type="hidden" name="data.skills.ritual.stat" value="WILL"/>
+      <input type="text" name="data.skills.ritual.value" value="{{data.skills.ritual.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.ritual.total}}</td>
+  </tr>
+  <tr data-key="resistmagic">
+    <td>{{skillsTable.WILL.resistmagic.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.resistmagic.difficult" value="{{skillsTable.WILL.resistmagic.difficult}}"/>
+      <input type="hidden" name="data.skills.resistmagic.stat" value="WILL"/>
+      <input type="text" name="data.skills.resistmagic.value" value="{{data.skills.resistmagic.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.resistmagic.total}}</td>
+  </tr>
+  <tr data-key="resistpersuasion">
+    <td>{{skillsTable.WILL.resistpersuasion.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.resistpersuasion.difficult" value="{{skillsTable.WILL.resistpersuasion.difficult}}"/>
+      <input type="hidden" name="data.skills.resistpersuasion.stat" value="WILL"/>
+      <input type="text" name="data.skills.resistpersuasion.value" value="{{data.skills.resistpersuasion.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.resistpersuasion.total}}</td>
+  </tr>
+  <tr data-key="spellmagic">
+    <td>{{skillsTable.WILL.spellmagic.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.spellmagic.difficult" value="{{skillsTable.WILL.spellmagic.difficult}}"/>
+      <input type="hidden" name="data.skills.spellmagic.stat" value="WILL"/>
+      <input type="text" name="data.skills.spellmagic.value" value="{{data.skills.spellmagic.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.spellmagic.total}}</td>
+  </tr>
+  <tr data-key="bravery">
+    <td>{{skillsTable.WILL.bravery.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.bravery.difficult" value="{{skillsTable.WILL.bravery.difficult}}"/>
+      <input type="hidden" name="data.skills.bravery.stat" value="WILL"/>
+      <input type="text" name="data.skills.bravery.value" value="{{data.skills.bravery.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.bravery.total}}</td>
+  </tr>  
+</table>
 
-    <div class="flex-item">
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.WILL.Long"}}</th>
-        </tr>
-        {{#each skillsTable.WILL}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="WILL"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
+<table class="actor-table-skills">
+  <tr><th colspan="3">{{localize "Witcher.Actor.Stats.CRA.Long"}}</th></tr>
+  <tr data-key="alchemy">
+    <td>{{skillsTable.CRA.alchemy.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.alchemy.difficult" value="{{skillsTable.CRA.alchemy.difficult}}"/>
+      <input type="hidden" name="data.skills.alchemy.stat" value="CRA"/>
+      <input type="text" name="data.skills.alchemy.value" value="{{data.skills.alchemy.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.alchemy.total}}</td>
+  </tr>
+  <tr data-key="lockpicks">
+    <td>{{skillsTable.CRA.lockpicks.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.lockpicks.difficult" value="{{skillsTable.CRA.lockpicks.difficult}}"/>
+      <input type="hidden" name="data.skills.lockpicks.stat" value="CRA"/>
+      <input type="text" name="data.skills.lockpicks.value" value="{{data.skills.lockpicks.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.lockpicks.total}}</td>
+  </tr>
+  <tr data-key="trapknow">
+    <td>{{skillsTable.CRA.trapknow.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.trapknow.difficult" value="{{skillsTable.CRA.trapknow.difficult}}"/>
+      <input type="hidden" name="data.skills.trapknow.stat" value="CRA"/>
+      <input type="text" name="data.skills.trapknow.value" value="{{data.skills.trapknow.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.trapknow.total}}</td>
+  </tr>
+  <tr data-key="crafting">
+    <td>{{skillsTable.CRA.crafting.name}} (2)</td>
+    <td>
+      <input type="hidden" name="data.skills.crafting.difficult" value="{{skillsTable.CRA.crafting.difficult}}"/>
+      <input type="hidden" name="data.skills.crafting.stat" value="CRA"/>
+      <input type="text" name="data.skills.crafting.value" value="{{data.skills.crafting.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.crafting.total}}</td>
+  </tr>
+  <tr data-key="spy">
+    <td>{{skillsTable.CRA.spy.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.spy.difficult" value="{{skillsTable.CRA.spy.difficult}}"/>
+      <input type="hidden" name="data.skills.spy.stat" value="CRA"/>
+      <input type="text" name="data.skills.spy.value" value="{{data.skills.spy.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.spy.total}}</td>
+  </tr>
+  <tr data-key="firstmedical">
+    <td>{{skillsTable.CRA.firstmedical.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.firstmedical.difficult" value="{{skillsTable.CRA.firstmedical.difficult}}"/>
+      <input type="hidden" name="data.skills.firstmedical.stat" value="CRA"/>
+      <input type="text" name="data.skills.firstmedical.value" value="{{data.skills.firstmedical.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.firstmedical.total}}</td>
+  </tr>
+  <tr data-key="fake">
+    <td>{{skillsTable.CRA.fake.name}}</td>
+    <td>
+      <input type="hidden" name="data.skills.fake.difficult" value="{{skillsTable.CRA.fake.difficult}}"/>
+      <input type="hidden" name="data.skills.fake.stat" value="CRA"/>
+      <input type="text" name="data.skills.fake.value" value="{{data.skills.fake.value}}"  data-dtype="Number"/>
+    </td>
+    <td>{{data.skills.fake.total}}</td>
+  </tr>
+</table>
+</div>
 
-      <table class="actor-table-skills">
-        <tr>
-          <th colspan="3">{{localize "Witcher.Actor.Stats.CRA.Long"}}</th>
-        </tr>
-        {{#each skillsTable.CRA}}
-        <tr data-key="{{key}}">
-          <td>{{name}}{{#ifgt difficult 1}} ({{difficult}}){{/ifgt}}</td>
-          <td>
-            <input type="hidden" name="data.skills.{{key}}.difficult" value="{{difficult}}"/>
-            <input type="hidden" name="data.skills.{{key}}.stat" value="CRA"/>
-            <input type="text" name="data.skills.{{key}}.value" value="{{lookup (lookup ../data.skills key) 'value'}}"  data-dtype="Number"/>
-          </td>
-          <td>{{lookup (lookup ../data.skills key) 'total'}}</td>
-        </tr>
-        {{/each}}
-      </table>
-
-    </div>
-  </div>
-
+</div>
 </div>

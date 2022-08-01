@@ -1,1 +1,23 @@
-statuses
+<table class="table-actor-statuseffects">
+  <tr><th colspan="7">{{localize "Witcher.Actor.DebugEffects.Info"}}</th></tr>
+  <tr>
+    <th>{{localize "Witcher.Actor.DebugEffects.Type"}}</th>
+    <th>{{localize "Witcher.Actor.DebugEffects.Key"}}</th>
+    <th>{{localize "Witcher.Actor.DebugEffects.Mod"}}</th>
+    <th>{{localize "Witcher.Actor.DebugEffects.Value"}}</th>
+    <th>{{{localize "Witcher.Actor.DebugEffects.ID"}}}</th>
+    <th>{{{localize "Witcher.Actor.DebugEffects.EffectID"}}}</th>
+    <th>{{localize "Witcher.Actor.DebugEffects.From"}}</th>
+  </tr>
+  {{#each data.modifications}}
+  <tr>
+    <td>{{type}}</td>
+    <td>{{key}}</td>
+    <td>{{mod}}</td>
+    <td>{{value}}</td>
+    <td>{{itemId}}<br><i>ввыести предмет или то, на чем эффект</i></td>
+    <td>{{effectId}}<br><i>вывести кликабельный эффект</i></td>
+    <td>{{from}}</td>
+  </tr>
+  {{/each}}
+</table>

@@ -1,33 +1,73 @@
 <div class="actor-stats-container">
+<h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Actor.Name"}}" /></h1>
 
   <div class="flex-parent">
     <div class="flex-item">
-      <table class="actor-table-stats">
-        <tr>
-          <td>
-            <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Actor.Name"}}" /></h1></td>
-        </tr>
-        <tr>
-          <td><img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/></td>
-        </tr>
-      </table>
-      
-
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
     </div>
 
     <div class="flex-item">
       <table class="actor-table-stats">
         <tr>
-          <th colspan="3">{{localize "Witcher.Stats"}}</th>
-          {{#each config.CharacterStats as |val key|}}
-            {{#ife val.Type "basis"}}
-            <tr>
-              <td>{{localize val.Short}}</td>
-              <td><input type="text" name="data.stats.{{key}}.value" value="{{lookup (lookup ../data.stats key) 'value'}}"  data-dtype="Number"/></td>
-              <td>{{lookup (lookup ../data.stats key) 'total'}}</td>
-            </tr>
-            {{/ife}}
-          {{/each}}
+          <td>{{localize "Witcher.Actor.Stats.INT.Short"}}</td>
+          <td><input type="text" name="data.stats.INT.value" value="{{data.stats.INT.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.INT.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.REF.Short"}}</td>
+          <td><input type="text" name="data.stats.REF.value" value="{{data.stats.REF.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.REF.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.DEX.Short"}}</td>
+          <td><input type="text" name="data.stats.DEX.value" value="{{data.stats.DEX.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.DEX.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.BODY.Short"}}</td>
+          <td><input type="text" name="data.stats.BODY.value" value="{{data.stats.BODY.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.BODY.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.SPD.Short"}}</td>
+          <td><input type="text" name="data.stats.SPD.value" value="{{data.stats.SPD.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.SPD.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.EMP.Short"}}</td>
+          <td><input type="text" name="data.stats.EMP.value" value="{{data.stats.EMP.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.EMP.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.CRA.Short"}}</td>
+          <td><input type="text" name="data.stats.CRA.value" value="{{data.stats.CRA.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.CRA.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.WILL.Short"}}</td>
+          <td><input type="text" name="data.stats.WILL.value" value="{{data.stats.WILL.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.WILL.total}}</td>
+        </tr>        
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.RUN.Short"}}</td>
+          <td colspan="2">{{data.stats.RUN.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.LEAP.Short"}}</td>
+          <td colspan="2">{{data.stats.LEAP.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.REC.Short"}}</td>
+          <td colspan="2">{{data.stats.REC.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.STUN.Short"}}</td>
+          <td colspan="2">{{data.stats.STUN.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.ENC.Short"}}</td>
+          <td>{{data.stats.ENC.value}}</td>
+          <td>{{data.stats.ENC.total}}</td>
         </tr>
       </table>
     </div>
@@ -35,9 +75,27 @@
     <div class="flex-item">
       <table class="actor-table-stats">
         <tr>
-          <th colspan="3">{{localize "Witcher.Stats"}}</th>
-
+          <td>{{localize "Witcher.Actor.Stats.VIGOR.Short"}}</td>
+          <td><input type="text" name="data.stats.VIGOR.value" value="{{data.stats.VIGOR.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.VIGOR.total}}</td>
         </tr>
+        
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.HP.Short"}}</td>
+          <td><input type="text" name="data.stats.HP.value" value="{{data.stats.HP.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.HP.total}}</td>
+        </tr>
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.STA.Short"}}</td>
+          <td><input type="text" name="data.stats.STA.value" value="{{data.stats.STA.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.STA.total}}</td>
+        </tr>
+
+        <tr>
+          <td>{{localize "Witcher.Actor.Stats.LUCK.Short"}}</td>
+          <td><input type="text" name="data.stats.LUCK.value" value="{{data.stats.LUCK.value}}"  data-dtype="Number"/></td>
+          <td>{{data.stats.LUCK.total}}</td>
+        </tr>        
       </table>
     </div>
   </div>
