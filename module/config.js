@@ -226,10 +226,16 @@ WITCHER.categoryWeapon = {
 }
 
 WITCHER.EffectsCategories = {
-  all: "Witcher.Item.Effects.Categories.forActor",
-  weapon: "Witcher.Item.Effects.Categories.forWeapon",
-  armor: "Witcher.Item.Effects.Categories.forArmor",
-  actor: "Witcher.Item.Effects.Categories.forAll"  
+  simple: "Witcher.Item.Effects.Categories.simple.val",
+  light: "Witcher.Item.Effects.Categories.light.val",
+  aura: "Witcher.Item.Effects.Categories.aura.val",
+  properties: "Witcher.Item.Effects.Categories.properties.val"  
+}
+
+WITCHER.EffectsTarget = {
+  self: "Witcher.Item.Effects.Targets.self",
+  attack: "Witcher.Item.Effects.Targets.attack",
+  defence: "Witcher.Item.Effects.Targets.defence"
 }
 
 WITCHER.EnchancementsCategories = {

@@ -18,13 +18,35 @@
         <td>
           <select name="data.category">
             {{#select data.category}}
-              {{#each config.EffectsCategories as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
+              {{#each config.EffectsCategories as |value key|}}
+                <option value="{{key}}">{{localize value}}</option>
               {{/each}}
             {{/select}}
           </select> 
         </td>
       </tr>
+      <tr>
+        <td colspan="2">
+          {{#ife data.category "simple"}}{{localize "Witcher.Item.Effects.Categories.simple.info"}}{{/ife}}
+          {{#ife data.category "light"}}{{localize "Witcher.Item.Effects.Categories.light.info"}}{{/ife}}
+          {{#ife data.category "aura"}}{{localize "Witcher.Item.Effects.Categories.aura.info"}}{{/ife}}
+          {{#ife data.category "properties"}}{{localize "Witcher.Item.Effects.Categories.properties.info"}}{{/ife}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>{{localize "Witcher.Item.Effects.TargetsValue"}}</td>
+        <td>
+          <select name="data.target">
+            {{#select data.target}}
+              {{#each config.EffectsTarget as |value key|}}
+                <option value="{{key}}">{{localize value}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+        </td>
+      </tr>
+      
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
         <td>
@@ -41,11 +63,23 @@
 
     <table class="table-item-card">
       <tr>
-        <th>{{localize "Witcher.Item.Effects.TableName"}}</th>
         <th>{{localize "Witcher.Item.Effects.TableMod"}}</th>
         <th colspan="2">{{localize "Witcher.Item.Effects.TableGoal"}}</th>
         <th>{{localize "Witcher.Item.Effects.TableValue"}}</th>
-        <th><input type="button" name="effects-add" value=" + "/></th>
+        <!-- <th><input type="button" name="effects-add" value=" + "/></th> -->
+      </tr>
+      <tr class="attack-of-the-clones">
+        <td>
+          <select name="data.dataSet.modification">
+             {{#select data.dataSet.modification}}
+              <option value="+"> + </option>
+              <option value="-"> - </option>
+             {{/select}}
+          </select>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
 

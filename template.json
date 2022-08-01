@@ -215,7 +215,12 @@
     "effects": {
       "templates": ["system"],
       "description": "",
-      "category": "actor"
+      "category": "simple",
+      "modification": "+",
+      "type": "stats",
+      "key": "INT",
+      "value": 0,
+      "target": "self"
     }, 
     "mount_gear": {
       "templates": ["system", "things"],
