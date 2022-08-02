@@ -2,8 +2,48 @@
 <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "Witcher.Actor.Name"}}" /></h1>
 
   <div class="flex-parent">
+   
     <div class="flex-item">
       <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    </div>
+
+    <div class="flex-item">
+    <table class="actor-table-stats">
+      <tr class="block-40px">
+        <td>{{localize "Witcher.Actor.Race"}}</td>
+        <td></td>
+      </tr>
+      <tr class="block-40px">
+        <td>{{localize "Witcher.Actor.Profession"}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan="2">{{localize "Witcher.Actor.DefiningSkill"}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Actor.Reputation"}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Actor.Sex"}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Actor.Age"}}</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Actor.Krones"}}</td>
+        <td></td>
+      </tr>
+    </table>
     </div>
 
     <div class="flex-item">
@@ -73,29 +113,36 @@
     </div>
 
     <div class="flex-item">
-      <table class="actor-table-stats">
-        <tr>
-          <td>{{localize "Witcher.Actor.Stats.VIGOR.Short"}}</td>
-          <td><input type="text" name="data.stats.VIGOR.value" value="{{data.stats.VIGOR.value}}"  data-dtype="Number"/></td>
-          <td>{{data.stats.VIGOR.total}}</td>
-        </tr>
-        
-        <tr>
-          <td>{{localize "Witcher.Actor.Stats.HP.Short"}}</td>
-          <td><input type="text" name="data.stats.HP.value" value="{{data.stats.HP.value}}"  data-dtype="Number"/></td>
-          <td>{{data.stats.HP.total}}</td>
-        </tr>
-        <tr>
-          <td>{{localize "Witcher.Actor.Stats.STA.Short"}}</td>
-          <td><input type="text" name="data.stats.STA.value" value="{{data.stats.STA.value}}"  data-dtype="Number"/></td>
-          <td>{{data.stats.STA.total}}</td>
-        </tr>
+      <table class="actor-table-stats actor-table-sensors">
+        <tr><td class="actor-summary-sensor actor-sensor-hp">
+          <input type="text" name="data.stats.HP.value" value="{{data.stats.HP.value}}"  data-dtype="Number"/>/ {{data.stats.HP.total}}
+        </td></tr>
+        <tr><td class="actor-summary-sensor actor-sensor-sta">
+          <input type="text" name="data.stats.STA.value" value="{{data.stats.STA.value}}"  data-dtype="Number"/>/ {{data.stats.STA.total}}
+        </td></tr>
+        <tr><td class="actor-summary-sensor actor-sensor-vigor">
+          <input type="text" name="data.stats.VIGOR.value" value="{{data.stats.VIGOR.value}}"  data-dtype="Number"/>/ {{data.stats.VIGOR.total}}
+        </td></tr>
+        <tr><td class="actor-summary-sensor actor-sensor-luck">
+          <input type="text" name="data.stats.LUCK.value" value="{{data.stats.LUCK.value}}"  data-dtype="Number"/>/ {{data.stats.LUCK.total}}
+        </td></tr>
+      </table>
+    </div>
 
+    <div class="flex-item">
+      <table>
+        <tr><th colspan="2">{{localize "Witcher.Actor.Buttons.QuickActions"}}</th></tr>
         <tr>
-          <td>{{localize "Witcher.Actor.Stats.LUCK.Short"}}</td>
-          <td><input type="text" name="data.stats.LUCK.value" value="{{data.stats.LUCK.value}}"  data-dtype="Number"/></td>
-          <td>{{data.stats.LUCK.total}}</td>
-        </tr>        
+          <td><input type="submit" value="{{localize "Witcher.Actor.Buttons.Initiative"}}" name=""/></td>
+          <td><input type="submit" value="{{localize "Witcher.Actor.Buttons.Stun"}}" name=""/></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="{{localize "Witcher.Actor.Buttons.TargetLoc"}}" name=""/></td>
+          <td><input type="submit" value="{{localize "Witcher.Actor.Buttons.Defense"}}" name=""/></td>
+        </tr>
+        <tr>
+          <td colspan="2">Очки улучшений</td>
+        </tr>
       </table>
     </div>
   </div>

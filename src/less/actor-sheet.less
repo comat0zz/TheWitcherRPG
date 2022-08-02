@@ -122,6 +122,9 @@
         font-size: 16px;
         margin: 0;
         
+        .block-40px {
+          height: 40px;
+        }
         img.profile {
           width: 300px;
           height: 300px;
@@ -135,7 +138,38 @@
           width: 30px;
           text-align: center;
         }
-       }
+      }
+
+      .actor-table-sensors {
+        height: 310px;
+        width: 80px;
+        text-align: center;
+        border: 0;
+
+        .actor-summary-sensor {
+          
+          height: 77px;
+          background-repeat: no-repeat;
+          background-size: 80px 77px;
+          
+          input {
+            width: 25px;
+            padding: 0;
+          }
+        }
+        .actor-sensor-hp {
+          background-image:url(../assets/ActorSheets/health-dead.png);
+        }
+        .actor-sensor-sta {
+          background-image:url(../assets/ActorSheets/stamina.png);
+        }
+        .actor-sensor-vigor {
+          background-image:url(../assets/ActorSheets/focus.png);
+        }
+        .actor-sensor-luck {
+          background-image:url(../assets/ActorSheets/clover.png);
+        }
+      }
 
     }
 

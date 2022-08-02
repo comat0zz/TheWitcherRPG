@@ -45,6 +45,22 @@
 
 		"Actor": {
 			"Name": "Имя",
+			"Race": "Раса",
+			"Profession": "Профессия",
+			"DefiningSkill": "Определяющий навык",
+			"Reputation": "Репутация",
+			"Sex": "Пол",
+			"Age": "Возраст",
+			"Krones": "Кроны",
+
+			
+			"Buttons": {
+				"QuickActions": "Быстрые действия",
+				"Initiative": "Инициатива",
+				"Stun": "Устойчивость",
+				"TargetLoc": "Разброс",
+				"Defense": "Защита"
+			},
 
 			"MeleeFight": "Безоружный бой",
 			"MeleeFightHand": "Удар рукой",

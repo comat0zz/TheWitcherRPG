@@ -265,6 +265,9 @@
   font-size: 16px;
   margin: 0;
 }
+.sheet.actor form .actor-stats-container .actor-table-stats .block-40px {
+  height: 40px;
+}
 .sheet.actor form .actor-stats-container .actor-table-stats img.profile {
   width: 300px;
   height: 300px;
@@ -275,6 +278,33 @@
 .sheet.actor form .actor-stats-container .actor-table-stats td:not(:first-child) {
   width: 30px;
   text-align: center;
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors {
+  height: 310px;
+  width: 80px;
+  text-align: center;
+  border: 0;
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors .actor-summary-sensor {
+  height: 77px;
+  background-repeat: no-repeat;
+  background-size: 80px 77px;
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors .actor-summary-sensor input {
+  width: 25px;
+  padding: 0;
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-hp {
+  background-image: url(../assets/ActorSheets/health-dead.png);
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-sta {
+  background-image: url(../assets/ActorSheets/stamina.png);
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-vigor {
+  background-image: url(../assets/ActorSheets/focus.png);
+}
+.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-luck {
+  background-image: url(../assets/ActorSheets/clover.png);
 }
 .sheet.actor form .actor-skills-container {
   margin: 0 auto;
