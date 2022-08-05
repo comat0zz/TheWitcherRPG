@@ -340,3 +340,17 @@
 .witcher-style {
   font-family: Thewitcher;
 }
+.witcher.sheet.actor > .window-content {
+  background: #fff;
+  padding-top: 0;
+}
+.witcher.sheet.actor > .window-content .sheet-navigation {
+  background: none;
+  margin: 0;
+}
+.witcher.sheet.actor > .window-content .sheet-navigation .item {
+  border-radius: 0 0 12px 12px;
+}
+.witcher.sheet.actor > .window-content .sheet-navigation .item.active {
+  background: rgba(211, 211, 211, 0.5);
+}
