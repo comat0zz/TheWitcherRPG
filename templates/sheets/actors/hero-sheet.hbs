@@ -19,21 +19,180 @@
 {{!-- NPC Sheet Body --}}
 <section class="actor-content">
     
-  <div class="tab summary flexcol" data-group="primary" data-tab="summary">
+  <div class="tab summary flexrow" data-group="primary" data-tab="summary">
     <div class="left-side">
-      <div class="witcher-name">
-        <h1>
-          
-        </h1>
-      </div>
+      <!-- Чукча не верстал 7 лет, потому сорян кто это увидит :) -->
+      <table>
+        <tr>
+          <td><input name="name" type="text" value="{{item.name}}"/></td>
+          <td class="width-cells-30px"></td>
+          <td class="width-cells-70px"><input name="data.biography.sex" type="text" value="{{data.biography.sex}}"/></td>
+          <td class="width-cells-30px"></td>
+          <td class="width-cells-70px"><input name="data.biography.age" type="text" value="{{data.biography.age}}"/></td>
+        </tr>
+        <tr>
+          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Name"}}</td>
+          <td class="width-cells-30px"></td>
+          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Sex"}}</td>
+          <td class="width-cells-30px"></td>
+          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Age"}}</td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td class="width-cells-labels">&nbsp;</td>
+          <td class="width-cells-30px"></td>
+          <td class="width-cells-labels"></td>
+        </tr>
+        <tr>
+          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Race"}}</td>
+          <td class="width-cells-30px"></td>
+          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Profession"}}</td>
+        </tr>
+      </table>
 
-      <div class="witcher-skills">
+      <div class="flexrow pizza-in-two-halves">
+        <div class="flexcol actor-skills">
+          <div class="flexrow item-stat">
+            <div class="item-stat-left">
+              <div class="item-stat-square">
+                <input class="item-stat-input" name="data.stats.INT.value" type="text" value="{{data.stats.INT.value}}" data-dtype="Number"/>
+                <div class="item-square-mini">
+                  <div>{{data.stats.INT.total}}</div>                  
+                </div>
+              </div>
+            </div>
+            
+            <ul class="list-skills">
+              <li>
+                <div class="ls-li-item">
+                  <span>
+                    <input type="hidden" name="data.skills.perception.difficult" value="{{skillsTable.INT.perception.difficult}}"/>
+                    <input type="hidden" name="data.skills.perception.stat" value="INT"/>
+                    <input class="ls-input" name="data.skills.perception.value" type="text" value="{{data.skills.perception.value}}" data-dtype="Number"/>
+                    <span class="ls-square">&#9672;</span>
+                    <input class="ls-input" type="text" value="{{data.skills.perception.total}}" data-dtype="Number" disabled/>
 
+                  </span>
+                  {{skillsTable.INT.perception.name}}
+                </div>
+              </li>
+
+              <li>
+                <div class="ls-li-item">
+                  <span>
+                    <input type="hidden" name="data.skills.survival.difficult" value="{{skillsTable.INT.survival.difficult}}"/>
+                    <input type="hidden" name="data.skills.survival.stat" value="INT"/>
+                    <input class="ls-input" name="data.skills.survival.value" type="text" value="{{data.skills.survival.value}}" data-dtype="Number"/>
+                    <span class="ls-square inprof">&#9672;</span>
+                    <input class="ls-input" type="text" value="{{data.skills.survival.total}}" data-dtype="Number" disabled/>
+
+                  </span>
+                  {{skillsTable.INT.survival.name}}
+                </div>
+              </li>
+
+              <li>
+                <div class="ls-li-item">
+                  <span>
+                    <input type="hidden" name="data.skills.deduction.difficult" value="{{skillsTable.INT.deduction.difficult}}"/>
+                    <input type="hidden" name="data.skills.deduction.stat" value="INT"/>
+                    <input class="ls-input" name="data.skills.deduction.value" type="text" value="{{data.skills.deduction.value}}" data-dtype="Number"/>
+                    <span class="ls-square inprof">&#9672;</span>
+                    <input class="ls-input" type="text" value="{{data.skills.deduction.total}}" data-dtype="Number" disabled/>
+
+                  </span>
+                  {{skillsTable.INT.deduction.name}}
+                </div>
+              </li>
+
+              <li>
+                <div class="ls-li-item">
+                  <span>
+                    <input type="hidden" name="data.skills.monstrology.difficult" value="{{skillsTable.INT.monstrology.difficult}}"/>
+                    <input type="hidden" name="data.skills.monstrology.stat" value="INT"/>
+                    <input class="ls-input" name="data.skills.monstrology.value" type="text" value="{{data.skills.monstrology.value}}" data-dtype="Number"/>
+                    <span class="ls-square">&#9672;</span>
+                    <input class="ls-input" type="text" value="{{data.skills.monstrology.total}}" data-dtype="Number" disabled/>
+
+                  </span>
+                  {{skillsTable.INT.monstrology.name}}
+                </div>
+              </li>
+             
+            </ul>
+          </div>
+          <div class="flexrow item-stat">
+            <div class="item-stat-left">
+              <div class="item-stat-square">
+                <input class="item-stat-input" name="data.stats.REF.value" type="text" value="{{data.stats.REF.value}}" data-dtype="Number"/>
+              </div>
+            </div>
+            <ul class="list-skills">
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+            </ul>
+          </div>
+          <div class="flexrow item-stat">
+            <div class="item-stat-left">
+              <div class="item-stat-square"><input class="item-stat-input" name="" type="text" value=""/></div>
+            </div>
+            <ul class="list-skills">
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+              <li>
+                <input class="ls-input" name="" type="text" value=""/>
+                <span>1</span>
+                <input class="ls-input" name="" type="text" value=""/>  
+              </li>
+            </ul>
+          </div>
+           
+        </div>
+        <div class="flexcol">
+          не решили что тут
+        </div>
       </div>
 
     </div>
     <div class="right-side">
-
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
     </div>  
   </div>
     <!-- 

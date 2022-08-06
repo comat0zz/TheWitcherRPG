@@ -53,6 +53,14 @@
 			"Age": "Возраст",
 			"Krones": "Кроны",
 
+			"Biography": {
+				"Name": "имя",
+				"Sex": "пол",
+				"Age": "возраст",
+				"Race": "раса",
+				"Profession": "профессия"
+			},
+
 			
 			"Buttons": {
 				"QuickActions": "Быстрые действия",
