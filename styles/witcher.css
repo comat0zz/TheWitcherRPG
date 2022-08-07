@@ -348,15 +348,36 @@
   background: #fff;
   padding-top: 0;
 }
-.witcher.sheet.actor > .window-content .sheet-navigation {
+.witcher.sheet.actor > .window-content .main-nav.sheet-navigation {
   background: none;
   margin: 0;
 }
-.witcher.sheet.actor > .window-content .sheet-navigation .item {
+.witcher.sheet.actor > .window-content .main-nav.sheet-navigation .item {
   border-radius: 0 0 12px 12px;
 }
-.witcher.sheet.actor > .window-content .sheet-navigation .item.active {
+.witcher.sheet.actor > .window-content .main-nav.sheet-navigation .item.active {
   background: rgba(211, 211, 211, 0.5);
+}
+.witcher.sheet.actor > .window-content .second-nav {
+  background: none;
+  margin: 0;
+}
+.witcher.sheet.actor > .window-content .second-nav .item {
+  border-radius: 12px 12px 12px 12px;
+}
+.witcher.sheet.actor > .window-content .second-nav .item.active {
+  background: #D4D4D4;
+}
+.witcher.sheet.actor > .window-content .skinv-content {
+  flex: 1;
+  overflow: hidden;
+  margin: 0;
+}
+.witcher.sheet.actor > .window-content .skinv-content .tab {
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
 }
 .witcher.sheet.actor > .window-content .summary .left-side {
   flex: 3;
@@ -381,15 +402,22 @@
   background-repeat: no-repeat;
   background-size: 100% 1px;
 }
+.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .skill-delimiter {
+  margin-top: 5px;
+  font-size: 2px;
+  background-image: url(../assets/images/skill-delimiter.png);
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+}
+.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .margin-bottom-15 {
+  margin-bottom: 15px;
+}
 .witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills {
   border: 10px solid #D4D4D4;
   background-color: #E9E9E9;
 }
 .witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills input {
   width: 25px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat {
-  min-height: 200px;
 }
 .witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left {
   width: 130px;
@@ -439,6 +467,30 @@
   margin-right: -1px;
   margin-top: 6px;
 }
+.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name {
+  font-size: 18px;
+  background-image: url(../assets/images/stat-name.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-left: -4px;
+  margin-top: -34px;
+  position: absolute;
+  z-index: 22;
+  padding-top: 4px;
+}
+.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name.actor-stat-will {
+  margin-left: -6px;
+  margin-top: -38px;
+}
+.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name.actor-stat-emp {
+  margin-left: -4px;
+  margin-top: -35px;
+}
 .witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills {
   list-style: none;
   margin-left: 0;
@@ -459,10 +511,57 @@
 .witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item .ls-square.inprof {
   color: #777575;
 }
+.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills-2 {
+  border-left: 0;
+}
 .witcher.sheet.actor > .window-content .summary .right-side {
   margin-left: 10px;
+  font-family: GwentExtraBold;
+  text-align: center;
 }
 .witcher.sheet.actor > .window-content .summary .right-side img.profile {
   width: 225px;
   border: thick double #D4D4D4;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block {
+  background-image: url(../assets/images/hpstamon.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 150px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-recovery {
+  padding-top: 15px;
+  font-size: 16px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-current {
+  padding-top: 21px;
+  font-size: 40px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-current span {
+  padding: 0 15px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-current input {
+  width: 50px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-max span {
+  padding: 0 60px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-label {
+  padding-top: 4px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .actor-sensor-label span {
+  margin-right: 49px;
+  margin-left: 51px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-luck-ini-spd-block {
+  background-image: url(../assets/images/luckini.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 90px;
+}
+.witcher.sheet.actor > .window-content .summary .right-side .actor-defence-block {
+  background-image: url(../assets/images/defence.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 250px;
 }

@@ -1,11 +1,9 @@
 <form class="{{cssClass}} witcher-actor-{{item.type}} flexcol" autocomplete="off">
 
 {{!-- NPC Sheet Navigation --}}
-<nav class="sheet-navigation tabs" data-group="primary">
+<nav class="main-nav sheet-navigation tabs" data-group="primary">
   <!-- Общая информация, статы, навыки -->
   <a class="item" data-tab="summary" data-group="primary">{{localize "Witcher.Summary"}}</a>
-  <!-- Ивентарь -->
-  <a class="item" data-tab="inventory" data-group="primary">{{localize "Witcher.Inventory"}}</a>
   <!-- Магия и заклинания, рецепты -->
   <a class="item" data-tab="Spellbook" data-group="primary">{{localize "Witcher.Spellbook"}}</a>
   <!-- Активные статусы и эффекты на персонаже -->
@@ -18,196 +16,88 @@
 
 {{!-- NPC Sheet Body --}}
 <section class="actor-content">
-    
-  <div class="tab summary flexrow" data-group="primary" data-tab="summary">
-    <div class="left-side">
-      <!-- Чукча не верстал 7 лет, потому сорян кто это увидит :) -->
-      <table>
-        <tr>
-          <td><input name="name" type="text" value="{{item.name}}"/></td>
-          <td class="width-cells-30px"></td>
-          <td class="width-cells-70px"><input name="data.biography.sex" type="text" value="{{data.biography.sex}}"/></td>
-          <td class="width-cells-30px"></td>
-          <td class="width-cells-70px"><input name="data.biography.age" type="text" value="{{data.biography.age}}"/></td>
-        </tr>
-        <tr>
-          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Name"}}</td>
-          <td class="width-cells-30px"></td>
-          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Sex"}}</td>
-          <td class="width-cells-30px"></td>
-          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Age"}}</td>
-        </tr>
-      </table>
-      <table>
-        <tr>
-          <td class="width-cells-labels">&nbsp;</td>
-          <td class="width-cells-30px"></td>
-          <td class="width-cells-labels"></td>
-        </tr>
-        <tr>
-          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Race"}}</td>
-          <td class="width-cells-30px"></td>
-          <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Profession"}}</td>
-        </tr>
-      </table>
 
-      <div class="flexrow pizza-in-two-halves">
-        <div class="flexcol actor-skills">
-          <div class="flexrow item-stat">
-            <div class="item-stat-left">
-              <div class="item-stat-square">
-                <input class="item-stat-input" name="data.stats.INT.value" type="text" value="{{data.stats.INT.value}}" data-dtype="Number"/>
-                <div class="item-square-mini">
-                  <div>{{data.stats.INT.total}}</div>                  
-                </div>
-              </div>
-            </div>
-            
-            <ul class="list-skills">
-              <li>
-                <div class="ls-li-item">
-                  <span>
-                    <input type="hidden" name="data.skills.perception.difficult" value="{{skillsTable.INT.perception.difficult}}"/>
-                    <input type="hidden" name="data.skills.perception.stat" value="INT"/>
-                    <input class="ls-input" name="data.skills.perception.value" type="text" value="{{data.skills.perception.value}}" data-dtype="Number"/>
-                    <span class="ls-square">&#9672;</span>
-                    <input class="ls-input" type="text" value="{{data.skills.perception.total}}" data-dtype="Number" disabled/>
+  <div class="tab summary flexcol" data-group="primary" data-tab="summary">
 
-                  </span>
-                  {{skillsTable.INT.perception.name}}
-                </div>
-              </li>
+    <div class="flexrow">
+      <div class="left-side">
+        <!-- Чукча не верстал 7 лет, потому сорян кто это увидит :) -->
+        <table>
+          <tr>
+            <td><input name="name" type="text" value="{{item.name}}"/></td>
+            <td class="width-cells-30px"></td>
+            <td class="width-cells-70px"><input name="data.biography.sex" type="text" value="{{data.biography.sex}}"/></td>
+            <td class="width-cells-30px"></td>
+            <td class="width-cells-70px"><input name="data.biography.age" type="text" value="{{data.biography.age}}"/></td>
+          </tr>
+          <tr>
+            <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Name"}}</td>
+            <td class="width-cells-30px"></td>
+            <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Sex"}}</td>
+            <td class="width-cells-30px"></td>
+            <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Age"}}</td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td class="width-cells-labels">&nbsp;</td>
+            <td class="width-cells-30px"></td>
+            <td class="width-cells-labels"></td>
+          </tr>
+          <tr>
+            <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Race"}}</td>
+            <td class="width-cells-30px"></td>
+            <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Profession"}}</td>
+          </tr>
+        </table>
 
-              <li>
-                <div class="ls-li-item">
-                  <span>
-                    <input type="hidden" name="data.skills.survival.difficult" value="{{skillsTable.INT.survival.difficult}}"/>
-                    <input type="hidden" name="data.skills.survival.stat" value="INT"/>
-                    <input class="ls-input" name="data.skills.survival.value" type="text" value="{{data.skills.survival.value}}" data-dtype="Number"/>
-                    <span class="ls-square inprof">&#9672;</span>
-                    <input class="ls-input" type="text" value="{{data.skills.survival.total}}" data-dtype="Number" disabled/>
-
-                  </span>
-                  {{skillsTable.INT.survival.name}}
-                </div>
-              </li>
-
-              <li>
-                <div class="ls-li-item">
-                  <span>
-                    <input type="hidden" name="data.skills.deduction.difficult" value="{{skillsTable.INT.deduction.difficult}}"/>
-                    <input type="hidden" name="data.skills.deduction.stat" value="INT"/>
-                    <input class="ls-input" name="data.skills.deduction.value" type="text" value="{{data.skills.deduction.value}}" data-dtype="Number"/>
-                    <span class="ls-square inprof">&#9672;</span>
-                    <input class="ls-input" type="text" value="{{data.skills.deduction.total}}" data-dtype="Number" disabled/>
-
-                  </span>
-                  {{skillsTable.INT.deduction.name}}
-                </div>
-              </li>
-
-              <li>
-                <div class="ls-li-item">
-                  <span>
-                    <input type="hidden" name="data.skills.monstrology.difficult" value="{{skillsTable.INT.monstrology.difficult}}"/>
-                    <input type="hidden" name="data.skills.monstrology.stat" value="INT"/>
-                    <input class="ls-input" name="data.skills.monstrology.value" type="text" value="{{data.skills.monstrology.value}}" data-dtype="Number"/>
-                    <span class="ls-square">&#9672;</span>
-                    <input class="ls-input" type="text" value="{{data.skills.monstrology.total}}" data-dtype="Number" disabled/>
-
-                  </span>
-                  {{skillsTable.INT.monstrology.name}}
-                </div>
-              </li>
-             
-            </ul>
+        <nav class="sheet-navigation tabs second-nav" data-group="secondary-tabs">
+          <a class="item" data-tab="summary-skills" data-group="secondary-tabs">{{localize "Witcher.Summary"}}</a>
+          <a class="item" data-tab="summary-inventory" data-group="secondary-tabs">{{localize "Witcher.Inventory"}}</a>
+        </nav>
+        
+        <div class="skinv-content">
+          <div class="tab" data-group="secondary-tabs" data-tab="summary-skills">
+            {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-skills-list.hbs"}}
           </div>
-          <div class="flexrow item-stat">
-            <div class="item-stat-left">
-              <div class="item-stat-square">
-                <input class="item-stat-input" name="data.stats.REF.value" type="text" value="{{data.stats.REF.value}}" data-dtype="Number"/>
-              </div>
-            </div>
-            <ul class="list-skills">
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-            </ul>
+          <div class="tab" data-group="secondary-tabs" data-tab="summary-inventory">
+            inventory
           </div>
-          <div class="flexrow item-stat">
-            <div class="item-stat-left">
-              <div class="item-stat-square"><input class="item-stat-input" name="" type="text" value=""/></div>
-            </div>
-            <ul class="list-skills">
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-              <li>
-                <input class="ls-input" name="" type="text" value=""/>
-                <span>1</span>
-                <input class="ls-input" name="" type="text" value=""/>  
-              </li>
-            </ul>
-          </div>
-           
-        </div>
-        <div class="flexcol">
-          не решили что тут
         </div>
       </div>
 
+      <div class="right-side">
+        <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+
+        <div class="actor-hp-sun-sta-block">
+          <div class="actor-sensor-recovery">{{data.stats.REC.total}}</div>
+          <div class="actor-sensor-current">
+            <input type="text" name="data.stats.HP.value" value="{{data.stats.HP.value}}"  data-dtype="Number"/>
+            <span><input type="text" name="data.stats.STUN.value" value="{{data.stats.STUN.value}}"  data-dtype="Number" disabled/></span>
+            <input type="text" name="data.stats.STA.value" value="{{data.stats.STA.value}}"  data-dtype="Number"/>
+          </div>
+          <div class="actor-sensor-max">
+            {{data.stats.HP.total}}
+            <span>{{data.stats.STUN.value}}</span>
+            {{data.stats.STA.value}}
+          </div>
+          <div class="actor-sensor-label">
+            {{localize "Witcher.Actor.Stats.HP.Short"}}
+            <span>{{localize "Witcher.Actor.Stats.STUN.Short"}}</span>
+            {{localize "Witcher.Actor.Stats.STA.Short"}}
+          </div>
+        </div>
+
+        <div class="actor-luck-ini-spd-block">
+
+        </div>
+
+        <div class="actor-defence-block">
+
+        </div>
+
+      </div>
     </div>
-    <div class="right-side">
-      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
-    </div>  
-  </div>
-    <!-- 
-    <div class="header-summary flexcol">
-      
-      {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/summary.hbs"}}
-    </div>
-    <div class="skills">
-      {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/skills.hbs"}}
-    </div>
-  </div>
-  -->
-  <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
-    <div class="header-inventory flexcol">inventory
-    </div>  
   </div>
 
   <div class="tab Spellbook flexcol" data-group="primary" data-tab="Spellbook">

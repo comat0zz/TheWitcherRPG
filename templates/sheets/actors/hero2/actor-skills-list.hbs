@@ -1,0 +1,168 @@
+<div class="pizza-in-two-halves flexrow">
+<div class="flexcol actor-skills">
+  <div class="flexrow item-stat">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.INT.value" type="text" value="{{data.stats.INT.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.INT.total}}</div>
+          <span class="item-square-name">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.INT.Short"}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="perception"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="survival"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="deduction"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="monstrology"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="knowledge"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="streetknow"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="transknow"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="tactics"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="trade"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="etiquette"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="INT" skill="lang"}}
+    </ul>
+  </div>
+
+  <div class="skill-delimiter">&nbsp;</div>
+
+  <div class="flexrow item-stat">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.REF.value" type="text" value="{{data.stats.REF.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.REF.total}}</div>
+          <span class="item-square-name">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.REF.Short"}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="meleefight"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="struggle"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="horseriding"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="polearm"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="lightblade"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="sword"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="ship"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="REF" skill="evasion"}}
+    </ul>
+  </div>
+  <div class="skill-delimiter">&nbsp;</div>
+  <div class="flexrow item-stat">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.CRA.value" type="text" value="{{data.stats.CRA.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.CRA.total}}</div>
+          <span class="item-square-name">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.CRA.Short"}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="alchemy"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="lockpicks"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="trapknow"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="crafting"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="spy"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="firstmedical"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="CRA" skill="fake"}}
+    </ul>
+  </div> 
+</div>
+
+<div class="flexcol actor-skills actor-skills-2">
+  <div class="flexrow item-stat margin-bottom-15">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.BODY.value" type="text" value="{{data.stats.BODY.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.BODY.total}}</div>
+          <span class="item-square-name">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.BODY.Short"}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="BODY" skill="stength"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="BODY" skill="endurance"}}
+    </ul>
+  </div>
+  <div class="skill-delimiter">&nbsp;</div>
+  <div class="flexrow item-stat">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.WILL.value" type="text" value="{{data.stats.WILL.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.WILL.total}}</div>
+          <span class="item-square-name actor-stat-will">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.WILL.Short"}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="intimidation"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="injury"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="ritual"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="resistmagic"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="resistpersuasion"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="spellmagic"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="WILL" skill="bravery"}}
+    </ul>
+  </div>
+  <div class="skill-delimiter">&nbsp;</div>
+  <div class="flexrow item-stat">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.EMP.value" type="text" value="{{data.stats.EMP.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.EMP.total}}</div>
+          <span class="item-square-name actor-stat-emp">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.EMP.Short"}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="gammes"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="appearance"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="performance"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="art"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="leadership"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="fraud"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="understanding"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="seduction"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="belief"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="EMP" skill="charisma"}}
+    </ul>
+  </div>
+  <div class="skill-delimiter">&nbsp;</div>
+  <div class="flexrow item-stat">
+    <div class="item-stat-left">
+      <div class="item-stat-square">
+        <input class="item-stat-input" name="data.stats.DEX.value" type="text" value="{{data.stats.DEX.value}}" data-dtype="Number"/>
+        <div class="item-square-mini">
+          <div>{{data.stats.DEX.total}}</div>
+          <span class="item-square-name">&nbsp;&nbsp;{{localize "Witcher.Actor.Stats.DEX.Short"}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    
+    <ul class="list-skills">
+    <!-- Без цикла, потому что сортировка собьется. пока не придумал как зациклить с сортировкой. Но выгоднее обрабатывать через lookups --> 
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="DEX" skill="athletic"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="DEX" skill="sleighthand"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="DEX" skill="stealth"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="DEX" skill="bow"}}
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs" stat="DEX" skill="crossbow"}}
+  </div>         
+</div>
+</div>

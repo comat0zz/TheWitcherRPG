@@ -8,7 +8,18 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       classes: ["witcher", "sheet", "actor"],
       width: 940,
       height: 900,
-      tabs: [{navSelector: ".tabs", contentSelector: ".actor-content", initial: "summary"}]
+      tabs: [
+        {
+          navSelector: "nav.tabs[data-group='primary']", 
+          contentSelector: ".actor-content", 
+          initial: "summary"
+        },
+        {
+          navSelector: "nav.tabs[data-group='secondary-tabs']", 
+          contentSelector: ".skinv-content", 
+          initial: "summary-skills"
+        }
+      ]
     });
   }
 
@@ -83,6 +94,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
   async getStats(mods) {
     let obj = {};
+
+    // Не обновляет значений, пофиксить
     let stats = this.actor.data.data.stats;
     const statsConfig = CONFIG.WITCHER.CharacterStats;
 
@@ -129,7 +142,10 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     };    
     obj['ENC'].total = obj['BODY'].total * 10;
     
-    if( ! Object.keys(obj).includes('STUN')) {obj['STUN'] = {};};
+    if( ! Object.keys(obj).includes('STUN')) {
+      obj['STUN'] = {};
+      obj['STUN'].value = TableBodyWill[bodywill]['stun'];
+    };
     obj['STUN'].total = TableBodyWill[bodywill]['stun'];
     
     if( ! Object.keys(obj).includes('RUN')) {obj['RUN'] = {};};

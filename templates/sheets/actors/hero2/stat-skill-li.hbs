@@ -1,0 +1,12 @@
+<li>
+  <div class="ls-li-item">
+    <span>
+      <input type="hidden" name="data.skills.{{skill}}.difficult" value="{{lookup (lookup (lookup skillsTable stat) skill) 'difficult' }}"/>
+      <input type="hidden" name="data.skills.{{skill}}.stat" value="{{stat}}"/>
+      <input class="ls-input" name="data.skills.{{skill}}.value" type="text" value="{{lookup (lookup data.skills skill) 'value' }}" data-dtype="Number"/>
+      <span class="ls-square">&#9672;</span>
+        <input class="ls-input" type="text" value="{{lookup (lookup data.skills skill) 'total' }}" data-dtype="Number" disabled/>
+    </span>
+    {{lookup (lookup (lookup skillsTable stat) skill) 'name' }}
+  </div>
+</li>
