@@ -273,16 +273,31 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     return arr;
   }
 
-  activateListeners(html) {
+  async activateListeners(html) {
     super.activateListeners(html);
 
+    html.find('a.roll-actor-skill').click(evt => this._onRollActorSkill(evt));
 
-    new ContextMenu(html, '.quick-action-menu', this.itemContextMenu)
+    new ContextMenu(html, '.quick-action-menu', this.itemContextMenu);
   }
 
-  _onQuickActions(ev) {
-    console.log(ev)
-    return 
+  async _onRollActorSkill(evt) {
+    evt.preventDefault();
+    let input = '1d7';
+    let roll = await new Roll(input).roll({async: true});
+      
+    const html = await renderTemplate("systems/TheWitcherRPG/templates/chat/card-roll.hbs", {
+        name: 'name',
+        result: roll.result,
+        total: roll.total
+    });
+
+    ChatMessage.create({
+      user: game.user._id,
+      speaker: ChatMessage.getSpeaker(),
+      content: html
+    });
+    
   }
 }
 
