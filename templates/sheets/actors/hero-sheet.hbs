@@ -61,7 +61,7 @@
             {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-skills-list.hbs"}}
           </div>
           <div class="tab" data-group="secondary-tabs" data-tab="summary-inventory">
-            inventory
+            {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-inventory-list.hbs"}}
           </div>
         </div>
       </div>
@@ -69,32 +69,109 @@
       <div class="right-side">
         <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
 
-        <div class="actor-hp-sun-sta-block">
-          <div class="actor-sensor-recovery">{{data.stats.REC.total}}</div>
-          <div class="actor-sensor-current">
-            <input type="text" name="data.stats.HP.value" value="{{data.stats.HP.value}}"  data-dtype="Number"/>
-            <span><input type="text" name="data.stats.STUN.value" value="{{data.stats.STUN.value}}"  data-dtype="Number" disabled/></span>
-            <input type="text" name="data.stats.STA.value" value="{{data.stats.STA.value}}"  data-dtype="Number"/>
-          </div>
-          <div class="actor-sensor-max">
-            {{data.stats.HP.total}}
-            <span>{{data.stats.STUN.value}}</span>
-            {{data.stats.STA.value}}
-          </div>
-          <div class="actor-sensor-label">
-            {{localize "Witcher.Actor.Stats.HP.Short"}}
-            <span>{{localize "Witcher.Actor.Stats.STUN.Short"}}</span>
-            {{localize "Witcher.Actor.Stats.STA.Short"}}
-          </div>
+        <!-- Заебался! Плюс мелкие подписи вообще не видно
+        <table class="table-unstaled actor-hp-sun-sta-block">
+          <tr>
+            <td colspan="3"></td>
+          </tr>
+          <tr class="stats-value">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="stats-total">
+            <td>{{data.stats.HP.total}}</td>
+            <td>{{data.stats.STUN.total}}</td>
+            <td>{{data.stats.STA.total}}</td>
+          </tr>
+          <tr class="weightvigor">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <table class="table-unstaled actor-luck-ini-spd-block">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <table class="table-unstaled actor-defence-block">
+
+        </table>
+        -->
+        <div class="quick-action-menu">
+          <input type="button" value="{{localize "Witcher.Actor.Buttons.QuickActions"}}">
         </div>
 
-        <div class="actor-luck-ini-spd-block">
+        <table class="table-unstaled table-firsttd-click">
+          <tr>
+            <th></th>
+            <th>{{localize "Witcher.Current"}}</th>
+            <th>{{localize "Witcher.Maximum"}}</th>
+          </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.Stats.HP.Short"}}</td>
+            <td><input type="text" name="data.stats.HP.value" value="{{data.stats.HP.value}}"  data-dtype="Number"/></td>
+            <td>{{data.stats.HP.total}}</td>
+          </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.Stats.STA.Short"}}</td>
+            <td><input type="text" name="data.stats.STA.value" value="{{data.stats.STA.value}}"  data-dtype="Number"/></td>
+            <td>{{data.stats.STA.total}}</td>
+          </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.Stats.STUN.Short"}}</td>
+            <td><input type="text" name="data.stats.STUN.value" value="{{data.stats.STUN.value}}"  data-dtype="Number" disabled/></td>
+            <td>{{data.stats.STUN.total}}</td>
+          </tr>
+          {{#ifgt data.stats.VIGOR.total 0}}
+          <tr>
+            <td colspan="2">{{localize "Witcher.Actor.Stats.VIGOR.Short"}}</td>
+            <td>{{data.stats.VIGOR.total}}</td>
+          </tr>
+          {{/ifgt}}
+          <tr>
+            <td colspan="2">{{localize "Witcher.Actor.Buttons.Initiative"}}</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">{{localize "Witcher.Actor.Stats.RUN.Short"}}</td>
+            <td>{{data.stats.RUN.total}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">{{localize "Witcher.Actor.Stats.LEAP.Short"}}</td>
+            <td>{{data.stats.LEAP.total}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">{{localize "Witcher.Actor.Stats.REC.Short"}}</td>
+            <td>{{data.stats.REC.total}}</td>
+          </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.Stats.ENC.Short"}}</td>
+            <td>{{data.stats.ENC.value}}</td>
+            <td>{{data.stats.ENC.total}}</td>
+          </tr>
+        </table>
 
-        </div>
+        <table class="table-unstaled table-firsttd-click TableMeleeFight">
+          <tr><th colspan="2"><i class="fas fa-fist-raised"></i>  {{localize "Witcher.Actor.MeleeFight"}}</th></tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.MeleeFightHand"}}</td>
+            <td>{{data.MeleeFightHand}}</td>
+          </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.MeleeFightFoot"}}</td>
+            <td>{{data.MeleeFightFoot}}</td>
+          </tr>
+        </table>
 
-        <div class="actor-defence-block">
+        <table class="table-unstaled actor-defence-block">
 
-        </div>
+        </table>
 
       </div>
     </div>

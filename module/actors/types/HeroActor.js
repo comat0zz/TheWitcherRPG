@@ -1,1 +1,6 @@
-export class HeroActor extends Actor {}
+export class HeroActor extends Actor {
+
+  async getTextTestMod() {
+    return 'getTextTestMod';
+  }
+}

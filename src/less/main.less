@@ -221,39 +221,61 @@
         border: thick double #D4D4D4;
       }
 
+      .table-unstaled {
+        border: 0;
+        margin: 0;
+        td:first-child {
+          text-align: left;
+          padding-left: 5px;
+        }
+      }
+
+      .table-firsttd-click td:first-child {
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .TableMeleeFight {
+        margin: 5px 0;
+      }
+
+      .quick-action-menu {
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        input {
+          font-family: GwentExtraBold;
+          width: 100%;
+          background-color:  #E9E9E9;
+          border: 0;
+          cursor: pointer;
+          height: 20px
+        }
+      }
+
       .actor-hp-sun-sta-block {
         background-image: url(../assets/images/hpstamon.png);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         height: 150px;
 
-        .actor-sensor-recovery {  
-          padding-top: 15px;
-          font-size: 16px;
-        }
-
-        .actor-sensor-current {
-          padding-top: 21px;
-          font-size: 40px;
-          span {
-            padding: 0 15px;
-          }
-
+        .stats-value td {
+          padding-top: 22px;
           input {
-            width: 50px;
+            font-size: 40px;
           }
+          
         }
-        .actor-sensor-max {
-          span {
-            padding: 0 60px;
-          }
+        .stats-total {
+          top: -18px;
+          position: relative
         }
-        .actor-sensor-label {
-          padding-top: 4px;
-          span {
-            margin-right: 49px;
-            margin-left: 51px;
-          }
+        .weightvigor{
+          top: -4px;
+          position: relative
+        }
+        tr:first-child td{
+          padding-top: 7px;
         }
       }
 

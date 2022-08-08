@@ -23,6 +23,49 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     });
   }
 
+  itemContextMenu = [{
+    name: game.i18n.localize("Witcher.Actor.Buttons.Initiative"),
+    icon: '',
+    callback: element => {
+      console.log(element)
+    }
+  },
+  {
+    name: game.i18n.localize("Witcher.Actor.Buttons.TargetLoc"),
+    icon: '',
+    callback: element => {
+      console.log(element)
+    }
+  },
+  {
+    name: game.i18n.localize("Witcher.Actor.Buttons.Defense"),
+    icon: '',
+    callback: element => {
+      console.log(element)
+    }
+  },
+  {
+    name: game.i18n.localize("Witcher.Actor.Buttons.Recovery"),
+    icon: '',
+    callback: element => {
+      console.log(element)
+    }
+  },
+  {
+    name: game.i18n.localize("Witcher.Actor.Buttons.Lucky"),
+    icon: '',
+    callback: element => {
+      console.log(element)
+    }
+  },
+  {
+    name: game.i18n.localize("Witcher.Actor.Buttons.Stun"),
+    icon: '',
+    callback: element => {
+      console.log(element)
+    }
+  }];
+
   async getData(options) {
     const data = super.getData(options);
     const itemData = data.data;
@@ -46,7 +89,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     itemData.data.allPoints = prevSkills[1];
 
     const TableMeleeFight = await this.getMeleeFight();
-     itemData.data.MeleeFightHand = TableMeleeFight[0];
+    itemData.data.MeleeFightHand = TableMeleeFight[0];
     itemData.data.MeleeFightFoot = TableMeleeFight[1];
     
     // get skills
@@ -92,10 +135,9 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     return [sum, arr];
   }
 
-  async getStats(mods) {
+   async getStats(mods) {
     let obj = {};
 
-    // Не обновляет значений, пофиксить
     let stats = this.actor.data.data.stats;
     const statsConfig = CONFIG.WITCHER.CharacterStats;
 
@@ -121,43 +163,62 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
     const bodywill = Math.floor((obj['BODY'].total + obj['WILL'].total) / 2);
     const TableBodyWill = CONFIG.WITCHER.TablePhysicalParameters;
-    if( ! Object.keys(obj).includes('HP')) { 
-      obj['HP'] = {};
+
+    // Не обновляет значений, пофиксить
+    obj['HP'] = {};
+    if( ! Object.keys(stats).includes('HP')) { 
       obj['HP'].value = TableBodyWill[bodywill]['hp'];
+    } else {
+      obj['HP'].value = stats['HP'].value;
     }
     obj['HP'].total = TableBodyWill[bodywill]['hp'];
 
-    if( ! Object.keys(obj).includes('STA')) { 
-      obj['STA'] = {};
+    obj['STA'] = {};
+    if( ! Object.keys(stats).includes('STA')) { 
       obj['STA'].value = TableBodyWill[bodywill]['stamina'];
+    } else {
+      obj['STA'].value = stats['STA'].value;
     }
     obj['STA'].total = TableBodyWill[bodywill]['stamina'];
     
-    if( ! Object.keys(obj).includes('REC')) {obj['REC'] = {};};
+    obj['REC'] = {};
     obj['REC'].total = TableBodyWill[bodywill]['rest'];
     
-    if( ! Object.keys(obj).includes('ENC')) {
-      obj['ENC'] = {};
+    obj['ENC'] = {};
+    if( ! Object.keys(stats).includes('ENC')) {
       obj['ENC'].value = 0;
     };    
     obj['ENC'].total = obj['BODY'].total * 10;
     
-    if( ! Object.keys(obj).includes('STUN')) {
-      obj['STUN'] = {};
+    obj['STUN'] = {};
+    if( ! Object.keys(stats).includes('STUN')) {
       obj['STUN'].value = TableBodyWill[bodywill]['stun'];
     };
-    obj['STUN'].total = TableBodyWill[bodywill]['stun'];
     
-    if( ! Object.keys(obj).includes('RUN')) {obj['RUN'] = {};};
+    obj['STUN'].total = TableBodyWill[bodywill]['stun'];
+    if( ! Object.keys(obj['STUN']).includes('value')) {
+      obj['STUN'].value = obj['STUN'].total;
+    }
+    
+    obj['RUN'] = {};
+    if( ! Object.keys(stats).includes('RUN')) {
+      obj['RUN'].value = ( obj['SPD'].total * 3 );
+    };
     obj['RUN'].total = ( obj['SPD'].total * 3 );
 
-    if( ! Object.keys(obj).includes('LEAP')) {obj['LEAP'] = {};};
+    obj['LEAP'] = {};
+    if( ! Object.keys(stats).includes('LEAP')) {
+      obj['LEAP'].value = Math.floor(obj['RUN'].total / 3);
+    };
     obj['LEAP'].total = Math.floor(obj['RUN'].total / 3);
 
-    if( ! Object.keys(obj).includes('VIGOR')) { 
-      obj['VIGOR'] = {};
+    obj['VIGOR'] = {};
+    if( ! Object.keys(stats).includes('VIGOR')) { 
       obj['VIGOR'].value = 0;
       obj['VIGOR'].total = 0;
+    }else{
+      obj['VIGOR'].value = stats['VIGOR'].value;
+      obj['VIGOR'].total = stats['VIGOR'].total;
     }
 
     return obj;
@@ -210,6 +271,18 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     });
 
     return arr;
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+
+
+    new ContextMenu(html, '.quick-action-menu', this.itemContextMenu)
+  }
+
+  _onQuickActions(ev) {
+    console.log(ev)
+    return 
   }
 }
 
