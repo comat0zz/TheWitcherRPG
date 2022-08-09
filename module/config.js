@@ -310,21 +310,22 @@ WITCHER.MutagenCategory = {
 }
 
 WITCHER.TablePhysicalParameters = {
-  "2": {"hp": 10, "stamina": 10, "rest": 2, "stun": 2},
-  "3": {"hp": 15, "stamina": 15, "rest": 3, "stun": 3},
-  "4": {"hp": 20, "stamina": 20, "rest": 4, "stun": 4},
-  "5": {"hp": 25, "stamina": 25, "rest": 5, "stun": 5},
-  "6": {"hp": 30, "stamina": 30, "rest": 6, "stun": 6},
-  "7": {"hp": 35, "stamina": 35, "rest": 7, "stun": 7},
-  "8": {"hp": 40, "stamina": 40, "rest": 8, "stun": 8},
-  "9": {"hp": 45, "stamina": 45, "rest": 9, "stun": 9},
-  "10": {"hp": 50, "stamina": 50, "rest": 10, "stun": 10},
-  "11": {"hp": 55, "stamina": 55, "rest": 11, "stun": 10},
-  "12": {"hp": 60, "stamina": 60, "rest": 12, "stun": 10},
-  "13": {"hp": 65, "stamina": 65, "rest": 13, "stun": 10}
+  "2": {"HP": 10, "STA": 10, "REC": 2, "STUN": 2},
+  "3": {"HP": 15, "STA": 15, "REC": 3, "STUN": 3},
+  "4": {"HP": 20, "STA": 20, "REC": 4, "STUN": 4},
+  "5": {"HP": 25, "STA": 25, "REC": 5, "STUN": 5},
+  "6": {"HP": 30, "STA": 30, "REC": 6, "STUN": 6},
+  "7": {"HP": 35, "STA": 35, "REC": 7, "STUN": 7},
+  "8": {"HP": 40, "STA": 40, "REC": 8, "STUN": 8},
+  "9": {"HP": 45, "STA": 45, "REC": 9, "STUN": 9},
+  "10": {"HP": 50, "STA": 50, "REC": 10, "STUN": 10},
+  "11": {"HP": 55, "STA": 55, "REC": 11, "STUN": 10},
+  "12": {"HP": 60, "STA": 60, "REC": 12, "STUN": 10},
+  "13": {"HP": 65, "STA": 65, "REC": 13, "STUN": 10}
 }
 
 WITCHER.TableMeleeFight = {
+  "0-0": {"hand": "1d6-6", "foot": "1d6-6"},
   "1-2": {"hand": "1d6-4", "foot": "1d6"},
   "3-4": {"hand": "1d6-2", "foot": "1d6+2"},
   "5-6": {"hand": "1d6", "foot": "1d6+4"},

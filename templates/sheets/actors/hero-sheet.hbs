@@ -124,8 +124,7 @@
             <td>{{data.stats.STA.total}}</td>
           </tr>
           <tr>
-            <td>{{localize "Witcher.Actor.Stats.STUN.Short"}}</td>
-            <td><input type="text" name="data.stats.STUN.value" value="{{data.stats.STUN.value}}"  data-dtype="Number" disabled/></td>
+            <td colspan="2">{{localize "Witcher.Actor.Stats.STUN.Short"}}</td>
             <td>{{data.stats.STUN.total}}</td>
           </tr>
           {{#ifgt data.stats.VIGOR.total 0}}
@@ -134,10 +133,6 @@
             <td>{{data.stats.VIGOR.total}}</td>
           </tr>
           {{/ifgt}}
-          <tr>
-            <td colspan="2">{{localize "Witcher.Actor.Buttons.Initiative"}}</td>
-            <td></td>
-          </tr>
           <tr>
             <td colspan="2">{{localize "Witcher.Actor.Stats.RUN.Short"}}</td>
             <td>{{data.stats.RUN.total}}</td>
@@ -155,24 +150,35 @@
             <td>{{data.stats.ENC.value}}</td>
             <td>{{data.stats.ENC.total}}</td>
           </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.StatsCount"}}</td>
+            <td><input type="text" name="data.trainSkills.StatsCount" value="{{data.trainSkills.StatsCount}}"  data-dtype="Number" disabled/></td>
+            <td>todo</td>
+          </tr>
+          <tr>
+            <td>{{localize "Witcher.Actor.SkillsCount"}}</td>
+            <td><input type="text" name="data.trainSkills.SkillsCount" value="{{data.trainSkills.SkillsCount}}"  data-dtype="Number" disabled/></td>
+            <td>todo</td>
+          </tr>
         </table>
 
         <table class="table-unstaled table-firsttd-click TableMeleeFight">
           <tr><th colspan="2"><i class="fas fa-fist-raised"></i>  {{localize "Witcher.Actor.MeleeFight"}}</th></tr>
           <tr>
             <td>{{localize "Witcher.Actor.MeleeFightHand"}}</td>
-            <td>{{data.MeleeFightHand}}</td>
+            <td>{{data.meleeFight.hand}}</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.MeleeFightFoot"}}</td>
-            <td>{{data.MeleeFightFoot}}</td>
+            <td>{{data.meleeFight.foot}}</td>
           </tr>
         </table>
 
+        <!--
         <table class="table-unstaled actor-defence-block">
 
         </table>
-
+        -->
       </div>
     </div>
   </div>

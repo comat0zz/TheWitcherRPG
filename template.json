@@ -12,6 +12,7 @@
         "deathSaves": 0,
         "modifications": [],
         "race": "",
+        "meleeFight": {},
         "skills": {},
         "stats": {
           "INT": {}, 
@@ -43,14 +44,15 @@
       "profession": "",
       "age": 0,
       "krones": 0,
-      "sex": "male",
       "reputation": 0,
       "inventory": [],
       "spellbook": [],
       "biography": {},
       "trainSkills": {
         "current": 0,
-        "list": []
+        "list": [],
+        "SkillsCount": 0,
+        "StatsCount": 0
       },
       "toxicity": 0,
       "isArmorEquip": {
