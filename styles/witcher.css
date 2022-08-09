@@ -333,6 +333,11 @@
   width: 70px;
   text-align: left;
 }
+.item-table-info {
+  margin: 0;
+  border: 0;
+  flex: 0;
+}
 @font-face {
   font-family: 'Thewitcher';
   src: url('./fonts/thewitcher2.ttf');

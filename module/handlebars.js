@@ -33,6 +33,7 @@ const preloadHandlebarsTemplates = async function () {
     
     // chat
     "systems/TheWitcherRPG/templates/chat/card-roll.hbs",
+    "systems/TheWitcherRPG/templates/chat/skill-check-roll.hbs",
 
     // Spells partials
     "systems/TheWitcherRPG/templates/sheets/items/spells/spell.hbs",

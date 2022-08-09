@@ -12,76 +12,84 @@
 {{!-- Item Sheet Body --}}
 <section class="item-content">
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
-    <table class="table-item-card">
-      <tr>
-        <td>{{localize "Witcher.Item.Effects.Category"}}</td>
-        <td>
-          <select name="data.category">
-            {{#select data.category}}
-              {{#each config.EffectsCategories as |value key|}}
-                <option value="{{key}}">{{localize value}}</option>
+  <table class="item-table-info">
+    <tr>
+      <td>{{localize "Witcher.Item.Effects.Category"}}</td>
+      <td>
+        <select name="data.category">
+          {{#select data.category}}
+            {{#each config.Effects.Categories as |value key|}}
+              <option value="{{key}}">{{localize value}}</option>
+            {{/each}}
+          {{/select}}
+        </select> 
+      </td>
+    </tr>
+    <tr>
+      <td>{{localize "Witcher.Item.Effects.onToken"}}</td>
+      <td>
+        <select name="data.onToken">
+          {{#select data.onToken}}
+            {{#each config.Effects.onToken as |value key|}}
+              <option value="{{key}}">{{localize value}}</option>
+            {{/each}}
+          {{/select}}
+        </select> 
+      </td>
+    </tr>
+    <tr>
+      <td>{{localize "Witcher.Item.Effects.Activity"}}</td>
+      <td>
+        <select name="data.activity">
+          {{#select data.activity}}
+            {{#each config.Effects.Activities as |value key|}}
+              <option value="{{key}}">{{localize value}}</option>
+            {{/each}}
+          {{/select}}
+        </select> 
+      </td>
+    </tr>
+    <tr>
+      <td>{{localize "Witcher.Item.Effects.Target"}}</td>
+      <td>
+        <select name="data.target">
+          {{#select data.target}}
+            {{#each config.Effects.Targets as |value key|}}
+              <option value="{{key}}">{{localize value}}</option>
+            {{/each}}
+          {{/select}}
+        </select> 
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">{{localize "Witcher.Item.Effects.Formulas"}}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <textarea name="data.formula" rows="5">{{data.formula}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">{{localize "Witcher.Item.Effects.Saving"}}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <textarea name="data.saving" rows="5">{{data.saving}}</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>{{localize "Witcher.Source"}}</td>
+      <td>
+        <select name="data.source">
+            {{#select data.source}}
+              {{#each config.SourceList as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
               {{/each}}
             {{/select}}
           </select> 
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          {{#ife data.category "simple"}}{{localize "Witcher.Item.Effects.Categories.simple.info"}}{{/ife}}
-          {{#ife data.category "light"}}{{localize "Witcher.Item.Effects.Categories.light.info"}}{{/ife}}
-          {{#ife data.category "aura"}}{{localize "Witcher.Item.Effects.Categories.aura.info"}}{{/ife}}
-          {{#ife data.category "properties"}}{{localize "Witcher.Item.Effects.Categories.properties.info"}}{{/ife}}
-        </td>
-      </tr>
-
-      <tr>
-        <td>{{localize "Witcher.Item.Effects.TargetsValue"}}</td>
-        <td>
-          <select name="data.target">
-            {{#select data.target}}
-              {{#each config.EffectsTarget as |value key|}}
-                <option value="{{key}}">{{localize value}}</option>
-              {{/each}}
-            {{/select}}
-          </select> 
-        </td>
-      </tr>
-      
-      <tr>
-        <td>{{localize "Witcher.Source"}}</td>
-        <td>
-          <select name="data.source">
-              {{#select data.source}}
-                {{#each config.SourceList as |name type|}}
-                  <option value="{{type}}">{{localize name}}</option>
-                {{/each}}
-              {{/select}}
-            </select> 
-        </td>
-     </tr>
-    </table>
-
-    <table class="table-item-card">
-      <tr>
-        <th>{{localize "Witcher.Item.Effects.TableMod"}}</th>
-        <th colspan="2">{{localize "Witcher.Item.Effects.TableGoal"}}</th>
-        <th>{{localize "Witcher.Item.Effects.TableValue"}}</th>
-        <!-- <th><input type="button" name="effects-add" value=" + "/></th> -->
-      </tr>
-      <tr class="attack-of-the-clones">
-        <td>
-          <select name="data.dataSet.modification">
-             {{#select data.dataSet.modification}}
-              <option value="+"> + </option>
-              <option value="-"> - </option>
-             {{/select}}
-          </select>
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+      </td>
+    </tr>
+  </table>
 
   </div>
   <div class="tab flexcol" data-tab="tab-Detailed" data-group="primary-tabs">

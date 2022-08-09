@@ -72,18 +72,10 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     data.config = CONFIG.WITCHER;
 
     data.skillsTable = await this.getSkillsTable();
-
-    itemData.data.modifications = [
-      {"type": "skills", "key": "horseriding", "mod": "+", "value": "2", "itemId": "123", "effectId": "221", "from": "equip"},
-      {"type": "stats", "key": "INT", "mod": "-", "value": 1, "itemId": "456", "effectId": "2312", "from": "status"},
-      {"type": "stats", "key": "REF", "mod": "-", "value": 4, "itemId": "678", "effectId": "62312", "from": "status"},
-    ];
-    
-    
     
     itemData.data.stats = await this.getStats(itemData.data.modifications);
     
-    this.actor.update({'data.stats': itemData.data.stats})
+    //this.actor.update({'data.stats': itemData.data.stats})
     const prevSkills = await this.getSkills(itemData.data.modifications);
     itemData.data.skills = prevSkills[0];
     itemData.data.allPoints = prevSkills[1];
@@ -266,6 +258,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
           "name": itemData.name,
           "key": itemData.data.key,
           "difficult": itemData.data.difficult,
+          "img": itemData.img,
           "id": itemData._id // если не нужно - убрать
       };
     });
@@ -283,11 +276,30 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
   async _onRollActorSkill(evt) {
     evt.preventDefault();
-    let input = '1d7';
-    let roll = await new Roll(input).roll({async: true});
-      
-    const html = await renderTemplate("systems/TheWitcherRPG/templates/chat/card-roll.hbs", {
-        name: 'name',
+    // Криво :( 
+    const skill = $(evt.currentTarget)[0];
+    const skillName = skill.dataset.skillName;
+    const skillLabel = skill.dataset.skillLabel;
+    const skillImg = skill.dataset.skillImg;
+    const skillStat = skill.dataset.skillStat;
+
+    const skills = this.actor.data.data.skills;
+    const stats = this.actor.data.data.stats;
+
+    const curStat = stats[skillStat];
+    const curSkill = skills[skillName];
+
+    console.log(await this.actor.getStatsList())
+   
+    let input = '1d10+' + curSkill.value + '+' + curStat.total;
+
+    let roll = await new Roll('@stats.INT.total').roll({async: true});
+    console.log(roll)
+    const html = await renderTemplate("systems/TheWitcherRPG/templates/chat/skill-check-roll.hbs", {
+        name: skillName,
+        label: skillLabel,
+        img: skillImg,
+        stat: curStat,
         result: roll.result,
         total: roll.total
     });

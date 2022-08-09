@@ -9,17 +9,21 @@ export class EffectsItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "item"],
       width: 500,
-      height: 500,
+      height: 620,
       tabs: [{navSelector: ".tabs", contentSelector: ".item-content", initial: "tab-Properties"}]
     });
   }
 
-  getData(options) {
+  async getData(options) {
     const data = super.getData(options);
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
+    console.log(data)
+    itemData.data.formula = JSON.stringify(itemData.data.formula);
+    itemData.data.saving = JSON.stringify(itemData.data.saving); 
     data.item = itemData;
     data.data = itemData.data;
+    
     return data;
   }
 

@@ -7,6 +7,12 @@
       <span class="ls-square">&#9672;</span>
         <input class="ls-input" type="text" value="{{lookup (lookup data.skills skill) 'total' }}" data-dtype="Number" disabled/>
     </span>
-    <a class="roll-actor-skill" data-skill-name="{{skill}}" data-skill-total="{{lookup (lookup data.skills skill) 'total' }}">{{lookup (lookup (lookup skillsTable stat) skill) 'name' }}</a>
+    <a class="roll-actor-skill" 
+      data-skill-name="{{skill}}"
+      data-skill-label="{{lookup (lookup (lookup skillsTable stat) skill) 'name' }}"
+      data-skill-img="{{lookup (lookup (lookup skillsTable stat) skill) 'img' }}"
+      data-skill-stat="{{stat}}"
+    >
+      {{lookup (lookup (lookup skillsTable stat) skill) 'name' }}</a>
   </div>
 </li>

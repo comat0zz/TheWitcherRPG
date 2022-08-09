@@ -225,12 +225,34 @@ WITCHER.categoryWeapon = {
   crossbow: "Witcher.Item.Weapon.Types.Crossbow"
 }
 
-WITCHER.EffectsCategories = {
-  simple: "Witcher.Item.Effects.Categories.simple.val",
-  light: "Witcher.Item.Effects.Categories.light.val",
-  aura: "Witcher.Item.Effects.Categories.aura.val",
-  properties: "Witcher.Item.Effects.Categories.properties.val"  
+WITCHER.Effects = {
+  Categories: {
+    simple: "Witcher.Item.Effects.Categories.simple",
+    self: "Witcher.Item.Effects.Categories.self",
+    equip: "Witcher.Item.Effects.Categories.equip",
+    attack: "Witcher.Item.Effects.Categories.attack",
+    use: "Witcher.Item.Effects.Categories.use",
+    aura: "Witcher.Item.Effects.Categories.aura"
+  },
+  onToken: {
+    no: "Witcher.Item.Effects.onTokens.no",
+    icon: "Witcher.Item.Effects.onTokens.icon",
+    border: "Witcher.Item.Effects.onTokens.border",
+    aura: "Witcher.Item.Effects.onTokens.aura"
+  },
+  Activities: {
+    no: "Witcher.Item.Effects.Activities.no",
+    remove: "Witcher.Item.Effects.Activities.remove",
+    count: "Witcher.Item.Effects.Activities.count",
+    replace: "Witcher.Item.Effects.Activities.replace"
+  },
+  Targets: {
+    no: "Witcher.Item.Effects.Targets.no",
+    properties: "Witcher.Item.Effects.Targets.properties",
+    generic: "Witcher.Item.Effects.Targets.generic"
+  }
 }
+
 
 WITCHER.EffectsTarget = {
   self: "Witcher.Item.Effects.Targets.self",

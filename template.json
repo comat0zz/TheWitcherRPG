@@ -10,6 +10,7 @@
     "templates": {
       "baseActor": {
         "deathSaves": 0,
+        "modifications": [],
         "race": "",
         "skills": {},
         "stats": {
@@ -234,11 +235,12 @@
       "templates": ["system"],
       "description": "",
       "category": "simple",
-      "modification": "+",
-      "type": "stats",
-      "key": "INT",
-      "value": 0,
-      "target": "self"
+      "onToken": "no",
+      "activity": "no",
+      "target": "no",
+      "formula": {},
+      "saving": {},
+      "time": ""
     }, 
     "mount_gear": {
       "templates": ["system", "things"],
