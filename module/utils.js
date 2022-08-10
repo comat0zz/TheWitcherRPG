@@ -6,6 +6,9 @@ export const arrayRemove = function (arr, value) {
 }
 
 
+export const genId = function() {
+  return '_' + Math.random().toString(36).substr(2, 9);
+}
 
 /*
 var preparePack = async function(name) {

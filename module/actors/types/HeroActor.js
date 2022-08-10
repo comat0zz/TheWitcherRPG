@@ -90,17 +90,19 @@ export class HeroActor extends Actor {
   }
 
   async getCalcModifiers(type, key) {
-    const modifications = this.getModTable(type, key);
+    const mods = this.data.data.modifications;
     const sum = 0;
     let logs = []; 
 
+    for(const [key, opt] of Object.entries(mods).filter( ([v, k]) => k.status === true )) {
+      if(opt.target == "properties") {
+        const formula = opt.formula;
+
+        console.log
+      }
+    }
+
     return [sum, logs];
-  }
-
-  async getModTable(type, key, category = []) {
-    const modifications = this.data.data.modifications;
-
-    return modifications;
   }
 
   async updateStatsList() {
@@ -271,5 +273,11 @@ export class HeroActor extends Actor {
       img: csk.img,
       label: csk.name
     }
-  }  
+  }
+
+  async addEffectsTable(effect) {
+    let modifications = duplicate(this.data.data.modifications);
+    modifications.push(effect);
+    this.update({ "data.modifications": modifications });
+  }
 }

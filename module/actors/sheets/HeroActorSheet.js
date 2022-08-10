@@ -1,4 +1,5 @@
 import { WitcherBaseActorSheet } from "../BaseActorSheet.js"
+import { genId } from "../../utils.js";
 
 export class HeroActorSheet extends WitcherBaseActorSheet {
   
@@ -19,7 +20,13 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
           contentSelector: ".skinv-content", 
           initial: "summary-skills"
         }
-      ]
+      ],
+      dragDrop: [
+        {
+          dropSelector: ".inventory-drop", 
+          dragSelector: ".item"
+        }
+      ],
     });
   }
 
@@ -105,6 +112,75 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     html.find('a.roll-actor-skill').click(evt => this._onRollActorSkill(evt));
 
     new ContextMenu(html, '.quick-action-menu', this.itemContextMenu);
+
+  }
+
+  async _getDocumentByPack(name) {
+    const pack = game.packs.get(name.pack);
+    return pack.getDocument(name.id);
+  }
+
+  async _extractItem(data) {
+
+    if(Object.keys(data).includes("pack") && data.pack != "") {
+      return await this._getDocumentByPack(data);
+    }else if(data.type == "Item"){
+      return game.items.get(data.id);
+    }else if(data.type == "Actor") {
+      return game.actors.get(data.id);
+    }
+  }
+
+  // формируем эффекты с предмета и добавляем в таблицу
+  async _calcItemEffects(efs) {
+    if (typeof(efs) === "undefined") {
+      return false;
+    }
+    let ids = [];
+
+    for(const [key, val] of Object.entries(efs)) {
+      const item = game.items.get(val.id);
+      const itemData = item.data.data;
+      const effect_id = genId();
+
+      let effect = {
+        id: effect_id,
+        name: item.name,
+        img: item.img,
+        effectId: val.id,
+        status: itemData.category == "self"? true:false,
+        onToken: itemData.onToken,
+        category: itemData.category,
+        activity: itemData.activity,
+        target: itemData.target,
+        formula: itemData.formula,
+        saving: itemData.saving,
+        time: itemData.time
+      }
+      
+      await this.actor.addEffectsTable(effect);
+      ids.push(effect_id);
+    }
+    
+    return ids;
+  }
+
+  /** @override */
+  async _onDrop(evt) { 
+    const dragData = JSON.parse(evt.dataTransfer.getData("text/plain"));
+    const itemData = await this._extractItem(dragData);
+    const item_id = dragData.id;
+
+    let item = {
+      data: itemData?.data?.data,
+      name: itemData.name,
+      type: itemData.type,
+      item_id: item_id,
+      img: itemData.img,
+      effectsIds: await this._calcItemEffects(itemData?.data?.data?.effects)
+    }
+
+    console.log(item)
   }
 
   async _onRollActorSkill(evt) {

@@ -338,6 +338,9 @@
   border: 0;
   flex: 0;
 }
+.inventory-drop .inventory-weapon {
+  border: 1px solid #D4D4D4;
+}
 @font-face {
   font-family: 'Thewitcher';
   src: url('./fonts/thewitcher2.ttf');
