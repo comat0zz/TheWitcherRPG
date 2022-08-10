@@ -119,33 +119,37 @@ export class HeroActor extends Actor {
 
     for (const [key, opt] of Object.entries(statsConfig).filter( ([v, k]) => k.Type === "basis" )) { 
       
-      
-
       let val = stats[key];
       actor[key] = {};
       actor[key].name = game.i18n.localize(opt.Long);
       let value = parseInt(val.value);
       if(isNaN(value)) value = 1;
       if (typeof(value) === "undefined") value = 1;
-
       actor[key].value = value;
-      let total = value;
-      const [thisSum, thisArr] = await this.getCalcModifiers("stats", key);
+      
+      if(key !== "LUCK"){
+        let total = value;
+        const [thisSum, thisArr] = await this.getCalcModifiers("stats", key);
 
-      total = total + thisSum;
-      actor[key]['log'] = thisArr;
-      
-      actor[key].total = total;
-      
-      if(actor[key].total < actor[key].value) {
-        actor[key].value = total;
-      }
+        total = total + thisSum;
+        actor[key]['log'] = thisArr;
+        
+        actor[key].total = total;
+        
+        
+        if(actor[key].total < actor[key].value) {
+          actor[key].value = total;
+        } 
+      } else {
+        actor[key].total = stats[key].total;
+        allPoints += stats[key].total;
+      }     
       
       if(! ["SPD", "LUCK"].includes(key)) {
         allPoints += value;
-      }
-      
+      }      
     }
+
 
     // Я бы с удовольствием запихал в один цикл, если бы не это
     const bodyWill = Math.floor((actor['BODY'].total + actor['WILL'].total) / 2);
