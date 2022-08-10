@@ -1,26 +1,42 @@
 export class HeroActor extends Actor {
 
-  async prepareData() {
+  /** @override */
+  prepareBaseData() {
+    // Data modifications in this step occur before processing embedded
+    // documents or derived data.
+  }
+
+  /** @override */
+  prepareData() {
+    // Prepare data for the actor. Calling the super version of this executes
+    // the following, in order: data reset (to clear active effects),
+    // prepareBaseData(), prepareEmbeddedDocuments() (including active effects),
+    // prepareDerivedData().
     super.prepareData();
-    let data = this.data.data;
-    
+  }
+
+  async prepareDerivedData() {
+
     const [stats, allStPoints] = await this.updateStatsList();
-    data.stats = stats;
-    data.trainSkills.StatsCount = allStPoints;
+    this.data.data.stats = stats;
+    this.data.data.StatsCount = allStPoints;
 
     const [skills, allSkPoints] = await this.updateSkillsList();
-    data.skills = skills;
-    data.trainSkills.SkillsCount = allSkPoints;
+    this.data.data.skills = skills;
+    this.data.data.SkillsCount = allSkPoints;
 
-    const [handFight, footFight] = await this.getMeleeFight();
+    const [handFight, footFight] = await this.getMeleeFight(stats['BODY'].total);
+    this.data.data.meleeFightHand = handFight;
+    this.data.data.meleeFightFoot = footFight;
 
+    /*
     this.update({
-      "data.trainSkills.SkillsCount": allSkPoints,
-      "data.trainSkills.StatsCount": allStPoints,
-      "data.meleeFight.hand": handFight,
-      "data.meleeFight.foot": footFight,
+        "data.trainSkills.SkillsCount": allSkPoints,
+        "data.trainSkills.StatsCount": allStPoints,
+        //"data.meleeFight.hand": handFight,
+        //"data.meleeFight.foot": footFight,
     });
-
+    */
   }
 
   async getMods(mods, type, key) {
@@ -44,14 +60,13 @@ export class HeroActor extends Actor {
     return [sum, arr];
   }
 
-  async getMeleeFight() {
+  async getMeleeFight(body_total) {
     const TableMeleeFight = CONFIG.WITCHER.TableMeleeFight;
-    const BODY = this.data.data.stats['BODY'].total;
-    if(BODY < 1) return [0, 0];
+    if(body_total < 1) return [0, 0];
 
     for (let [key, val] of Object.entries(TableMeleeFight)) { 
       let [from, to] = key.split("-");
-      if( (parseInt(from) <= BODY) &&  (BODY <= parseInt(to))) return [val.hand, val.foot];
+      if( (parseInt(from) <= body_total) &&  (body_total <= parseInt(to))) return [val.hand, val.foot];
     };
 
     return [0, 0];
@@ -104,6 +119,8 @@ export class HeroActor extends Actor {
 
     for (const [key, opt] of Object.entries(statsConfig).filter( ([v, k]) => k.Type === "basis" )) { 
       
+      
+
       let val = stats[key];
       actor[key] = {};
       actor[key].name = game.i18n.localize(opt.Long);
@@ -124,7 +141,10 @@ export class HeroActor extends Actor {
         actor[key].value = total;
       }
       
-      allPoints += value;
+      if(! ["SPD", "LUCK"].includes(key)) {
+        allPoints += value;
+      }
+      
     }
 
     // Я бы с удовольствием запихал в один цикл, если бы не это
@@ -195,7 +215,7 @@ export class HeroActor extends Actor {
     if(this.uuid == 'Actor.'){
       // create? hz
     }else{
-      this.update({ "data.stats": actor });
+      //this.update({ "data.stats": actor });
     }
 
     return [actor, allPoints];
@@ -231,7 +251,7 @@ export class HeroActor extends Actor {
       };
     }
 
-    this.update({"data.skills": obj});
+    //this.update({"data.skills": obj});
 
     return [obj, allPoints];
   }

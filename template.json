@@ -12,27 +12,25 @@
         "deathSaves": 0,
         "modifications": [],
         "race": "",
-        "meleeFight": {},
         "skills": {},
         "stats": {
-          "INT": {}, 
-          "REF": {}, 
-          "DEX": {}, 
-          "BODY": {}, 
-          "SPD": {}, 
-          "EMP": {}, 
-          "CRA": {}, 
-          "WILL": {}, 
-          "LUCK": {}, 
-          "VIGOR": {}, 
-          "STUN": {}, 
-          "RUN": {}, 
-          "LEAP": {}, 
-          "HP": {}, 
-          "STA": {}, 
-          "ENC": {}, 
-          "REC": {}, 
-          "PUNKI": {}
+          "INT": {"value": 1, "total": 1, "log": []}, 
+          "REF": {"value": 1, "total": 1, "log": []}, 
+          "DEX": {"value": 1, "total": 1, "log": []}, 
+          "BODY": {"value": 1, "total": 1, "log": []}, 
+          "SPD": {"value": 1, "total": 1, "log": []}, 
+          "EMP": {"value": 1, "total": 1, "log": []}, 
+          "CRA": {"value": 1, "total": 1, "log": []}, 
+          "WILL": {"value": 1, "total": 1, "log": []}, 
+          "LUCK": {"value": 1, "total": 1, "log": []}, 
+          "VIGOR": {"value": 0, "total": 0, "log": []}, 
+          "STUN": {"value": 0, "total": 0, "log": []}, 
+          "RUN": {"value": 0, "total": 0, "log": []}, 
+          "LEAP": {"value": 0, "total": 0, "log": []}, 
+          "HP": {"value": 0, "total": 0, "log": []}, 
+          "STA": {"value": 0, "total": 0, "log": []}, 
+          "ENC": {"value": 0, "total": 0, "log": []}, 
+          "REC": {"value": 0, "total": 0, "log": []}
         }
       }, 
       "creature": {
@@ -50,9 +48,7 @@
       "biography": {},
       "trainSkills": {
         "current": 0,
-        "list": [],
-        "SkillsCount": 0,
-        "StatsCount": 0
+        "list": []
       },
       "toxicity": 0,
       "isArmorEquip": {

@@ -66,17 +66,16 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     }
   }];
 
-  async getData(options) {
-    const data = super.getData(options);
-    const itemData = data.data;
-    data.config = CONFIG.WITCHER;
+  async getData() {
+    let sheetData = await super.getData();
 
-    data.skillsTable = await this.getSkillsTable();
-    
-    data.item = itemData;
-    data.data = itemData.data;
-    console.log(data);
-    return data;
+    sheetData.config = CONFIG.WITCHER;
+
+    sheetData.actorData = sheetData.actor.data.data;
+    sheetData.skillsTable = await this.getSkillsTable();
+
+    console.log(sheetData);
+    return sheetData;
   }
 
   async getSkillsTable() {
@@ -110,10 +109,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
   async _onRollActorSkill(evt) {
     evt.preventDefault();
-    // Криво :( 
-      // переопределил навыки в хиро
-    const skill = $(evt.currentTarget)[0];
-    const skillName = skill.dataset.skillName;
+
+    const skillName = $(evt.currentTarget).attr('data-skill-name');
     const skillData = await this.actor.getSkill(skillName);
 
     let roll = await new Roll(`1d10+${skillData.total}`).roll({async: true});
