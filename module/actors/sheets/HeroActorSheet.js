@@ -30,6 +30,45 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     });
   }
 
+  itemBackPackMenu = [
+    {
+      name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Edit"),
+      icon: '',
+      callback: element => {
+        console.log(element)
+      }
+    },
+    {
+      name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Remove"),
+      icon: '',
+      callback: element => {
+        console.log(element)
+      }
+    },
+    {
+      name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Use"),
+      icon: '',
+      callback: element => {
+        console.log(element)
+      }
+    },
+    {
+      name: game.i18n.localize("Witcher.Actor.BackpacksMenu.HandOver"),
+      icon: '',
+      callback: element => {
+        console.log(element)
+      }
+    },
+    {
+      name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Dress"),
+      icon: '',
+      callback: element => {
+        const item_id = $(element).attr('data-item-id');
+        this.actor.itemDressEqup(item_id);
+      }
+    }
+  ];
+
   itemContextMenu = [{
     name: game.i18n.localize("Witcher.Actor.Buttons.Initiative"),
     icon: '',
@@ -80,6 +119,12 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
     sheetData.actorData = sheetData.actor.data.data;
     sheetData.skillsTable = await this.getSkillsTable();
+    
+    sheetData.weapons = sheetData.actorData.inventory.filter((i) => i.type === "weapon" && i.isEquip == true);
+    sheetData.armors = sheetData.actorData.inventory.filter((i) => i.type === "armor" && i.isEquip == true);
+    sheetData.valuables = sheetData.actorData.inventory.filter((i) => i.type === "valuable" && i.isEquip == true);
+
+
 
     console.log(sheetData);
     return sheetData;
@@ -112,7 +157,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     html.find('a.roll-actor-skill').click(evt => this._onRollActorSkill(evt));
 
     new ContextMenu(html, '.quick-action-menu', this.itemContextMenu);
-
+    
+    new ContextMenu(html, '.inventory-backpacks tr', this.itemBackPackMenu);
   }
 
   async _getDocumentByPack(name) {
@@ -132,7 +178,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
   }
 
   // формируем эффекты с предмета и добавляем в таблицу
-  async _calcItemEffects(efs) {
+  async _calcItemEffects(efs, aitem) {
     if (typeof(efs) === "undefined") {
       return false;
     }
@@ -155,7 +201,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
         target: itemData.target,
         formula: itemData.formula,
         saving: itemData.saving,
-        time: itemData.time
+        time: itemData.time,
+        info: aitem
       }
       
       await this.actor.addEffectsTable(effect);
@@ -170,17 +217,22 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     const dragData = JSON.parse(evt.dataTransfer.getData("text/plain"));
     const itemData = await this._extractItem(dragData);
     const item_id = dragData.id;
+    const id = genId();
 
     let item = {
-      data: itemData?.data?.data,
+      id: id,
       name: itemData.name,
       type: itemData.type,
       item_id: item_id,
-      img: itemData.img,
-      effectsIds: await this._calcItemEffects(itemData?.data?.data?.effects)
+      img: itemData.img
     }
-
-    console.log(item)
+    item.effectsIds = await this._calcItemEffects(itemData?.data?.data?.effects, item)
+    item.data = itemData?.data?.data;
+    item.isEquip = false;
+    
+    let items = duplicate(this.actor.data.data.inventory);
+    items.push(item);
+    await this.actor.update({'data.inventory': items});    
   }
 
   async _onRollActorSkill(evt) {

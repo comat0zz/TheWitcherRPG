@@ -238,7 +238,8 @@
       "target": "no",
       "formula": {},
       "saving": {},
-      "time": ""
+      "time": "",
+      "info": {}
     }, 
     "mount_gear": {
       "templates": ["system", "things"],

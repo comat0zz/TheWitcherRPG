@@ -341,6 +341,29 @@
 .inventory-drop .inventory-weapon {
   border: 1px solid #D4D4D4;
 }
+.inventory-drop .inventory-weapon caption {
+  text-align: left;
+}
+.table-actor-statuseffects,
+.inventory-backpacks {
+  border: 1px solid #D4D4D4;
+  flex: 0;
+}
+.table-actor-statuseffects caption,
+.inventory-backpacks caption {
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+.table-actor-statuseffects img,
+.inventory-backpacks img {
+  width: 35px;
+  height: 35px;
+}
+.table-actor-statuseffects td,
+.inventory-backpacks td {
+  padding: 2px;
+}
 @font-face {
   font-family: 'Thewitcher';
   src: url('./fonts/thewitcher2.ttf');

@@ -1,0 +1,18 @@
+<table class="inventory-backpacks">
+  <tr>
+    <th></th>
+    <th>name</th>
+    <th>type</th>
+    <th>status</th>
+  </tr>
+  {{#each actorData.inventory}}
+    <tr data-item-id="{{item_id}}">
+      <td><img src="{{img}}"></td>
+      <td>{{name}}</td>
+      <td>{{type}}</td>
+      <td>
+        {{#if isEquip}}Надето{{else}}Не надето{{/if}}
+      </td>
+    </tr>
+  {{/each}}
+</table>

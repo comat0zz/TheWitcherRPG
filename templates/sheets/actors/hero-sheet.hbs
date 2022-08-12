@@ -6,6 +6,8 @@
   <a class="item" data-tab="summary" data-group="primary">{{localize "Witcher.Summary"}}</a>
   <!-- Магия и заклинания, рецепты -->
   <a class="item" data-tab="Spellbook" data-group="primary">{{localize "Witcher.Spellbook"}}</a>
+  <!-- Рюкзак со всем шмотом -->
+  <a class="item" data-tab="Backpack" data-group="primary">{{localize "Witcher.Actor.TabBackpack"}}</a>
   <!-- Активные статусы и эффекты на персонаже -->
   <a class="item" data-tab="statuses" data-group="primary">{{localize "Witcher.Statuses"}}</a>
   <!-- Профессия и раса -->
@@ -16,7 +18,9 @@
 
 {{!-- NPC Sheet Body --}}
 <section class="actor-content">
-
+  <div class="tab Backpack flexcol" data-group="primary" data-tab="Backpack">
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/backpack.hbs"}}
+  </div>
   <div class="tab summary flexcol" data-group="primary" data-tab="summary">
 
     <div class="flexrow">

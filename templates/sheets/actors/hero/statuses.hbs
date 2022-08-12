@@ -1,23 +1,29 @@
 <table class="table-actor-statuseffects">
-  <tr><th colspan="7">{{localize "Witcher.Actor.DebugEffects.Info"}}</th></tr>
+  <caption>{{localize "Witcher.Actor.DebugEffects.Info"}}</caption>
   <tr>
-    <th>{{localize "Witcher.Actor.DebugEffects.Type"}}</th>
-    <th>{{localize "Witcher.Actor.DebugEffects.Key"}}</th>
-    <th>{{localize "Witcher.Actor.DebugEffects.Mod"}}</th>
-    <th>{{localize "Witcher.Actor.DebugEffects.Value"}}</th>
-    <th>{{{localize "Witcher.Actor.DebugEffects.ID"}}}</th>
-    <th>{{{localize "Witcher.Actor.DebugEffects.EffectID"}}}</th>
-    <th>{{localize "Witcher.Actor.DebugEffects.From"}}</th>
+    <th>{{localize "Witcher.Actor.EffectStatus"}}</th>
+    <th colspan="2">{{localize "Witcher.Item.Effects.Names"}}</th>
+    <th>{{localize "Witcher.Item.Effects.Category"}}</th>
+    <th>{{localize "Witcher.Item.Effects.Activity"}}</th>
+    <th>{{{localize "Witcher.Item.Effects.onToken"}}}</th>
+    <th>{{{localize "Witcher.Item.Effects.Target"}}}</th>
+    <th colspan="2">{{localize "Witcher.Item.Effects.Things"}}</th>
   </tr>
-  {{#each data.modifications}}
+  {{#each actorData.modifications}}
+  <tr data-id="{{id}}" data-effectId="{{effectId}}">
+    <td>{{#if status}}{{localize "Witcher.Actor.EffectStatusTrue"}}{{else}}{{localize "Witcher.Actor.EffectStatusFalse"}}{{/if}}</td>
+    <td><img src="{{img}}" title="{{name}}"></td>
+    <td>{{name}}</td>
+    <td>{{lzCc "Witcher.Item.Effects.Categories." category}}</td>
+    <td>{{lzCc "Witcher.Item.Effects.Activities." activity}}</td>
+    <td>{{lzCc "Witcher.Item.Effects.onTokens." onToken}}</td>
+    <td>{{lzCc "Witcher.Item.Effects.Targets." target}}</td>
+    <td><img src="{{info.img}}" title="{{info.name}}"></td>
+    <td>{{info.name}}</td>
+  </tr>
   <tr>
-    <td>{{type}}</td>
-    <td>{{key}}</td>
-    <td>{{mod}}</td>
-    <td>{{value}}</td>
-    <td>{{itemId}}<br><i>ввыести предмет или то, на чем эффект</i></td>
-    <td>{{effectId}}<br><i>вывести кликабельный эффект</i></td>
-    <td>{{from}}</td>
+    <td colspan="5">{{localize "Witcher.Item.Effects.Formulas"}}: {{stringify formula}}</td>
+    <td colspan="4">{{localize "Witcher.Item.Effects.Saving"}}: {{stringify saving}}</td>
   </tr>
   {{/each}}
 </table>

@@ -21,6 +21,8 @@ const preloadHandlebarsTemplates = async function () {
     "systems/TheWitcherRPG/templates/sheets/actors/hero/profrace.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/biography.hbs",
 
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/backpack.hbs",
+
     "systems/TheWitcherRPG/templates/sheets/actors/monster-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/mount-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/npc-sheet.hbs",
@@ -96,6 +98,14 @@ function registerHandlebarsHelpers() {
       return options.fn(this);
     }
     return options.inverse(this);
+  });
+
+  Handlebars.registerHelper('stringify', function (value) {
+    return JSON.stringify(value);
+  });
+  
+  Handlebars.registerHelper('lzCc', function (str, val) {
+    return game.i18n.localize(str + val);
   });
 
   Handlebars.registerHelper('isdefined', function (value) {

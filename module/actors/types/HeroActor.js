@@ -89,16 +89,16 @@ export class HeroActor extends Actor {
     return CONFIG.WITCHER.CharacterStats;
   }
 
-  async getCalcModifiers(type, key) {
+  async getCalcModifiersProps(type, key) {
     const mods = this.data.data.modifications;
     const sum = 0;
     let logs = []; 
 
-    for(const [key, opt] of Object.entries(mods).filter( ([v, k]) => k.status === true )) {
+    for(const [key, opt] of Object.entries(mods).filter( ([v, k]) => k.status === true && k.target === "properties" )) {
       if(opt.target == "properties") {
         const formula = opt.formula;
 
-        console.log
+        console.log(1)
       }
     }
 
@@ -131,7 +131,7 @@ export class HeroActor extends Actor {
       
       if(key !== "LUCK"){
         let total = value;
-        const [thisSum, thisArr] = await this.getCalcModifiers("stats", key);
+        const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", key);
 
         total = total + thisSum;
         actor[key]['log'] = thisArr;
@@ -201,7 +201,7 @@ export class HeroActor extends Actor {
         total = run;
       }
 
-      const [thisSum, thisArr] = await this.getCalcModifiers("stats", key);
+      const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", key);
       actor[key]['log'] = thisArr;
       total = total + thisSum;
       actor[key].total = total;
@@ -214,7 +214,7 @@ export class HeroActor extends Actor {
     // в цикле выше не обработать, там надо ловить порядок,
     // в котором выполнится RUN, затем LEAP. нах надо
     actor["LEAP"].value = Math.floor(run / 3);
-    const [thisSum, thisArr] = await this.getCalcModifiers("stats", "LEAP");
+    const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", "LEAP");
     actor["LEAP"].total = actor["LEAP"].value + thisSum;
     actor["LEAP"]['log'] = thisArr;
 
@@ -247,7 +247,7 @@ export class HeroActor extends Actor {
       const stat_total = stats[val.stat.key].total;
       
       /// mod there
-      const [thisSum, thisArr] = await this.getCalcModifiers("skills", key);
+      const [thisSum, thisArr] = await this.getCalcModifiersProps("skills", key);
       obj[key].total = value + stat_total + thisSum;
       obj[key].log = thisArr;
       obj[key].stat = {
@@ -279,5 +279,28 @@ export class HeroActor extends Actor {
     let modifications = duplicate(this.data.data.modifications);
     modifications.push(effect);
     this.update({ "data.modifications": modifications });
+  }
+
+  async applyEffects(ids, category) {
+    let effects = duplicate(this.data.data.modifications);
+    console.log(ids)
+    effects.filter((i) => i.category === category).map(el => {
+      if(ids.includes(el.id)) {
+        el.status = true;
+      }
+    });
+    await this.update({"data.modifications": effects});
+  }
+
+  async itemDressEqup(id) {
+    let invs = duplicate(this.data.data.inventory);
+    const effects = invs.filter((i) => i.item_id === id)?.effectsIds;
+    invs.filter((i) => i.item_id === id).map( el => {
+      el.isEquip = true;
+    });
+
+    console.log(invs.filter((i) => i.item_id === id))
+    await this.applyEffects(effects, "equip");
+    await this.update({"data.inventory": invs});
   }
 }
