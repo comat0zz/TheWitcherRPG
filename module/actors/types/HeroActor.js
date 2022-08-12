@@ -39,27 +39,6 @@ export class HeroActor extends Actor {
     */
   }
 
-  async getMods(mods, type, key) {
-    let sum = 0; 
-    let arr = []; // Для лога при броске и можно в тотал подсказку сделать при наведении
-    mods.forEach(el => {
-      if(el.type == type && el.key == key) {
-        if(el.mod == "+") {
-          sum += parseInt(el.value);
-          
-        }else if(el.mod == '-') {
-          sum -= parseInt(el.value);
-        }
-
-        arr.push(el);
-      }
-      
-    });
-
-    //console.log([sum, arr])
-    return [sum, arr];
-  }
-
   async getMeleeFight(body_total) {
     const TableMeleeFight = CONFIG.WITCHER.TableMeleeFight;
     if(body_total < 1) return [0, 0];
@@ -91,14 +70,20 @@ export class HeroActor extends Actor {
 
   async getCalcModifiersProps(type, key) {
     const mods = this.data.data.modifications;
-    const sum = 0;
+    let sum = 0;
     let logs = []; 
 
-    for(const [key, opt] of Object.entries(mods).filter( ([v, k]) => k.status === true && k.target === "properties" )) {
+    for(const [k, opt] of Object.entries(mods).filter( ([v, k]) => k.status === true && k.target === "properties" )) {
       if(opt.target == "properties") {
         const formula = opt.formula;
-
-        console.log(1)
+        if(formula.type === type && formula.key === key) {
+          if(formula.modifier === '+') {
+            sum += formula.value;
+          }else if( formula.modifier === '-' ){
+            sum -= formula.value;
+          }
+          logs.push(formula);
+        }
       }
     }
 
@@ -132,16 +117,16 @@ export class HeroActor extends Actor {
       if(key !== "LUCK"){
         let total = value;
         const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", key);
-
+        console.log(thisSum)
         total = total + thisSum;
         actor[key]['log'] = thisArr;
         
         actor[key].total = total;
         
         
-        if(actor[key].total < actor[key].value) {
-          actor[key].value = total;
-        } 
+        //if(actor[key].total < actor[key].value) {
+        //  actor[key].value = total;
+        //} 
       } else {
         actor[key].total = stats[key].total;
         allPoints += stats[key].total;
@@ -206,9 +191,9 @@ export class HeroActor extends Actor {
       total = total + thisSum;
       actor[key].total = total;
 
-      if(actor[key].total < actor[key].value) {
-        actor[key].value = total;
-      }
+      //if(actor[key].total < actor[key].value) {
+      // actor[key].value = total;
+      //}
     }
 
     // в цикле выше не обработать, там надо ловить порядок,
@@ -257,8 +242,6 @@ export class HeroActor extends Actor {
       };
     }
 
-    //this.update({"data.skills": obj});
-
     return [obj, allPoints];
   }
 
@@ -283,7 +266,6 @@ export class HeroActor extends Actor {
 
   async applyEffects(ids, category) {
     let effects = duplicate(this.data.data.modifications);
-    console.log(ids)
     effects.filter((i) => i.category === category).map(el => {
       if(ids.includes(el.id)) {
         el.status = true;
@@ -292,15 +274,35 @@ export class HeroActor extends Actor {
     await this.update({"data.modifications": effects});
   }
 
+  async cancelEffects(ids, category) {
+    let effects = duplicate(this.data.data.modifications);
+    effects.filter((i) => i.category === category).map(el => {
+      if(ids.includes(el.id)) {
+        el.status = false;
+      }
+    });
+    await this.update({"data.modifications": effects});
+  }
+
   async itemDressEqup(id) {
     let invs = duplicate(this.data.data.inventory);
-    const effects = invs.filter((i) => i.item_id === id)?.effectsIds;
-    invs.filter((i) => i.item_id === id).map( el => {
+    const effects = invs.filter((i) => i.id === id)?.[0]?.effectsIds;
+    invs.filter((i) => i.id === id).map( el => {
       el.isEquip = true;
     });
-
-    console.log(invs.filter((i) => i.item_id === id))
+    
     await this.applyEffects(effects, "equip");
+    await this.update({"data.inventory": invs});
+  }
+
+  async itemUnDressEqup(id) {
+    let invs = duplicate(this.data.data.inventory);
+    const effects = invs.filter((i) => i.id === id)?.[0]?.effectsIds;
+    invs.filter((i) => i.id === id).map( el => {
+      el.isEquip = false;
+    });
+    
+    await this.cancelEffects(effects, "equip");
     await this.update({"data.inventory": invs});
   }
 }

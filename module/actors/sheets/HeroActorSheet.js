@@ -63,8 +63,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Dress"),
       icon: '',
       callback: element => {
-        const item_id = $(element).attr('data-item-id');
-        this.actor.itemDressEqup(item_id);
+        const id = element[0].dataset.id;
+        this.actor.itemDressEqup(id);
       }
     }
   ];

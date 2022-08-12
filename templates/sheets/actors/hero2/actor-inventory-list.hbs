@@ -1,7 +1,7 @@
 <div class="flexcol inventory-drop">
   <table class="item-table-info inventory-weapon">
-    <caption>Example Caption</caption>
-    
+    <caption>Оружие</caption>
+    <!-- 
     <tr>
       <td>картинка</td>
       <td>Название</td>
@@ -13,7 +13,37 @@
       <td>вес</td>
       <td>тип урона, эффекты, хват, доступность, скрытность</td>
     </tr>
-    
+    -->
+    {{#each weapons}}
+      <tr data-id="{{id}}">
+        <td><img style="width:35px;height:35px" src="{{img}}" title="{{name}}"></td>
+        <td>{{name}}</td>
+        <td></td>
+      </tr>
+    {{/each}}
   </table>
 
+  <table class="item-table-info inventory-valuables">
+    <caption>Пояс</caption>
+    <!-- 
+    <tr>
+      <td>картинка</td>
+      <td>Название</td>
+      <td>масло</td>
+      <td>дистанция</td>
+      <td>урон</td>
+      <td>Надежность ч/ч</td>
+      <td>руны, пустые или заполненные</td>
+      <td>вес</td>
+      <td>тип урона, эффекты, хват, доступность, скрытность</td>
+    </tr>
+    -->
+    {{#each valuables}}
+      <tr>
+        <td><img style="width:35px;height:35px" src="{{img}}" title="{{name}}"></td>
+        <td>{{name}}</td>
+        <td></td>
+      </tr>
+    {{/each}}
+  </table>
 </div>
