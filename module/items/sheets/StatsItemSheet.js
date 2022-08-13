@@ -23,5 +23,4 @@ export class StatsItemSheet extends WitcherBaseItemSheet {
     data.data = itemData.data;
     return data;
   }
-
 }

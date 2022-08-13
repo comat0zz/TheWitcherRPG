@@ -5,7 +5,7 @@ export class BulletsItemSheet extends WitcherBaseItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      height: 430
+      height: 500
     });
   }
 }

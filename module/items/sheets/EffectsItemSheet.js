@@ -18,7 +18,6 @@ export class EffectsItemSheet extends ItemSheet {
     const data = super.getData(options);
     const itemData = data.data;
     data.config = CONFIG.WITCHER;
-    console.log(data)
     itemData.data.formula = JSON.stringify(itemData.data.formula);
     itemData.data.saving = JSON.stringify(itemData.data.saving); 
     data.item = itemData;
@@ -26,12 +25,4 @@ export class EffectsItemSheet extends ItemSheet {
     
     return data;
   }
-
 }
-
-
-
-
-
-
-

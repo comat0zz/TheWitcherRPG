@@ -173,7 +173,6 @@
       "templates": ["system", "things"],
       "effects": [],
       "toxic": 0,
-      "macros": "",
       "category": "potion"
     }, 
     "mutagen": {

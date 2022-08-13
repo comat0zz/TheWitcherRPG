@@ -33,12 +33,4 @@ export class NoteItemSheet extends ItemSheet {
     data.UserisGM = game.user.isGM;
     return data;
   }
-
 }
-
-
-
-
-
-
-

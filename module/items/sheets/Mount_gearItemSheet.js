@@ -8,12 +8,4 @@ export class Mount_gearItemSheet extends WitcherBaseItemSheet {
       height: 400
     });
   }
-
 }
-
-
-
-
-
-
-

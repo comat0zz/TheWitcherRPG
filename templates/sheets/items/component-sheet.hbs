@@ -15,15 +15,32 @@
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
       <tr>
-        <th>{{localize "Witcher.Item.Weight"}}</th>
-        <th>{{localize "Witcher.Item.Components.ForageDC"}}</th>
-        <th>{{localize "Witcher.Item.Cost"}}</th>
-        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
+        <td>{{localize "Witcher.Item.Components.Categories.Label"}}</td>
+        <td>
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.ComponentsCategories as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+        </td>
       </tr>
-      <tr class="table-th-value">
+
+      <tr>
+        <td>{{localize "Witcher.Item.Weight"}}</td>
         <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Components.ForageDC"}}</td>
         <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Cost"}}</td>
         <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
         <td>
           <select name="data.rarity">
             {{#select data.rarity}}
@@ -34,39 +51,28 @@
           </select>
         </td>
       </tr>
-      <tr>
-        <td>{{localize "Witcher.Item.Components.Categories.Label"}}</td>
-        <td colspan="3">
-          <select name="data.category">
-            {{#select data.category}}
-              {{#each config.ComponentsCategories as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-              {{/each}}
-            {{/select}}
-          </select> 
-        </td>
-      </tr>
+      
       {{#ife data.category "substances"}}
         <tr>
           <td>{{localize "Witcher.Item.Components.Substance"}}</td>
-          <td colspan="3">
+          <td>
             {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.substanceType dist_field="substanceType;0;0;1" dist_type="substances" tpl="one"}}
           </td>
         </tr>
       {{/ife}}
       <tr>
         <td class="cursor-pointer" item-click="QuantityObtainable_on">{{localize "Witcher.Item.Components.QuantityObtainable"}}</td>
-        <td colspan="3"><input item-click="QuantityObtainable_value" type="text" name="data.quantityObtainable" value="{{data.quantityObtainable}}" placeholder="{{localize "Witcher.Macros"}}"/></td>
+        <td><input item-click="QuantityObtainable_value" type="text" name="data.quantityObtainable" value="{{data.quantityObtainable}}" placeholder="{{localize "Witcher.Macros"}}"/></td>
       </tr>
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td colspan="3">
+        <td>
           {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" tpl="one"}}
         </td>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="3">
+        <td>
           <select name="data.source">
               {{#select data.source}}
                 {{#each config.SourceList as |name type|}}

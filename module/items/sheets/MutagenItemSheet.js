@@ -8,13 +8,4 @@ export class MutagenItemSheet extends WitcherBaseItemSheet {
       height: 400,
     });
   }
-
-
 }
-
-
-
-
-
-
-

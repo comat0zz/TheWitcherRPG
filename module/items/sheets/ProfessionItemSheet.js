@@ -10,10 +10,3 @@ export class ProfessionItemSheet extends WitcherBaseItemSheet {
     });
   }
 }
-
-
-
-
-
-
-

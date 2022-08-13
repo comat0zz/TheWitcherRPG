@@ -15,7 +15,7 @@
     <table>
       <tr>
         <td>{{localize "Witcher.Item.Enchancements.Category"}}</td>
-        <td colspan="5">
+        <td>
           <select name="data.category">
             {{#select data.category}}
               {{#each config.EnchancementsCategories as |name type|}}
@@ -27,29 +27,39 @@
       </tr>
       {{#ife data.category "armor"}}
       <tr>
-        <th>{{localize "Witcher.Item.Weight"}}</th>
-        <th>{{localize "Witcher.Item.Armor.Label.Short"}}</th>
-        <th>{{localize "Witcher.Item.TypeDamages.Slashing.Short"}}</th>
-        <th>{{localize "Witcher.Item.TypeDamages.Piercing.Short"}}</th>
-        <th>{{localize "Witcher.Item.TypeDamages.Bludgeoning.Short"}}</th>
-        <th>{{localize "Witcher.Item.TypeDamages.Elemental.Short"}}</th>
+        <td>{{localize "Witcher.Item.Armor.Label.Long"}}</td>
+        <td><input name="data.dataArmor.sp" type="text" value="{{data.dataArmor.sp}}" data-dtype="Number" /></td>
       </tr>
       <tr>
-        <td><input name="data.dataArmor.weight" type="text" value="{{data.weight}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.dataArmor.sp" type="text" value="{{data.dataArmor.sp}}" placeholder="" data-dtype="Number" /></td>
-        <td><input name="data.dataArmor.slashing" type="checkbox" value="{{data.dataArmor.slashing}}" {{checked data.dataArmor.slashing}}/></td>
-        <td><input name="data.dataArmor.piercing" type="checkbox" value="{{data.dataArmor.piercing}}" {{checked data.dataArmor.piercing}}/></td>
-        <td><input name="data.dataArmor.bludgeoning" type="checkbox" value="{{data.dataArmor.bludgeoning}}" {{checked data.dataArmor.bludgeoning}}/></td>
-        <td><input name="data.dataArmor.elemental" type="checkbox" value="{{data.dataArmor.elemental}}" {{checked data.dataArmor.elemental}}/></td>
+        <td colspan="2">
+          <table style="border:0; text-align:center">
+            <tr>
+              <th>{{localize "Witcher.Item.TypeDamages.Slashing.Long"}}</th>
+              <th>{{localize "Witcher.Item.TypeDamages.Piercing.Long"}}</th>
+              <th>{{localize "Witcher.Item.TypeDamages.Bludgeoning.Long"}}</th>
+              <th>{{localize "Witcher.Item.TypeDamages.Elemental.Long"}}</th>
+            </tr>
+            <tr>
+              <td><input name="data.dataArmor.slashing" type="checkbox" value="{{data.dataArmor.slashing}}" {{checked data.dataArmor.slashing}}/></td>
+              <td><input name="data.dataArmor.piercing" type="checkbox" value="{{data.dataArmor.piercing}}" {{checked data.dataArmor.piercing}}/></td>
+              <td><input name="data.dataArmor.bludgeoning" type="checkbox" value="{{data.dataArmor.bludgeoning}}" {{checked data.dataArmor.bludgeoning}}/></td>
+              <td><input name="data.dataArmor.elemental" type="checkbox" value="{{data.dataArmor.elemental}}" {{checked data.dataArmor.elemental}}/></td>
+            </tr>
+          </table>
+        </td>
       </tr>
       {{/ife}}
       <tr>
-        <th>{{localize "Witcher.Item.Cost"}}</th>
-        <th colspan="5">{{localize "Witcher.Item.Rarity.Label"}}</th>
+        <td>{{localize "Witcher.Item.Weight"}}</td>
+        <td><input name="data.dataArmor.weight" type="text" value="{{data.weight}}" data-dtype="Number" /></td>
       </tr>
       <tr>
-        <td><input name="data.cost" type="text" value="{{data.cost}}" placeholder="" data-dtype="Number" /></td>
-        <td colspan="5">
+        <td>{{localize "Witcher.Item.Cost"}}</td>
+        <td><input name="data.cost" type="text" value="{{data.cost}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
+        <td>
           <select name="data.rarity">
             {{#select data.rarity}}
               {{#each config.RarityItem as |name value|}}
@@ -59,15 +69,16 @@
           </select>
         </td>
       </tr>
+
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td colspan="5">
+        <td>
           {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" isQty=false tpl="one"}}
         </td>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="5">
+        <td>
           <select name="data.source">
               {{#select data.source}}
                 {{#each config.SourceList as |name type|}}

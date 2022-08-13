@@ -37,10 +37,3 @@ export class ComponentItemSheet extends WitcherBaseItemSheet {
     }
   }
 }
-
-
-
-
-
-
-

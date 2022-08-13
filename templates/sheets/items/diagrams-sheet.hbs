@@ -15,15 +15,32 @@
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
       <tr>
-        <th>{{localize "Witcher.Item.Surcharge"}}</th>
-        <th>{{localize "Witcher.Item.ForageDC"}}</th>
-        <th>{{localize "Witcher.Item.Cost"}}</th>
-        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
+        <td>{{localize "Witcher.Item.Diagrams.TypeLabel"}}</td>
+        <td>
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.diagramsType as |name type|}}
+                <option value="{{type}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select> 
+        </td>
       </tr>
-      <tr class="table-th-value">
+
+      <tr>
+        <td>{{localize "Witcher.Item.Surcharge"}}</td>
         <td><input type="text" name="data.surcharge" value="{{data.surcharge}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.ForageDC"}}</td>
         <td><input type="text" name="data.forage" value="{{data.forage}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Cost"}}</td>
         <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
         <td>
           <select name="data.rarity">
             {{#select data.rarity}}
@@ -34,11 +51,12 @@
           </select>
         </td>
       </tr>
+
       <tr>
         <td>
           {{localize "Witcher.Item.LevelTypeLabel"}}
         </td>
-        <td colspan="3">
+        <td>
           <select name="data.LevelType">
           {{#select data.LevelType}}
             {{#each config.LevelType as |name type|}}
@@ -48,21 +66,10 @@
         </select> 
         </td>
       </tr>
-      <tr>
-        <td>{{localize "Witcher.Item.Diagrams.TypeLabel"}}</td>
-        <td colspan="3">
-          <select name="data.category">
-            {{#select data.category}}
-              {{#each config.diagramsType as |name type|}}
-                <option value="{{type}}">{{localize name}}</option>
-              {{/each}}
-            {{/select}}
-          </select> 
-        </td>
-      </tr>
+      
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="3">
+        <td>
           <select name="data.source">
               {{#select data.source}}
                 {{#each config.SourceList as |name type|}}

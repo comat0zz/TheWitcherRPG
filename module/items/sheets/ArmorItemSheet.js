@@ -8,12 +8,4 @@ export class ArmorItemSheet extends WitcherBaseItemSheet {
       height: 600
     });
   }
-
 }
-
-
-
-
-
-
-

@@ -7,28 +7,8 @@
 <section class="item-content">
   <table>
     <tr>
-      <th>{{localize "Witcher.Item.Times.Label"}}</th>
-      <th>{{localize "Witcher.Item.ForgeDC"}}</th>
-      <th>{{localize "Witcher.Item.Cost"}}</th>
-      <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
-    </tr>
-    <tr class="table-th-value">
-      <td><input type="text" name="data.time" value="{{data.time}}" placeholder="" /></td>
-      <td><input type="text" name="data.forageDC" value="{{data.forageDC}}" data-dtype="Number"/></td>
-      <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
-      <td>
-        <select name="data.rarity">
-          {{#select data.rarity}}
-            {{#each config.RarityItem as |name value|}}
-              <option value="{{value}}">{{localize name.long}}</option>
-            {{/each}}
-          {{/select}}
-        </select>
-      </td>
-    </tr>
-    <tr>
       <td>{{localize "Witcher.Item.Alhformulas.IngridientsLabel"}}</td>
-      <td colspan="3">
+      <td>
         {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.ingridients dist_field="ingridients;1;0;0" dist_type="all" isQty=false tpl="row"}}
       </td>
     </tr>
@@ -36,7 +16,7 @@
       <td>
         {{localize "Witcher.Item.LevelTypeLabel"}}
       </td>
-      <td colspan="3">
+      <td>
         <select name="data.LevelType">
         {{#select data.LevelType}}
             {{#each config.LevelType as |name type|}}
@@ -46,9 +26,35 @@
         </select> 
         </td>
       </tr>
+
+      <tr>
+        <td>{{localize "Witcher.Item.Times.Label"}}</td>
+        <td><input type="text" name="data.time" value="{{data.time}}" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.ForgeDC"}}</td>
+        <td><input type="text" name="data.forageDC" value="{{data.forageDC}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Cost"}}</td>
+        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
+        <td>
+          <select name="data.rarity">
+          {{#select data.rarity}}
+            {{#each config.RarityItem as |name value|}}
+              <option value="{{value}}">{{localize name.long}}</option>
+            {{/each}}
+          {{/select}}
+        </select>
+        </td>
+      </tr>
+
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="3">
+        <td>
           <select name="data.source">
           {{#select data.source}}
             {{#each config.SourceList as |name type|}}

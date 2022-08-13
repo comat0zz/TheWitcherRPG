@@ -157,18 +157,18 @@
   width: 100%;
   height: 100%;
 }
-.sheet.item.witcher section.window-content .witcher-insertion-area table td,
-.sheet.item.witcher section.window-content .witcher-insertion-area table tr,
-.sheet.item.witcher section.window-content .witcher-insertion-area table th {
-  border: 0;
-}
-.sheet.item.witcher section.window-content .witcher-insertion-area table img {
+.sheet.item.witcher section.window-content .witcher-insertion-area img {
   width: 35px;
   height: 35px;
   border: 0;
 }
-.sheet.item.witcher section.window-content .witcher-insertion-area table input.qty-edit {
+.sheet.item.witcher section.window-content .witcher-insertion-area input.qty-edit {
   width: 30px;
+}
+.sheet.item.witcher section.window-content .witcher-insertion-area table td,
+.sheet.item.witcher section.window-content .witcher-insertion-area table tr,
+.sheet.item.witcher section.window-content .witcher-insertion-area table th {
+  border: 0;
 }
 .sheet.item.witcher section.window-content .witcher-insertion-area table td:last-child {
   text-align: center;
