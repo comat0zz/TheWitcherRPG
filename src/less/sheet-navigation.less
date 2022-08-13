@@ -1,0 +1,31 @@
+.sheet.witcher {
+  section.window-content {
+    form {
+      .sheet-navigation {
+        flex: 0 0 30px;
+        font-family: "GwentExtraBold", "Nodesto", "Signika", "Palatino Linotype", serif;
+        font-size: var(--font-size-24, 18pt);
+        font-variant: small-caps;
+        margin-top: 4px;
+        background: @nav-color03;
+        border: 1px solid @nav-0000;
+        border-radius: 6px 6px 0 0;
+        font-size: var(--font-size-20, 16pt);
+  
+        .item {
+          height: 30px;
+          line-height: 32px;
+          margin: 0 2px;
+          white-space: nowrap;
+          border: 1px solid @nav-0000;
+          border-radius: 12px 12px 0 0;
+          flex: 1;
+        }
+  
+        .item.active {
+          background: @nav-color05;
+        }
+      }
+    }
+  }
+}

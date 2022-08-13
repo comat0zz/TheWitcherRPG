@@ -1,369 +1,3 @@
-.sheet.item form {
-  height: 100%;
-  overflow: hidden;
-}
-.sheet.item form .align-center {
-  text-align: center;
-}
-.sheet.item form input[type="text"],
-.sheet.item form input[type="number"] {
-  background: none;
-  border: 1px solid transparent;
-}
-.sheet.item form h1,
-.sheet.item form h2,
-.sheet.item form h3,
-.sheet.item form h4,
-.sheet.item form h5 {
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: var(--font-size-24, 18pt);
-  font-variant: small-caps;
-}
-.sheet.item form .table-item-card {
-  flex: 0;
-}
-.sheet.item form .sheet-header {
-  flex: 0 0 100px;
-  border-bottom: 2px groove #eeede0;
-  align-items: center;
-}
-.sheet.item form .sheet-header h1 {
-  flex: 1;
-  border-bottom: none;
-  height: 60px;
-  margin: 0;
-  padding: 5px;
-}
-.sheet.item form .sheet-header h1 input {
-  font-size: calc(var(--font-size-28, 20pt) * 1.2);
-  font-variant-caps: small-caps;
-  margin: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.sheet.item form .sheet-header img.profile {
-  flex: 0 0 100px;
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  border: 1px solid #000;
-}
-.sheet.item form .sheet-header .summary {
-  display: flex;
-  flex: 0 0 100%;
-  height: 36px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 2px groove #eeede0;
-  border-bottom: none;
-}
-.sheet.item form .sheet-header .summary li {
-  width: 33.33%;
-  height: 24px;
-  padding: 0 3px;
-  border-right: 2px groove #eeede0;
-  border-bottom: 2px groove #eeede0;
-  line-height: 24px;
-  color: #4b4a44;
-}
-.sheet.item form .sheet-header .item-subtitle {
-  flex: 0 0 auto;
-  height: 60px;
-  margin: 0;
-  padding: 5px;
-  text-align: right;
-  color: #7a7971;
-}
-.sheet.item form .sheet-header .item-subtitle .item-type {
-  font-size: var(--font-size-20, 16pt);
-  line-height: 1.1;
-  margin: 0;
-}
-.sheet.item form .sheet-header .item-subtitle .item-status {
-  font-size: var(--font-size-14, 14pt);
-  line-height: 1.1;
-}
-.sheet.item form .is-hidden {
-  visibility: hidden;
-}
-.sheet.item form .witcher-insertion-area {
-  width: 100%;
-  height: 100%;
-}
-.sheet.item form .img35x35 {
-  width: 35px;
-  height: 35px;
-  border: 0;
-}
-.sheet.item form table.item-properties-list .item-properties-small {
-  width: 50px;
-}
-.sheet.item form .cursor-pointer {
-  cursor: pointer;
-}
-.sheet.item form .notes-sub-header {
-  padding-left: 8px;
-  align-items: center;
-  display: flex;
-}
-.sheet.item form .sheet-navigation {
-  flex: 0 0 30px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: var(--font-size-24, 18pt);
-  font-variant: small-caps;
-  margin: 4px 0;
-  background: rgba(155, 155, 155, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 6px 6px 0 0;
-  font-size: var(--font-size-20, 16pt);
-}
-.sheet.item form .sheet-navigation .item {
-  height: 30px;
-  line-height: 32px;
-  margin: 0 2px;
-  white-space: nowrap;
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 12px 12px 0 0;
-  flex: 1;
-}
-.sheet.item form .sheet-navigation .item.active {
-  background: rgba(155, 155, 155, 0.5);
-}
-.sheet.item form .item-content {
-  flex: 1;
-  overflow: hidden;
-}
-.sheet.item form .item-content .table-th-value input {
-  text-align: center;
-}
-.sheet.item form .item-content .tab {
-  padding: 0 5px;
-  height: 100%;
-  overflow-y: auto;
-  align-content: flex-start;
-}
-.sheet.item form .item-content select {
-  width: 100%;
-}
-.sheet.item form .item-content input.qty-edit {
-  width: 30px;
-}
-.sheet.item form.witcher-item-component .substanceImage,
-.sheet.item form.witcher-item-component .location-table img {
-  width: 35px;
-  height: 35px;
-  border: 0;
-}
-.sheet.item form.witcher-item-substances .item-content {
-  padding-top: 10px;
-}
-.sheet.actor form {
-  height: 100%;
-  overflow: hidden;
-}
-.sheet.actor form .align-center {
-  text-align: center;
-}
-.sheet.actor form input[type="text"],
-.sheet.actor form input[type="number"] {
-  background: none;
-  border: 1px solid transparent;
-}
-.sheet.actor form h1,
-.sheet.actor form h2,
-.sheet.actor form h3,
-.sheet.actor form h4,
-.sheet.actor form h5 {
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: var(--font-size-24, 18pt);
-  font-variant: small-caps;
-}
-.sheet.actor form img.profile {
-  flex: 0 0 100px;
-  width: 200px;
-  height: 310px;
-  object-fit: contain;
-  border: 1px solid #000;
-}
-.sheet.actor form .sheet-header {
-  flex: 0 0 100px;
-  border-bottom: 2px groove #eeede0;
-  align-items: center;
-}
-.sheet.actor form .sheet-header h1 {
-  flex: 1;
-  border-bottom: none;
-  height: 60px;
-  margin: 0;
-  padding: 5px;
-}
-.sheet.actor form .sheet-header h1 input {
-  font-size: calc(var(--font-size-28, 20pt) * 1.2);
-  font-variant-caps: small-caps;
-  margin: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.sheet.actor form .sheet-navigation {
-  flex: 0 0 30px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: var(--font-size-24, 18pt);
-  font-variant: small-caps;
-  margin: 4px 0;
-  background: rgba(155, 155, 155, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 6px 6px 0 0;
-  font-size: var(--font-size-20, 16pt);
-}
-.sheet.actor form .sheet-navigation .item {
-  height: 30px;
-  line-height: 32px;
-  margin: 0 2px;
-  white-space: nowrap;
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 12px 12px 0 0;
-  flex: 1;
-}
-.sheet.actor form .sheet-navigation .item.active {
-  background: rgba(155, 155, 155, 0.5);
-}
-.sheet.actor form .actor-content {
-  flex: 1;
-  overflow: hidden;
-}
-.sheet.actor form .actor-content .table-actor-statuseffects {
-  flex: 0;
-  font-size: 10px;
-}
-.sheet.actor form .actor-content .table-th-value input {
-  text-align: center;
-}
-.sheet.actor form .actor-content .tab {
-  padding: 0 5px;
-  height: 100%;
-  overflow-y: auto;
-  align-content: flex-start;
-}
-.sheet.actor form .actor-content select {
-  width: 100%;
-}
-.sheet.actor form .actor-content input.qty-edit {
-  width: 30px;
-}
-.sheet.actor form .actor-stats-container .flex-parent {
-  display: flex;
-}
-.sheet.actor form .actor-stats-container .flex-item {
-  padding: 0.5em;
-}
-.sheet.actor form .actor-stats-container .flex-item.no-shrink {
-  flex-shrink: 0;
-}
-.sheet.actor form .actor-stats-container .actor-table-stats {
-  border: 1px solid var(--color-border-light-tertiary);
-  font-size: 16px;
-  margin: 0;
-}
-.sheet.actor form .actor-stats-container .actor-table-stats .block-40px {
-  height: 40px;
-}
-.sheet.actor form .actor-stats-container .actor-table-stats img.profile {
-  width: 300px;
-  height: 300px;
-}
-.sheet.actor form .actor-stats-container .actor-table-stats td {
-  padding: 0 0 0 3px;
-}
-.sheet.actor form .actor-stats-container .actor-table-stats td:not(:first-child) {
-  width: 30px;
-  text-align: center;
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors {
-  height: 310px;
-  width: 80px;
-  text-align: center;
-  border: 0;
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors .actor-summary-sensor {
-  height: 77px;
-  background-repeat: no-repeat;
-  background-size: 80px 77px;
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors .actor-summary-sensor input {
-  width: 25px;
-  padding: 0;
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-hp {
-  background-image: url(../assets/ActorSheets/health-dead.png);
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-sta {
-  background-image: url(../assets/ActorSheets/stamina.png);
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-vigor {
-  background-image: url(../assets/ActorSheets/focus.png);
-}
-.sheet.actor form .actor-stats-container .actor-table-sensors .actor-sensor-luck {
-  background-image: url(../assets/ActorSheets/clover.png);
-}
-.sheet.actor form .actor-skills-container {
-  margin: 0 auto;
-}
-.sheet.actor form .actor-skills-container .flex-parent {
-  display: flex;
-}
-.sheet.actor form .actor-skills-container .flex-item {
-  padding: 0.5em;
-}
-.sheet.actor form .actor-skills-container .flex-item.no-shrink {
-  flex-shrink: 0;
-}
-.sheet.actor form .actor-skills-container .actor-table-skills {
-  border: 1px solid var(--color-border-light-tertiary);
-  font-size: 12px;
-}
-.sheet.actor form .actor-skills-container .actor-table-skills td {
-  padding: 0 0 0 3px;
-}
-.sheet.actor form .actor-skills-container .actor-table-skills td:not(:first-child) {
-  width: 30px;
-  text-align: center;
-}
-.sheet.actor form .actor-skills-container .TableMeleeFight td:last-child {
-  width: 70px;
-  text-align: left;
-}
-.item-table-info {
-  margin: 0;
-  border: 0;
-  flex: 0;
-}
-.inventory-drop .inventory-weapon {
-  border: 1px solid #D4D4D4;
-}
-.inventory-drop .inventory-weapon caption {
-  text-align: left;
-}
-.table-actor-statuseffects,
-.inventory-backpacks {
-  border: 1px solid #D4D4D4;
-  flex: 0;
-}
-.table-actor-statuseffects caption,
-.inventory-backpacks caption {
-  text-align: left;
-  font-weight: bold;
-  font-size: 18px;
-}
-.table-actor-statuseffects img,
-.inventory-backpacks img {
-  width: 35px;
-  height: 35px;
-}
-.table-actor-statuseffects td,
-.inventory-backpacks td {
-  padding: 2px;
-}
 @font-face {
   font-family: 'Thewitcher';
   src: url('./fonts/thewitcher2.ttf');
@@ -375,244 +9,178 @@
 .witcher-style {
   font-family: Thewitcher;
 }
-.witcher.sheet.actor > .window-content {
+.gwent-style {
+  font-family: GwentExtraBold;
+}
+.sheet.witcher section.window-content form .align-center {
+  text-align: center;
+}
+.sheet.witcher section.window-content form .is-hidden {
+  visibility: hidden;
+}
+.sheet.witcher section.window-content form .img35x35 {
+  width: 35px;
+  height: 35px;
+  border: 0;
+}
+.sheet.witcher section.window-content form .cursor-pointer {
+  cursor: pointer;
+}
+.sheet.witcher section.window-content form .sheet-navigation {
+  flex: 0 0 30px;
+  font-family: "GwentExtraBold", "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: var(--font-size-24, 18pt);
+  font-variant: small-caps;
+  margin-top: 4px;
+  background: rgba(155, 155, 155, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 6px 6px 0 0;
+  font-size: var(--font-size-20, 16pt);
+}
+.sheet.witcher section.window-content form .sheet-navigation .item {
+  height: 30px;
+  line-height: 32px;
+  margin: 0 2px;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 12px 12px 0 0;
+  flex: 1;
+}
+.sheet.witcher section.window-content form .sheet-navigation .item.active {
+  background: rgba(155, 155, 155, 0.5);
+}
+.sheet.witcher section.window-content {
   background: #fff;
-  padding-top: 0;
 }
-.witcher.sheet.actor > .window-content .main-nav.sheet-navigation {
+.sheet.witcher section.window-content form {
+  height: 100%;
+  overflow: hidden;
+}
+.sheet.witcher section.window-content form input,
+.sheet.witcher section.window-content form select {
   background: none;
+  border: 1px solid transparent;
+}
+.sheet.witcher section.window-content form h1,
+.sheet.witcher section.window-content form h2,
+.sheet.witcher section.window-content form h3,
+.sheet.witcher section.window-content form h4,
+.sheet.witcher section.window-content form h5 {
+  font-family: "GwentExtraBold", "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: var(--font-size-24, 18pt);
+  font-variant: small-caps;
+}
+.sheet.witcher section.window-content form select option {
+  background: #fff;
+}
+.sheet.item.witcher section.window-content form .sheet-header {
+  flex: 0 0 100px;
+  align-items: center;
+}
+.sheet.item.witcher section.window-content form .sheet-header h1 {
+  flex: 1;
+  border-bottom: none;
+  height: 60px;
   margin: 0;
+  padding: 5px;
 }
-.witcher.sheet.actor > .window-content .main-nav.sheet-navigation .item {
-  border-radius: 0 0 12px 12px;
-}
-.witcher.sheet.actor > .window-content .main-nav.sheet-navigation .item.active {
-  background: rgba(211, 211, 211, 0.5);
-}
-.witcher.sheet.actor > .window-content .second-nav {
-  background: none;
+.sheet.item.witcher section.window-content form .sheet-header h1 input {
+  font-size: calc(var(--font-size-28, 20pt) * 1.2);
+  font-variant-caps: small-caps;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-.witcher.sheet.actor > .window-content .second-nav .item {
-  border-radius: 12px 12px 12px 12px;
+.sheet.item.witcher section.window-content form .sheet-header img.profile {
+  flex: 0 0 100px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: 1px solid #eeede0;
 }
-.witcher.sheet.actor > .window-content .second-nav .item.active {
-  background: #D4D4D4;
+.sheet.item.witcher section.window-content form .sheet-header .summary {
+  display: flex;
+  flex: 0 0 100%;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.witcher.sheet.actor > .window-content .skinv-content {
+.sheet.item.witcher section.window-content form .sheet-header .summary li {
+  width: 33.33%;
+  height: 24px;
+  padding: 0 3px;
+  border-width: 2px 2px 2px 0;
+  border-color: #eeede0;
+  border-style: groove;
+  line-height: 24px;
+  color: #4b4a44;
+}
+.sheet.item.witcher section.window-content form .sheet-header .summary li:first-child {
+  border-left: 2px groove #eeede0;
+}
+.sheet.item.witcher section.window-content form .item-content {
   flex: 1;
   overflow: hidden;
-  margin: 0;
 }
-.witcher.sheet.actor > .window-content .skinv-content .tab {
-  padding: 0;
+.sheet.item.witcher section.window-content form .item-content .tab {
   height: 100%;
   overflow-y: auto;
   align-content: flex-start;
 }
-.witcher.sheet.actor > .window-content .summary .left-side {
-  flex: 3;
-}
-.witcher.sheet.actor > .window-content .summary .left-side table {
-  border: 0;
+.sheet.item.witcher section.window-content form table {
   background: #fff;
-}
-.witcher.sheet.actor > .window-content .summary .left-side table .width-cells-30px {
-  width: 30px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side table .width-cells-70px {
-  width: 70px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side table .width-cells-labels {
-  width: 40%;
-}
-.witcher.sheet.actor > .window-content .summary .left-side table .border-line-prop {
-  font-family: GwentExtraBold;
-  font-size: 10px;
-  background-image: url(../assets/images/bottom-line.png);
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .skill-delimiter {
-  margin-top: 5px;
-  font-size: 2px;
-  background-image: url(../assets/images/skill-delimiter.png);
-  background-repeat: no-repeat;
-  background-size: 100% 2px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .margin-bottom-15 {
-  margin-bottom: 15px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills {
-  border: 10px solid #D4D4D4;
-  background-color: #E9E9E9;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills input {
-  width: 25px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left {
-  width: 130px;
   flex: 0;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square {
-  margin-top: 25px;
-  margin-left: 25px;
-  width: 70px;
-  height: 70px;
-  background: #fff;
-  border: thick double #777575;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square input.item-stat-input {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin-top: 15px;
-  margin-left: 4px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square div.item-square-mini {
-  z-index: 3;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #777575;
-  background-color: #fff;
-  margin-left: 24px;
-  margin-top: 5px;
-  text-align: center;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square div.item-square-mini div {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin-right: -1px;
-  margin-top: 6px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name {
-  font-size: 18px;
-  background-image: url(../assets/images/stat-name.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin-left: -4px;
-  margin-top: -34px;
-  position: absolute;
-  z-index: 22;
-  padding-top: 4px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name.actor-stat-will {
-  margin-left: -6px;
-  margin-top: -38px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name.actor-stat-emp {
-  margin-left: -4px;
-  margin-top: -35px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 20px;
-  font-size: 10px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-input {
-  border-bottom: 1px solid #777575;
-  width: 20px;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item {
-  align-items: flex-start;
-  flex-wrap: nowrap;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item .ls-square {
-  color: #fff;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item .ls-square.inprof {
-  color: #777575;
-}
-.witcher.sheet.actor > .window-content .summary .left-side .pizza-in-two-halves .actor-skills-2 {
-  border-left: 0;
-}
-.witcher.sheet.actor > .window-content .summary .right-side {
-  margin-left: 10px;
-  font-family: GwentExtraBold;
-  text-align: center;
-}
-.witcher.sheet.actor > .window-content .summary .right-side img.profile {
-  width: 225px;
-  border: thick double #D4D4D4;
-}
-.witcher.sheet.actor > .window-content .summary .right-side .table-unstaled {
-  border: 0;
   margin: 0;
+  padding: 0;
+  border: 2px groove rgba(155, 155, 155, 0.5);
 }
-.witcher.sheet.actor > .window-content .summary .right-side .table-unstaled td:first-child {
-  text-align: left;
-  padding-left: 5px;
+.sheet.item.witcher section.window-content form tr,
+.sheet.item.witcher section.window-content form td,
+.sheet.item.witcher section.window-content form th {
+  border: 1px groove rgba(155, 155, 155, 0.5);
 }
-.witcher.sheet.actor > .window-content .summary .right-side .table-firsttd-click td:first-child {
-  text-align: left;
-  cursor: pointer;
-}
-.witcher.sheet.actor > .window-content .summary .right-side .TableMeleeFight {
-  margin: 5px 0;
-}
-.witcher.sheet.actor > .window-content .summary .right-side .quick-action-menu {
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-.witcher.sheet.actor > .window-content .summary .right-side .quick-action-menu input {
-  font-family: GwentExtraBold;
+.sheet.item.witcher section.window-content form td input[type=text],
+.sheet.item.witcher section.window-content form td input[type=submit],
+.sheet.item.witcher section.window-content form td input[type=button],
+.sheet.item.witcher section.window-content form td select,
+.sheet.item.witcher section.window-content form td textarea {
   width: 100%;
-  background-color: #E9E9E9;
+}
+.sheet.item.witcher section.window-content form td input {
+  text-align: center;
+}
+.sheet.item.witcher section.window-content form td:first-child {
+  font-weight: bold;
+}
+.sheet.item.witcher section.window-content .witcher-insertion-area {
+  width: 100%;
+  height: 100%;
+}
+.sheet.item.witcher section.window-content .witcher-insertion-area table td,
+.sheet.item.witcher section.window-content .witcher-insertion-area table tr,
+.sheet.item.witcher section.window-content .witcher-insertion-area table th {
   border: 0;
-  cursor: pointer;
-  height: 20px;
 }
-.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block {
-  background-image: url(../assets/images/hpstamon.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 150px;
+.sheet.item.witcher section.window-content .witcher-insertion-area table img {
+  width: 35px;
+  height: 35px;
+  border: 0;
 }
-.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .stats-value td {
-  padding-top: 22px;
+.sheet.item.witcher section.window-content .witcher-insertion-area table input.qty-edit {
+  width: 30px;
 }
-.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .stats-value td input {
-  font-size: 40px;
+.sheet.item.witcher section.window-content .witcher-insertion-area table td:last-child {
+  text-align: center;
 }
-.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .stats-total {
-  top: -18px;
-  position: relative;
+.sheet.item.witcher section.window-content .witcher-insertion-area table td:nth-child(1) {
+  width: 40px;
+  height: 40px;
 }
-.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block .weightvigor {
-  top: -4px;
-  position: relative;
+.sheet.item.witcher section.window-content .witcher-insertion-area table td:nth-child(2) {
+  padding-left: 3px;
 }
-.witcher.sheet.actor > .window-content .summary .right-side .actor-hp-sun-sta-block tr:first-child td {
-  padding-top: 7px;
-}
-.witcher.sheet.actor > .window-content .summary .right-side .actor-luck-ini-spd-block {
-  background-image: url(../assets/images/luckini.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 90px;
-}
-.witcher.sheet.actor > .window-content .summary .right-side .actor-defence-block {
-  background-image: url(../assets/images/defence.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 250px;
+.sheet.witcher section.window-content form .editor {
+  width: 100%;
+  height: 100%;
 }

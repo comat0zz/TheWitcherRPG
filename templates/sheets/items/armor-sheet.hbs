@@ -15,33 +15,17 @@
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
       <tr>
-        <th>{{localize "Witcher.Item.Weight"}}</th>
-        <th>{{localize "Witcher.Item.Cost"}}</th>
-        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
-        <th>{{localize "Witcher.Item.Reliability"}}</th>
-      </tr>
-      <tr class="table-th-value">
-        <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
-        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
-        <td>
-          <select name="data.rarity">
-            {{#select data.rarity}}
-              {{#each config.RarityItem as |name value|}}
-                <option value="{{value}}">{{localize name.long}}</option>
+        <td>{{localize "Witcher.Item.Armor.CategoryLabel"}}</td>
+        <td colspan="3">
+          <select name="data.category">
+            {{#select data.category}}
+              {{#each config.ArmorCategory as |name value|}}
+                <option value="{{value}}">{{localize name}}</option>
               {{/each}}
             {{/select}}
           </select>
         </td>
-        <td><input name="data.reliability" type="text" value="{{data.reliability}}" data-dtype="Number" /></td>
       </tr>
-
-      <tr>
-        <td>{{localize "Witcher.Item.Armor.Label.Long"}}</td>
-        <td colspan="3">
-          <input name="data.points" type="text" value="{{data.points}}" data-dtype="Number" />
-        </td>
-      </tr>
-
       <tr>
         <td>{{localize "Witcher.Item.Armor.DefenceLabel"}}</td>
         <td colspan="3">
@@ -54,23 +38,42 @@
           </select>
         </td>
       </tr>
+      
+      <tr>
+        <td>{{localize "Witcher.Item.Armor.Label.Long"}}</td>
+        <td colspan="3">
+          <input name="data.points" type="text" value="{{data.points}}" data-dtype="Number" />
+        </td>
+      </tr>
 
       <tr>
-        <td>{{localize "Witcher.Item.Armor.CategoryLabel"}}</td>
-        <td colspan="3">
-          <select name="data.category">
-            {{#select data.category}}
-              {{#each config.ArmorCategory as |name value|}}
-                <option value="{{value}}">{{localize name}}</option>
+        <td>{{localize "Witcher.Item.Weight"}}</td>
+        <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Cost"}}</td>
+        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
+        <td>
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
               {{/each}}
             {{/select}}
           </select>
         </td>
       </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Reliability"}}</td>
+        <td><input name="data.reliability" type="text" value="{{data.reliability}}" data-dtype="Number" /></td>
+      </tr>
 
       <tr>
         <td>{{localize "Witcher.Tags"}}</td>
-        <td colspan="3">
+        <td>
           <select name="data.tags">
             {{#select data.tags}}
               {{#each config.ItemTags as |name value|}}
@@ -83,27 +86,27 @@
 
       <tr>
         <td>{{localize "Witcher.Item.Armor.Stiffness.Long"}}</td>
-        <td colspan="3">
+        <td>
           <input name="data.stiffness" type="text" value="{{data.stiffness}}" data-dtype="Number" />
         </td>
       </tr>
 
       <tr>
         <td>{{localize "Witcher.Item.Armor.Glifs.Long"}}</td>
-        <td colspan="3">
+        <td>
           <input name="data.glifs" type="text" value="{{data.glifs}}" data-dtype="Number" />
         </td>
       </tr>  
 
       <tr>
         <td>{{localize "Witcher.Item.DiagramLabel"}}</td>
-        <td colspan="3">
+        <td>
           {{> "systems/TheWitcherRPG/templates/insertions/insertion-area.hbs" data=data.assocDiagram dist_field="assocDiagram;0;0;1" dist_type="diagrams" tpl="one"}}
         </td>
       </tr>
       <tr>
         <td>{{localize "Witcher.Source"}}</td>
-        <td colspan="3">
+        <td>
           <select name="data.source">
             {{#select data.source}}
               {{#each config.SourceList as |name type|}}

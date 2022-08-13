@@ -75,25 +75,24 @@
   },
   "Item": {
     "types": [
-      "weapon",
-      "armor",
-      "enhancement",
-      "valuable",
       "alchemical",
+      "alhformulas",
+      "armor",
+      "bullets",
       "component",
       "diagrams",
-      "mutagen",
-      "spell",
-      "profession",
-      "note",
-      "race",
       "effects",
+      "enhancement",
       "mount_gear",
-      "bullets",
-      "substances",
-      "alhformulas",
+      "mutagen",
+      "note",
+      "profession",
+      "race",
       "skills",
-      "stats"
+      "spell",
+      "substances",
+      "valuable",
+      "weapon"
     ],
     "templates": {
       "system": {
@@ -121,16 +120,13 @@
       "description": "",
       "difficult": 1
     },
-    "stats": {
-      "templates": [],
-      "description": ""
-    },
     "note": {
       "description": "",
       "descriptionOnlyGM": ""
     },
     "valuable": {
-      "templates": ["system", "things"]      
+      "templates": ["system", "things"],
+      "category": "standardEquip"
     }, 
     "substances": {
       "templates": [],
@@ -145,12 +141,14 @@
       "reliability": 0,
       "runes": 0,
       "accuracy": "",
+      "category": "sword",
       "tags": ""
     },
     "bullets": {
       "templates": ["system", "things"],
       "reliability": 0,
-      "damage": ""
+      "damage": "",
+      "category": "slashing"
     },  
     "armor": {
       "templates": ["system", "things"],
@@ -159,12 +157,13 @@
       "stiffness": 0,
       "points": 0,
       "defence": "",
-      "reliability": 0
+      "reliability": 0,
+      "category": "light"
     }, 
     "enhancement": {
       "templates": ["system"],
       "effects": [],
-      "category": "",
+      "category": "weapon",
       "dataArmor": {},
       "cost": 0,
       "rarity": "", 
@@ -174,20 +173,23 @@
       "templates": ["system", "things"],
       "effects": [],
       "toxic": 0,
-      "macros": ""
+      "macros": "",
+      "category": "potion"
     }, 
     "mutagen": {
       "templates": ["system", "things"],
       "fromWhom": [],
       "mutation": "",
-      "macros": ""
+      "macros": "",
+      "category": "red"
     },
     "component": {
       "templates": ["things", "system"],
       "location": [],
       "quantityObtainable": "",
       "substanceType": [],
-      "forage": 0
+      "forage": 0,
+      "category": "craftmaterial"
     }, 
     "diagrams": {
       "templates": ["things", "system"],
@@ -196,13 +198,14 @@
       "time": 0,
       "cost": 0,
       "surcharge": 0, 
-      "levelType": ""
+      "levelType": "",
+      "category": "weapon"
     }, 
     "spell": {
       "templates": ["system"],
       "description": "",
       "effect": "",
-      "category": "",
+      "category": "magicspell",
       "costStamina": 0,
       "components": [],
       "specData": []
@@ -243,7 +246,8 @@
     }, 
     "mount_gear": {
       "templates": ["system", "things"],
-      "effects": []
+      "effects": [],
+      "category": "saddles"
     },
     "alhformulas": {
       "templates": ["system"],

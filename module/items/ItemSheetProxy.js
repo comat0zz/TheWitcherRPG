@@ -16,7 +16,6 @@ import { Mount_gearItemSheet } from "./sheets/Mount_gearItemSheet.js";
 import { BulletsItemSheet } from "./sheets/BulletsItemSheet.js";
 import { AlhformulasItemSheet } from "./sheets/AlhformulasItemSheet.js";
 import { SkillsItemSheet } from "./sheets/SkillsItemSheet.js";
-import { StatsItemSheet } from "./sheets/StatsItemSheet.js";
 
 const itemSheetMappings = {
   substances: SubstancesItemSheet,
@@ -36,8 +35,7 @@ const itemSheetMappings = {
   mount_gear: Mount_gearItemSheet,
   bullets: BulletsItemSheet,
   alhformulas: AlhformulasItemSheet,
-  skills: SkillsItemSheet,
-  stats: StatsItemSheet
+  skills: SkillsItemSheet
 }
 
 /**

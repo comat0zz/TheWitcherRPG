@@ -15,37 +15,6 @@
   <div class="tab flexcol" data-tab="tab-Properties" data-group="primary-tabs">
     <table>
       <tr>
-        <th>{{localize "Witcher.Item.Weight"}}</th>
-        <th>{{localize "Witcher.Item.ConcealmentLabel"}}</th>
-        <th>{{localize "Witcher.Item.Cost"}}</th>
-        <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
-        <th>{{localize "Witcher.Item.Reliability"}}</th>
-      </tr>
-      <tr class="table-th-value">
-        <td><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
-        <td>
-          <select name="data.concealment">
-            {{#select data.concealment}}
-              {{#each config.typeCONC as |name value|}}
-                <option value="{{value}}">{{localize name.long}}</option>
-              {{/each}}
-            {{/select}}
-          </select>
-        </td>
-        <td><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
-        <td>
-          <select name="data.rarity">
-            {{#select data.rarity}}
-              {{#each config.RarityItem as |name value|}}
-                <option value="{{value}}">{{localize name.long}}</option>
-              {{/each}}
-            {{/select}}
-          </select>
-        </td>
-        <td><input name="data.reliability" type="text" value="{{data.reliability}}" data-dtype="Number" /></td>
-      </tr>
-
-      <tr>
         <td>{{localize "Witcher.Item.Weapon.Category"}}</td>
         <td colspan="4">
           <select name="data.category">
@@ -55,26 +24,6 @@
               {{/each}}
             {{/select}}
           </select>
-        </td>
-      </tr>
-
-      <tr>
-        <td>{{localize "Witcher.Tags"}}</td>
-        <td colspan="4">
-          <select name="data.tags">
-            {{#select data.tags}}
-              {{#each config.ItemTags as |name value|}}
-                <option value="{{value}}">{{localize name}}</option>
-              {{/each}}
-            {{/select}}
-          </select>
-        </td>
-      </tr>
-
-      <tr>
-        <td>{{localize "Witcher.Item.Weapon.Damage"}}</td>
-        <td colspan="4">
-          <input name="data.damage" type="text" value="{{data.damage}}" placeholder="{{localize "Witcher.Item.Effects.Formulas"}}" />
         </td>
       </tr>
       <tr>
@@ -90,6 +39,62 @@
         </td>
         <td class="align-center">
           <label>{{localize "Witcher.Item.TypeDamages.Elemental.Long"}}<br><input type="checkbox" name="data.damageType.elemental" {{checked data.damageType.elemental}}/></label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>{{localize "Witcher.Item.Weapon.Damage"}}</td>
+        <td colspan="4">
+          <input name="data.damage" type="text" value="{{data.damage}}" placeholder="{{localize "Witcher.Item.Effects.Formulas"}}" />
+        </td>
+      </tr>
+
+      <tr>
+        <td>{{localize "Witcher.Item.Weight"}}</td>
+        <td  colspan="4"><input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.ConcealmentLabel"}}</td>
+        <td colspan="4">
+          <select name="data.concealment">
+            {{#select data.concealment}}
+              {{#each config.typeCONC as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Cost"}}</td>
+        <td colspan="4"><input type="text" name="data.cost" value="{{data.cost}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Rarity.Label"}}</td>
+        <td colspan="4">
+          <select name="data.rarity">
+            {{#select data.rarity}}
+              {{#each config.RarityItem as |name value|}}
+                <option value="{{value}}">{{localize name.long}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Item.Reliability"}}</td>
+        <td colspan="4"><input name="data.reliability" type="text" value="{{data.reliability}}" data-dtype="Number" /></td>
+      </tr>
+      <tr>
+        <td>{{localize "Witcher.Tags"}}</td>
+        <td colspan="4">
+          <select name="data.tags">
+            {{#select data.tags}}
+              {{#each config.ItemTags as |name value|}}
+                <option value="{{value}}">{{localize name}}</option>
+              {{/each}}
+            {{/select}}
+          </select>
         </td>
       </tr>
 
@@ -116,7 +121,7 @@
       <tr>
         <td>{{localize "Witcher.Item.Weapon.Distantion"}}</td>
         <td colspan="4">
-          <input name="data.distantion" type="text" value="{{data.distantion}}" placeholder="" />
+          <input name="data.distantion" type="text" value="{{data.distantion}}" />
         </td>
       </tr>
 

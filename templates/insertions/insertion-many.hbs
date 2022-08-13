@@ -6,7 +6,7 @@
 {{#each data}}
   <tr data-item-id="{{id}}">
     <td>
-      <img class="img35x35 click-show" src="{{img}}" title="{{name}}">
+      <img class="click-show" src="{{img}}" title="{{name}}">
     </td>
     <td>{{name}}</td>          
   {{#if ../isQty}}
@@ -17,6 +17,6 @@
 {{/each}}
 </table>
 {{else}}
-  {{localize "Witcher.DragDrop"}}
+  <span class="no-element">{{{localize "Witcher.DragDrop"}}}</span>
 {{/isArray}}
 </div>

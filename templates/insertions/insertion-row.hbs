@@ -4,11 +4,11 @@
 {{#if data.length}}
   {{#each data}}
     <span data-item-id="{{id}}">
-      <img src="{{img}}" class="img35x35" title="{{name}}">
+      <img src="{{img}}" title="{{name}}">
       <a class="delete"><i class="fas fa-trash-alt"></i></a>
     </span>
   {{/each}}
 {{else}}
-  {{localize "Witcher.DragDrop"}}
+  <span class="no-element">{{{localize "Witcher.DragDrop"}}}</span>
 {{/if}}
 </div>

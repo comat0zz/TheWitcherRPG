@@ -5,7 +5,7 @@ export class ArmorItemSheet extends WitcherBaseItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      height: 550
+      height: 600
     });
   }
 
