@@ -1,7 +1,6 @@
 <table class="table-unstyle">
   <caption>{{localize "Witcher.Actor.DebugEffects.Info"}}</caption>
   <tr>
-    <th>{{localize "Witcher.Actor.EffectStatus"}}</th>
     <th colspan="2">{{localize "Witcher.Item.Effects.Names"}}</th>
     <th>{{localize "Witcher.Item.Effects.Category"}}</th>
     <th>{{localize "Witcher.Item.Effects.Activity"}}</th>
@@ -10,8 +9,7 @@
     <th colspan="2">{{localize "Witcher.Item.Effects.Things"}}</th>
   </tr>
   {{#each actorData.modifications}}
-  <tr data-id="{{id}}" data-effectId="{{effectId}}">
-    <td>{{#if status}}{{localize "Witcher.Actor.EffectStatusTrue"}}{{else}}{{localize "Witcher.Actor.EffectStatusFalse"}}{{/if}}</td>
+  <tr data-id="{{id}}" data-effectId="{{effectId}}"{{#if status}} style="background-color:rgb(186, 240, 198, 0.3)"{{/if}}>
     <td><img src="{{img}}" title="{{name}}"></td>
     <td>{{name}}</td>
     <td>{{lzCc "Witcher.Item.Effects.Categories." category}}</td>
@@ -21,8 +19,8 @@
     <td><img src="{{info.img}}" title="{{info.name}}"></td>
     <td>{{info.name}}</td>
   </tr>
-  <tr>
-    <td colspan="5">{{localize "Witcher.Item.Effects.Formulas"}}: {{stringify formula}}</td>
+  <tr{{#if status}} style="background-color:rgb(186, 240, 198, 0.3)"{{/if}}>
+    <td colspan="4">{{localize "Witcher.Item.Effects.Formulas"}}: {{stringify formula}}</td>
     <td colspan="4">{{localize "Witcher.Item.Effects.Saving"}}: {{stringify saving}}</td>
   </tr>
   {{/each}}

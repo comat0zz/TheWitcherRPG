@@ -19,6 +19,11 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
           navSelector: "nav.tabs[data-group='secondary-tabs']", 
           contentSelector: ".second-nav-content", 
           initial: "summary-skills"
+        },
+        {
+          navSelector: "nav.tabs[data-group='backpack-tabs']", 
+          contentSelector: ".backpack-nav-content", 
+          initial: "backpack-weapons"
         }
       ],
       dragDrop: [
@@ -116,23 +121,22 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     }
   }];
 
-  async getData() {
-    let sheetData = await super.getData();
+  /** @override */
+  async getData(options) {
+    let sheetData = super.getData(options);
 
     sheetData.config = CONFIG.WITCHER;
 
-    sheetData.actorData = sheetData.actor.data.data;
+    sheetData.actorData = foundry.utils.deepClone(sheetData.data.data);
     sheetData.skillsTable = await this.getSkillsTable();
     
     sheetData.weapons = sheetData.actorData.inventory.filter((i) => i.type === "weapon" && i.isEquip == true);
     sheetData.armors = sheetData.actorData.inventory.filter((i) => i.type === "armor" && i.isEquip == true);
     sheetData.valuables = sheetData.actorData.inventory.filter((i) => i.type === "valuable" && i.isEquip == true);
-
-
-
-    console.log(sheetData);
+    
     return sheetData;
   }
+
 
   async getSkillsTable() {
     const pack = game.packs.get("TheWitcherRPG.skills");
@@ -155,7 +159,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     return arr;
   }
 
-  async activateListeners(html) {
+  activateListeners(html) {
     super.activateListeners(html);
 
     html.find('a.roll-actor-skill').click(evt => this._onRollActorSkill(evt));
@@ -182,7 +186,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
   }
 
   // формируем эффекты с предмета и добавляем в таблицу
-  async _calcItemEffects(efs, aitem) {
+  _calcItemEffects(efs, aitem) {
     if (typeof(efs) === "undefined") {
       return false;
     }
@@ -209,7 +213,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
         info: aitem
       }
       
-      await this.actor.addEffectsTable(effect);
+      this.actor.addEffectsTable(effect);
       ids.push(effect_id);
     }
     
@@ -218,6 +222,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
   /** @override */
   async _onDrop(evt) { 
+    evt.preventDefault();
     const dragData = JSON.parse(evt.dataTransfer.getData("text/plain"));
     const itemData = await this._extractItem(dragData);
     const item_id = dragData.id;
@@ -230,13 +235,13 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       item_id: item_id,
       img: itemData.img
     }
-    item.effectsIds = await this._calcItemEffects(itemData?.data?.data?.effects, item)
+    item.effectsIds = this._calcItemEffects(itemData?.data?.data?.effects, item)
     item.data = itemData?.data?.data;
     item.isEquip = false;
     
     let items = duplicate(this.actor.data.data.inventory);
     items.push(item);
-    await this.actor.update({'data.inventory': items});    
+    this.actor.update({'data.inventory': items});
   }
 
   async _onRollActorSkill(evt) {

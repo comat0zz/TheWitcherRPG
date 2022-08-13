@@ -1,15 +1,30 @@
-<table class="table-unstyle">
+<nav class="sheet-navigation tabs backpack-nav" data-group="backpack-tabs">
+  <a class="item" data-tab="backpack-weapons" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Weapons"}}</a>
+  <a class="item" data-tab="backpack-bullets" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Bullets"}}</a>
+  <a class="item" data-tab="backpack-armors" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Armors"}}</a>
+  <a class="item" data-tab="backpack-crafts" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Crafts"}}</a>
+  <a class="item" data-tab="backpack-alchimicals" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Alchimicals"}}</a>
+  <a class="item" data-tab="backpack-others" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Others"}}</a>
+</nav>
+        
+<div class="backpack-nav-content">
+
+  <div class="tab flexcol backpack-weapons" data-group="backpack-tabs" data-tab="backpack-weapons">
+    <table class="table-unstyle">
   <tr>
     <th></th>
     <th>{{localize "Witcher.Item.Name"}}</th>
-    <th>status</th>
+    <th>{{localize "Witcher.Item.Weight"}}</th>
+    <th>{{localize "Witcher.Item.Rarity.Label"}}</th>
+    <th></th>
   </tr>
   {{#each actorData.inventory}}
     <tr data-id="{{id}}"
-
     {{#if isEquip}} style="background-color:rgb(186, 240, 198, 0.3)"{{/if}}>
       <td><img src="{{img}}"></td>
       <td>{{name}}</td>
+      <td></td>
+      <td></td>
       <td>
         {{#ife type "weapon"}}
 
@@ -18,3 +33,22 @@
     </tr>
   {{/each}}
 </table>
+  </div>
+  <div class="tab flexcol backpack-bullets" data-group="backpack-tabs" data-tab="backpack-bullets">
+    bullets
+  </div>
+  <div class="tab flexcol backpack-armors" data-group="backpack-tabs" data-tab="backpack-armors">
+    armors
+  </div>
+  <div class="tab flexcol backpack-crafts" data-group="backpack-tabs" data-tab="backpack-crafts">
+    crafts
+  </div>
+  <div class="tab flexcol backpack-alchimicals" data-group="backpack-tabs" data-tab="backpack-alchimicals">
+    alchimicals
+  </div>
+  <div class="tab flexcol backpack-others" data-group="backpack-tabs" data-tab="backpack-others">
+    others
+  </div>
+</div>
+
+

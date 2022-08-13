@@ -46,6 +46,15 @@
 		"Tags": "Признак",
 		 
 
+		"Backpacks": {
+			"Weapons": "Оружие",
+			"Bullets": "Боеприпасы",
+			"Armors": "Броня",
+			"Crafts": "Форумылы и ингридиенты",
+			"Alchimicals": "Зелья",
+			"Others": "Прочее"
+		},
+
 		"Actor": {
 			"Name": "Имя",
 			"Race": "Раса",

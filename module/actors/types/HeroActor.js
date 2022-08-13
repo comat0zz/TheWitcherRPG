@@ -4,6 +4,7 @@ export class HeroActor extends Actor {
   prepareBaseData() {
     // Data modifications in this step occur before processing embedded
     // documents or derived data.
+    console.log("prepareBaseData")
   }
 
   /** @override */
@@ -13,33 +14,28 @@ export class HeroActor extends Actor {
     // prepareBaseData(), prepareEmbeddedDocuments() (including active effects),
     // prepareDerivedData().
     super.prepareData();
+
+    console.log("prepareData")
   }
 
-  async prepareDerivedData() {
+  prepareDerivedData() {
 
-    const [stats, allStPoints] = await this.updateStatsList();
+    const [stats, allStPoints] = this.updateStatsList();
     this.data.data.stats = stats;
     this.data.data.StatsCount = allStPoints;
 
-    const [skills, allSkPoints] = await this.updateSkillsList();
+    const [skills, allSkPoints] = this.updateSkillsList();
     this.data.data.skills = skills;
     this.data.data.SkillsCount = allSkPoints;
 
-    const [handFight, footFight] = await this.getMeleeFight(stats['BODY'].total);
+    const [handFight, footFight] = this.getMeleeFight(stats['BODY'].total);
     this.data.data.meleeFightHand = handFight;
     this.data.data.meleeFightFoot = footFight;
 
-    /*
-    this.update({
-        "data.trainSkills.SkillsCount": allSkPoints,
-        "data.trainSkills.StatsCount": allStPoints,
-        //"data.meleeFight.hand": handFight,
-        //"data.meleeFight.foot": footFight,
-    });
-    */
+    console.log("prepareDerivedData")
   }
 
-  async getMeleeFight(body_total) {
+  getMeleeFight(body_total) {
     const TableMeleeFight = CONFIG.WITCHER.TableMeleeFight;
     if(body_total < 1) return [0, 0];
 
@@ -51,7 +47,7 @@ export class HeroActor extends Actor {
     return [0, 0];
   }
 
-  async getPhysicalParametersTable(bw) {
+  getPhysicalParametersTable(bw) {
     if(bw < 1) { bw = 1; };
 
     // experimental 
@@ -64,11 +60,11 @@ export class HeroActor extends Actor {
     return {"HP": hp, "STA": sta, "REC": rec, "STUN": stun};
   }
 
-  async getStatConfigTable() {
+  getStatConfigTable() {
     return CONFIG.WITCHER.CharacterStats;
   }
 
-  async getCalcModifiersProps(type, key) {
+  getCalcModifiersProps(type, key) {
     const mods = this.data.data.modifications;
     let sum = 0;
     let logs = []; 
@@ -90,9 +86,9 @@ export class HeroActor extends Actor {
     return [sum, logs];
   }
 
-  async updateStatsList() {
+  updateStatsList() {
     const stats = this.data.data.stats;
-    const statsConfig = await this.getStatConfigTable();
+    const statsConfig = this.getStatConfigTable();
     let actor = {};
     let allPoints = 0;
 
@@ -116,13 +112,11 @@ export class HeroActor extends Actor {
       
       if(key !== "LUCK"){
         let total = value;
-        const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", key);
-        console.log(thisSum)
+        const [thisSum, thisArr] = this.getCalcModifiersProps("stats", key);
         total = total + thisSum;
         actor[key]['log'] = thisArr;
         
         actor[key].total = total;
-        
         
         //if(actor[key].total < actor[key].value) {
         //  actor[key].value = total;
@@ -137,10 +131,9 @@ export class HeroActor extends Actor {
       }      
     }
 
-
     // Я бы с удовольствием запихал в один цикл, если бы не это
     const bodyWill = Math.floor((actor['BODY'].total + actor['WILL'].total) / 2);
-    const tableBodyWill = await this.getPhysicalParametersTable(bodyWill);
+    const tableBodyWill = this.getPhysicalParametersTable(bodyWill);
     const run = actor['SPD'].total * 3;
     
     for (const [key, opt] of Object.entries(statsConfig).filter( ([v, k]) => k.Type === "derived" )) { 
@@ -186,7 +179,7 @@ export class HeroActor extends Actor {
         total = run;
       }
 
-      const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", key);
+      const [thisSum, thisArr] = this.getCalcModifiersProps("stats", key);
       actor[key]['log'] = thisArr;
       total = total + thisSum;
       actor[key].total = total;
@@ -199,20 +192,14 @@ export class HeroActor extends Actor {
     // в цикле выше не обработать, там надо ловить порядок,
     // в котором выполнится RUN, затем LEAP. нах надо
     actor["LEAP"].value = Math.floor(run / 3);
-    const [thisSum, thisArr] = await this.getCalcModifiersProps("stats", "LEAP");
+    const [thisSum, thisArr] = this.getCalcModifiersProps("stats", "LEAP");
     actor["LEAP"].total = actor["LEAP"].value + thisSum;
     actor["LEAP"]['log'] = thisArr;
-
-    if(this.uuid == 'Actor.'){
-      // create? hz
-    }else{
-      //this.update({ "data.stats": actor });
-    }
 
     return [actor, allPoints];
   }
 
-  async updateSkillsList() {
+  updateSkillsList() {
     const skills = this.data.data.skills;
     const stats = this.data.data.stats;
     let obj = {};
@@ -232,7 +219,7 @@ export class HeroActor extends Actor {
       const stat_total = stats[val.stat.key].total;
       
       /// mod there
-      const [thisSum, thisArr] = await this.getCalcModifiersProps("skills", key);
+      const [thisSum, thisArr] = this.getCalcModifiersProps("skills", key);
       obj[key].total = value + stat_total + thisSum;
       obj[key].log = thisArr;
       obj[key].stat = {
@@ -258,30 +245,30 @@ export class HeroActor extends Actor {
     }
   }
 
-  async addEffectsTable(effect) {
+  addEffectsTable(effect) {
     let modifications = duplicate(this.data.data.modifications);
     modifications.push(effect);
     this.update({ "data.modifications": modifications });
   }
 
-  async applyEffects(ids, category) {
+  applyEffects(ids, category) {
     let effects = duplicate(this.data.data.modifications);
     effects.filter((i) => i.category === category).map(el => {
       if(ids.includes(el.id)) {
         el.status = true;
       }
     });
-    await this.update({"data.modifications": effects});
+    this.update({"data.modifications": effects});
   }
 
-  async cancelEffects(ids, category) {
+  cancelEffects(ids, category) {
     let effects = duplicate(this.data.data.modifications);
     effects.filter((i) => i.category === category).map(el => {
       if(ids.includes(el.id)) {
         el.status = false;
       }
     });
-    await this.update({"data.modifications": effects});
+    this.update({"data.modifications": effects});
   }
 
   async itemDressEqup(id) {
@@ -291,8 +278,8 @@ export class HeroActor extends Actor {
       el.isEquip = true;
     });
     
-    await this.applyEffects(effects, "equip");
-    await this.update({"data.inventory": invs});
+    this.applyEffects(effects, "equip");
+    this.update({"data.inventory": invs});
   }
 
   async itemUnDressEqup(id) {
@@ -302,7 +289,7 @@ export class HeroActor extends Actor {
       el.isEquip = false;
     });
     
-    await this.cancelEffects(effects, "equip");
-    await this.update({"data.inventory": invs});
+    this.cancelEffects(effects, "equip");
+    this.update({"data.inventory": invs});
   }
 }
