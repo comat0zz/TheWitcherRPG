@@ -11,7 +11,26 @@
         border: thick double @color-border;
       }
 
-      .summary {
+      .table-unstyle {
+        border: 1px solid @color-border;
+        flex: 0; 
+        background-color: @main-color;
+        caption {
+          text-align: left;
+          font-weight: bold;
+          font-size: 18px;
+        }
+      
+        img {
+          width: 35px;
+          height: 35px;
+        }
+        td {
+          padding: 2px;
+        }
+      }
+
+      .content-summary {
 
         .left-side {
           flex: 3;

@@ -8,12 +8,12 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["witcher", "sheet", "actor"],
       width: 940,
-      height: 900,
+      height: 1000,
       tabs: [
         {
           navSelector: "nav.tabs[data-group='primary']", 
           contentSelector: ".actor-content", 
-          initial: "summary"
+          initial: "content-summary"
         },
         {
           navSelector: "nav.tabs[data-group='secondary-tabs']", 
@@ -23,7 +23,11 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       ],
       dragDrop: [
         {
-          dropSelector: ".inventory-drop", 
+          dropSelector: ".content-backpacks", 
+          dragSelector: ".item"
+        },
+        {
+          dropSelector: ".content-spellbook", 
           dragSelector: ".item"
         }
       ],
@@ -158,7 +162,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
     new ContextMenu(html, '.quick-action-menu', this.itemContextMenu);
     
-    new ContextMenu(html, '.inventory-backpacks tr', this.itemBackPackMenu);
+    new ContextMenu(html, '.content-backpacks tr', this.itemBackPackMenu);
   }
 
   async _getDocumentByPack(name) {

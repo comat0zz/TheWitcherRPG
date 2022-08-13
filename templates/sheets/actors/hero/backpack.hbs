@@ -1,17 +1,19 @@
-<table class="inventory-backpacks">
+<table class="table-unstyle">
   <tr>
     <th></th>
-    <th>name</th>
-    <th>type</th>
+    <th>{{localize "Witcher.Item.Name"}}</th>
     <th>status</th>
   </tr>
   {{#each actorData.inventory}}
-    <tr data-id="{{id}}">
+    <tr data-id="{{id}}"
+
+    {{#if isEquip}} style="background-color:rgb(186, 240, 198, 0.3)"{{/if}}>
       <td><img src="{{img}}"></td>
       <td>{{name}}</td>
-      <td>{{type}}</td>
       <td>
-        {{#if isEquip}}Надето{{else}}Не надето{{/if}}
+        {{#ife type "weapon"}}
+
+        {{/ife}}
       </td>
     </tr>
   {{/each}}

@@ -3,25 +3,22 @@
 {{!-- NPC Sheet Navigation --}}
 <nav class="sheet-navigation main-nav tabs" data-group="primary">
   <!-- Общая информация, статы, навыки -->
-  <a class="item" data-tab="summary" data-group="primary">{{localize "Witcher.Summary"}}</a>
+  <a class="item" data-tab="content-summary" data-group="primary">{{localize "Witcher.Summary"}}</a>
   <!-- Магия и заклинания, рецепты -->
-  <a class="item" data-tab="Spellbook" data-group="primary">{{localize "Witcher.Spellbook"}}</a>
+  <a class="item" data-tab="content-spellbook" data-group="primary">{{localize "Witcher.Spellbook"}}</a>
   <!-- Рюкзак со всем шмотом -->
-  <a class="item" data-tab="Backpack" data-group="primary">{{localize "Witcher.Actor.TabBackpack"}}</a>
+  <a class="item" data-tab="content-backpacks" data-group="primary">{{localize "Witcher.Actor.TabBackpack"}}</a>
   <!-- Активные статусы и эффекты на персонаже -->
-  <a class="item" data-tab="statuses" data-group="primary">{{localize "Witcher.Statuses"}}</a>
+  <a class="item" data-tab="content-statuses" data-group="primary">{{localize "Witcher.Statuses"}}</a>
   <!-- Профессия и раса -->
-  <a class="item" data-tab="profrace" data-group="primary">{{localize "Witcher.Profrace"}}</a>
+  <a class="item" data-tab="content-profrace" data-group="primary">{{localize "Witcher.Profrace"}}</a>
   <!-- Биография и жизненный путь -->
-  <a class="item" data-tab="biography" data-group="primary">{{localize "Witcher.Biography"}}</a>
+  <a class="item" data-tab="content-biography" data-group="primary">{{localize "Witcher.Biography"}}</a>
 </nav>
 
 {{!-- NPC Sheet Body --}}
 <section class="actor-content">
-  <div class="tab Backpack flexcol" data-group="primary" data-tab="Backpack">
-    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/backpack.hbs"}}
-  </div>
-  <div class="tab summary flexcol" data-group="primary" data-tab="summary">
+  <div class="tab content-summary flexcol" data-group="primary" data-tab="content-summary">
 
     <div class="flexrow">
       <div class="left-side">
@@ -158,23 +155,26 @@
     </div>
   </div>
 
-  <div class="tab Spellbook flexcol" data-group="primary" data-tab="Spellbook">
-    <div class="header-Spellbook flexcol">Spellbook
-    </div>
+  <div class="tab content-backpacks flexcol" data-group="primary" data-tab="content-backpacks">
+    {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/backpack.hbs"}}
+  </div>
+  
+  <div class="tab flexcol content-spellbook" data-group="primary" data-tab="content-spellbook">
+    Spellbook
   </div>
 
-  <div class="tab statuses flexcol" data-group="primary" data-tab="statuses">
+  <div class="tab content-statuses flexcol" data-group="primary" data-tab="content-statuses">
     {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/statuses.hbs"}}
   </div>
 
-  <div class="tab profrace flexcol" data-group="primary" data-tab="profrace">
-    <div class="header-profrace flexcol">profrace
-    </div>
+  <div class="tab content-profrace flexcol" data-group="primary" data-tab="content-profrace">
+profrace
+
   </div>
 
-  <div class="tab biography flexcol" data-group="primary" data-tab="biography">
-    <div class="header-biography flexcol">biography
-    </div>
+  <div class="tab content-biography flexcol" data-group="primary" data-tab="content-biography">
+    biography
+
   </div>
 
 </section>
