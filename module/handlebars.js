@@ -8,9 +8,9 @@ const preloadHandlebarsTemplates = async function () {
   const templatePaths = [
     
     // Actors
-    "systems/TheWitcherRPG/templates/sheets/actors/hero2/stat-skill-li.hbs",
-    "systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-skills-list.hbs",
-    "systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-inventory-list.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/stat-skill-li.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/actor-skills-list.hbs",
+    "systems/TheWitcherRPG/templates/sheets/actors/hero/actor-inventory-list.hbs",
     
     "systems/TheWitcherRPG/templates/sheets/actors/hero-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/skills.hbs",

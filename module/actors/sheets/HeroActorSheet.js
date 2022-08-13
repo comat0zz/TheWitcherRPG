@@ -17,7 +17,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
         },
         {
           navSelector: "nav.tabs[data-group='secondary-tabs']", 
-          contentSelector: ".skinv-content", 
+          contentSelector: ".second-nav-content", 
           initial: "summary-skills"
         }
       ],

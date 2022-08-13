@@ -49,6 +49,26 @@
 .sheet.witcher section.window-content form .sheet-navigation .item.active {
   background: rgba(155, 155, 155, 0.5);
 }
+.sheet.witcher section.window-content form .main-nav {
+  background: none;
+  margin: 0;
+}
+.sheet.witcher section.window-content form .main-nav .item {
+  border-radius: 0 0 12px 12px;
+}
+.sheet.witcher section.window-content form .main-nav .item.active {
+  background: rgba(155, 155, 155, 0.5);
+}
+.sheet.witcher section.window-content form .second-nav {
+  background: none;
+  margin: 0;
+}
+.sheet.witcher section.window-content form .second-nav .item {
+  border-radius: 12px 12px 12px 12px;
+}
+.sheet.witcher section.window-content form .second-nav .item.active {
+  background: #D4D4D4;
+}
 .sheet.witcher section.window-content {
   background: #fff;
 }
@@ -73,6 +93,7 @@
 .sheet.witcher section.window-content form select option {
   background: #fff;
 }
+/* Items Sheet */
 .sheet.item.witcher section.window-content form .sheet-header {
   flex: 0 0 100px;
   align-items: center;
@@ -179,6 +200,219 @@
 }
 .sheet.item.witcher section.window-content .witcher-insertion-area table td:nth-child(2) {
   padding-left: 3px;
+}
+/* Actors Sheet */
+.sheet.actor.witcher section.window-content {
+  padding-top: 0;
+}
+.sheet.actor.witcher section.window-content form img.profile {
+  flex: 0 0 100px;
+  width: 225px;
+  height: 310px;
+  object-fit: contain;
+  border: thick double #D4D4D4;
+}
+.sheet.actor.witcher section.window-content form .summary .left-side {
+  flex: 3;
+}
+.sheet.actor.witcher section.window-content form .summary .left-side table {
+  border: 0;
+  background: #fff;
+}
+.sheet.actor.witcher section.window-content form .summary .left-side table .width-cells-30px {
+  width: 30px;
+}
+.sheet.actor.witcher section.window-content form .summary .left-side table .width-cells-70px {
+  width: 70px;
+}
+.sheet.actor.witcher section.window-content form .summary .left-side table .width-cells-labels {
+  width: 40%;
+}
+.sheet.actor.witcher section.window-content form .summary .left-side table .border-line-prop {
+  font-family: GwentExtraBold;
+  font-size: 10px;
+  background-image: url(../assets/images/bottom-line.png);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .skill-delimiter {
+  margin-top: 5px;
+  font-size: 2px;
+  background-image: url(../assets/images/skill-delimiter.png);
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .margin-bottom-15 {
+  margin-bottom: 15px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills {
+  border: 10px solid #D4D4D4;
+  background-color: #E9E9E9;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills input {
+  width: 25px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left {
+  width: 130px;
+  flex: 0;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square {
+  margin-top: 25px;
+  margin-left: 25px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border: thick double #777575;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square input.item-stat-input {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-top: 15px;
+  margin-left: 4px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square div.item-square-mini {
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #777575;
+  background-color: #fff;
+  margin-left: 24px;
+  margin-top: 5px;
+  text-align: center;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square div.item-square-mini div {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-right: -1px;
+  margin-top: 6px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name {
+  font-size: 18px;
+  background-image: url(../assets/images/stat-name.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-left: -4px;
+  margin-top: -34px;
+  position: absolute;
+  z-index: 22;
+  padding-top: 4px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name.actor-stat-will {
+  margin-left: -6px;
+  margin-top: -38px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .item-stat-left div.item-stat-square .item-square-name.actor-stat-emp {
+  margin-left: -4px;
+  margin-top: -35px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 20px;
+  font-size: 10px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-input {
+  border-bottom: 1px solid #777575;
+  width: 20px;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item {
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item .ls-square {
+  color: #fff;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills .list-skills .ls-li-item .ls-square.inprof {
+  color: #777575;
+}
+.sheet.actor.witcher section.window-content .summary .left-side .pizza-in-two-halves .actor-skills-2 {
+  border-left: 0;
+}
+.sheet.actor.witcher section.window-content .summary .right-side {
+  margin-left: 10px;
+  font-family: GwentExtraBold;
+  text-align: center;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .table-unstaled {
+  border: 0;
+  margin: 0;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .table-unstaled td:first-child {
+  text-align: left;
+  padding-left: 5px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .table-firsttd-click td:first-child {
+  text-align: left;
+  cursor: pointer;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .TableMeleeFight {
+  margin: 5px 0;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .quick-action-menu {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .quick-action-menu input {
+  font-family: GwentExtraBold;
+  width: 100%;
+  background-color: #E9E9E9;
+  border: 0;
+  cursor: pointer;
+  height: 20px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-hp-sun-sta-block {
+  background-image: url(../assets/images/hpstamon.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 150px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-hp-sun-sta-block .stats-value td {
+  padding-top: 22px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-hp-sun-sta-block .stats-value td input {
+  font-size: 40px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-hp-sun-sta-block .stats-total {
+  top: -18px;
+  position: relative;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-hp-sun-sta-block .weightvigor {
+  top: -4px;
+  position: relative;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-hp-sun-sta-block tr:first-child td {
+  padding-top: 7px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-luck-ini-spd-block {
+  background-image: url(../assets/images/luckini.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 90px;
+}
+.sheet.actor.witcher section.window-content .summary .right-side .actor-defence-block {
+  background-image: url(../assets/images/defence.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 250px;
 }
 .sheet.witcher section.window-content form .editor {
   width: 100%;

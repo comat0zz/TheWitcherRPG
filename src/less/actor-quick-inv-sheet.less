@@ -1,0 +1,82 @@
+.sheet.actor.witcher {
+  section.window-content {
+    .summary {
+      .right-side {
+        margin-left: 10px;
+        font-family: GwentExtraBold;
+        text-align: center;
+
+        .table-unstaled {
+          border: 0;
+          margin: 0;
+          td:first-child {
+            text-align: left;
+            padding-left: 5px;
+          }
+        }
+  
+        .table-firsttd-click td:first-child {
+          text-align: left;
+          cursor: pointer;
+        }
+  
+        .TableMeleeFight {
+          margin: 5px 0;
+        }
+  
+        .quick-action-menu {
+          padding-top: 3px;
+          padding-bottom: 3px;
+  
+          input {
+            font-family: GwentExtraBold;
+            width: 100%;
+            background-color: @color-skill-back;
+            border: 0;
+            cursor: pointer;
+            height: 20px
+          }
+        }
+  
+        .actor-hp-sun-sta-block {
+          background-image: url(../assets/images/hpstamon.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          height: 150px;
+  
+          .stats-value td {
+            padding-top: 22px;
+            input {
+              font-size: 40px;
+            }
+          }
+          .stats-total {
+            top: -18px;
+            position: relative
+          }
+          .weightvigor{
+            top: -4px;
+            position: relative
+          }
+          tr:first-child td{
+            padding-top: 7px;
+          }
+        }
+  
+        .actor-luck-ini-spd-block {
+          background-image: url(../assets/images/luckini.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          height: 90px
+        }
+  
+        .actor-defence-block {
+          background-image: url(../assets/images/defence.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          height: 250px
+        }
+      }
+    }
+  }
+}

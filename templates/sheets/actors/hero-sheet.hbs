@@ -1,7 +1,7 @@
 <form class="{{cssClass}} witcher-actor-{{actor.type}} flexcol" autocomplete="off">
 
 {{!-- NPC Sheet Navigation --}}
-<nav class="main-nav sheet-navigation tabs" data-group="primary">
+<nav class="sheet-navigation main-nav tabs" data-group="primary">
   <!-- Общая информация, статы, навыки -->
   <a class="item" data-tab="summary" data-group="primary">{{localize "Witcher.Summary"}}</a>
   <!-- Магия и заклинания, рецепты -->
@@ -60,12 +60,12 @@
           <a class="item" data-tab="summary-inventory" data-group="secondary-tabs">{{localize "Witcher.Inventory"}}</a>
         </nav>
         
-        <div class="skinv-content">
+        <div class="second-nav-content">
           <div class="tab" data-group="secondary-tabs" data-tab="summary-skills">
-            {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-skills-list.hbs"}}
+            {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/actor-skills-list.hbs"}}
           </div>
           <div class="tab" data-group="secondary-tabs" data-tab="summary-inventory">
-            {{>"systems/TheWitcherRPG/templates/sheets/actors/hero2/actor-inventory-list.hbs"}}
+            {{>"systems/TheWitcherRPG/templates/sheets/actors/hero/actor-inventory-list.hbs"}}
           </div>
         </div>
       </div>
@@ -73,40 +73,6 @@
       <div class="right-side">
         <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
 
-        <!-- Заебался! Плюс мелкие подписи вообще не видно
-        <table class="table-unstaled actor-hp-sun-sta-block">
-          <tr>
-            <td colspan="3"></td>
-          </tr>
-          <tr class="stats-value">
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="stats-total">
-            <td>{{actorData.stats.HP.total}}</td>
-            <td>{{actorData.stats.STUN.total}}</td>
-            <td>{{actorData.stats.STA.total}}</td>
-          </tr>
-          <tr class="weightvigor">
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <table class="table-unstaled actor-luck-ini-spd-block">
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <table class="table-unstaled actor-defence-block">
-
-        </table>
-        -->
         <div class="quick-action-menu">
           <input type="button" value="{{localize "Witcher.Actor.Buttons.QuickActions"}}">
         </div>
