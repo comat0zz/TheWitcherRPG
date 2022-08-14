@@ -4,9 +4,9 @@
       <input type="hidden" name="data.skills.{{skill}}.difficult" value="{{lookup (lookup (lookup skillsTable stat) skill) 'difficult' }}"/>
       <input type="hidden" name="data.skills.{{skill}}.stat.key" value="{{stat}}"/>
       <input type="hidden" name="data.skills.{{skill}}.id" value="{{lookup (lookup (lookup skillsTable stat) skill) 'id' }}"/>
-      <input class="ls-input" name="data.skills.{{skill}}.value" type="text" value="{{lookup (lookup actorData.skills skill) 'value' }}" data-dtype="Number"/>
+      <input class="ls-input" name="data.skills.{{skill}}.value" type="text" value="{{lookup (lookup data.data.skills skill) 'value' }}" data-dtype="Number"/>
       <span class="ls-square">&#9672;</span>
-        <input class="ls-input" type="text" value="{{lookup (lookup actorData.skills skill) 'total' }}" data-dtype="Number" disabled/>
+        <input class="ls-input" type="text" value="{{lookup (lookup data.data.skills skill) 'total' }}" data-dtype="Number" disabled/>
     </span>
     <a class="roll-actor-skill" 
       data-skill-name="{{skill}}"

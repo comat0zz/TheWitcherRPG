@@ -229,6 +229,15 @@
 .sheet.actor.witcher section.window-content form .table-unstyle td {
   padding: 2px;
 }
+.sheet.actor.witcher section.window-content form .actor-content {
+  flex: 1;
+  overflow: hidden;
+}
+.sheet.actor.witcher section.window-content form .actor-content .tab {
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
+}
 .sheet.actor.witcher section.window-content form .content-summary .left-side {
   flex: 3;
 }
@@ -430,6 +439,22 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 250px;
+}
+.sheet.actor.witcher section.window-content .backpack-nav-content table td,
+.sheet.actor.witcher section.window-content .backpack-nav-content table tr,
+.sheet.actor.witcher section.window-content .backpack-nav-content table th {
+  border: 1px solid #D4D4D4;
+}
+.sheet.actor.witcher section.window-content .backpack-nav-content table .table-icon {
+  width: 20px;
+  height: 20px;
+  border: 0;
+}
+.sheet.actor.witcher section.window-content .backpack-nav-content table td {
+  text-align: center;
+}
+.sheet.actor.witcher section.window-content .backpack-nav-content table td:nth-child(2) {
+  text-align: left;
 }
 .sheet.actor.witcher section.window-content .content-statuses table td:first-child,
 .sheet.actor.witcher section.window-content .content-statuses table td:nth-child(7) {

@@ -251,45 +251,30 @@ export class HeroActor extends Actor {
     this.update({ "data.modifications": modifications });
   }
 
-  applyEffects(ids, category) {
+  editEffects(ids, category, status) {
     let effects = duplicate(this.data.data.modifications);
     effects.filter((i) => i.category === category).map(el => {
       if(ids.includes(el.id)) {
-        el.status = true;
+        el.status = status;
       }
     });
     this.update({"data.modifications": effects});
   }
 
-  cancelEffects(ids, category) {
-    let effects = duplicate(this.data.data.modifications);
-    effects.filter((i) => i.category === category).map(el => {
-      if(ids.includes(el.id)) {
-        el.status = false;
-      }
-    });
-    this.update({"data.modifications": effects});
-  }
-
-  async itemDressEqup(id) {
+  itemDressEqup(id, put_on = true) {
     let invs = duplicate(this.data.data.inventory);
     const effects = invs.filter((i) => i.id === id)?.[0]?.effectsIds;
     invs.filter((i) => i.id === id).map( el => {
-      el.isEquip = true;
+      el.isEquip = put_on;
     });
     
-    this.applyEffects(effects, "equip");
+    this.editEffects(effects, "equip", put_on);
     this.update({"data.inventory": invs});
   }
 
-  async itemUnDressEqup(id) {
-    let invs = duplicate(this.data.data.inventory);
-    const effects = invs.filter((i) => i.id === id)?.[0]?.effectsIds;
-    invs.filter((i) => i.id === id).map( el => {
-      el.isEquip = false;
-    });
-    
-    this.cancelEffects(effects, "equip");
-    this.update({"data.inventory": invs});
+  addEquipToInventory(item) {
+    let items = duplicate(this.data.data.inventory);
+    items.push(item);
+    this.update({'data.inventory': items});
   }
 }

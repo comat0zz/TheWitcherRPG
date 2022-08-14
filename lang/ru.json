@@ -47,12 +47,51 @@
 		 
 
 		"Backpacks": {
-			"Weapons": "Оружие",
-			"Bullets": "Боеприпасы",
-			"Armors": "Броня",
-			"Crafts": "Форумылы и ингридиенты",
-			"Alchimicals": "Зелья",
-			"Others": "Прочее"
+			"Labels": {
+				"Weapons": "Оружие",
+				"Bullets": "Боеприпасы",
+				"Armors": "Броня",
+				"Crafts": "Формулы и ингридиенты",
+				"Alchimicals": "Зелья",
+				"Others": "Прочее"
+			},
+			"Common": {
+				"Name": "Название",
+				"Category": "Категория",
+				"Reliability": "Н",
+				"ReliabilityTitle": "Надежность",
+				"Effects": "Эффекты",
+				"Concealment": "Скр",
+				"ConcealmentTitle": "Скрытность",
+				"Rarity": "Дос",
+				"RarityTitle": "Доступность",
+				"Weight": "Вес",
+				"Info": "Доп. инфо"
+			},
+			"Weapon": {
+				"Damage": "Урон",
+				"TypeDamages": "Тип",
+				"TypeDamagesTitle": "Тип урона",
+				"Runes": "Руны",
+				"Distantion": "Дис",
+				"DistantionTitle": "Дистанция",
+				"Grasp": "Х",
+				"GraspTitle": "Хват"
+			},
+			"Crafts": {
+				"AlhFormCat": "Алхимическая<br>формула",
+				"CompontCat": "Компонент",
+				"DiagramCat": "Рецепт"
+			},
+			"Others": {
+				"Enchants": "Улучшение",
+				"Maunt": "Для скакуна",
+				"MutagenMutation": "Малая мутация",
+				"MutagenSource": "Источник"
+			},
+			"Armor": {
+				
+			}
 		},
 
 		"Actor": {

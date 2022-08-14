@@ -12,7 +12,8 @@
 
 export const WITCHER = {};
     
-WITCHER.imageRef = "systems/TheWitcherRPG/asset/{filename}";
+WITCHER.fileAssets = "systems/TheWitcherRPG/assets";
+WITCHER.imgAssets = `${WITCHER.fileAssets}/images`; 
 
 // Weapon and bullets damage types 
 WITCHER.typeDamage = {

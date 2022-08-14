@@ -15,8 +15,6 @@ const preloadHandlebarsTemplates = async function () {
     "systems/TheWitcherRPG/templates/sheets/actors/hero-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/skills.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/spellbook.hbs",
-    "systems/TheWitcherRPG/templates/sheets/actors/hero/inventory.hbs",
-    "systems/TheWitcherRPG/templates/sheets/actors/hero/summary.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/statuses.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/profrace.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/biography.hbs",
@@ -104,6 +102,15 @@ function registerHandlebarsHelpers() {
     return JSON.stringify(value);
   });
   
+  
+  Handlebars.registerHelper('frCfg', function (obj, val) {
+    console.log(this.config, obj)
+
+    //if(! Object.keys(obj).includes(val)) return undefined;
+    console.log(obj[val])
+    return game.i18n.localize( obj[val] );
+  });
+
   Handlebars.registerHelper('lzCc', function (str, val) {
     return game.i18n.localize(str + val);
   });

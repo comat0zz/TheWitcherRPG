@@ -8,7 +8,7 @@
     <th>{{{localize "Witcher.Item.Effects.Target"}}}</th>
     <th colspan="2">{{localize "Witcher.Item.Effects.Things"}}</th>
   </tr>
-  {{#each actorData.modifications}}
+  {{#each data.data.modifications}}
   <tr data-id="{{id}}" data-effectId="{{effectId}}"{{#if status}} style="background-color:rgb(186, 240, 198, 0.3)"{{/if}}>
     <td><img src="{{img}}" title="{{name}}"></td>
     <td>{{name}}</td>

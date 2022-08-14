@@ -27,9 +27,9 @@
           <tr>
             <td><input name="name" type="text" value="{{actor.name}}"/></td>
             <td class="width-cells-30px"></td>
-            <td class="width-cells-70px"><input name="data.biography.sex" type="text" value="{{actorData.biography.sex}}"/></td>
+            <td class="width-cells-70px"><input name="data.biography.sex" type="text" value="{{data.data.biography.sex}}"/></td>
             <td class="width-cells-30px"></td>
-            <td class="width-cells-70px"><input name="data.biography.age" type="text" value="{{actorData.biography.age}}"/></td>
+            <td class="width-cells-70px"><input name="data.biography.age" type="text" value="{{data.data.biography.age}}"/></td>
           </tr>
           <tr>
             <td class="border-line-prop">{{localize "Witcher.Actor.Biography.Name"}}</td>
@@ -82,54 +82,54 @@
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.Stats.HP.Short"}}</td>
-            <td><input type="text" name="data.stats.HP.value" value="{{actorData.stats.HP.value}}"  data-dtype="Number"/></td>
-            <td>{{actorData.stats.HP.total}}</td>
+            <td><input type="text" name="data.stats.HP.value" value="{{data.data.stats.HP.value}}"  data-dtype="Number"/></td>
+            <td>{{data.data.stats.HP.total}}</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.Stats.STA.Short"}}</td>
-            <td><input type="text" name="data.stats.STA.value" value="{{actorData.stats.STA.value}}"  data-dtype="Number"/></td>
-            <td>{{actorData.stats.STA.total}}</td>
+            <td><input type="text" name="data.stats.STA.value" value="{{data.data.stats.STA.value}}"  data-dtype="Number"/></td>
+            <td>{{data.data.stats.STA.total}}</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.Stats.LUCK.Short"}}</td>
-            <td><input type="text" name="data.stats.LUCK.value" value="{{actorData.stats.LUCK.value}}"  data-dtype="Number"/></td>
-            <td><input type="text" name="data.stats.LUCK.total" value="{{actorData.stats.LUCK.total}}"  data-dtype="Number"/></td>
+            <td><input type="text" name="data.stats.LUCK.value" value="{{data.data.stats.LUCK.value}}"  data-dtype="Number"/></td>
+            <td><input type="text" name="data.stats.LUCK.total" value="{{data.data.stats.LUCK.total}}"  data-dtype="Number"/></td>
           </tr>
           <tr>
             <td colspan="2">{{localize "Witcher.Actor.Stats.STUN.Short"}}</td>
-            <td>{{actorData.stats.STUN.total}}</td>
+            <td>{{data.data.stats.STUN.total}}</td>
           </tr>
           {{#ifgt data.stats.VIGOR.total 0}}
           <tr>
             <td colspan="2">{{localize "Witcher.Actor.Stats.VIGOR.Short"}}</td>
-            <td>{{actorData.stats.VIGOR.total}}</td>
+            <td>{{data.data.stats.VIGOR.total}}</td>
           </tr>
           {{/ifgt}}
           <tr>
             <td colspan="2">{{localize "Witcher.Actor.Stats.RUN.Short"}}</td>
-            <td>{{actorData.stats.RUN.total}}</td>
+            <td>{{data.data.stats.RUN.total}}</td>
           </tr>
           <tr>
             <td colspan="2">{{localize "Witcher.Actor.Stats.LEAP.Short"}}</td>
-            <td>{{actorData.stats.LEAP.total}}</td>
+            <td>{{data.data.stats.LEAP.total}}</td>
           </tr>
           <tr>
             <td colspan="2">{{localize "Witcher.Actor.Stats.REC.Short"}}</td>
-            <td>{{actorData.stats.REC.total}}</td>
+            <td>{{data.data.stats.REC.total}}</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.Stats.ENC.Short"}}</td>
-            <td>{{actorData.stats.ENC.value}}</td>
-            <td>{{actorData.stats.ENC.total}}</td>
+            <td>{{data.data.stats.ENC.value}}</td>
+            <td>{{data.data.stats.ENC.total}}</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.StatsCount"}}</td>
-            <td><input type="text" name="data.trainSkills.StatsCount" value="{{actorData.StatsCount}}"  data-dtype="Number" disabled/></td>
+            <td><input type="text" name="data.trainSkills.StatsCount" value="{{data.data.StatsCount}}"  data-dtype="Number" disabled/></td>
             <td>todo</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.SkillsCount"}}</td>
-            <td><input type="text" name="data.trainSkills.SkillsCount" value="{{actorData.SkillsCount}}"  data-dtype="Number" disabled/></td>
+            <td><input type="text" name="data.trainSkills.SkillsCount" value="{{data.data.SkillsCount}}"  data-dtype="Number" disabled/></td>
             <td>todo</td>
           </tr>
         </table>
@@ -138,11 +138,11 @@
           <tr><th colspan="2"><i class="fas fa-fist-raised"></i>  {{localize "Witcher.Actor.MeleeFight"}}</th></tr>
           <tr>
             <td>{{localize "Witcher.Actor.MeleeFightHand"}}</td>
-            <td>{{actorData.meleeFightHand}}</td>
+            <td>{{data.data.meleeFightHand}}</td>
           </tr>
           <tr>
             <td>{{localize "Witcher.Actor.MeleeFightFoot"}}</td>
-            <td>{{actorData.meleeFightFoot}}</td>
+            <td>{{data.data.meleeFightFoot}}</td>
           </tr>
         </table>
 

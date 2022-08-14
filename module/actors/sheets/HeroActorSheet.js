@@ -3,42 +3,21 @@ import { genId } from "../../utils.js";
 
 export class HeroActorSheet extends WitcherBaseActorSheet {
   
-  /** @override */
-  static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
-      classes: ["witcher", "sheet", "actor"],
-      width: 940,
-      height: 1000,
-      tabs: [
-        {
-          navSelector: "nav.tabs[data-group='primary']", 
-          contentSelector: ".actor-content", 
-          initial: "content-summary"
-        },
-        {
-          navSelector: "nav.tabs[data-group='secondary-tabs']", 
-          contentSelector: ".second-nav-content", 
-          initial: "summary-skills"
-        },
-        {
-          navSelector: "nav.tabs[data-group='backpack-tabs']", 
-          contentSelector: ".backpack-nav-content", 
-          initial: "backpack-weapons"
-        }
-      ],
-      dragDrop: [
-        {
-          dropSelector: ".content-backpacks", 
-          dragSelector: ".item"
-        },
-        {
-          dropSelector: ".content-spellbook", 
-          dragSelector: ".item"
-        }
-      ],
-    });
-  }
-
+  /* -------------------------------------------- */
+  addInventoryTypes = [
+    "alchemical",
+    "alhformulas",
+    "armor",
+    "bullets",
+    "component",
+    "diagrams",
+    "enhancement",
+    "mount_gear",
+    "mutagen",
+    "valuable",
+    "weapon"
+  ];
+  /* -------------------------------------------- */
   itemBackPackMenu = [
     {
       name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Edit"),
@@ -51,7 +30,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       name: game.i18n.localize("Witcher.Actor.BackpacksMenu.Remove"),
       icon: '',
       callback: element => {
-        console.log(element)
+        const id = element[0].dataset.id;
+        this.actor.itemRemoveEqup(id);
       }
     },
     {
@@ -77,7 +57,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       }
     }
   ];
-
+  /* -------------------------------------------- */
   itemContextMenu = [{
     name: game.i18n.localize("Witcher.Actor.Buttons.Initiative"),
     icon: '',
@@ -120,20 +100,72 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       console.log(element)
     }
   }];
+  /* -------------------------------------------- */
+
+  /** @override */
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ["witcher", "sheet", "actor"],
+      width: 940,
+      height: 1000,
+      tabs: [
+        {
+          navSelector: "nav.tabs[data-group='primary']", 
+          contentSelector: ".actor-content", 
+          initial: "content-summary"
+        },
+        {
+          navSelector: "nav.tabs[data-group='secondary-tabs']", 
+          contentSelector: ".second-nav-content", 
+          initial: "summary-skills"
+        },
+        {
+          navSelector: "nav.tabs[data-group='backpack-tabs']", 
+          contentSelector: ".backpack-nav-content", 
+          initial: "backpack-weapons"
+        }
+      ],
+      dragDrop: [
+        {
+          dropSelector: ".content-backpacks", 
+          dragSelector: ".item"
+        },
+        {
+          dropSelector: ".content-spellbook", 
+          dragSelector: ".item"
+        }
+      ],
+    });
+  }
 
   /** @override */
   async getData(options) {
     let sheetData = super.getData(options);
+    const actorData = foundry.utils.deepClone(sheetData.data.data);
 
     sheetData.config = CONFIG.WITCHER;
-
-    sheetData.actorData = foundry.utils.deepClone(sheetData.data.data);
     sheetData.skillsTable = await this.getSkillsTable();
     
-    sheetData.weapons = sheetData.actorData.inventory.filter((i) => i.type === "weapon" && i.isEquip == true);
-    sheetData.armors = sheetData.actorData.inventory.filter((i) => i.type === "armor" && i.isEquip == true);
-    sheetData.valuables = sheetData.actorData.inventory.filter((i) => i.type === "valuable" && i.isEquip == true);
-    
+    /* ------------ Inventory Backpacks Tabs ------------ */
+    sheetData.invWeapons = actorData.inventory.filter((i) => i.type === "weapon");
+    sheetData.isEquipWeapons = sheetData.invWeapons.filter((i) => i.isEquip === true);
+
+    sheetData.invArmors = actorData.inventory.filter((i) => i.type === "armor");
+    sheetData.isEquipArmors = sheetData.invArmors.filter((i) => i.isEquip === true);
+
+    sheetData.invBullets = actorData.inventory.filter((i) => i.type === "bullets");
+    sheetData.isEquipBullets = sheetData.invBullets.filter((i) => i.isEquip === true);
+
+    sheetData.invPotions = actorData.inventory.filter((i) => ["alchemical"].includes(i.type));
+    sheetData.isEquipPotions = sheetData.invPotions.filter((i) => i.isEquip === true);
+
+    sheetData.invCrafts = actorData.inventory.filter((i) => ["component", "diagrams", "alhformulas"].includes(i.type));
+
+    sheetData.invOthers = actorData.inventory.filter((i) => ["mount_gear", "enhancement", "mutagen", "valuable"].includes(i.type));
+    sheetData.isEquipOthers = sheetData.invOthers.filter((i) => i.isEquip === true && i.type === "valuable");
+    /* -------------------------------------------- */
+
+    console.log(sheetData)
     return sheetData;
   }
 
@@ -171,7 +203,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
   async _getDocumentByPack(name) {
     const pack = game.packs.get(name.pack);
-    return pack.getDocument(name.id);
+    return await pack.getDocument(name.id);
   }
 
   async _extractItem(data) {
@@ -228,20 +260,32 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     const item_id = dragData.id;
     const id = genId();
 
-    let item = {
-      id: id,
-      name: itemData.name,
-      type: itemData.type,
-      item_id: item_id,
-      img: itemData.img
+    if(Object.values(this.addInventoryTypes).includes(itemData.type)){
+
+      let item = {
+        id: id,
+        name: itemData.name,
+        type: itemData.type,
+        item_id: item_id,
+        img: itemData.img
+      }
+      item.effectsIds = this._calcItemEffects(itemData?.data?.data?.effects, item)
+      item.data = itemData?.data?.data;
+      item.isEquip = false;
+
+      this.actor.addEquipToInventory(item);
+
+    }else if(itemData.type == "race") {
+
+    }else if(itemData.type == "profession") {
+
+    }else if(itemData.type == "note") {
+
+    }else if(itemData.type == "spell") {
+
+    }else {
+      return false;
     }
-    item.effectsIds = this._calcItemEffects(itemData?.data?.data?.effects, item)
-    item.data = itemData?.data?.data;
-    item.isEquip = false;
-    
-    let items = duplicate(this.actor.data.data.inventory);
-    items.push(item);
-    this.actor.update({'data.inventory': items});
   }
 
   async _onRollActorSkill(evt) {
