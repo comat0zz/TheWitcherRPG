@@ -40,13 +40,17 @@
                 {{localize (lookup (lookup ../../config.typeDamage k) 'short')}}&nbsp;
               </span>
             {{/if}}
-          {{/each}}        
+          {{/each}}
         </td>
         <td>{{data.runes}}</td>
         <td title="{{localize "Witcher.Backpacks.Weapon.DistantionTitle"}}">{{data.distantion}}</td>
         <td title="{{localize "Witcher.Backpacks.Weapon.GraspTitle"}}"><img class="table-icon" src="{{../config.imgAssets}}/hand-{{data.grasp}}.png"></td>
         <td title="{{localize "Witcher.Backpacks.Common.ReliabilityTitle"}}">{{data.reliability}}</td>
-        <td>effects</td>
+        <td>{{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}</td>
         <td title="{{localize "Witcher.Backpacks.Common.ConcealmentTitle"}} - {{localize (lookup (lookup ../config.typeCONC data.concealment) 'long')}}">
             {{localize (lookup (lookup ../config.typeCONC data.concealment) 'short')}}
           </td>

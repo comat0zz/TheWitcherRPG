@@ -1,44 +1,58 @@
 <div class="flexcol inventory-drop">
-  <table class="item-table-info inventory-weapon">
-    <caption>Оружие</caption>
-    <!-- 
+  {{#if isEquipWeapons}}
+  <table class="table-unstyle active-invemtories inv-weapon">
     <tr>
-      <td>картинка</td>
-      <td>Название</td>
-      <td>масло</td>
-      <td>дистанция</td>
-      <td>урон</td>
-      <td>Надежность ч/ч</td>
-      <td>руны, пустые или заполненные</td>
-      <td>вес</td>
-      <td>тип урона, эффекты, хват, доступность, скрытность</td>
+      <th></th>
+      <th>{{localize "Witcher.Backpacks.Common.Name"}}</th>
+      <th>{{localize "Witcher.Backpacks.Weapon.Damage"}}</th>
+      <th title="{{localize "Witcher.Backpacks.Weapon.TypeDamagesTitle"}}">{{localize "Witcher.Backpacks.Weapon.TypeDamages"}}</th>
+      <th title="{{localize "Witcher.Backpacks.Weapon.DistantionTitle"}}">{{localize "Witcher.Backpacks.Weapon.Distantion"}}</th>
+      <th title="{{localize "Witcher.Backpacks.Weapon.GraspTitle"}}">{{localize "Witcher.Backpacks.Weapon.Grasp"}}</th>
+      <th>{{localize "Witcher.Backpacks.Common.Effects"}}</th>
+      <th>{{localize "Witcher.Backpacks.Weapon.Oil"}}</th>
+      <th>{{localize "Witcher.Backpacks.Weapon.Sharp"}}</th>
+      <th>{{localize "Witcher.Backpacks.Weapon.Poison"}}</th>
     </tr>
-    -->
-    {{#each weapons}}
+    {{#each isEquipWeapons}}
       <tr data-id="{{id}}">
-        <td><img style="width:35px;height:35px" src="{{img}}" title="{{name}}"></td>
+        <td><img src="{{img}}" title="{{name}}"></td>
         <td>{{name}}</td>
-        <td></td>
+        <td>{{data.damage}}</td>
+        <td title="{{localize "Witcher.Backpacks.Weapon.TypeDamagesTitle"}}">
+          {{#each data.damageType as |v k|}}
+            {{#if v}}
+              <span title="{{localize (lookup (lookup ../../config.typeDamage k) 'long')}}">
+                {{localize (lookup (lookup ../../config.typeDamage k) 'short')}}&nbsp;
+              </span>
+            {{/if}}
+          {{/each}}
+        </td>
+        <td title="{{localize "Witcher.Backpacks.Weapon.DistantionTitle"}}">{{data.distantion}}</td>
+        <td title="{{localize "Witcher.Backpacks.Weapon.GraspTitle"}}"><img class="table-icon" src="{{../config.imgAssets}}/hand-{{data.grasp}}.png"></td>
+        <td>
+          {{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}
+        </td>
+        <td class="no-oil">
+          <img src="{{../config.imgAssets}}/oil.png" title="{{localize "Witcher.Backpacks.Weapon.noOil"}}">
+        </td>
+        <td class="no-sharp">
+          <img src="{{../config.imgAssets}}/sharp.png" title="{{localize "Witcher.Backpacks.Weapon.noSharp"}}">
+        </td>
+        <td class="no-poison">
+          <img src="{{../config.imgAssets}}/poison.png" title="{{localize "Witcher.Backpacks.Weapon.noPoison"}}">
+        </td>
       </tr>
     {{/each}}
   </table>
+  {{/if}}
 
-  <table class="item-table-info inventory-valuables">
-    <caption>Пояс</caption>
-    <!-- 
-    <tr>
-      <td>картинка</td>
-      <td>Название</td>
-      <td>масло</td>
-      <td>дистанция</td>
-      <td>урон</td>
-      <td>Надежность ч/ч</td>
-      <td>руны, пустые или заполненные</td>
-      <td>вес</td>
-      <td>тип урона, эффекты, хват, доступность, скрытность</td>
-    </tr>
-    -->
-    {{#each valuables}}
+  {{#if isEquipOthers}}
+  <table class="item-table-info active-invemtories inv-valuables">
+    {{#each isEquipOthers}}
       <tr>
         <td><img style="width:35px;height:35px" src="{{img}}" title="{{name}}"></td>
         <td>{{name}}</td>
@@ -46,4 +60,7 @@
       </tr>
     {{/each}}
   </table>
+  {{/if}}
+
+
 </div>

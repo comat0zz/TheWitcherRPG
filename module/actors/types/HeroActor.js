@@ -86,6 +86,21 @@ export class HeroActor extends Actor {
     return [sum, logs];
   }
 
+  async itemRemoveEqup(id) {
+    const invs = duplicate(this.data.data.inventory);
+    let items = [];
+
+    for (const [key, opt] of Object.entries(invs)) {
+      if(opt.id === id) {
+        const effectsIds = opt?.effectsIds;
+        await this.removeEffects(effectsIds);
+      }else{
+        items.push(opt);
+      }
+    }
+    await this.update({'data.inventory': items});
+  }
+
   updateStatsList() {
     const stats = this.data.data.stats;
     const statsConfig = this.getStatConfigTable();
@@ -245,10 +260,10 @@ export class HeroActor extends Actor {
     }
   }
 
-  addEffectsTable(effect) {
+  async addEffectsTable(effect) {
     let modifications = duplicate(this.data.data.modifications);
     modifications.push(effect);
-    this.update({ "data.modifications": modifications });
+    await this.update({ "data.modifications": modifications });
   }
 
   editEffects(ids, category, status) {
@@ -259,6 +274,13 @@ export class HeroActor extends Actor {
       }
     });
     this.update({"data.modifications": effects});
+  }
+
+  async removeEffects(ids) {
+    if(typeof(ids) === 'undefined') return;
+    const mods = duplicate(this.data.data.modifications);
+    const newMods = mods.filter((i) => ! Object.values(ids).includes(i.id) );
+    await this.update({ "data.modifications": newMods });
   }
 
   itemDressEqup(id, put_on = true) {

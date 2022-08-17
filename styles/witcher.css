@@ -461,6 +461,24 @@
   width: 40px;
   height: 40px;
 }
+.sheet.actor.witcher section.window-content form .active-invemtories img {
+  border: 0;
+}
+.sheet.actor.witcher section.window-content form .active-invemtories td,
+.sheet.actor.witcher section.window-content form .active-invemtories tr,
+.sheet.actor.witcher section.window-content form .active-invemtories th {
+  border: 1px solid #D4D4D4;
+  text-align: center;
+}
+.sheet.actor.witcher section.window-content form .active-invemtories td:nth-child(2) {
+  text-align: left;
+  padding-left: 6px;
+  cursor: pointer;
+}
+.sheet.actor.witcher section.window-content form .inv-weapon td:nth-child(6) img {
+  width: 20px;
+  height: 20px;
+}
 .sheet.witcher section.window-content form .editor {
   width: 100%;
   height: 100%;

@@ -218,7 +218,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
   }
 
   // формируем эффекты с предмета и добавляем в таблицу
-  _calcItemEffects(efs, aitem) {
+  async _calcItemEffects(efs, aitem) {
     if (typeof(efs) === "undefined") {
       return false;
     }
@@ -226,6 +226,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
     for(const [key, val] of Object.entries(efs)) {
       const item = game.items.get(val.id);
+      //console.log(item)
       const itemData = item.data.data;
       const effect_id = genId();
 
@@ -245,8 +246,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
         info: aitem
       }
       
-      this.actor.addEffectsTable(effect);
-      ids.push(effect_id);
+      await this.actor.addEffectsTable(effect);
+      await ids.push(effect_id);
     }
     
     return ids;
@@ -269,7 +270,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
         item_id: item_id,
         img: itemData.img
       }
-      item.effectsIds = this._calcItemEffects(itemData?.data?.data?.effects, item)
+      item.effectsIds = await this._calcItemEffects(itemData?.data?.data?.effects, item)
       item.data = itemData?.data?.data;
       item.isEquip = false;
 

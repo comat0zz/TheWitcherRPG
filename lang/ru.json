@@ -76,7 +76,13 @@
 				"Distantion": "Дис",
 				"DistantionTitle": "Дистанция",
 				"Grasp": "Х",
-				"GraspTitle": "Хват"
+				"GraspTitle": "Хват",
+				"Oil": "Масло",
+				"noOil": "Нет масла",
+				"Sharp": "Заточка",
+				"noSharp": "Нет заточки",
+				"noPoison": "Без яда",
+				"Poison": "Яд"
 			},
 			"Crafts": {
 				"AlhFormCat": "Алхимическая<br>формула",
