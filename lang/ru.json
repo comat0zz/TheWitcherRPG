@@ -66,7 +66,8 @@
 				"Rarity": "Дос",
 				"RarityTitle": "Доступность",
 				"Weight": "Вес",
-				"Info": "Доп. инфо"
+				"Info": "Доп. инфо",
+				"Tags": "Признак"
 			},
 			"Weapon": {
 				"Damage": "Урон",
@@ -96,7 +97,13 @@
 				"MutagenSource": "Источник"
 			},
 			"Armor": {
-				
+				"PointArmor": "ПБ",
+				"PointArmorLabel": "Пункты Брони",
+				"EnchantArmor": "УБ",
+				"EnchantArmorLabel": "Усиления Брони",
+				"Stiffness": "СД",
+				"StiffnessLabel": "Скованность движений",
+				"TypeArmor": "Тип брони"
 			}
 		},
 

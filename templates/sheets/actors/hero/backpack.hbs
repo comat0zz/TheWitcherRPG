@@ -16,6 +16,7 @@
       <th>{{localize "Witcher.Backpacks.Common.Name"}}</th>
       <th>{{localize "Witcher.Backpacks.Common.Category"}}</th>
       <th>{{localize "Witcher.Backpacks.Weapon.Damage"}}</th>
+      <th>{{localize "Witcher.Backpacks.Common.Tags"}}</th>
       <th title="{{localize "Witcher.Backpacks.Weapon.TypeDamagesTitle"}}">{{localize "Witcher.Backpacks.Weapon.TypeDamages"}}</th>
       <th>{{localize "Witcher.Backpacks.Weapon.Runes"}}</th>
       <th title="{{localize "Witcher.Backpacks.Weapon.DistantionTitle"}}">{{localize "Witcher.Backpacks.Weapon.Distantion"}}</th>
@@ -33,6 +34,7 @@
         <td>{{name}}</td>
         <td>{{localize (lookup ../config.categoryWeapon data.category)}}</td>
         <td>{{data.damage}}</td>
+        <td>{{localize (lookup ../config.ItemTags data.tags)}}</td>
         <td title="{{localize "Witcher.Backpacks.Weapon.TypeDamagesTitle"}}">
           {{#each data.damageType as |v k|}}
             {{#if v}}
@@ -67,6 +69,7 @@
         <th>{{localize "Witcher.Backpacks.Common.Name"}}</th>
         <th>{{localize "Witcher.Backpacks.Weapon.TypeDamagesTitle"}}</th>
         <th>{{localize "Witcher.Backpacks.Weapon.Damage"}}</th>
+        <th>{{localize "Witcher.Backpacks.Common.Tags"}}</th>
         <th title="{{localize "Witcher.Backpacks.Common.ReliabilityTitle"}}">{{localize "Witcher.Backpacks.Common.Reliability"}}</th>
         <th>{{localize "Witcher.Backpacks.Common.Effects"}}</th>
         <th title="{{localize "Witcher.Backpacks.Common.ConcealmentTitle"}}">{{localize "Witcher.Backpacks.Common.Concealment"}}</th>
@@ -80,8 +83,13 @@
           <td>{{name}}</td>
           <td>{{localize (lookup (lookup ../config.typeDamage data.category) 'long')}}</td>
           <td>{{data.damage}}</td>
+          <td>{{localize (lookup ../config.ItemTags data.tags)}}</td>
           <td title="{{localize "Witcher.Backpacks.Common.ReliabilityTitle"}}">{{data.reliability}}</td>
-          <td>effects</td>
+          <td>{{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}</td>
           <td title="{{localize "Witcher.Backpacks.Common.ConcealmentTitle"}} - {{localize (lookup (lookup ../config.typeCONC data.concealment) 'long')}}">
             {{localize (lookup (lookup ../config.typeCONC data.concealment) 'short')}}
           </td>
@@ -98,6 +106,11 @@
         <th></th>
         <th>{{localize "Witcher.Backpacks.Common.Name"}}</th>
         <th>{{localize "Witcher.Backpacks.Common.Category"}}</th>
+        <th>{{localize "Witcher.Backpacks.Common.Tags"}}</th>
+        <th title="{{localize "Witcher.Backpacks.Armor.TypeArmor"}}">{{localize "Witcher.Backpacks.Armor.TypeArmor"}}</th>
+        <th title="{{localize "Witcher.Backpacks.Armor.PointArmorLabel"}}">{{localize "Witcher.Backpacks.Armor.PointArmor"}}</th>
+        <th title="{{localize "Witcher.Backpacks.Armor.EnchantArmorLabel"}}">{{localize "Witcher.Backpacks.Armor.EnchantArmor"}}</th>
+        <th title="{{localize "Witcher.Backpacks.Armor.StiffnessLabel"}}">{{localize "Witcher.Backpacks.Armor.Stiffness"}}</th>
 
         <th title="{{localize "Witcher.Backpacks.Common.ReliabilityTitle"}}">{{localize "Witcher.Backpacks.Common.Reliability"}}</th>
         <th>{{localize "Witcher.Backpacks.Common.Effects"}}</th>
@@ -111,9 +124,25 @@
           <td><img src="{{img}}" title="{{name}}"></td>
           <td>{{name}}</td>
           <td>{{localize (lookup ../config.ArmorCategory data.category)}}</td>
-          
+          <td>{{localize (lookup ../config.ItemTags data.tags)}}</td>
+          <td title="{{localize "Witcher.Backpacks.Armor.TypeArmor"}}">
+            {{localize (lookup ../config.ArmorDefence data.defence)}}
+          </td>
+          <td title="{{localize "Witcher.Backpacks.Armor.PointArmorLabel"}}">
+            {{data.points}}
+          </td>
+          <td title="{{localize "Witcher.Backpacks.Armor.EnchantArmorLabel"}}">
+            {{data.glifs}}
+          </td>
+          <td title="{{localize "Witcher.Backpacks.Armor.StiffnessLabel"}}">
+            {{data.stiffness}}
+          </td>
           <td title="{{localize "Witcher.Backpacks.Common.ReliabilityTitle"}}">{{data.reliability}}</td>
-          <td>effects</td>
+          <td>{{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}</td>
           <td title="{{localize "Witcher.Backpacks.Common.ConcealmentTitle"}} - {{localize (lookup (lookup ../config.typeCONC data.concealment) 'long')}}">
             {{localize (lookup (lookup ../config.typeCONC data.concealment) 'short')}}
           </td>
@@ -150,9 +179,16 @@
             {{#ife type "component"}}
               {{localize "Witcher.Backpacks.Crafts.CompontCat"}}:&nbsp;
               {{localize (lookup ../config.ComponentsCategories data.category)}}
+              {{#ife  data.category 'substances'}}
+                <img src="{{data.substanceType.0.img}}" title="{{data.substanceType.0.name}}">
+              {{/ife}}
             {{/ife}}
           </td>
-          <td>effects</td>
+          <td>{{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}</td>
           <td title="{{localize "Witcher.Backpacks.Common.ConcealmentTitle"}} - {{localize (lookup (lookup ../config.typeCONC data.concealment) 'long')}}">
             {{localize (lookup (lookup ../config.typeCONC data.concealment) 'short')}}
           </td>
@@ -179,7 +215,11 @@
           <td><img src="{{img}}" title="{{name}}"></td>
           <td>{{name}}</td>
           <td>{{localize (lookup ../config.AlchemicalCategory data.category)}}</td>
-          <td>effects</td>
+          <td>{{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}</td>
           <td title="{{localize "Witcher.Backpacks.Common.ConcealmentTitle"}} - {{localize (lookup (lookup ../config.typeCONC data.concealment) 'long')}}">
             {{localize (lookup (lookup ../config.typeCONC data.concealment) 'short')}}
           </td>
@@ -221,14 +261,20 @@
               {{localize (lookup ../config.ValuablesTypes data.category)}}
             {{/ife}}
           </td>
-          <td>effects</td>
+          <td>{{#each data.effects}}
+            <span title="{{name}}">
+              <img src="{{img}}" title="{{name}}"> 
+            </span>
+          {{/each}}</td>
           <td title="{{localize "Witcher.Backpacks.Common.RarityTitle"}} - {{localize (lookup (lookup ../config.RarityItem data.rarity) 'long')}}">
             {{localize (lookup (lookup ../config.RarityItem data.rarity) 'short')}}
           </td>
           <td>{{data.weight}}</td>
           <td>
             {{#ife type "mutagen"}}
+              {{#if data.mutation}}
               {{localize "Witcher.Backpacks.Others.MutagenMutation"}}: {{data.mutation}}<br>
+              {{/if}}
               {{localize "Witcher.Backpacks.Others.MutagenSource"}}: 
             {{/ife}}
             {{#ife type "mount_gear"}}
