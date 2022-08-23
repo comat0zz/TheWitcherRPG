@@ -1,0 +1,11 @@
+<form class="set-{{typeImp}}-on-weapon">
+  <table class="inv-weapon-choise-dialog">
+  {{#each data}}
+    <tr>
+      <td><input type="radio" name="{{../typeImp}}" value="{{id}}"></td>
+      <td><img src="{{img}}" title="{{name}}"></td>
+      <td>{{name}}</td>
+    </tr>
+  {{/each}}
+  </table>
+</form>

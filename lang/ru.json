@@ -104,6 +104,15 @@
 				"Stiffness": "СД",
 				"StiffnessLabel": "Скованность движений",
 				"TypeArmor": "Тип брони"
+			},
+			"InvAddWeapon": {
+				"OilLabel": "Нанести масло",
+				"PoisonLabel": "Нанести яд",
+				"SharpLabel": "Заточить",
+
+				"Yes": "Добавить",
+				"Cancel": "Отмена",
+				"Clear": "Очистить"
 			}
 		},
 

@@ -36,14 +36,26 @@
             </span>
           {{/each}}
         </td>
-        <td class="no-oil">
+        <td class="set-weapon-oil">
+          {{#if setOil}}
+          <img src="{{setOil.img}}" title="{{setOil.name}}">
+          {{else}}
           <img src="{{../config.imgAssets}}/oil.png" title="{{localize "Witcher.Backpacks.Weapon.noOil"}}">
+          {{/if}}
         </td>
-        <td class="no-sharp">
+        <td class="set-weapon-sharp">
+          {{#if setSharp}}
+          <img src="{{setSharp.img}}" title="{{setSharp.name}}">
+          {{else}}
           <img src="{{../config.imgAssets}}/sharp.png" title="{{localize "Witcher.Backpacks.Weapon.noSharp"}}">
+          {{/if}}
         </td>
-        <td class="no-poison">
+        <td class="set-weapon-poison">
+          {{#if setPoison}}
+            <img src="{{setPoison.img}}" title="{{setPoison.name}}">
+          {{else}}
           <img src="{{../config.imgAssets}}/poison.png" title="{{localize "Witcher.Backpacks.Weapon.noPoison"}}">
+          {{/if}}
         </td>
       </tr>
     {{/each}}

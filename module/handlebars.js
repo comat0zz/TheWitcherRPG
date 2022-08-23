@@ -11,6 +11,8 @@ const preloadHandlebarsTemplates = async function () {
     "systems/TheWitcherRPG/templates/sheets/actors/hero/stat-skill-li.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/actor-skills-list.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/actor-inventory-list.hbs",
+
+    "systems/TheWitcherRPG/templates/sheets/actors/inv-weapon-add-imprv.hbs",
     
     "systems/TheWitcherRPG/templates/sheets/actors/hero-sheet.hbs",
     "systems/TheWitcherRPG/templates/sheets/actors/hero/skills.hbs",

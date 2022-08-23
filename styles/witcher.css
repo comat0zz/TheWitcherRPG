@@ -470,6 +470,10 @@
   border: 1px solid #D4D4D4;
   text-align: center;
 }
+.sheet.actor.witcher section.window-content form .active-invemtories td:nth-child(1) img {
+  width: 35px;
+  height: 35px;
+}
 .sheet.actor.witcher section.window-content form .active-invemtories td:nth-child(2) {
   text-align: left;
   padding-left: 6px;
@@ -478,6 +482,25 @@
 .sheet.actor.witcher section.window-content form .inv-weapon td:nth-child(6) img {
   width: 20px;
   height: 20px;
+}
+.window-app.dialog .window-content {
+  padding-top: 0;
+  background: #fff;
+}
+.window-app.dialog .window-content form table.inv-weapon-choise-dialog {
+  flex: 0;
+  background-color: #fff;
+  border: 0;
+}
+.window-app.dialog .window-content form table.inv-weapon-choise-dialog img {
+  border: 0;
+  width: 35px;
+  height: 35px;
+}
+.window-app.dialog .window-content form table.inv-weapon-choise-dialog td,
+.window-app.dialog .window-content form table.inv-weapon-choise-dialog tr,
+.window-app.dialog .window-content form table.inv-weapon-choise-dialog th {
+  border: 0;
 }
 .sheet.witcher section.window-content form .editor {
   width: 100%;

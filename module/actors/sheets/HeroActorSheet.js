@@ -196,9 +196,130 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
 
     html.find('a.roll-actor-skill').click(evt => this._onRollActorSkill(evt));
 
+    html.find('td.set-weapon-oil').click(evt => this.setInvWeaponOil(evt));
+    html.find('td.set-weapon-poison').click(evt => this.setInvWeaponPoison(evt));
+
     new ContextMenu(html, '.quick-action-menu', this.itemContextMenu);
     
     new ContextMenu(html, '.content-backpacks tr', this.itemBackPackMenu);
+  }
+
+  removeWeaponImprov(weapon_id, type_imprv) {
+    const invs = duplicate(this.actor.data.data.inventory);
+    let newInvs = [];
+    invs.forEach(el => {
+      if(el.id === weapon_id) {
+        if(type_imprv === "oil") {
+          el.setOil = false;
+        }else if(type_imprv === "poison") {
+          el.setPoison = false;
+        }else if(type_imprv === "sharp") {
+          el.setSharp = false;
+        }
+      }
+      newInvs.push(el);
+    });
+    this.actor.update({"data.inventory": newInvs});
+  }
+
+  setWeaponImprov(weapon_id, form, type_imprv) {
+    const c_id = form.find(`form.set-${type_imprv}-on-weapon input[type=radio][name=${type_imprv}]:checked`).val();
+    if (typeof(c_id) === "undefined") return;
+    const nous = this.actor.data.data.inventory.filter( (i) => i.type === "alchemical" && i.data.category === type_imprv && i.id === c_id );
+    const invs = duplicate(this.actor.data.data.inventory);
+    let newInvs = [];
+    invs.forEach(el => {
+      console.log(el.id, c_id)
+      if(el.id !== c_id) {
+
+        
+        if(el.id === weapon_id) {
+          if(type_imprv === "oil") {
+            el.setOil = nous[0];
+          }else if(type_imprv === "poison") {
+            el.setPoison = nous[0];
+          }else if(type_imprv === "sharp") {
+            el.setSharp = nous[0];
+          }
+        }
+        newInvs.push(el);
+      }
+    });
+    this.actor.update({"data.inventory": newInvs});
+  }
+
+  async setInvWeaponOil(evt) {
+    evt.preventDefault();
+    const weapon_id = $(evt.currentTarget).closest('tr').attr('data-id'); 
+
+    const tpl = "systems/TheWitcherRPG/templates/sheets/actors/inv-weapon-add-imprv.hbs";
+    const oils = this.actor.data.data.inventory.filter( (i) => i.type === "alchemical" && i.data.category === "oil" );
+    const template = await renderTemplate(tpl, {data: oils, typeImp: "oil"});
+
+    return new Promise(resolve => {
+      const data = {
+        title: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.OilLabel"),
+        content: template,
+        buttons: {
+          yes: {
+           icon: '<i class="fas fa-check"></i>',
+           label: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.Yes"),
+           callback: html => resolve(this.setWeaponImprov(weapon_id, html, "oil"))
+          },
+          clear: {
+            icon: '<i class="fas fa-trash"></i>',
+            label: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.Clear"),
+            callback: html => resolve(this.removeWeaponImprov(weapon_id, "oil"))
+           },
+          cancel: {
+           icon: '<i class="fas fa-times"></i>',
+           label: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.Cancel"),
+           callback: html => resolve({cancelled: true})
+          }
+        },
+        default: "cancel",
+        close: () => resolve({cancelled: true})
+      }
+
+      new Dialog(data, null).render(true);
+    });
+  }
+
+  async setInvWeaponPoison(evt) {
+    evt.preventDefault();
+    const weapon_id = $(evt.currentTarget).closest('tr').attr('data-id'); 
+
+    const tpl = "systems/TheWitcherRPG/templates/sheets/actors/inv-weapon-add-imprv.hbs";
+    const poisons = this.actor.data.data.inventory.filter( (i) => i.type === "alchemical" && i.data.category === "poison" );
+    const template = await renderTemplate(tpl, {data: poisons, typeImp: "poison"});
+
+    return new Promise(resolve => {
+      const data = {
+        title: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.PoisonLabel"),
+        content: template,
+        buttons: {
+          yes: {
+           icon: '<i class="fas fa-check"></i>',
+           label: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.Yes"),
+           callback: html => resolve(this.setWeaponImprov(weapon_id, html, "poison"))
+          },
+          clear: {
+            icon: '<i class="fas fa-trash"></i>',
+            label: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.Clear"),
+            callback: html => resolve(this.removeWeaponImprov(weapon_id, "poison"))
+           },
+          cancel: {
+           icon: '<i class="fas fa-times"></i>',
+           label: game.i18n.localize("Witcher.Backpacks.InvAddWeapon.Cancel"),
+           callback: html => resolve({cancelled: true})
+          }
+        },
+        default: "cancel",
+        close: () => resolve({cancelled: true})
+      }
+
+      new Dialog(data, null).render(true);
+    });
   }
 
   async _getDocumentByPack(name) {
@@ -275,6 +396,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
       item.isEquip = false;
 
       this.actor.addEquipToInventory(item);
+
+      this.render();
 
     }else if(itemData.type == "race") {
 
