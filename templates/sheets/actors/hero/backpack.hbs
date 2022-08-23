@@ -6,8 +6,9 @@
   <a class="item" data-tab="backpack-alchimicals" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Labels.Alchimicals"}}</a>
   <a class="item" data-tab="backpack-others" data-group="backpack-tabs">{{localize "Witcher.Backpacks.Labels.Others"}}</a>
 </nav>
-        
+
 <div class="backpack-nav-content">
+  <progress class="weightbar" value="{{data.data.stats.ENC.value}}" max="{{data.data.stats.ENC.total}}">s e</progress>   
 
   <div class="tab flexcol backpack-weapons" data-group="backpack-tabs" data-tab="backpack-weapons">
     <table class="table-unstyle">

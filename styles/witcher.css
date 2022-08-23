@@ -461,20 +461,20 @@
   width: 40px;
   height: 40px;
 }
-.sheet.actor.witcher section.window-content form .active-invemtories img {
+.sheet.actor.witcher section.window-content form .active-inventories img {
   border: 0;
 }
-.sheet.actor.witcher section.window-content form .active-invemtories td,
-.sheet.actor.witcher section.window-content form .active-invemtories tr,
-.sheet.actor.witcher section.window-content form .active-invemtories th {
+.sheet.actor.witcher section.window-content form .active-inventories td,
+.sheet.actor.witcher section.window-content form .active-inventories tr,
+.sheet.actor.witcher section.window-content form .active-inventories th {
   border: 1px solid #D4D4D4;
   text-align: center;
 }
-.sheet.actor.witcher section.window-content form .active-invemtories td:nth-child(1) img {
+.sheet.actor.witcher section.window-content form .active-inventories td:nth-child(1) img {
   width: 35px;
   height: 35px;
 }
-.sheet.actor.witcher section.window-content form .active-invemtories td:nth-child(2) {
+.sheet.actor.witcher section.window-content form .active-inventories td:nth-child(2) {
   text-align: left;
   padding-left: 6px;
   cursor: pointer;
@@ -501,6 +501,28 @@
 .window-app.dialog .window-content form table.inv-weapon-choise-dialog tr,
 .window-app.dialog .window-content form table.inv-weapon-choise-dialog th {
   border: 0;
+}
+.sheet.actor.witcher section.window-content form .weightbar {
+  flex: 0;
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Get rid of default border in Firefox. */
+  border: none;
+  /* Dimensions */
+  width: 100%;
+  height: 20px;
+}
+.sheet.actor.witcher section.window-content form .weightbar::-webkit-progress-bar {
+  background-color: #D4D4D4;
+}
+.sheet.actor.witcher section.window-content form .weightbar::-webkit-progress-value {
+  background-color: #4b4a44;
+  border-radius: 0 7px 7px 0;
+}
+.sheet.actor.witcher section.window-content form .weightbar::-moz-progress-bar {
+  /* style rules */
 }
 .sheet.witcher section.window-content form .editor {
   width: 100%;

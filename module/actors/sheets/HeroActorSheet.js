@@ -165,6 +165,8 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     sheetData.isEquipOthers = sheetData.invOthers.filter((i) => i.isEquip === true && i.type === "valuable");
     /* -------------------------------------------- */
 
+
+
     console.log(sheetData)
     return sheetData;
   }
@@ -213,8 +215,6 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
           el.setOil = false;
         }else if(type_imprv === "poison") {
           el.setPoison = false;
-        }else if(type_imprv === "sharp") {
-          el.setSharp = false;
         }
       }
       newInvs.push(el);
@@ -229,10 +229,7 @@ export class HeroActorSheet extends WitcherBaseActorSheet {
     const invs = duplicate(this.actor.data.data.inventory);
     let newInvs = [];
     invs.forEach(el => {
-      console.log(el.id, c_id)
       if(el.id !== c_id) {
-
-        
         if(el.id === weapon_id) {
           if(type_imprv === "oil") {
             el.setOil = nous[0];

@@ -35,6 +35,15 @@ export class HeroActor extends Actor {
     console.log("prepareDerivedData")
   }
 
+  getCurrentWeight() {
+    const inventory = this.data.data.inventory;
+    let sum = 0;
+    inventory.forEach(element => {
+      sum += element.data.weight;
+    });
+    return sum;
+  }
+
   getMeleeFight(body_total) {
     const TableMeleeFight = CONFIG.WITCHER.TableMeleeFight;
     if(body_total < 1) return [0, 0];
@@ -167,7 +176,7 @@ export class HeroActor extends Actor {
           actor[key].value = tableBodyWill[key];
         }
         if(key === "ENC") {
-          actor[key].value = 0;
+          actor[key].value = this.getCurrentWeight();
         }
 
         if(key === "RUN") {
@@ -210,6 +219,8 @@ export class HeroActor extends Actor {
     const [thisSum, thisArr] = this.getCalcModifiersProps("stats", "LEAP");
     actor["LEAP"].total = actor["LEAP"].value + thisSum;
     actor["LEAP"]['log'] = thisArr;
+
+    actor["ENC"].value = this.getCurrentWeight();
 
     return [actor, allPoints];
   }
